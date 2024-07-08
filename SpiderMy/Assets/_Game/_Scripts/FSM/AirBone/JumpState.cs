@@ -1,6 +1,7 @@
 using Animancer;
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered.Swing;
 using UnityEngine;
 
 namespace SFRemastered
@@ -11,6 +12,7 @@ namespace SFRemastered
         [SerializeField] private float jumpImpulseModifier = 1f;
         [SerializeField] private WalkState _walkState;
         [SerializeField] private FallState _fallState;
+        [SerializeField] private StartSwing _startSwingState;
         [SerializeField] private ClipTransition _fallLoopAnimation; 
 
         public override void EnterState()
@@ -47,11 +49,18 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_startSwingState);
+                return StateStatus.Success;
+            }
+
             if(_blackBoard.playerMovement.GetVelocity().y < 0 && elapsedTime > .2f)
             {
                 _fsm.ChangeState(_fallState);
                 return StateStatus.Success;
             }
+            
 
             return StateStatus.Running;
         }

@@ -26,6 +26,7 @@ namespace SFRemastered.InputSystem
         [Header("Input Actions")]
         public InputAction jump;
         public InputAction sprint;
+        public InputAction swing;
 
         public bool disableInput;
 

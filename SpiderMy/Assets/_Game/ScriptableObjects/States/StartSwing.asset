@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9710b03f7cf7a141b141e9bb2849ce8, type: 3}
-  m_Name: SwingState
+  m_Script: {fileID: 11500000, guid: 5c123d34023549e5be356038cca45006, type: 3}
+  m_Name: StartSwing
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,7 +19,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 722b2dbbfd905d749ac9f77c08a27d4a, type: 3}
+    _Clip: {fileID: 7400000, guid: 4f9b2cc802bffcd468bf59be5599a8d1, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}

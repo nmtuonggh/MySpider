@@ -6,32 +6,48 @@ using UnityEngine;
 
 namespace SFRemastered
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/Swing")]
     public class SwingState : StateBase
     {
         [SerializeField] private IdleState _idleState;
-
+        [SerializeField] private FallState _fallState;
+        protected Transform swingPoint;
+        [SerializeField] protected SpringJoint _springJoint;
+        
+        
         //Work in progress, enable physic for swinging simulation
         public override void EnterState()
         {
             base.EnterState();
             Vector3 velocity = _blackBoard.playerMovement.GetVelocity();
-            _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
+            _blackBoard.playerMovement.SetMovementMode(MovementMode.Flying);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            _blackBoard.rigidbody.velocity = velocity;
+            _blackBoard.rigidbody.velocity = velocity * 2f;
         }
 
         public override StateStatus UpdateState()
         {
+            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
+            
             if(GroundCheck())
             {
                 _fsm.ChangeState(_idleState);
                 return StateStatus.Success;
             }
+            
+            if (!_blackBoard.swing )
+            {
+                _fsm.ChangeState(_fallState);
+                return StateStatus.Success;
+            }
 
             return StateStatus.Running;
+        }
+
+        public override void FixedUpdateState()
+        {
+            base.FixedUpdateState();
         }
 
         public override void ExitState()
