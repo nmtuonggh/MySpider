@@ -20,10 +20,10 @@ namespace SFRemastered
             base.EnterState();
             Vector3 velocity = _blackBoard.playerMovement.GetVelocity();
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
-            _blackBoard.rigidbody.useGravity = true;
+            _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            _blackBoard.rigidbody.velocity = velocity * 2f;
+            _blackBoard.rigidbody.velocity = velocity;
             
         }
 
