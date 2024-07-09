@@ -5,11 +5,10 @@ namespace SFRemastered.Swing
     [CreateAssetMenu(menuName = "ScriptableObjects/States/StartSwing")]
     public class StartSwing: SwingState
     {
-        
         public override void EnterState()
         {
             base.EnterState();
-            startSwing();
+             
         }
 
         public override StateStatus UpdateState()

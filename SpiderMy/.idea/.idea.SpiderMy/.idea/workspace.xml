@@ -17,6 +17,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1ef406b3fd3a4bfbac8a7b76b99d890b1fe00/69/f05b4489/SpringJoint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Swing/SwingState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -96,12 +97,14 @@
       <workItem from="1720412660063" duration="26000" />
       <workItem from="1720412697096" duration="4858000" />
       <workItem from="1720425057546" duration="12496000" />
+      <workItem from="1720492279868" duration="29655000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
