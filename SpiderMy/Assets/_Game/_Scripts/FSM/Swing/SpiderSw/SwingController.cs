@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class SwingController : MonoBehaviour
     public Camera cam;
     enum State { Swinging, Falling, Walking };
     State state;
-    public Pendulum pendulum;
+    public ConLac pendulum;
     Vector3 previousPosition;
     float distToGround;
     Vector3 hitPos;
@@ -22,7 +22,7 @@ public class SwingController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         state = State.Walking;
-        pendulum.bob_tr.transform.parent = pendulum.tether.tether_tr;
+        pendulum.spider_tr.transform.parent = pendulum.tether.tetherTransform;
         previousPosition = transform.localPosition;
 
         distToGround = GetComponent<CapsuleCollider>().bounds.extents.y;
@@ -69,7 +69,7 @@ public class SwingController : MonoBehaviour
             {
                 if (state == State.Walking)
                 {
-                    pendulum.bob.velocity = moveDirection;
+                    pendulum.spider.velocity = moveDirection;
                 }
                 pendulum.SwitchTether(hit.point);
                 state = State.Swinging;
@@ -89,17 +89,17 @@ public class SwingController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            pendulum.bob.velocity += pendulum.bob.velocity.normalized * 2;
+            pendulum.spider.velocity += pendulum.spider.velocity.normalized * 2;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            pendulum.bob.velocity += -cam.transform.right * 1.2f;
+            pendulum.spider.velocity += -cam.transform.right * 1.2f;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            pendulum.bob.velocity += cam.transform.right * 1.2f;
+            pendulum.spider.velocity += cam.transform.right * 1.2f;
         }
-        transform.localPosition = pendulum.MoveBob(transform.localPosition, previousPosition, Time.deltaTime);
+        transform.localPosition = pendulum.MoveSpider(transform.localPosition, previousPosition, Time.deltaTime);
         previousPosition = transform.localPosition;
     }
 
@@ -112,7 +112,7 @@ public class SwingController : MonoBehaviour
 
     void DoWalkingAction()
     {
-        pendulum.bob.velocity = Vector3.zero;
+        pendulum.spider.velocity = Vector3.zero;
         if (controller.isGrounded)
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -142,8 +142,8 @@ public class SwingController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        Vector3 undesiredMotion = collision.contacts[0].normal * Vector3.Dot(pendulum.bob.velocity, collision.contacts[0].normal);
-        pendulum.bob.velocity = pendulum.bob.velocity - (undesiredMotion * 1.2f);
+        Vector3 undesiredMotion = collision.contacts[0].normal * Vector3.Dot(pendulum.spider.velocity, collision.contacts[0].normal);
+        pendulum.spider.velocity = pendulum.spider.velocity - (undesiredMotion * 1.2f);
         hitPos = transform.position;
 
         if (collision.gameObject.name == "Respawn")
@@ -153,4 +153,4 @@ public class SwingController : MonoBehaviour
         }
     }
 }
-*/
+
