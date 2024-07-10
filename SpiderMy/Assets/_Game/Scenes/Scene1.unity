@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17757884, g: 0.2223225, b: 0.3045184, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757848, g: 0.22232172, b: 0.30451703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42022,6 +42022,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1408434825}
+    - target: {fileID: 5459646892774124854, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: _gravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6798298130353121681, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.1
@@ -42066,6 +42070,10 @@ PrefabInstance:
       propertyPath: lr
       value: 
       objectReference: {fileID: 204332297}
+    - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: swing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: camera
       value: 

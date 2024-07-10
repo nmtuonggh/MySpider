@@ -34,7 +34,7 @@ namespace SFRemastered
 
         public virtual void EnterState() 
         {
-            Debug.Log("Entering State: " + this);
+            //  Debug.Log("Entering State: " + this);
             elapsedTime = 0;
 
             if(_mainAnimation.Clip != null)
