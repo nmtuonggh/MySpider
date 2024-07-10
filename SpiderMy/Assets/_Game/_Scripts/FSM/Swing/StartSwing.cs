@@ -8,13 +8,13 @@ namespace SFRemastered.Swing
         public override void EnterState()
         {
             base.EnterState();
-             
         }
 
         public override StateStatus UpdateState()
         {
             StateStatus baseStatus = base.UpdateState();
-            
+            HandelForce();
+            DrawLine();
             if (baseStatus != StateStatus.Running)
             {
                 return baseStatus;
@@ -26,7 +26,6 @@ namespace SFRemastered.Swing
         public override void FixedUpdateState()
         {
             base.FixedUpdateState();
-            DrawRope();
         }
         
         public override void ExitState()
@@ -36,35 +35,34 @@ namespace SFRemastered.Swing
             _blackBoard.lr.positionCount = 0;
             _blackBoard.swing = false;
         }
-        
-        public void startSwing()
+
+        public void HandelForce()
         {
-            swingPoint.position = _blackBoard.swingPoint2.position;
-            _springJoint = _blackBoard.playerMovement.gameObject.AddComponent<SpringJoint>();
-            _springJoint.autoConfigureConnectedAnchor = false;
-            _springJoint.connectedAnchor = swingPoint.position;
-            float distanceFromPoint = Vector3.Distance(_blackBoard.playerPoint.position, swingPoint.position);
+            var v = _blackBoard.playerMovement.GetVelocity();
+            var r = _blackBoard.swingPoint.position - _blackBoard.playerSwingPoint.position;
+            var tensionMagnitude = v.magnitude * v.magnitude / r.magnitude; // T = (m*v*v)/r
+            var tensionDirection = r.normalized;
             
-            _springJoint.maxDistance = distanceFromPoint * 0.8f;
-            _springJoint.minDistance = distanceFromPoint * 0.25f;
+            var gravity = _blackBoard.playerMovement.GetGravityVector();
             
-            _springJoint.spring = 4.5f;
-            _springJoint.damper = 7f;
-            _springJoint.massScale = 4.5f;
+            var gPara = Vector3.Project(gravity, tensionDirection);
+            var gPerp = gravity - gPara;
             
+            var angle = Vector3.Angle(tensionDirection, gravity);
+            var tension = tensionMagnitude * Mathf.Cos(angle);
+            var gperpMag = gPerp.magnitude * Mathf.Sin(angle);
+            
+            //var force =(tension + gperpMag);
+            _blackBoard.playerMovement.AddForce( tensionDirection * tension);
+            _blackBoard.playerMovement.AddForce( gperpMag * gPerp);
+        }
+        
+        public void DrawLine()
+        {
             _blackBoard.lr.positionCount = 2;
-            GrapPoint = _blackBoard.playerPoint;
+            _blackBoard.lr.SetPosition(0, _blackBoard.swingPoint.position);
+            _blackBoard.lr.SetPosition(1, _blackBoard.playerSwingPoint.position);
+            
         }
-
-        private Transform GrapPoint;
-        void DrawRope() {
-            if (!_springJoint) return;
-
-            //GrapPoint.position = Vector3.Lerp(GrapPoint.position, _blackBoard.swingPoint.position, Time.deltaTime * 8f);
-        
-            _blackBoard.lr.SetPosition(0, _blackBoard.playerPoint.position);
-            _blackBoard.lr.SetPosition(1, swingPoint.position);
-        }
-        
     }
 }
