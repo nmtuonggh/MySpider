@@ -13,6 +13,7 @@ namespace SFRemastered
         [SerializeField] protected Vector3 leght;
         [SerializeField] protected float startAlpha;
         [SerializeField] protected float currentAlpha;
+        private SpringJoint springJoint;
         
         
         //Work in progress, enable physic for swinging simulation
