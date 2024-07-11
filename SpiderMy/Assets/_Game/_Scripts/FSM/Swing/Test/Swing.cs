@@ -15,7 +15,7 @@ namespace SFRemastered._Game._Scripts.FSM.Swing.Test
 
         private void FixedUpdate()
         {
-            transform.localPosition = conLac.MoveSpider(transform.localPosition, Time.fixedDeltaTime);
+            transform.position = conLac.MoveSpider(transform.position, Time.fixedDeltaTime);
         }
     }
 }

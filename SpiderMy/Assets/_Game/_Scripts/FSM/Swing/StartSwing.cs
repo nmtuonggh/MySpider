@@ -61,7 +61,6 @@ namespace SFRemastered.Swing
             if (!_springJoint) return;
 
             //GrapPoint.position = Vector3.Lerp(GrapPoint.position, _blackBoard.swingPoint.position, Time.deltaTime * 8f);
-        
             _blackBoard.lr.SetPosition(0, _blackBoard.playerPoint.position);
             _blackBoard.lr.SetPosition(1, swingPoint.position);
         }

@@ -13,8 +13,8 @@ using UnityEngine.Serialization;
 
         public void Initialise()
         {
-            spider_tr.transform.parent = tether.tetherTransform;
-            arm.length= Vector3.Distance(spider_tr.transform.localPosition, tether.point);
+            //spider_tr.transform.parent = tether.tetherTransform;
+            arm.length= Vector3.Distance(spider_tr.transform.position, tether.tetherTransform.position);
         }
         
         public Vector3 MoveSpider(Vector3 pos, float time)
