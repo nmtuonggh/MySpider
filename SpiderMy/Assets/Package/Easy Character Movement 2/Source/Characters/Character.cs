@@ -49,7 +49,7 @@ namespace EasyCharacterMovement
     #endregion
 
     [RequireComponent(typeof(CharacterMovement))]
-    public class Character : MonoBehaviour
+    public class  Character : MonoBehaviour
     {
         #region EDITOR EXPOSED FIELDS
 

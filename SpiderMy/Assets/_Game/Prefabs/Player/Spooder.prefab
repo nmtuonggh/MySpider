@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 3767107911866814509}
   - component: {fileID: 6202625030417572680}
   - component: {fileID: 2371883009369663962}
-  - component: {fileID: 1140438495638315085}
   m_Layer: 3
   m_Name: Spooder
   m_TagString: Player
@@ -529,7 +528,12 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
-  swingPoint: {fileID: 0}
+  tether:
+    point: {x: 0, y: 0, z: 0}
+    tetherTransform: {fileID: 0}
+  swingPoint2: {fileID: 0}
+  playerPoint: {fileID: 0}
+  lr: {fileID: 0}
 --- !u!114 &3767107911866814509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,30 +587,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   footlandClips:
   - {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
---- !u!145 &1140438495638315085
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037471572762071374}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_Spring: 10
-  m_Damper: 0.2
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1001 &2634003495687629508
 PrefabInstance:
   m_ObjectHideFlags: 0
