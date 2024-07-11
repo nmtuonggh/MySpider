@@ -20,8 +20,9 @@ namespace SFRemastered
         public bool swing;
         public bool isGrounded;
         public LayerMask groundLayers;
+        //
+        public Transform playerHand;
         public Transform swingPoint;
-        public Transform playerSwingPoint;
         public Transform playerPoint;
         public LineRenderer lr;
         

@@ -47,11 +47,12 @@ namespace SFRemastered
             }
 
             //Swing entry point, work in progress
-            //if(_blackBoard.jump)
-            //{
-            //    _fsm.ChangeState(_swingState);
-            //    return StateStatus.Success;
-            //}
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_swingState);
+                return StateStatus.Success;
+            }
+
 
             return StateStatus.Running;
         }

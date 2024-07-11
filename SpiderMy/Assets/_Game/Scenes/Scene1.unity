@@ -3571,7 +3571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154352052}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: HandSwing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3585,12 +3585,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154352051}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.36, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6414999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 204332296}
+  m_Father: {fileID: 678585224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159015119
 GameObject:
@@ -4826,11 +4826,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9037471572762071374, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
   m_PrefabInstance: {fileID: 4496070970909889249}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &204332296 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6798298130353121681, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
-  m_PrefabInstance: {fileID: 4496070970909889249}
-  m_PrefabAsset: {fileID: 0}
 --- !u!120 &204332297
 LineRenderer:
   serializedVersion: 2
@@ -4878,7 +4873,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -6187,111 +6182,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &260611946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 260611947}
-  - component: {fileID: 260611950}
-  - component: {fileID: 260611949}
-  - component: {fileID: 260611948}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &260611947
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260611946}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 394490442}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &260611948
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260611946}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &260611949
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260611946}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &260611950
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260611946}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &263608169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,37 +6898,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ff3e7944ac156e84bb9985c33b5ee183, type: 3}
   m_PrefabInstance: {fileID: 300893250}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &303558777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 303558778}
-  m_Layer: 0
-  m_Name: SwingPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &303558778
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303558777}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.6, z: 7.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 678585224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313026667
 GameObject:
   m_ObjectHideFlags: 0
@@ -9529,38 +9388,6 @@ MonoBehaviour:
   _slopeBehaviour: 1
   _slopeLimit: 0
   _slopeLimitCos: 1
---- !u!1 &394490441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 394490442}
-  m_Layer: 0
-  m_Name: swingpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &394490442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394490441}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.9, y: 22.1, z: 266.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 260611947}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &400986250
 GameObject:
   m_ObjectHideFlags: 0
@@ -10002,6 +9829,37 @@ MonoBehaviour:
   _slopeBehaviour: 1
   _slopeLimit: 0
   _slopeLimitCos: 1
+--- !u!1 &426170953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426170954}
+  m_Layer: 3
+  m_Name: Swingpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426170954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426170953}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 15.2, z: 16.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678585224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &426442658
 GameObject:
   m_ObjectHideFlags: 0
@@ -12992,6 +12850,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 619986031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &572078074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 741930399825075465, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+  m_PrefabInstance: {fileID: 4496070970909889249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579385506
 GameObject:
   m_ObjectHideFlags: 0
@@ -42014,6 +41877,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 3350882665949648572, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: _states.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350882665949648572, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: _states.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
     - target: {fileID: 5364459837804230101, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -42066,6 +41937,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8698019614061827359, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: lr
       value: 
@@ -42079,17 +41954,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1408434825}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+      propertyPath: playerHand
+      value: 
+      objectReference: {fileID: 154352052}
+    - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: swingPoint
       value: 
-      objectReference: {fileID: 394490442}
+      objectReference: {fileID: 426170954}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: playerPoint
       value: 
-      objectReference: {fileID: 204332296}
+      objectReference: {fileID: 572078074}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: swingPoint2
       value: 
-      objectReference: {fileID: 303558778}
+      objectReference: {fileID: 0}
     - target: {fileID: 8772811149629240781, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       propertyPath: playerSwingPoint
       value: 
@@ -42101,12 +41980,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6798298130353121681, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5741894222748038778, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 154352052}
     - targetCorrespondingSourceObject: {fileID: 5741894222748038778, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 303558778}
+      addedObject: {fileID: 426170954}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9037471572762071374, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       insertIndex: -1
@@ -42190,4 +42069,3 @@ SceneRoots:
   - {fileID: 977588639}
   - {fileID: 2001768522}
   - {fileID: 4496070970909889249}
-  - {fileID: 394490442}
