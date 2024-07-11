@@ -104,7 +104,7 @@ namespace SFRemastered
             _blackBoard.lr.positionCount = 2;
             _blackBoard.lr.SetPosition(0, _blackBoard.playerHand.position);
             _blackBoard.lr.SetPosition(1, currentSwingPoint);
-        }
+        } 
 
         private bool GroundCheck()
         {
