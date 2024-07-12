@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4e3f7803c163b4899ea30984ef00c1, type: 3}
-  m_Name: SprintTurn180State
+  m_Script: {fileID: 11500000, guid: 217a8378ab4448789aaed887edfb8801, type: 3}
+  m_Name: DiveState
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
-    _FadeDuration: 0.033333335
+    _FadeDuration: 0.25
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 5d3b165cccb17de499134df9ecd6aa73, type: 3}
+    _Clip: {fileID: 7400000, guid: c371d0383416ff743a551149abcc380b, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _jumpState: {fileID: 11400000, guid: c1da1219f551cef4e9a6a3a4ec2b178e, type: 2}
-  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
-  canJump: 1
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
-  _sprintToIdleState: {fileID: 11400000, guid: b551b896c6cb1b04684787a4f4dec030, type: 2}
+  _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
+  _landIdleState: {fileID: 11400000, guid: 15f0ffbabd49eb045b0daa37055c8535, type: 2}
+  _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
+  _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9710b03f7cf7a141b141e9bb2849ce8, type: 3}
-  m_Name: SwingState
+  m_Script: {fileID: 11500000, guid: a18e521949968f346a0971186313061b, type: 3}
+  m_Name: IdleState
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,13 +19,10 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: abaf23e7378d08248a15ca38c768c244, type: 2}
-    _Speed: 2
+    _Clip: {fileID: 7400000, guid: 4f9b2cc802bffcd468bf59be5599a8d1, type: 3}
+    _Speed: 1
     _NormalizedStartTime: NaN
-  _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
+  _jumpState: {fileID: 11400000, guid: 6235abdc6b6054443b85e92c6db43ed7, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
-  _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 153.97943, y: 48.012096, z: 350.4857}
-  multiplierVelocity: 2.5
-  speedWhenSwing: 20
-  rotationSpeed: 50
+  canJump: 1
+  _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}

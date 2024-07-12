@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ea8f74f43147a64ea8fcba9aca20b88, type: 3}
-  m_Name: FallState
+  m_Script: {fileID: 11500000, guid: 31f12d851ed04350903092c2523f3c4b, type: 3}
+  m_Name: JumpFromSwingState
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,12 +19,20 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 1f7a93442b82e564ab956b4cd8a0bc07, type: 3}
+    _Clip: {fileID: 7400000, guid: 5d25f487bfa3d494182e2adbf5bfa3b0, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
-  _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
+  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _landIdleState: {fileID: 11400000, guid: 15f0ffbabd49eb045b0daa37055c8535, type: 2}
   _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
-  _diveState: {fileID: 11400000, guid: ad902a0650015f8439f4f07130cd98b4, type: 2}
+  _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
+  _fallLoopAnimation:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: decc5909966096240b57d0c86efcf2f1, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN

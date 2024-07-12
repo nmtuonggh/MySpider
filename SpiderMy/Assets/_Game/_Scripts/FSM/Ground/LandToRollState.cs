@@ -1,23 +1,25 @@
+using NodeCanvas.StateMachines;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace SFRemastered
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandToWalk")]
-    public class LandToWalkState : GroundState
+    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandToRoll")]
+    public class LandToRollState : GroundState
     {
-        [SerializeField] private WalkState _walkState;
-        [SerializeField] private WalkToIdleState _idleState;
+        [SerializeField] private SprintState _sprintState;
+        [SerializeField] private SprintToIdleState _idleState;
         public override void EnterState()
         {
             base.EnterState();
 
             _state.Events.OnEnd = () =>
             {
-                _fsm.ChangeState(_walkState);
+                _fsm.ChangeState(_sprintState);
             };
+
+            _blackBoard.playerMovement.Sprint();
         }
 
         public override StateStatus UpdateState()
@@ -28,7 +30,7 @@ namespace SFRemastered
                 return baseStatus;
             }
 
-            if(_blackBoard.moveDirection.magnitude > 0.1f)
+            if (_blackBoard.moveDirection.magnitude > 0.1f)
                 _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
             else
                 _blackBoard.playerMovement.SetMovementDirection(_fsm.transform.forward);
@@ -36,9 +38,16 @@ namespace SFRemastered
             return StateStatus.Running;
         }
 
+        public override void ExitState()
+        {
+            base.ExitState();
+
+            _blackBoard.playerMovement.StopSprinting();
+        }
+
         public void FinishRoll()
         {
-            if (_blackBoard.moveDirection.magnitude < 0.1f)
+            if(_blackBoard.moveDirection.magnitude < 0.1f)
             {
                 _fsm.ChangeState(_idleState);
             }

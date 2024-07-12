@@ -1,15 +1,16 @@
-using NodeCanvas.StateMachines;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandToSprint")]
-    public class LandToSprintState : GroundState
+    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandNormal")]
+    public class LandNormalState : GroundState
     {
-        [SerializeField] private SprintState _sprintState;
-        [SerializeField] private SprintToIdleState _idleState;
+        [FormerlySerializedAs("_walkState")] [SerializeField] private SprintState _sprintState;
+        [SerializeField] private SprintToIdleState  _sprintToIdleState ;
         public override void EnterState()
         {
             base.EnterState();
@@ -18,8 +19,6 @@ namespace SFRemastered
             {
                 _fsm.ChangeState(_sprintState);
             };
-
-            _blackBoard.playerMovement.Sprint();
         }
 
         public override StateStatus UpdateState()
@@ -30,7 +29,7 @@ namespace SFRemastered
                 return baseStatus;
             }
 
-            if (_blackBoard.moveDirection.magnitude > 0.1f)
+            if(_blackBoard.moveDirection.magnitude > 0.1f)
                 _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
             else
                 _blackBoard.playerMovement.SetMovementDirection(_fsm.transform.forward);
@@ -38,18 +37,11 @@ namespace SFRemastered
             return StateStatus.Running;
         }
 
-        public override void ExitState()
-        {
-            base.ExitState();
-
-            _blackBoard.playerMovement.StopSprinting();
-        }
-
         public void FinishRoll()
         {
-            if(_blackBoard.moveDirection.magnitude < 0.1f)
+            if (_blackBoard.moveDirection.magnitude < 0.1f)
             {
-                _fsm.ChangeState(_idleState);
+                _fsm.ChangeState(_sprintToIdleState);
             }
         }
     }
