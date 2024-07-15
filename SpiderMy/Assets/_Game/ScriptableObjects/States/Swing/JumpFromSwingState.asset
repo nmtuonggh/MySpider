@@ -38,23 +38,26 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _jumpFromSwingBlendTree:
-    _FadeDuration: 0.25
+    _FadeDuration: 1.0083333
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
     _Speed: 1
     _Animations:
-    - {fileID: 7400000, guid: 977bac4ff08705148ae5c8237bdc3f57, type: 2}
-    - {fileID: 7400000, guid: bcf1301acc6c91549ab759ac93ca4fb9, type: 2}
-    - {fileID: 7400000, guid: ab38a0ab0730c9e4bace65f6eb096448, type: 2}
-    - {fileID: 7400000, guid: cbd84af04eca10a46855cbe537c8ba01, type: 2}
-    - {fileID: 7400000, guid: 516fb1c15fd79724dab58005e50068cd, type: 2}
-    - {fileID: 7400000, guid: 7ae6994c672ba5c4d9301312ba86f657, type: 2}
-    - {fileID: 7400000, guid: 5d25f487bfa3d494182e2adbf5bfa3b0, type: 2}
-    - {fileID: 7400000, guid: c4cf6d2b3afc907429ce96c1d763b090, type: 2}
-    - {fileID: 7400000, guid: db251043dc3a8334ba4d9bde3bb36f91, type: 2}
-    - {fileID: 7400000, guid: 26346380d223db244b1639d334254fc5, type: 2}
+    - {fileID: 7400000, guid: 8bbebf4dfe3db4f4fb30bcb9c9d1bb27, type: 2}
+    - {fileID: 7400000, guid: f3d6d36813a800d4a8f5117199a70571, type: 2}
+    - {fileID: 7400000, guid: 1a1f13b7cf009d742966b76abe6a6953, type: 2}
+    - {fileID: 7400000, guid: 9982e37ff9ec5de4a825d7b9934e5256, type: 2}
+    - {fileID: 7400000, guid: ac3ce7aa2df548f4e8a8abbc4d179aa1, type: 2}
+    - {fileID: 7400000, guid: 313fb61ad07849c41a65d6e22be9de2c, type: 2}
+    - {fileID: 7400000, guid: f36e0b6ccec9f134289a2f5e360e4627, type: 2}
+    - {fileID: 7400000, guid: 2b803245e1d39294faa766d86db42d54, type: 2}
+    - {fileID: 7400000, guid: e4423511d0361a94ca2295d0bdb7c5df, type: 2}
+    - {fileID: 7400000, guid: 44286cc91c35d2a42bd585f245ff713e, type: 2}
+    - {fileID: 7400000, guid: 340a740d2159f874892714c33408b0e2, type: 2}
+    - {fileID: 7400000, guid: b2ca38b78a2246244a7ccc88baabece1, type: 2}
+    - {fileID: 7400000, guid: 77de00caf2831cf46a95e253eed9a1cb, type: 2}
     _Speeds: []
     _SynchronizeChildren: 
     _Thresholds:
@@ -68,6 +71,9 @@ MonoBehaviour:
     - 7
     - 8
     - 9
+    - 10
+    - 11
+    - 12
     _DefaultParameter: 0
     _ExtrapolateSpeed: 1
-  _animCount: 9
+  _animCount: 12

@@ -13,8 +13,8 @@ namespace SFRemastered
         [SerializeField] private LandToRollState _landRollState;
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private ClipTransition _fallLoopAnimation;
-        [SerializeField] private int _animCount;
         [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
+        [SerializeField] private int _animCount;
 
         private Vector3 startVelocity;
         private bool endAnimation;

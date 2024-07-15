@@ -28,7 +28,7 @@ MonoBehaviour:
   _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _diveBlendTree:
-    _FadeDuration: 0.625
+    _FadeDuration: 1
     _Events:
       _NormalizedTimes: []
       _Callbacks: []

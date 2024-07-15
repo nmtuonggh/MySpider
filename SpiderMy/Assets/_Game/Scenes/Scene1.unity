@@ -5712,6 +5712,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &223595699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 892721655549184612, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+  m_PrefabInstance: {fileID: 4496070970909889249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &242519367
 GameObject:
   m_ObjectHideFlags: 0
@@ -15464,12 +15469,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737295744}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.021, z: -0.005}
+  m_LocalRotation: {x: 0.000000011175868, y: 0.21047343, z: 0.5826845, w: 0.7849711}
+  m_LocalPosition: {x: -0.049, y: 0.111, z: 0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1476230689}
+  m_Father: {fileID: 223595699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &739999602
 Mesh:
@@ -26222,11 +26227,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &1476230689 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5822633606407061753, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
-  m_PrefabInstance: {fileID: 4496070970909889249}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507678036
 GameObject:
   m_ObjectHideFlags: 0
@@ -42170,7 +42170,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5741894222748038778, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 426170954}
-    - targetCorrespondingSourceObject: {fileID: 5822633606407061753, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 892721655549184612, guid: dbb92de03e90df04ab633aba5b7ef1d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 737295745}
     m_AddedComponents:

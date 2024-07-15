@@ -18,22 +18,25 @@ namespace SFRemastered
         [FormerlySerializedAs("multiplier")] [SerializeField] protected float multiplierVelocity;
         [SerializeField] protected float speedWhenSwing;
         [SerializeField] private LinearMixerTransition _swingAnimBlendTree;
+        [SerializeField] private int _swingAnimCount;
+        [SerializeField] private ClipTransition _swingLoopAnimation;
         
         private SpringJoint _springJoint;
         private Bounds _ropeHolderBounds;
         private Vector3 _randomRopePosition;
         private float angle;
         private float startVelocityMagnitude;
+        private int animIndex;
         
         
         //Work in progress, enable physic for swinging simulation
         public override void EnterState()
         {
             currentSwingPoint = _blackBoard.swingPoint.position;
+            animIndex = Random.Range(0, _swingAnimCount);
             base.EnterState();
             SetupEnterState();
-            RandomPos();
-            RandomAnim();
+            RandomRopeShotPosition();
             Swinging();
         }
         public override StateStatus UpdateState()
@@ -57,15 +60,15 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             DrawLine();
+            SwitchAnim();
             
-
             return StateStatus.Running;
         }
         
         public override void FixedUpdateState()
         {
             base.FixedUpdateState();
-            RotationPlayer();
+            RotationPlayerWhileSwing();
         }
 
         public override void ExitState()
@@ -78,39 +81,44 @@ namespace SFRemastered
             _blackBoard.swing = false;
         }
 
-        private void RandomAnim()
+        private void SwitchAnim()
         {
-            _state = _blackBoard.animancer.Play(_swingAnimBlendTree);
-            var index = Random.Range(0, 7);
-            ((LinearMixerState)_state).Parameter = index;
+            Debug.Log(_blackBoard.rigidbody.velocity.magnitude);
+            if(_blackBoard.rigidbody.velocity.magnitude < 5f)
+            {
+                _state = _blackBoard.animancer.Play(_mainAnimation);
+            }
+            else
+            {
+                _state = _blackBoard.animancer.Play(_swingAnimBlendTree);
+                ((LinearMixerState)_state).Parameter = animIndex;
+            }
         }
-        private void RotationPlayer()
+        private void RotationPlayerWhileSwing()
         {
             var direction = _randomRopePosition - _blackBoard.startrope.position;
-            /*_blackBoard.playerMovement.transform.forward = Vector3.Slerp(_blackBoard.playerMovement.transform.forward,_blackBoard.rigidbody.velocity.normalized,
-                rotationSpeed * Time.fixedDeltaTime);*/
-            _blackBoard.playerMovement.RotateTowards(_blackBoard.rigidbody.velocity.normalized, false);
+            _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
             Quaternion rotation = Quaternion.LookRotation( _blackBoard.playerMovement.transform.forward, direction.normalized);
             _blackBoard.playerMovement.transform.rotation = rotation;
         }
         private void SetupEnterState()
         {
             startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
-            var velo = _blackBoard.playerMovement.GetVelocity();
+            var velocity = _blackBoard.playerMovement.GetVelocity();
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.velocity = (velo * multiplierVelocity);
+            _blackBoard.rigidbody.velocity = (velocity * multiplierVelocity);
             Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
-        void Swinging()
+        private void Swinging()
         {
             _springJoint = _blackBoard.gameObject.AddComponent<SpringJoint>();
             _springJoint.autoConfigureConnectedAnchor = false;
             _springJoint.connectedAnchor = currentSwingPoint;
 
-            float distanceFromPoint = Vector3.Distance(_blackBoard.playerSwingPos.position, currentSwingPoint);
+            var distanceFromPoint = Vector3.Distance(_blackBoard.playerSwingPos.position, currentSwingPoint);
 
             _springJoint.maxDistance = distanceFromPoint * 0.8f;
             _springJoint.minDistance = distanceFromPoint * 0.25f;
@@ -131,12 +139,9 @@ namespace SFRemastered
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startVelocityMagnitude);
         }
-        private void RandomPos()
+        private void RandomRopeShotPosition()
         {
-            // Get the bounds of the ropeHolder
             _ropeHolderBounds = _blackBoard.ropHolder.GetComponent<Renderer>().bounds;
-
-            // Select a random point within these bounds
             _randomRopePosition = new Vector3(
                 Random.Range(_ropeHolderBounds.min.x, _ropeHolderBounds.max.x),
                 Random.Range(_ropeHolderBounds.min.y, _ropeHolderBounds.max.y),
@@ -146,9 +151,11 @@ namespace SFRemastered
         private void DrawLine()
         {
             // Set the LineRenderer's positions
-            _blackBoard.lr.positionCount = 2;
-            _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position);
-            _blackBoard.lr.SetPosition(1, _randomRopePosition);
+            _blackBoard.lr.positionCount = 4;
+            _blackBoard.lr.SetPosition(2, _blackBoard.startrope.position);
+            _blackBoard.lr.SetPosition(3, _randomRopePosition);
+            _blackBoard.lr.SetPosition(1, _blackBoard.startrope.position);
+            _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position + Vector3.down * .5f);
         } 
         private bool GroundCheck()
         {
