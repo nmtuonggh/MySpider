@@ -2,6 +2,7 @@ using DG.Tweening;
 using EasyCharacterMovement;
 using System.Collections;
 using System.Collections.Generic;
+using Animancer;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,7 +17,7 @@ namespace SFRemastered
         [SerializeField] protected Vector3 currentSwingPoint;
         [FormerlySerializedAs("multiplier")] [SerializeField] protected float multiplierVelocity;
         [SerializeField] protected float speedWhenSwing;
-        [SerializeField] protected float rotationSpeed;
+        [SerializeField] private LinearMixerTransition _swingAnimBlendTree;
         
         private SpringJoint _springJoint;
         private Bounds _ropeHolderBounds;
@@ -32,11 +33,11 @@ namespace SFRemastered
             base.EnterState();
             SetupEnterState();
             RandomPos();
+            RandomAnim();
             Swinging();
         }
         public override StateStatus UpdateState()
         {
-            //angle = Vector3.Angle(Vector3.down,(_blackBoard.playerSwingPos.position - currentSwingPoint).normalized);
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             if(GroundCheck())
             {
@@ -60,21 +61,11 @@ namespace SFRemastered
 
             return StateStatus.Running;
         }
-
-        private void RotationPlayer()
-        {
-            var direction = _randomRopePosition - _blackBoard.startrope.position;
-            _blackBoard.playerMovement.RotateTowardsWithSlerp(direction, true);
-            _blackBoard.transform.rotation = Quaternion.LookRotation(direction);
-            //Vector3 direction = _randomRopePosition - _blackBoard.startrope.position;
-            
-           
-        }
-
+        
         public override void FixedUpdateState()
         {
-            RotationPlayer();
             base.FixedUpdateState();
+            RotationPlayer();
         }
 
         public override void ExitState()
@@ -86,12 +77,26 @@ namespace SFRemastered
             Destroy(_springJoint);
             _blackBoard.swing = false;
         }
-        
+
+        private void RandomAnim()
+        {
+            _state = _blackBoard.animancer.Play(_swingAnimBlendTree);
+            var index = Random.Range(0, 7);
+            ((LinearMixerState)_state).Parameter = index;
+        }
+        private void RotationPlayer()
+        {
+            var direction = _randomRopePosition - _blackBoard.startrope.position;
+            /*_blackBoard.playerMovement.transform.forward = Vector3.Slerp(_blackBoard.playerMovement.transform.forward,_blackBoard.rigidbody.velocity.normalized,
+                rotationSpeed * Time.fixedDeltaTime);*/
+            _blackBoard.playerMovement.RotateTowards(_blackBoard.rigidbody.velocity.normalized, false);
+            Quaternion rotation = Quaternion.LookRotation( _blackBoard.playerMovement.transform.forward, direction.normalized);
+            _blackBoard.playerMovement.transform.rotation = rotation;
+        }
         private void SetupEnterState()
         {
             startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
             var velo = _blackBoard.playerMovement.GetVelocity();
-            //Vector3 velocity = _blackBoard.playerMovement.GetVelocity();
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
@@ -99,7 +104,6 @@ namespace SFRemastered
             _blackBoard.rigidbody.velocity = (velo * multiplierVelocity);
             Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
-
         void Swinging()
         {
             _springJoint = _blackBoard.gameObject.AddComponent<SpringJoint>();
@@ -116,7 +120,6 @@ namespace SFRemastered
             _springJoint.massScale = 1f;
             _blackBoard.lr.positionCount = 2;
         }
-        
         private void SetupExitState()
         {
             Vector3 velocity = _blackBoard.rigidbody.velocity;
@@ -128,7 +131,6 @@ namespace SFRemastered
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startVelocityMagnitude);
         }
-
         private void RandomPos()
         {
             // Get the bounds of the ropeHolder
@@ -148,7 +150,6 @@ namespace SFRemastered
             _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position);
             _blackBoard.lr.SetPosition(1, _randomRopePosition);
         } 
-
         private bool GroundCheck()
         {
             if(Physics.Raycast(_fsm.transform.position, Vector3.down, 0.3f, _blackBoard.groundLayers))

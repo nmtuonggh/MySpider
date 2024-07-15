@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9710b03f7cf7a141b141e9bb2849ce8, type: 3}
+  m_Name: SwingState
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 99adb87cd68c78c42b9fc72f49a754b4, type: 2}
+    _Speed: 2
+    _NormalizedStartTime: NaN
+  _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
+  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
+  _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
+  currentSwingPoint: {x: 192.75629, y: 45.304485, z: 308.70493}
+  multiplierVelocity: 2.5
+  speedWhenSwing: 20
+  _swingAnimBlendTree:
+    _FadeDuration: 1.1333334
+    _Events:
+      _NormalizedTimes:
+      - 1
+      _Callbacks: []
+      _Names: []
+    _Speed: 1
+    _Animations:
+    - {fileID: 7400000, guid: abaf23e7378d08248a15ca38c768c244, type: 2}
+    - {fileID: 7400000, guid: 80c09aeb938fd6c41a14a85bf6b042d3, type: 2}
+    - {fileID: 7400000, guid: 9ca2d364858e1ed4089993047f57c607, type: 2}
+    - {fileID: 7400000, guid: a525ea9c8a29a3b40a94563bcd6c4a39, type: 2}
+    - {fileID: 7400000, guid: 9e61335c56cf59646861a30f30422001, type: 2}
+    - {fileID: 7400000, guid: 89581c7378dc88d4cb084892c18b0a53, type: 2}
+    - {fileID: 7400000, guid: a855ae969425a574498b2643c2c3ddc7, type: 2}
+    - {fileID: 7400000, guid: 3dee0188a5e408f43a56854341614591, type: 2}
+    _Speeds: []
+    _SynchronizeChildren: 
+    _Thresholds:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    _DefaultParameter: 0
+    _ExtrapolateSpeed: 1
