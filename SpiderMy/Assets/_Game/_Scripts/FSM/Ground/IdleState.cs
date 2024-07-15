@@ -1,12 +1,13 @@
 ﻿ using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Idle")]
     public class IdleState : GroundState
     {
-        [SerializeField] private WalkState _walkState;
+        [SerializeField] private SprintState _sprintState;
 
         public override void EnterState()
         {
@@ -25,7 +26,7 @@ namespace SFRemastered
 
             if(_blackBoard.moveDirection.magnitude > 0f)
             {
-                _fsm.ChangeState(_walkState);
+                _fsm.ChangeState(_sprintState);
                 return StateStatus.Success;
             }
 

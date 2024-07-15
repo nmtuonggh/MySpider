@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Fall")]
-    public class FallState : StateBase
+    public class FallState : FallDownBaseState
     {
-        [SerializeField] private WalkState _walkState;
-        [SerializeField] private SprintState _sprintState;
-        [SerializeField] private SwingState _swingState;
-        [SerializeField] private LandToIdleState _landIdleState;
-        [SerializeField] private LandToWalkState _landWalkState;
-        [SerializeField] private LandToSprintState _landSprintState;
+        [SerializeField] private DiveState _diveState;
         public override void EnterState()
         {
             base.EnterState();
@@ -26,33 +22,18 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
-
-            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
-
-            if (_blackBoard.playerMovement.IsGrounded())
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
             {
-                if(_blackBoard.moveDirection.magnitude < 0.3f)
-                    _fsm.ChangeState(_landIdleState);
-                else if(_blackBoard.sprint  && elapsedTime > .6f)
-                    _fsm.ChangeState(_landSprintState);
-                else if(elapsedTime > .4f)
-                    _fsm.ChangeState(_landWalkState);
-                else if(!_blackBoard.sprint)
-                    _fsm.ChangeState(_walkState);
-                else
-                    _fsm.ChangeState(_sprintState);
-
+                return baseStatus;
+            }
+            
+            if (_blackBoard.playerMovement.GetVelocity().y < 0 && _blackBoard.playerMovement.GetVelocity().magnitude > 20f)
+            {
+                _fsm.ChangeState(_diveState);
                 return StateStatus.Success;
             }
-
-            //Swing entry point, work in progress
-            //if(_blackBoard.jump)
-            //{
-            //    _fsm.ChangeState(_swingState);
-            //    return StateStatus.Success;
-            //}
-
+            
             return StateStatus.Running;
         }
     }

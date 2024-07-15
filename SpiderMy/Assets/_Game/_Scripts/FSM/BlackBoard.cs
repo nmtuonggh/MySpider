@@ -1,3 +1,4 @@
+using System;
 using Animancer;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,10 +21,16 @@ namespace SFRemastered
         public bool swing;
         public bool isGrounded;
         public LayerMask groundLayers;
+        //
+        [FormerlySerializedAs("playerHand")] public Transform playerSwingPos;
         public Transform swingPoint;
-        public Transform playerSwingPoint;
-        public Transform playerPoint;
+        public Transform startrope;
+        public GameObject ropHolder;
         public LineRenderer lr;
-        
+
+        private void Update()
+        {
+           //Debug.Log("Cureent speed" + playerMovement.GetVelocity().magnitude); 
+        }
     }
 }

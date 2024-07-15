@@ -8,7 +8,7 @@ namespace SFRemastered
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Sprint")]
     public class SprintState : GroundState
     {
-        [SerializeField] private WalkState _walkState;
+        //[SerializeField] private WalkState _walkState;
         [SerializeField] private SprintTurn180State _turn180State;
         [SerializeField] private SprintToIdleState _sprintToIdleState;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
@@ -49,11 +49,11 @@ namespace SFRemastered
 
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
 
-            if (_blackBoard.sprint == false)
+            /*if (_blackBoard.sprint == false)
             {
                 _fsm.ChangeState(_walkState);
                 return StateStatus.Success;
-            }
+            }*/
 
             if(_blackBoard.moveDirection.magnitude < 0.1f)
             {

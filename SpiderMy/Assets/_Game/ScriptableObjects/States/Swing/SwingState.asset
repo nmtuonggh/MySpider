@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9710b03f7cf7a141b141e9bb2849ce8, type: 3}
+  m_Name: SwingState
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.35
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: b9d25d497f121ef4eacfc1c564e0e9c5, type: 2}
+    _Speed: 2
+    _NormalizedStartTime: NaN
+  _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
+  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
+  _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
+  currentSwingPoint: {x: 160.3471, y: 43.542793, z: 301.6021}
+  multiplierVelocity: 2.5
+  speedWhenSwing: 20
+  _swingAnimBlendTree:
+    _FadeDuration: 1.1416667
+    _Events:
+      _NormalizedTimes:
+      - 1
+      _Callbacks: []
+      _Names: []
+    _Speed: 1
+    _Animations:
+    - {fileID: 7400000, guid: 43282704390015a4895fe154d430f058, type: 2}
+    - {fileID: 7400000, guid: a36b7fb163d84d34da4868bc00f4b180, type: 2}
+    - {fileID: 7400000, guid: 8f2dacb95a07a7046bfb76552fdfff9a, type: 2}
+    - {fileID: 7400000, guid: fa7c3f21de7d7284ba1ceb58aa9e6e07, type: 2}
+    - {fileID: 7400000, guid: 388e16cf7187d3d4ca9ddcb029531b2a, type: 2}
+    - {fileID: 7400000, guid: 6563d2c687a548b4aa6ca7c987e413cf, type: 2}
+    - {fileID: 7400000, guid: 7ce33ca7da5802249beb42254dc7b47c, type: 2}
+    _Speeds: []
+    _SynchronizeChildren: 
+    _Thresholds:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    _DefaultParameter: 0
+    _ExtrapolateSpeed: 1
+  _swingAnimCount: 6
+  _swingLoopAnimation:
+    _FadeDuration: 0.35
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: b9d25d497f121ef4eacfc1c564e0e9c5, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
