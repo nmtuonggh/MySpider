@@ -15,7 +15,7 @@ namespace SFRemastered
         [SerializeField] private FallState _fallState;
         [SerializeField] private JumpFromSwing _jumpFromSwing;
         [SerializeField] protected Vector3 currentSwingPoint;
-        [FormerlySerializedAs("multiplier")] [SerializeField] protected float multiplierVelocity;
+        [SerializeField] protected float startSwingVelocity;
         [SerializeField] protected float speedWhenSwing;
         [SerializeField] private LinearMixerTransition _swingAnimBlendTree;
         [SerializeField] private int _swingAnimCount;
@@ -25,7 +25,6 @@ namespace SFRemastered
         private Bounds _ropeHolderBounds;
         private Vector3 _randomRopePosition;
         private float angle;
-        private float startVelocityMagnitude;
         private int animIndex;
         
         
@@ -41,6 +40,8 @@ namespace SFRemastered
         }
         public override StateStatus UpdateState()
         {
+            base.UpdateState();
+            
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             if(GroundCheck())
             {
@@ -48,17 +49,20 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (!_blackBoard.swing && elapsedTime > 0.8f)
-            {
-                _fsm.ChangeState(_jumpFromSwing);
-                return StateStatus.Success;
-            }
-
             if (!_blackBoard.swing)
             {
-                _fsm.ChangeState(_fallState);
-                return StateStatus.Success;
+                if(elapsedTime is >= .3f and < 0.5f)
+                {
+                    _fsm.ChangeState(_fallState);
+                    return StateStatus.Success;
+                }
+                else
+                {
+                    _fsm.ChangeState(_jumpFromSwing);
+                    return StateStatus.Success;
+                }
             }
+            
             DrawLine();
             SwitchAnim();
             
@@ -75,6 +79,7 @@ namespace SFRemastered
         {
             base.ExitState();
             SetupExitState();
+            //_state.StartFade(0, 0.2f);
 
             _blackBoard.lr.positionCount = 0;
             Destroy(_springJoint);
@@ -103,13 +108,13 @@ namespace SFRemastered
         }
         private void SetupEnterState()
         {
-            startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
-            var velocity = _blackBoard.playerMovement.GetVelocity();
+            //startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
+            var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.velocity = (velocity * multiplierVelocity);
+            _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
             //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()
@@ -137,7 +142,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
-            _blackBoard.playerMovement.SetVelocity(velocity.normalized * startVelocityMagnitude);
+            _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
         private void RandomRopeShotPosition()
         {

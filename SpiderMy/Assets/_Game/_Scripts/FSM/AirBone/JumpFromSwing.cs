@@ -19,24 +19,28 @@ namespace SFRemastered
 
         public override void EnterState()
         {
-            //base.EnterState();
-            startVelocity = _blackBoard.playerMovement.GetVelocity();
+            Debug.Log("enter");
+            base.EnterState();
+            //startVelocity = _blackBoard.playerMovement.GetVelocity();
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
             //add force
             var forceValue = 30f;
             var totalForce = forceDirecton * forceValue;
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
 
-            RandomAnim();
+            //RandomAnim();
             /*_state.Events.OnEnd = () =>
             {
-                endAnimation = true;
+                _fsm.ChangeState(_diveState);
             };*/
         }
 
         public override StateStatus UpdateState()
         {
             base.UpdateState();
+            
+            _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
+
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
@@ -63,7 +67,8 @@ namespace SFRemastered
         {
             base.ExitState();
             //endAnimation = false;
-            _blackBoard.playerMovement.SetVelocity(startVelocity);
+            //_blackBoard.playerMovement.SetVelocity(startVelocity);
+            Debug.Log("exit");
         }
         
         private void RandomAnim()
