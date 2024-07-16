@@ -14,7 +14,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
-
+            //_state.Events.SetShouldNotModifyReason(null);
             _state.Events.OnEnd = () =>
             {
                 _fsm.ChangeState(_sprintState);
