@@ -12,7 +12,9 @@ namespace SFRemastered
         [SerializeField] private LandToRollState _landRollState;
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
+        [SerializeField] private ClipTransition[] _litsAnimation;
         [SerializeField] private int _animCount;
+        [SerializeField] private int _animIndex;
 
         private Vector3 startVelocity;
         private bool endAnimation;
@@ -29,6 +31,7 @@ namespace SFRemastered
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
 
             //RandomAnim();
+            _animIndex = Random.Range(0, _animCount);
             /*_state.Events.OnEnd = () =>
             {
                 _fsm.ChangeState(_diveState);
@@ -40,7 +43,7 @@ namespace SFRemastered
             base.UpdateState();
             
             _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
-
+            RandomAnim();
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
@@ -73,9 +76,10 @@ namespace SFRemastered
         
         private void RandomAnim()
         {
-            _state = _blackBoard.animancer.Play(_jumpFromSwingBlendTree);
+            /*_state = _blackBoard.animancer.Play(_jumpFromSwingBlendTree);
             var index = Random.Range(0, _animCount);
-            ((LinearMixerState)_state).Parameter = index;
+            ((LinearMixerState)_state).Parameter = index;*/
+            _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
         }
     }
 }

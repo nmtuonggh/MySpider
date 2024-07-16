@@ -1,6 +1,7 @@
 using Animancer;
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered.Wall;
 using UnityEngine;
 
 namespace SFRemastered
@@ -11,6 +12,7 @@ namespace SFRemastered
         //[SerializeField] private WalkState _walkState;
         [SerializeField] private SprintTurn180State _turn180State;
         [SerializeField] private SprintToIdleState _sprintToIdleState;
+        [SerializeField] private IdleWall _idleWall;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
 
         public override void EnterState()
@@ -64,6 +66,12 @@ namespace SFRemastered
             if(Vector3.Angle(_fsm.transform.forward, _blackBoard.moveDirection) > 150f && elapsedTime > .2f)
             {
                 _fsm.ChangeState(_turn180State);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.playerMovement.foudWall)
+            {
+                _fsm.ChangeState(_idleWall);
                 return StateStatus.Success;
             }
 

@@ -17,9 +17,10 @@ namespace SFRemastered
         [SerializeField] protected Vector3 currentSwingPoint;
         [SerializeField] protected float startSwingVelocity;
         [SerializeField] protected float speedWhenSwing;
-        [SerializeField] private LinearMixerTransition _swingAnimBlendTree;
+        //[SerializeField] private LinearMixerTransition _swingAnimBlendTree;
+        [SerializeField] private ClipTransition[] _ListAnim;
         [SerializeField] private int _swingAnimCount;
-        [SerializeField] private ClipTransition _swingLoopAnimation;
+        //[SerializeField] private ClipTransition _swingLoopAnimation;
         
         private SpringJoint _springJoint;
         private Bounds _ropeHolderBounds;
@@ -51,12 +52,12 @@ namespace SFRemastered
             
             if (!_blackBoard.swing)
             {
-                if(elapsedTime is >= .3f and < 0.5f)
+                if(elapsedTime is >= .3f and < 0.8f)
                 {
                     _fsm.ChangeState(_fallState);
                     return StateStatus.Success;
                 }
-                else
+                if (elapsedTime >= 0.8f)
                 {
                     _fsm.ChangeState(_jumpFromSwing);
                     return StateStatus.Success;
@@ -79,7 +80,6 @@ namespace SFRemastered
         {
             base.ExitState();
             SetupExitState();
-            //_state.StartFade(0, 0.2f);
 
             _blackBoard.lr.positionCount = 0;
             Destroy(_springJoint);
@@ -95,8 +95,9 @@ namespace SFRemastered
             }
             else
             {
-                _state = _blackBoard.animancer.Play(_swingAnimBlendTree);
-                ((LinearMixerState)_state).Parameter = animIndex;
+                /*_state = _blackBoard.animancer.Play(_swingAnimBlendTree);
+                ((LinearMixerState)_state).Parameter = animIndex;*/
+                _state = _blackBoard.animancer.Play(_ListAnim[animIndex]);
             }
         }
         private void RotationPlayerWhileSwing()
@@ -109,12 +110,15 @@ namespace SFRemastered
         private void SetupEnterState()
         {
             //startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
-            var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
+            //var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
+            var startVelocity = (_blackBoard.playerSwingPos.position - currentSwingPoint).normalized;
+            var forceValue = (Vector3.Cross(startVelocity, Vector3.down) + _blackBoard.playerSwingPos.position)
+                .normalized;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
+            _blackBoard.rigidbody.velocity = (forceValue * startSwingVelocity);
             //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()
@@ -125,7 +129,7 @@ namespace SFRemastered
 
             var distanceFromPoint = Vector3.Distance(_blackBoard.playerSwingPos.position, currentSwingPoint);
 
-            _springJoint.maxDistance = distanceFromPoint * 0.8f;
+            _springJoint.maxDistance = distanceFromPoint * 0.5f;
             _springJoint.minDistance = distanceFromPoint * 0.25f;
 
             _springJoint.spring = 4.5f;
@@ -156,9 +160,8 @@ namespace SFRemastered
         private void DrawLine()
         {
             // Set the LineRenderer's positions
-            _blackBoard.lr.positionCount = 4;
-            _blackBoard.lr.SetPosition(2, _blackBoard.startrope.position);
-            _blackBoard.lr.SetPosition(3, _randomRopePosition);
+            _blackBoard.lr.positionCount = 3;
+            _blackBoard.lr.SetPosition(2, _randomRopePosition);
             _blackBoard.lr.SetPosition(1, _blackBoard.startrope.position);
             _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position + Vector3.down * .5f);
         } 
