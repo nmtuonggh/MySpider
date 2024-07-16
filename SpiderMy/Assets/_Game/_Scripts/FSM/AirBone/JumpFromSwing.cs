@@ -6,13 +6,11 @@ namespace SFRemastered
     [CreateAssetMenu(menuName = "ScriptableObjects/States/JumpFromSwing")]
     public class JumpFromSwing : StateBase
     {
-        [SerializeField] private FallState _fallState;
         [SerializeField] private DiveState _diveState;
         [SerializeField] private LandToIdleState _landIdleState;
         [SerializeField] private LandNormalState _landNormalState;
         [SerializeField] private LandToRollState _landRollState;
         [SerializeField] private SprintState _sprintState;
-        [SerializeField] private ClipTransition _fallLoopAnimation;
         [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
         [SerializeField] private int _animCount;
 
@@ -30,10 +28,10 @@ namespace SFRemastered
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
 
             RandomAnim();
-            _state.Events.OnEnd = () =>
+            /*_state.Events.OnEnd = () =>
             {
                 endAnimation = true;
-            };
+            };*/
         }
 
         public override StateStatus UpdateState()
@@ -64,7 +62,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
-            endAnimation = false;
+            //endAnimation = false;
             _blackBoard.playerMovement.SetVelocity(startVelocity);
         }
         

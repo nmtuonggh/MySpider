@@ -83,7 +83,7 @@ namespace SFRemastered
 
         private void SwitchAnim()
         {
-            Debug.Log(_blackBoard.rigidbody.velocity.magnitude);
+            //Debug.Log(_blackBoard.rigidbody.velocity.magnitude);
             if(_blackBoard.rigidbody.velocity.magnitude < 5f)
             {
                 _state = _blackBoard.animancer.Play(_mainAnimation);
@@ -110,7 +110,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _blackBoard.rigidbody.velocity = (velocity * multiplierVelocity);
-            Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
+            //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()
         {

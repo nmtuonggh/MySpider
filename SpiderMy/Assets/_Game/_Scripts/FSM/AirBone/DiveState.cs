@@ -21,7 +21,7 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            Debug.Log("_blackBoard.rigidbody.velocity.magnitude: " + _blackBoard.playerMovement.GetVelocity().magnitude);
+            
             ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter, _blackBoard.playerMovement.GetVelocity().magnitude, 55 * Time.deltaTime);
 
             StateStatus baseStatus = base.UpdateState();
