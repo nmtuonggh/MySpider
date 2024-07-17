@@ -22,11 +22,12 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: abaf23e7378d08248a15ca38c768c244, type: 2}
     _Speed: 2
     _NormalizedStartTime: NaN
+  _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 115.18758, y: 35.80563, z: 442.56903}
-  startSwingVelocity: 10
+  currentSwingPoint: {x: 182.51282, y: 46.380775, z: 432.93817}
+  startSwingVelocity: 20
   speedWhenSwing: 20
   _ListAnim:
   - _FadeDuration: 0.25
@@ -43,6 +44,14 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: 257580cb5f684aa479912f9f7be0bd9b, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 6.8000007
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.25
@@ -67,14 +76,6 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: 4ebdbad341b13d442b3917fa5dfb8940, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 6.8000007
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _swingAnimCount: 6

@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Swing")]
-    public class SwingState : StateBase
+    public class SwingState : AirBoneState
     {
         [SerializeField] private IdleState _idleState;
         [SerializeField] private FallState _fallState;
@@ -109,16 +109,12 @@ namespace SFRemastered
         }
         private void SetupEnterState()
         {
-            //startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
-            //var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
-            var startVelocity = (_blackBoard.playerSwingPos.position - currentSwingPoint).normalized;
-            var forceValue = (Vector3.Cross(startVelocity, Vector3.down) + _blackBoard.playerSwingPos.position)
-                .normalized;
+            var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.velocity = (forceValue * startSwingVelocity);
+            _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
             //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()

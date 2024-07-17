@@ -27,10 +27,12 @@ namespace SFRemastered
             movementDirection += Vector3.right * movementInput.x;
             movementDirection += Vector3.forward * movementInput.y;
             
-            wallMovementDirection += Vector3.right * movementInput.x;
-            wallMovementDirection += Vector3.up * movementInput.y;
+            wallMovementDirection +=movementInput.x * blackBoard.characterVisual.transform.right;
+            if (movementInput.y >= 0)
+            {
+                wallMovementDirection += Vector3.up * movementInput.y;
+            }
             
-
             // If Camera is assigned, add input movement relative to camera look direction
 
             if (blackBoard.camera != null)

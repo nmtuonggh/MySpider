@@ -27,7 +27,7 @@ MonoBehaviour:
   canJump: 1
   _turn180State: {fileID: 11400000, guid: 5fc2babc776ad2e47bd845729fab430b, type: 2}
   _sprintToIdleState: {fileID: 11400000, guid: b551b896c6cb1b04684787a4f4dec030, type: 2}
-  _idleWall: {fileID: 11400000, guid: a1b60b320e919f64aa220eae4a2833ea, type: 2}
+  _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   _sprintingBlendTree:
     _FadeDuration: 0.25
     _Events:

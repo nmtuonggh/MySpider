@@ -12,7 +12,7 @@ namespace SFRemastered
         //[SerializeField] private WalkState _walkState;
         [SerializeField] private SprintTurn180State _turn180State;
         [SerializeField] private SprintToIdleState _sprintToIdleState;
-        [SerializeField] private IdleWall _idleWall;
+        [SerializeField] private WallRun _wallRun;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
 
         public override void EnterState()
@@ -38,24 +38,11 @@ namespace SFRemastered
                 return baseStatus;
             }
 
-            if(_blackBoard.playerMovement.GetSpeed() >= 6)
-            {
-                _blackBoard.playerMovement.rotationRate = 270;
-            }
-            else
-            {
-                _blackBoard.playerMovement.rotationRate = 540;
-            }
+            _blackBoard.playerMovement.rotationRate = _blackBoard.playerMovement.GetSpeed() >= 6 ? 270 : 540;
 
             ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter, _blackBoard.playerMovement.GetSpeed(), 55 * Time.deltaTime);
 
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
-
-            /*if (_blackBoard.sprint == false)
-            {
-                _fsm.ChangeState(_walkState);
-                return StateStatus.Success;
-            }*/
 
             if(_blackBoard.moveDirection.magnitude < 0.1f)
             {
@@ -71,7 +58,7 @@ namespace SFRemastered
             
             if (_blackBoard.playerMovement.foudWall)
             {
-                _fsm.ChangeState(_idleWall);
+                _fsm.ChangeState(_wallRun);
                 return StateStatus.Success;
             }
 

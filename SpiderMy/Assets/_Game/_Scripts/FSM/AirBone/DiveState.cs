@@ -10,7 +10,6 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
-            //_state = _blackBoard.animancer.Play(_diveBlendTree);
         }
 
         public override void ExitState()

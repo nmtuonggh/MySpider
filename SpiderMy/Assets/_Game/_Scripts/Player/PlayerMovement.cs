@@ -15,6 +15,7 @@ namespace SFRemastered
         public LayerMask wallLayer;
         public Transform wallCheckPoint;
         public RaycastHit hit;
+        public float rayCastDistance;
         protected override void HandleInput(){}
 
         protected override Vector3 CalcDesiredVelocity()
@@ -30,15 +31,13 @@ namespace SFRemastered
                 : movementDirection * GetMaxSpeed();
 
             // Return desired velocity (constrained to constraint plane if any)
-
             return characterMovement.ConstrainVectorToPlane(desiredVelocity);
         }
 
         private void CheckWallState()
         {
-            //foudWall = Physics.Raycast(wallCheckPoint.position, transform.forward, 1f, wallLayer);
-            Debug.DrawRay(wallCheckPoint.position, transform.forward * 1f, Color.red);
-            foudWall = Physics.Raycast(transform.position, transform.forward, out hit, 1f, wallLayer);
+            Debug.DrawRay(wallCheckPoint.position, transform.forward * rayCastDistance, Color.red);
+            foudWall = Physics.Raycast(transform.position, transform.forward, out hit, rayCastDistance, wallLayer);
         }
         protected override void Update()
         {

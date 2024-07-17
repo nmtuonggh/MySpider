@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/JumpFromSwing")]
-    public class JumpFromSwing : StateBase
+    public class JumpFromSwing : AirBoneState
     {
         [SerializeField] private DiveState _diveState;
         [SerializeField] private LandToIdleState _landIdleState;

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2436edb2b1f940baaa11d400b0c148e5, type: 3}
-  m_Name: WallRun
+  m_Script: {fileID: 11500000, guid: 97c466d6b00e4f869c33024ca170b8a2, type: 3}
+  m_Name: JumpOffWall
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,9 +19,8 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 280ab1a26af5492488e80f0280c5e397, type: 2}
-    _Speed: 1
+    _Clip: {fileID: 7400000, guid: dc8eaae1606703d428ef375ba6fdeaa0, type: 2}
+    _Speed: 2
     _NormalizedStartTime: NaN
-  wallRunSpeed: 10
-  _idleWallState: {fileID: 11400000, guid: a1b60b320e919f64aa220eae4a2833ea, type: 2}
-  _exitWallState: {fileID: 11400000, guid: 9cff788c8c1c41148a708cf9bf854a00, type: 2}
+  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
+  forceValue: 20

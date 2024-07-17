@@ -22,10 +22,10 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 71a4dd5632c200f4a83c67d9154fc031, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
+  _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   jumpImpulseModifier: 0.5
   _walkState: {fileID: 11400000, guid: c1719bdf0f93a27409699b28091264e4, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
-  _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
   _fallLoopAnimation:
     _FadeDuration: 0.25
     _Events:

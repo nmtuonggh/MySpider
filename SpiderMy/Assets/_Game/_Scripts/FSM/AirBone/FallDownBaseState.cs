@@ -2,7 +2,7 @@
 
 namespace SFRemastered
 {
-    public class FallDownBaseState : StateBase
+    public class FallDownBaseState : AirBoneState
     {
         
         [SerializeField] protected SprintState _sprintState;
