@@ -2,7 +2,7 @@
 
 namespace SFRemastered
 {
-    public class FallDownBaseState : StateBase
+    public class FallDownBaseState : AirBoneState
     {
         
         [SerializeField] protected SprintState _sprintState;
@@ -26,7 +26,11 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
 
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
 

@@ -6,12 +6,11 @@ using UnityEngine;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Jump")]
-    public class JumpState : StateBase
+    public class JumpState : AirBoneState
     {
         [SerializeField] private float jumpImpulseModifier = 1f;
         [SerializeField] private WalkState _walkState;
         [SerializeField] private FallState _fallState;
-        [SerializeField] private SwingState _swingState;
         [SerializeField] private ClipTransition _fallLoopAnimation; 
 
         public override void EnterState()
@@ -35,7 +34,11 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
     
             if(elapsedTime > .1f)   
                 _blackBoard.playerMovement.StopJumping();
@@ -48,11 +51,11 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.swing)
+            /*if (_blackBoard.swing)
             {
                 _fsm.ChangeState(_swingState);
                 return StateStatus.Success;
-            }
+            }*/
 
             if(_blackBoard.playerMovement.GetVelocity().y < 0 && elapsedTime > .2f)
             {

@@ -15,7 +15,9 @@ namespace SFRemastered
         public SFXManager sfxManager;
         public new Camera camera;
         public new Rigidbody rigidbody;
+        public GameObject characterVisual;
         public Vector3 moveDirection;
+        public Vector3 wallMoveDirection;
         public bool jump;
         public bool sprint;
         public bool swing;

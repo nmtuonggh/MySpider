@@ -14,33 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
-    _FadeDuration: 0.25
+    _FadeDuration: 1
     _Events:
-      _NormalizedTimes: []
+      _NormalizedTimes:
+      - 0.8318841
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: c371d0383416ff743a551149abcc380b, type: 2}
+    _Clip: {fileID: 7400000, guid: ac6179ad92084384cab6fed8f48f3942, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
+  _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
   _landIdleState: {fileID: 11400000, guid: 15f0ffbabd49eb045b0daa37055c8535, type: 2}
   _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
-  _diveBlendTree:
-    _FadeDuration: 1
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Speed: 1
-    _Animations:
-    - {fileID: 7400000, guid: ac6179ad92084384cab6fed8f48f3942, type: 2}
-    - {fileID: 7400000, guid: c371d0383416ff743a551149abcc380b, type: 2}
-    _Speeds: []
-    _SynchronizeChildren: 
-    _Thresholds:
-    - 0
-    - 30
-    _DefaultParameter: 0
-    _ExtrapolateSpeed: 1

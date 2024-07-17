@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/JumpFromSwing")]
-    public class JumpFromSwing : StateBase
+    public class JumpFromSwing : AirBoneState
     {
         [SerializeField] private DiveState _diveState;
         [SerializeField] private LandToIdleState _landIdleState;
@@ -12,31 +12,42 @@ namespace SFRemastered
         [SerializeField] private LandToRollState _landRollState;
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
+        [SerializeField] private ClipTransition[] _litsAnimation;
         [SerializeField] private int _animCount;
+        [SerializeField] private int _animIndex;
 
         private Vector3 startVelocity;
         private bool endAnimation;
 
         public override void EnterState()
         {
-            //base.EnterState();
-            startVelocity = _blackBoard.playerMovement.GetVelocity();
+            Debug.Log("enter");
+            base.EnterState();
+            //startVelocity = _blackBoard.playerMovement.GetVelocity();
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
             //add force
             var forceValue = 30f;
             var totalForce = forceDirecton * forceValue;
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
 
-            RandomAnim();
+            //RandomAnim();
+            _animIndex = Random.Range(0, _animCount);
             /*_state.Events.OnEnd = () =>
             {
-                endAnimation = true;
+                _fsm.ChangeState(_diveState);
             };*/
         }
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
+            
+            _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
+            RandomAnim();
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
@@ -63,14 +74,16 @@ namespace SFRemastered
         {
             base.ExitState();
             //endAnimation = false;
-            _blackBoard.playerMovement.SetVelocity(startVelocity);
+            //_blackBoard.playerMovement.SetVelocity(startVelocity);
+            Debug.Log("exit");
         }
         
         private void RandomAnim()
         {
-            _state = _blackBoard.animancer.Play(_jumpFromSwingBlendTree);
+            /*_state = _blackBoard.animancer.Play(_jumpFromSwingBlendTree);
             var index = Random.Range(0, _animCount);
-            ((LinearMixerState)_state).Parameter = index;
+            ((LinearMixerState)_state).Parameter = index;*/
+            _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
         }
     }
 }

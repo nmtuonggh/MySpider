@@ -9,23 +9,23 @@ using UnityEngine.Serialization;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Swing")]
-    public class SwingState : StateBase
+    public class SwingState : AirBoneState
     {
         [SerializeField] private IdleState _idleState;
         [SerializeField] private FallState _fallState;
         [SerializeField] private JumpFromSwing _jumpFromSwing;
         [SerializeField] protected Vector3 currentSwingPoint;
-        [FormerlySerializedAs("multiplier")] [SerializeField] protected float multiplierVelocity;
+        [SerializeField] protected float startSwingVelocity;
         [SerializeField] protected float speedWhenSwing;
-        [SerializeField] private LinearMixerTransition _swingAnimBlendTree;
+        //[SerializeField] private LinearMixerTransition _swingAnimBlendTree;
+        [SerializeField] private ClipTransition[] _ListAnim;
         [SerializeField] private int _swingAnimCount;
-        [SerializeField] private ClipTransition _swingLoopAnimation;
+        //[SerializeField] private ClipTransition _swingLoopAnimation;
         
         private SpringJoint _springJoint;
         private Bounds _ropeHolderBounds;
         private Vector3 _randomRopePosition;
         private float angle;
-        private float startVelocityMagnitude;
         private int animIndex;
         
         
@@ -41,6 +41,14 @@ namespace SFRemastered
         }
         public override StateStatus UpdateState()
         {
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
+            
+            SwitchAnim();
+            
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             if(GroundCheck())
             {
@@ -48,19 +56,21 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (!_blackBoard.swing && elapsedTime > 0.8f)
-            {
-                _fsm.ChangeState(_jumpFromSwing);
-                return StateStatus.Success;
-            }
-
             if (!_blackBoard.swing)
             {
-                _fsm.ChangeState(_fallState);
-                return StateStatus.Success;
+                if(elapsedTime is >= .3f and < 0.8f)
+                {
+                    _fsm.ChangeState(_fallState);
+                    return StateStatus.Success;
+                }
+                if (elapsedTime >= 0.8f)
+                {
+                    _fsm.ChangeState(_jumpFromSwing);
+                    return StateStatus.Success;
+                }
             }
+            
             DrawLine();
-            SwitchAnim();
             
             return StateStatus.Running;
         }
@@ -83,15 +93,13 @@ namespace SFRemastered
 
         private void SwitchAnim()
         {
-            //Debug.Log(_blackBoard.rigidbody.velocity.magnitude);
             if(_blackBoard.rigidbody.velocity.magnitude < 5f)
             {
                 _state = _blackBoard.animancer.Play(_mainAnimation);
             }
             else
             {
-                _state = _blackBoard.animancer.Play(_swingAnimBlendTree);
-                ((LinearMixerState)_state).Parameter = animIndex;
+                _state = _blackBoard.animancer.Play(_ListAnim[animIndex]);
             }
         }
         private void RotationPlayerWhileSwing()
@@ -103,13 +111,12 @@ namespace SFRemastered
         }
         private void SetupEnterState()
         {
-            startVelocityMagnitude = _blackBoard.playerMovement.GetVelocity().magnitude;
-            var velocity = _blackBoard.playerMovement.GetVelocity();
+            var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.velocity = (velocity * multiplierVelocity);
+            _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
             //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()
@@ -120,7 +127,7 @@ namespace SFRemastered
 
             var distanceFromPoint = Vector3.Distance(_blackBoard.playerSwingPos.position, currentSwingPoint);
 
-            _springJoint.maxDistance = distanceFromPoint * 0.8f;
+            _springJoint.maxDistance = distanceFromPoint * 0.5f;
             _springJoint.minDistance = distanceFromPoint * 0.25f;
 
             _springJoint.spring = 4.5f;
@@ -137,7 +144,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
-            _blackBoard.playerMovement.SetVelocity(velocity.normalized * startVelocityMagnitude);
+            _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
         private void RandomRopeShotPosition()
         {
@@ -151,9 +158,8 @@ namespace SFRemastered
         private void DrawLine()
         {
             // Set the LineRenderer's positions
-            _blackBoard.lr.positionCount = 4;
-            _blackBoard.lr.SetPosition(2, _blackBoard.startrope.position);
-            _blackBoard.lr.SetPosition(3, _randomRopePosition);
+            _blackBoard.lr.positionCount = 3;
+            _blackBoard.lr.SetPosition(2, _randomRopePosition);
             _blackBoard.lr.SetPosition(1, _blackBoard.startrope.position);
             _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position + Vector3.down * .5f);
         } 
