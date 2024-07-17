@@ -26,7 +26,7 @@ MonoBehaviour:
   _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 182.51282, y: 46.380775, z: 432.93817}
+  currentSwingPoint: {x: -188.66548, y: 263.6584, z: 37.37955}
   startSwingVelocity: 20
   speedWhenSwing: 20
   _ListAnim:
@@ -46,7 +46,7 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 257580cb5f684aa479912f9f7be0bd9b, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 6.8000007
+  - _FadeDuration: 1.1333334
     _Events:
       _NormalizedTimes: []
       _Callbacks: []

@@ -41,7 +41,13 @@ namespace SFRemastered
         }
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
+            
+            SwitchAnim();
             
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             if(GroundCheck())
@@ -65,7 +71,6 @@ namespace SFRemastered
             }
             
             DrawLine();
-            SwitchAnim();
             
             return StateStatus.Running;
         }
@@ -88,15 +93,12 @@ namespace SFRemastered
 
         private void SwitchAnim()
         {
-            //Debug.Log(_blackBoard.rigidbody.velocity.magnitude);
             if(_blackBoard.rigidbody.velocity.magnitude < 5f)
             {
                 _state = _blackBoard.animancer.Play(_mainAnimation);
             }
             else
             {
-                /*_state = _blackBoard.animancer.Play(_swingAnimBlendTree);
-                ((LinearMixerState)_state).Parameter = animIndex;*/
                 _state = _blackBoard.animancer.Play(_ListAnim[animIndex]);
             }
         }

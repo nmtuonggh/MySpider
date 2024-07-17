@@ -66,7 +66,7 @@ namespace SFRemastered.Wall
             startVelocity = _blackBoard.playerMovement.GetVelocity();
             //Debug.Log("enter velocity: " + startVelocity);
             var distance = _blackBoard.playerMovement.GetRadius();
-            var targetPosition = _blackBoard.playerMovement.hit.point + _blackBoard.playerMovement.hit.normal.normalized * distance * 1.2f;
+            var targetPosition = _blackBoard.playerMovement.hit.point + _blackBoard.playerMovement.hit.normal.normalized * distance * 1.3f;
             if (_blackBoard.playerMovement.IsGrounded())
             {
                 _blackBoard.playerMovement.transform.DOMove( targetPosition + new Vector3(0,3f,0), 0.2f);

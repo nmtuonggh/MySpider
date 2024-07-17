@@ -40,7 +40,11 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
             
             _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
             RandomAnim();

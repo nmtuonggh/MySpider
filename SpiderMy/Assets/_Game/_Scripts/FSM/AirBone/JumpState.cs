@@ -34,7 +34,11 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            base.UpdateState();
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
+            }
     
             if(elapsedTime > .1f)   
                 _blackBoard.playerMovement.StopJumping();
