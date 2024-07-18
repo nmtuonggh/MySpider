@@ -29,7 +29,7 @@ MonoBehaviour:
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _jumpFromSwingBlendTree:
-    _FadeDuration: 0.25
+    _FadeDuration: 1.0083333
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
@@ -82,7 +82,7 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 11bb077c26e8e914b8164c8800cbca28, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
+  - _FadeDuration: 0.8
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
@@ -106,7 +106,7 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 7a3d1807630c9a649b9c4b9278454190, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
+  - _FadeDuration: 0.63000005
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
@@ -114,7 +114,7 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: b2ca38b78a2246244a7ccc88baabece1, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
+  - _FadeDuration: 0.605
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
@@ -123,4 +123,4 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _animCount: 8
-  _animIndex: 3
+  _animIndex: 2

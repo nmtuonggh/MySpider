@@ -10,9 +10,12 @@ namespace SFRemastered.SwingHolder
 
         private void Update()
         {
-            transform.position = _player.transform.position + _offset;
-            var transformRotation = transform.rotation;
-            transformRotation.y = _player.transform.rotation.y;
+            Vector3 position = _player.transform.position + _player.transform.forward*10f + _offset;
+            transform.position = position;
+            float yRotation = _player.transform.rotation.eulerAngles.y;
+            
+            // Set the SwingHolder's rotation with only the y-axis from the player
+            transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
 }
