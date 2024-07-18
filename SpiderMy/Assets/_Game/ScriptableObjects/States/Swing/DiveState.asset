@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
-    _FadeDuration: 1
+    _FadeDuration: 1.275
     _Events:
-      _NormalizedTimes:
-      - 0.8318841
+      _NormalizedTimes: []
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: ac6179ad92084384cab6fed8f48f3942, type: 2}
