@@ -45,6 +45,7 @@ namespace SFRemastered
             blackBoard.jump = InputManager.instance.jump.Pressing;
             blackBoard.sprint = InputManager.instance.sprint.Pressing;
             blackBoard.swing = InputManager.instance.swing.Pressing;
+            blackBoard.zip = InputManager.instance.zip.Pressing;
             blackBoard.isGrounded = playerMovement.IsGrounded();
         }
     }
