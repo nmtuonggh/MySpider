@@ -115,6 +115,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
         }
         private void Swinging()
@@ -142,6 +143,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
         private void RandomRopeShotPosition()

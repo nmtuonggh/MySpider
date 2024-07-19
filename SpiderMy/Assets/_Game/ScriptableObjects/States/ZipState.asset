@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfeebcccddbb4fa5af9dd6f865eb4c35, type: 3}
   m_Name: ZipState
   m_EditorClassIdentifier: 
-  canTransitionToSelf: 0
+  canTransitionToSelf: 1
   _mainAnimation:
     _FadeDuration: 0.1
     _Events:

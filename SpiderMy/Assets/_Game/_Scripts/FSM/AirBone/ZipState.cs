@@ -39,14 +39,14 @@ namespace SFRemastered
             
            
 
-            /*_state = _blackBoard.animancer.Play(_zipBlendTree);
+            _state = _blackBoard.animancer.Play(_zipBlendTree);
             ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter, elapsedTime,
-                55 * Time.deltaTime);*/
+                55 * Time.deltaTime);
 
-            /*if (_blackBoard.playerMovement.GetVelocity() != Vector3.zero)
+            if (_blackBoard.playerMovement.GetVelocity() != Vector3.zero)
             {
                 _state = _blackBoard.animancer.Play(idleZip);
-            }*/
+            }
 
             if (_blackBoard.moveDirection != Vector3.zero)
             {

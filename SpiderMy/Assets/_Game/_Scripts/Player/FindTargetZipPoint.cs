@@ -27,7 +27,7 @@ namespace SFRemastered
             RaycastHit hit;
             bool hasHit = Physics.SphereCast(camera.transform.position, sphereRadius, camera.transform.forward, out hit, Mathf.Infinity, layerMask);
 
-            // If a new point is detected and it's different from the last hit point or if there's no last hit point
+            // If a new point is detected & it's different from the last hit point or if there's no last hit point
             if (hasHit && (lastInstantiatedObject == null || hit.point != hitInfo.point))
             {
                 // Destroy the old focus prefab if it exists
@@ -39,7 +39,6 @@ namespace SFRemastered
 
                 // Instantiate a new focus prefab at the hit point
                 lastInstantiatedObject = GetFromPool(hit.point, Quaternion.identity);
-
                 // Update the last hit info
                 hitInfo = hit;
             }
