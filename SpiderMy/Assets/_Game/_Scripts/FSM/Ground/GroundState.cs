@@ -8,6 +8,7 @@ namespace SFRemastered
     {
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
+        [SerializeField] protected ZipState _zipState;
 
         public bool canJump = true;
 
@@ -18,12 +19,20 @@ namespace SFRemastered
                 _fsm.ChangeState(_jumpState);
                 return StateStatus.Success;
             }
+            
+            if(_blackBoard.zip && _blackBoard.findTargetZipPoint.GetCurrentZipPosition() != null)
+            {
+                _fsm.ChangeState(_zipState);
+                return StateStatus.Success;
+            }
 
             if (!_blackBoard.playerMovement.IsGrounded())
             {
                 _fsm.ChangeState(_fallState);
                 return StateStatus.Success;
             }
+            
+           
 
             return StateStatus.Running;
         }

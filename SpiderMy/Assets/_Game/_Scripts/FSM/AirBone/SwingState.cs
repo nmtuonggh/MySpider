@@ -17,10 +17,8 @@ namespace SFRemastered
         [SerializeField] protected Vector3 currentSwingPoint;
         [SerializeField] protected float startSwingVelocity;
         [SerializeField] protected float speedWhenSwing;
-        //[SerializeField] private LinearMixerTransition _swingAnimBlendTree;
         [SerializeField] private ClipTransition[] _ListAnim;
-        [SerializeField] private int _swingAnimCount;
-        //[SerializeField] private ClipTransition _swingLoopAnimation;
+        [FormerlySerializedAs("_swingAnimCount")] [SerializeField] private int swingAnimCount;
         
         private SpringJoint _springJoint;
         private Bounds _ropeHolderBounds;
@@ -33,7 +31,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             currentSwingPoint = _blackBoard.swingPoint.position;
-            animIndex = Random.Range(0, _swingAnimCount);
+            animIndex = Random.Range(0, swingAnimCount);
             base.EnterState();
             SetupEnterState();
             RandomRopeShotPosition();
@@ -109,6 +107,7 @@ namespace SFRemastered
             Quaternion rotation = Quaternion.LookRotation( _blackBoard.playerMovement.transform.forward, direction.normalized);
             _blackBoard.playerMovement.transform.rotation = rotation;
         }
+        
         private void SetupEnterState()
         {
             var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
@@ -116,8 +115,8 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
-            //Debug.Log("Velocity" + _blackBoard.rigidbody.velocity.magnitude);
         }
         private void Swinging()
         {
@@ -144,6 +143,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
         private void RandomRopeShotPosition()

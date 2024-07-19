@@ -13,6 +13,7 @@ namespace SFRemastered
         public CameraController cameraController;
         public AnimancerComponent animancer;
         public SFXManager sfxManager;
+        public FindTargetZipPoint findTargetZipPoint;
         public new Camera camera;
         public new Rigidbody rigidbody;
         public GameObject characterVisual;
@@ -21,6 +22,7 @@ namespace SFRemastered
         public bool jump;
         public bool sprint;
         public bool swing;
+        public bool zip;
         public bool isGrounded;
         public LayerMask groundLayers;
         //
