@@ -50,3 +50,4 @@ MonoBehaviour:
     - 1
     _DefaultParameter: 0
     _ExtrapolateSpeed: 1
+  durationValue: 50
