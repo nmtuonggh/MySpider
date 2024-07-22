@@ -77,6 +77,7 @@ namespace SFRemastered
         {
             base.FixedUpdateState();
             RotationPlayerWhileSwing();
+            //RotateVisual();
         }
 
         public override void ExitState()
@@ -106,6 +107,13 @@ namespace SFRemastered
             _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized,  false);
             Quaternion rotation = Quaternion.LookRotation( _blackBoard.playerMovement.transform.forward, direction.normalized);
             _blackBoard.playerMovement.transform.rotation = rotation;
+        }
+        
+        private void RotateVisual()
+        {
+            Vector3 direction = _randomRopePosition - _blackBoard.startrope.position;
+            Quaternion rotation = Quaternion.LookRotation(direction.normalized);
+            //_blackBoard.characterVisual.transform.rotation = rotation;
         }
         
         private void SetupEnterState()
@@ -144,6 +152,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
             _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            //_blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.2f);
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
         private void RandomRopeShotPosition()

@@ -21,7 +21,6 @@ namespace SFRemastered.Wall
             base.EnterState();
             SetupEnter();
             RotatePlayer();
-            Debug.Log("enter wall run");
         }
 
         public override StateStatus UpdateState()
@@ -54,7 +53,6 @@ namespace SFRemastered.Wall
         {
             base.ExitState();
             SetupExitState();
-            Debug.Log("exit wall run");
         }
         private void RotatePlayer()
         {

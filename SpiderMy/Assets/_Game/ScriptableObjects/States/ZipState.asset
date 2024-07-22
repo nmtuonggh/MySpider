@@ -32,6 +32,7 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
+  _zipState: {fileID: 11400000}
   _zipBlendTree:
     _FadeDuration: 0.024
     _Events:

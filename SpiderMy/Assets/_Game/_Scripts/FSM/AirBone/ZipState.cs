@@ -10,6 +10,7 @@ namespace SFRemastered
     {
         [SerializeField] private ClipTransition idleZip;
         [SerializeField] private SprintState _sprintState;
+        [SerializeField] private ZipState _zipState;
         [SerializeField] private LinearMixerTransition _zipBlendTree;
 
         public override void EnterState()
@@ -46,6 +47,12 @@ namespace SFRemastered
             if (_blackBoard.playerMovement.GetVelocity() != Vector3.zero)
             {
                 _state = _blackBoard.animancer.Play(idleZip);
+            }
+            
+            if(_blackBoard.zip && _blackBoard.findTargetZipPoint.GetCurrentZipPosition() != null)
+            {
+                _fsm.ChangeState(_zipState);
+                return StateStatus.Success;
             }
 
             if (_blackBoard.moveDirection != Vector3.zero)
