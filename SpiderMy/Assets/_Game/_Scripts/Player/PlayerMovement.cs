@@ -64,7 +64,7 @@ namespace SFRemastered
         {
             base.Update();
             RaycastCheckWallState();
-            DetectZipPoint();
+            //DetectZipPoint();
         }
         
     }

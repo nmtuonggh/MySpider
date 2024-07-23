@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52c5e42485056e4fae9942088769c56, type: 3}
+  m_Name: SwingState
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.35
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
+    _Speed: 2
+    _NormalizedStartTime: NaN
+  _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
+  _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
+  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
+  _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
+  currentSwingPoint: {x: 158.08322, y: 66.85599, z: 342.94046}
+  startSwingVelocity: 20
+  speedWhenSwing: 20
+  _ListAnim:
+  - _FadeDuration: 0.2533334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 99adb87cd68c78c42b9fc72f49a754b4, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.35999998
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 257580cb5f684aa479912f9f7be0bd9b, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.4533334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
+    _Speed: 1.5
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.44166672
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: b7f387605185b224fa726f74129f0948, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.5066667
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 1227928cea9a448428449756988fd1a4, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.5533334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 4ebdbad341b13d442b3917fa5dfb8940, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.5533334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: a0ad726909f2f8141a6f74043f92a5f5, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  swingAnimCount: 7
