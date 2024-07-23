@@ -20,11 +20,6 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if(_blackBoard.zip && _blackBoard.findTargetZipPoint.GetCurrentZipPosition() != null)
-            {
-                _fsm.ChangeState(_zipState);
-                return StateStatus.Success;
-            }
 
             if (!_blackBoard.playerMovement.IsGrounded())
             {
@@ -32,7 +27,11 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-           
+            if(_blackBoard.zip && _blackBoard.playerMovement.zipPoint != Vector3.zero)
+            {
+                _fsm.ChangeState(_zipState);
+                return StateStatus.Success;
+            }
 
             return StateStatus.Running;
         }
