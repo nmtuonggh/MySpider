@@ -9,7 +9,6 @@ namespace SFRemastered
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
         [SerializeField] protected ZipState _zipState;
-        [SerializeField] protected JumpToSwing _jumpToSwing;
 
         public bool canJump = true;
 
@@ -18,12 +17,6 @@ namespace SFRemastered
             if (HandleJump())
             {
                 _fsm.ChangeState(_jumpState);
-                return StateStatus.Success;
-            }
-
-            if (HandleJumpToSwing() && _blackBoard.playerMovement.IsGrounded())
-            {
-                _fsm.ChangeState(_jumpToSwing);
                 return StateStatus.Success;
             }
 
@@ -47,16 +40,6 @@ namespace SFRemastered
             if (canJump && _blackBoard.playerMovement.CanJump())
             {
                 return _blackBoard.jump;
-            }
-
-            return false;
-        }
-        
-        protected virtual bool HandleJumpToSwing()
-        {
-            if (canJump && _blackBoard.playerMovement.CanJump())
-            {
-                return _blackBoard.swing;
             }
 
             return false;

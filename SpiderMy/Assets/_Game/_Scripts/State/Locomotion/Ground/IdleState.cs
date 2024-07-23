@@ -8,6 +8,7 @@ namespace SFRemastered
     public class IdleState : GroundState
     {
         [SerializeField] private SprintState _sprintState;
+        [SerializeField] private JumpToSwing _jumpToSwing;
 
         public override void EnterState()
         {
@@ -27,6 +28,12 @@ namespace SFRemastered
             if(_blackBoard.moveDirection.magnitude > 0f)
             {
                 _fsm.ChangeState(_sprintState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_jumpToSwing);
                 return StateStatus.Success;
             }
 

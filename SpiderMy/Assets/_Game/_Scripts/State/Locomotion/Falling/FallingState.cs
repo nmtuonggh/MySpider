@@ -1,20 +1,18 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace SFRemastered
 {
     public class FallingState : AirBoneState
     {
-        
-        [SerializeField] protected SprintState _sprintState;
         [SerializeField] protected SwingState _swingState;
-        [SerializeField] protected LandToIdleState _landIdleState;
-        [SerializeField] protected LandNormalState _landNormalState;
-        [SerializeField] protected LandToRollState _landRollState;
+        
         protected float incomingVelocity;
         public override void EnterState()
         {
             base.EnterState();
-            incomingVelocity = _blackBoard.playerMovement.GetVelocity().magnitude;
+            incomingVelocity = _blackBoard.playerMovement.GetSpeed();
+            //_blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
         }
 
         public override void ExitState()
@@ -31,22 +29,10 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-
+            
+            
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
-
-            if (_blackBoard.playerMovement.IsGrounded())
-            {
-                if(_blackBoard.moveDirection.magnitude < 0.3f)
-                    _fsm.ChangeState(_landIdleState);
-                else if(elapsedTime > .4f)
-                    _fsm.ChangeState(_landNormalState);
-                else
-                    _fsm.ChangeState(_sprintState);
-
-                return StateStatus.Success;
-            }
-
-            //Swing entry point, work in progress
+            
             if (_blackBoard.swing)
             {
                 _fsm.ChangeState(_swingState);
@@ -54,6 +40,13 @@ namespace SFRemastered
             }
             
             return StateStatus.Running;
+        }
+
+        public override void FixedUpdateState()
+        {
+            base.FixedUpdateState();
+            var targetRotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
+            _blackBoard.characterVisual.transform.rotation = Quaternion.Slerp(_blackBoard.characterVisual.transform.rotation, targetRotation, Time.fixedDeltaTime / 0.3f);
         }
     }
 }

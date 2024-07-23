@@ -11,8 +11,8 @@ namespace SFRemastered
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Swing")]
     public class SwingState : AirBoneState
     {
-        [SerializeField] private IdleState _idleState;
-        [SerializeField] private FallState _fallState;
+        [SerializeField] private LandRollState _landRollState;
+        [SerializeField] private JumpFromSwingLow _jumpFromSwingLow;
         [SerializeField] private JumpFromSwing _jumpFromSwing;
         [SerializeField] protected Vector3 currentSwingPoint;
         [SerializeField] protected float startSwingVelocity;
@@ -52,19 +52,19 @@ namespace SFRemastered
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             if (GroundCheck())
             {
-                _fsm.ChangeState(_idleState);
+                _fsm.ChangeState(_landRollState);
                 return StateStatus.Success;
             }
 
             if (!_blackBoard.swing)
             {
-                if (elapsedTime is >= .3f and < 0.8f)
+                if (_blackBoard.rigidbody.velocity.y <= 0)
                 {
-                    _fsm.ChangeState(_fallState);
+                    _fsm.ChangeState(_jumpFromSwingLow);
                     return StateStatus.Success;
                 }
 
-                if (elapsedTime >= 0.8f)
+                if (_blackBoard.rigidbody.velocity.y > 0)
                 {
                     _fsm.ChangeState(_jumpFromSwing);
                     return StateStatus.Success;
@@ -150,7 +150,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints =
                 RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            //_blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
         }
 
@@ -182,8 +182,8 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
-            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
-            _blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.2f);
+            //_blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            //_blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
 

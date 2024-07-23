@@ -1,32 +1,30 @@
-﻿using Animancer;
+﻿using System.Collections.Generic;
+using Animancer;
 using UnityEngine;
 
 namespace SFRemastered
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/JumpFromSwing")]
-    public class JumpFromSwing : AirBoneState
+    [CreateAssetMenu(menuName = "ScriptableObjects/States/JumpFromSwingLow")]
+    public class JumpFromSwingLow : AirBoneState
     {
-        [SerializeField] private DiveState _diveState;
+        [SerializeField] private FallState _fallState;
         [SerializeField] private LandToIdleState _landIdleState;
         [SerializeField] private LandNormalState _landNormalState;
         [SerializeField] private SprintState _sprintState;
-        [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
-        [SerializeField] private ClipTransition[] _litsAnimation;
+        [SerializeField] private List<ClipTransition> _litsAnimation;
+        
+        [SerializeField] float forceValue;
         [SerializeField] private int _animCount;
         [SerializeField] private int _animIndex;
-        [SerializeField] private float forceValue;
-
-        private Vector3 startVelocity;
-        private bool endAnimation;
 
         public override void EnterState()
         {
             base.EnterState();
-            var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
+            var forceDirecton = _blackBoard.playerMovement.transform.forward;
+            _animIndex = Random.Range(0, _animCount);
             //add force
             var totalForce = forceDirecton * forceValue;
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
-            _animIndex = Random.Range(0, _animCount);
         }
 
         public override StateStatus UpdateState()
@@ -37,7 +35,7 @@ namespace SFRemastered
                 return baseStatus;
             }
             
-            RandomAnim();
+            _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
@@ -51,9 +49,9 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.playerMovement.GetVelocity().y < 0 )
+            if (_blackBoard.playerMovement.GetVelocity().y < 0)
             {
-                _fsm.ChangeState(_diveState);
+                _fsm.ChangeState(_fallState);
                 return StateStatus.Success;
             }
 
@@ -63,11 +61,6 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
-        }
-        
-        private void RandomAnim()
-        {
-            _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
         }
     }
 }

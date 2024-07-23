@@ -23,10 +23,10 @@ MonoBehaviour:
     _Speed: 2
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
-  _idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}
-  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
+  _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
+  _jumpFromSwingLow: {fileID: 11400000, guid: 9e7485a58cdfb6d44a90fffc6611c20a, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 158.08322, y: 66.85599, z: 342.94046}
+  currentSwingPoint: {x: 195.82602, y: 21.207792, z: 415.36197}
   startSwingVelocity: 20
   speedWhenSwing: 20
   _ListAnim:

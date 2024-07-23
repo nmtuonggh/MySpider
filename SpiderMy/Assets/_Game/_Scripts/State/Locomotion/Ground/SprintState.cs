@@ -12,6 +12,7 @@ namespace SFRemastered
         //[SerializeField] private WalkState _walkState;
         [SerializeField] private SprintTurn180State _turn180State;
         [SerializeField] private SprintToIdleState _sprintToIdleState;
+        [SerializeField] private JumpToSwing _jumpToSwing;
         [SerializeField] private WallRun _wallRun;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
 
@@ -59,6 +60,12 @@ namespace SFRemastered
             if (_blackBoard.playerMovement.foudWall)
             {
                 _fsm.ChangeState(_wallRun);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_jumpToSwing);
                 return StateStatus.Success;
             }
 

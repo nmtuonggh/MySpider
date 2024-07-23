@@ -5,120 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwingLow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwingLow.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/RollLand.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/RollLand.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/PzoBuilderCity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/PzoBuilderCity.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/materials/ProBuilderDefault.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/materials/ProBuilderDefault.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/IdleState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/IdleState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandNormalState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandNormalState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandRollState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandRollState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandToIdleState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/LandToIdleState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintToIdleState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintToIdleState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintTurn180State.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/SprintTurn180State.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/WalkState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/WalkState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/WalkToIdleState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Grounded/WalkToIdleState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/JumpState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/JumpState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/JumpStateLow.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/JumpStateLow.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/DiveState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/DiveState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/JumpFromSwingState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/JumpFromSwingState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/SwingState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Swing/SwingState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/ExitWall.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/ExitWall.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/JumpOffWall.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/JumpOffWall.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/WallRun.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/WallState/WallRun.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/ZipState.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/ZipState.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/AirBone.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/AirBoneState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/AirBone/AirBoneState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/AirBoneState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/AirBone/AirBoneState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/DiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/DiveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/DiveState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/DiveState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/FallDownBaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/FallDownBaseState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallingState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/FallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/FallState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpFromSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpFromSwing.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwing.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpToSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpToSwing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/JumpToSwing.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpToSwing.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/SwingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/SwingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/SwingState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/ZipState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/ZipState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/AirBone/ZipState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/BlackBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/BlackBoard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/BlackBoard.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/DontNeedRN.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/DontNeedRN.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/DontNeedRN/WalkState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/DontNeedRN/WalkState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/DontNeedRN/WalkState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/DontNeedRN/WalkState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/DontNeedRN/WalkToIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/DontNeedRN/WalkToIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/DontNeedRN/WalkToIdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/DontNeedRN/WalkToIdleState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/FSM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/FSM.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/FSM.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/FSM.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/GroundState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/GroundState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/IdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandNormalState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandNormalState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandNormalState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandNormalState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandToIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandToIdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToIdleState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandToRollState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToRollState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/LandToRollState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToRollState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintToIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintToIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintToIdleState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintToIdleState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintTurn180State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintTurn180State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Ground/SprintTurn180State.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintTurn180State.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/InputPoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/InputPoller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/InputPoller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/InputPoller.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/StateBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/StateBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/StateBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/StateBase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/ExitWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/ExitWall.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/ExitWall.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/ExitWall.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/JumpOffWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/JumpOffWall.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/JumpOffWall.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/JumpOffWall.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/WallRun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/WallRun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Wall/WallRun.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/Wall/WallRun.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Zip.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Zip.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Zip/ModifyReadWrite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Zip/ModifyReadWrite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Zip/ModifyReadWrite.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Zip/ModifyReadWrite.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Zip/Town.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Zip/Town.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/FSM/Zip/Town.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Zip/Town.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/FallState.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/FallState.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Falling/DiveState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Falling/DiveState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandRollState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandRollState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Jump/JumpFromSwingState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Jump/JumpFromSwingState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/DiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/DiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Falling/FallingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToRollState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandRollState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandToRollState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/LandRollState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Jumps/JumpFromSwing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/SwingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/SwingState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
@@ -231,6 +140,7 @@
       <workItem from="1721612821245" duration="22176000" />
       <workItem from="1721660273233" duration="90000" />
       <workItem from="1721699740120" duration="15874000" />
+      <workItem from="1721722880356" duration="11038000" />
     </task>
     <servers />
   </component>

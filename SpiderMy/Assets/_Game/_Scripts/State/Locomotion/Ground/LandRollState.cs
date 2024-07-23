@@ -1,18 +1,20 @@
 using NodeCanvas.StateMachines;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace SFRemastered
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandToRoll")]
-    public class LandToRollState : GroundState
+    [CreateAssetMenu(menuName = "ScriptableObjects/States/LandRoll")]
+    public class LandRollState : GroundState
     {
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private SprintToIdleState _idleState;
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.characterVisual.transform.rotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
 
             _state.Events.OnEnd = () =>
             {

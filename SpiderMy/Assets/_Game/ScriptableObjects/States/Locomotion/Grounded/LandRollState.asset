@@ -35,13 +35,12 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
       _Names: []
-    _Clip: {fileID: 7400000, guid: cf6407db570659746bf8f3e45ad41984, type: 3}
+    _Clip: {fileID: 7400000, guid: 715959da103cfb54d80f43fd09abd12f, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _jumpState: {fileID: 11400000, guid: 6235abdc6b6054443b85e92c6db43ed7, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _zipState: {fileID: 0}
-  _jumpToSwing: {fileID: 11400000, guid: 26613c97ed450e44ea2b115f647a508e, type: 2}
   canJump: 1
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _idleState: {fileID: 11400000, guid: b551b896c6cb1b04684787a4f4dec030, type: 2}

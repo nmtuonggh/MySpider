@@ -123,4 +123,5 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _animCount: 8
-  _animIndex: 2
+  _animIndex: 7
+  forceValue: 30
