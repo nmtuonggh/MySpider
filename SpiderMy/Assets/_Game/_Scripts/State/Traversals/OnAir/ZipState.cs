@@ -23,8 +23,8 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             
-            var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position, _blackBoard.playerMovement.zipPoint);
-            _blackBoard.rigidbody.DOMove(_blackBoard.playerMovement.zipPoint, distance / durationValue);
+            var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position, _blackBoard.findZipPoint.zipPoint);
+            _blackBoard.rigidbody.DOMove(_blackBoard.findZipPoint.zipPoint, distance / durationValue);
         }
 
         public override StateStatus UpdateState()

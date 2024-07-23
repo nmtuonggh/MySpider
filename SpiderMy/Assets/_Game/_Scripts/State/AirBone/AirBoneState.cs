@@ -20,7 +20,7 @@ namespace SFRemastered
         {
             base.UpdateState();
 
-            if (_blackBoard.playerMovement.foudWall)
+            if (_blackBoard.foundWall)
             {
                 _fsm.ChangeState(_wallRun);
                 return StateStatus.Success;

@@ -34,13 +34,13 @@ namespace SFRemastered.Wall
             HandleAnimation();
             _blackBoard.rigidbody.velocity = _blackBoard.wallMoveDirection * wallRunSpeed;
 
-            if (_blackBoard.playerMovement.foudWall && _blackBoard.jump)
+            if (_blackBoard.foundWall && _blackBoard.jump)
             {
                 _fsm.ChangeState(_jumpOffWallState);
                 return StateStatus.Success;
             }
 
-            if (!_blackBoard.playerMovement.foudWall)
+            if (!_blackBoard.foundWall)
             {
                 _fsm.ChangeState(_exitWallState);
                 return StateStatus.Success;
@@ -57,7 +57,7 @@ namespace SFRemastered.Wall
 
         private void RotatePlayer()
         {
-            Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.playerMovement.hit.normal);
+            Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.checkWallState.hit.normal);
             _blackBoard.characterVisual.transform.rotation = targetRotation;
         }
 
@@ -65,8 +65,8 @@ namespace SFRemastered.Wall
         {
             startVelocity = _blackBoard.playerMovement.GetVelocity();
             var distance = _blackBoard.playerMovement.GetRadius();
-            var targetPosition = _blackBoard.playerMovement.hit.point +
-                                 _blackBoard.playerMovement.hit.normal.normalized * distance * 1.3f;
+            var targetPosition = _blackBoard.checkWallState.hit.point +
+                                 _blackBoard.checkWallState.hit.normal.normalized * distance * 1.3f;
             if (_blackBoard.playerMovement.IsGrounded())
             {
                 _blackBoard.playerMovement.transform.DOMove(targetPosition + new Vector3(0, 3f, 0), 0.2f);
