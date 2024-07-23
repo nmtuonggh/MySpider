@@ -57,11 +57,11 @@ namespace SFRemastered._Game._Scripts.CastCheck.Raycast
             }
         }
 
-        private void OnDrawGizmos()
+        /*private void OnDrawGizmos()
         {
             Gizmos.DrawSphere(SphereCastDetected.point, spcastRadius);
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(zipPoint, spcastRadius);
-        }
+        }*/
     }
 }
