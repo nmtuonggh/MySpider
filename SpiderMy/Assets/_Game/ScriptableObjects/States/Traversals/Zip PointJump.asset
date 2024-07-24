@@ -14,13 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
-    _FadeDuration: 0.25
+    _FadeDuration: 0
     _Events:
-      _NormalizedTimes: []
+      _NormalizedTimes:
+      - 0.9
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: a51d05a901635e94abcb89cfb64bf7a9, type: 2}
     _Speed: 1
+    _NormalizedStartTime: 0.12
+  _diveState: {fileID: 11400000, guid: ad902a0650015f8439f4f07130cd98b4, type: 2}
+  _endPointLaunch: {fileID: 11400000, guid: 0c05aeb0a3660e949a763d2a0c9ae15e, type: 2}
+  _forceValue: 20
+  _endAnimation:
+    _FadeDuration: 0.8583334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 464e2ec8787e02947add01b088d50437, type: 2}
+    _Speed: 1
     _NormalizedStartTime: NaN
-  _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
-  _forceValue: 100

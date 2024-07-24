@@ -26,7 +26,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.zip && _blackBoard.findZipPoint.zipPoint != Vector3.zero)
+            if (_blackBoard.zip && _blackBoard.findZipPoint.focusZipPointPrefab.gameObject.activeSelf)
             {
                 _fsm.ChangeState(_zipState);
                 return StateStatus.Success;

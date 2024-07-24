@@ -23,6 +23,7 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
+  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _diveBlendTree:

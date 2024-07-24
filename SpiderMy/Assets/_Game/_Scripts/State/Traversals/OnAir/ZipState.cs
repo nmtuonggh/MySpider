@@ -33,8 +33,7 @@ namespace SFRemastered
             DrawWeb();
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.findZipPoint.zipPoint, 0.1f, AxisConstraint.Y);
             _blackBoard.playerMovement.transform.DOMove(_blackBoard.findZipPoint.zipPoint + new Vector3(0, 0.2f, 0),
-                    moveDuration).OnStart(() => { _state = _blackBoard.animancer.Play(_zipping); })
-                .OnComplete(() => { _doneMove = true; });
+                    moveDuration).OnComplete(() => { _doneMove = true; });
         }
 
         public override StateStatus UpdateState()
@@ -44,6 +43,8 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
+            
+            _state = _blackBoard.animancer.Play(_zipping);
 
             if (_doneMove)
             {

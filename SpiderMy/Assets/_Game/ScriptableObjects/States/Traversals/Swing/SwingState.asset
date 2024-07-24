@@ -23,10 +23,11 @@ MonoBehaviour:
     _Speed: 2
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
+  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _jumpFromSwingLow: {fileID: 11400000, guid: 9e7485a58cdfb6d44a90fffc6611c20a, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 195.82602, y: 21.207792, z: 415.36197}
+  currentSwingPoint: {x: -128.6482, y: 31.37609, z: -55.37147}
   startSwingVelocity: 20
   speedWhenSwing: 20
   _ListAnim:
@@ -45,14 +46,6 @@ MonoBehaviour:
       _Names: []
     _Clip: {fileID: 7400000, guid: 257580cb5f684aa479912f9f7be0bd9b, type: 2}
     _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.4533334
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
-    _Speed: 1.5
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.44166672
     _Events:
@@ -75,7 +68,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 4ebdbad341b13d442b3917fa5dfb8940, type: 2}
+    _Clip: {fileID: 7400000, guid: a0ad726909f2f8141a6f74043f92a5f5, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.5533334
@@ -83,7 +76,15 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: a0ad726909f2f8141a6f74043f92a5f5, type: 2}
+    _Clip: {fileID: 7400000, guid: 4ebdbad341b13d442b3917fa5dfb8940, type: 2}
     _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.4533334
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
+    _Speed: 1.5
     _NormalizedStartTime: NaN
   swingAnimCount: 7
