@@ -23,6 +23,7 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
+  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _landIdleState: {fileID: 11400000, guid: 15f0ffbabd49eb045b0daa37055c8535, type: 2}
   _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
@@ -54,4 +55,4 @@ MonoBehaviour:
     _NormalizedStartTime: NaN
   forceValue: 10
   _animCount: 3
-  _animIndex: 0
+  _animIndex: 2

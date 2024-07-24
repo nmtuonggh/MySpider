@@ -23,10 +23,10 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
+  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _diveState: {fileID: 11400000, guid: ad902a0650015f8439f4f07130cd98b4, type: 2}
   _landIdleState: {fileID: 11400000, guid: 15f0ffbabd49eb045b0daa37055c8535, type: 2}
   _landNormalState: {fileID: 11400000, guid: cd95457b9d0feb5488926ca05111571a, type: 2}
-  _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _jumpFromSwingBlendTree:
     _FadeDuration: 1.0083333
@@ -66,22 +66,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 8bbebf4dfe3db4f4fb30bcb9c9d1bb27, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 0fa6febe67c7220458c7edf291069ab8, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 11bb077c26e8e914b8164c8800cbca28, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
   - _FadeDuration: 0.8
     _Events:
       _NormalizedTimes: []
@@ -96,14 +80,6 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: d250706eed29102438d0146827d2b0b7, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 7a3d1807630c9a649b9c4b9278454190, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.63000005
@@ -122,6 +98,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 77de00caf2831cf46a95e253eed9a1cb, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _animCount: 8
-  _animIndex: 7
+  _animCount: 5
+  _animIndex: 3
   forceValue: 30

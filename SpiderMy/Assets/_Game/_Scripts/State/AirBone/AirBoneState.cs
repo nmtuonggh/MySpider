@@ -6,6 +6,7 @@ namespace SFRemastered
     public class AirBoneState : StateBase
     {
         [SerializeField] protected WallRun _wallRun;
+        [SerializeField] protected ZipState _zipState;
         public override void EnterState()
         {
             base.EnterState();
@@ -23,6 +24,12 @@ namespace SFRemastered
             if (_blackBoard.foundWall)
             {
                 _fsm.ChangeState(_wallRun);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.zip && _blackBoard.findZipPoint.focusZipPointPrefab.gameObject.activeSelf)
+            {
+                _fsm.ChangeState(_zipState);
                 return StateStatus.Success;
             }
             

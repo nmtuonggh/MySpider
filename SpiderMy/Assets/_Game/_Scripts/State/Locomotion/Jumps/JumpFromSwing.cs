@@ -51,7 +51,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.playerMovement.GetVelocity().y < 0 )
+            if (_blackBoard.playerMovement.GetVelocity().y < -8f )
             {
                 _fsm.ChangeState(_diveState);
                 return StateStatus.Success;
