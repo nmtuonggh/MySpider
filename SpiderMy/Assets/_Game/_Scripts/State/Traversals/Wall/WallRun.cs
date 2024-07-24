@@ -57,12 +57,15 @@ namespace SFRemastered.Wall
 
         private void RotatePlayer()
         {
-            Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.checkWallState.hit.normal);
-            _blackBoard.characterVisual.transform.rotation = targetRotation;
+            /*Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.checkWallState.hit.normal);
+            _blackBoard.characterVisual.transform.rotation = targetRotation;*/
         }
 
         private void SetupEnter()
         {
+            Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.checkWallState.hit.normal);
+            //_blackBoard.characterVisual.transform.rotation = targetRotation;
+            _blackBoard.characterVisual.transform.DORotateQuaternion(targetRotation, 0.2f);
             startVelocity = _blackBoard.playerMovement.GetVelocity();
             var distance = _blackBoard.playerMovement.GetRadius();
             var targetPosition = _blackBoard.checkWallState.hit.point +

@@ -31,7 +31,7 @@ namespace SFRemastered
                 _blackBoard.findZipPoint.zipPoint + new Vector3(0, 0.2f, 0));
             float moveDuration = distance / durationValue;
             DrawWeb();
-            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.findZipPoint.zipPoint, 0.1f, AxisConstraint.Y);
+            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.findZipPoint.zipPoint, 0.15f, AxisConstraint.Y);
             _blackBoard.playerMovement.transform.DOMove(_blackBoard.findZipPoint.zipPoint + new Vector3(0, 0.2f, 0),
                     moveDuration).OnComplete(() => { _doneMove = true; });
         }
