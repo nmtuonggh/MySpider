@@ -26,7 +26,7 @@ MonoBehaviour:
   _swingState: {fileID: 11400000, guid: 4c081010a851ae048b8189d2ce5cc9e5, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _diveBlendTree:
-    _FadeDuration: 0.25
+    _FadeDuration: 0.42933333
     _Events:
       _NormalizedTimes: []
       _Callbacks: []

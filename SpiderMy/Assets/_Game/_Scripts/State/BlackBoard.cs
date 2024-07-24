@@ -37,6 +37,9 @@ namespace SFRemastered
         public Transform startrope;
         public GameObject ropHolder;
         public LineRenderer lr;
+        [Header("Zip")]
+        public Transform startZipLeft;
+        public Transform startZipRight;
         
     }
 }
