@@ -19,7 +19,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 0}
+    _Clip: {fileID: 7400000, guid: 73f60a9c8c614bc439f7c7d352eefe20, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   idleZip:
@@ -28,22 +28,35 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 0}
+    _Clip: {fileID: 7400000, guid: 73f60a9c8c614bc439f7c7d352eefe20, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
-  _zipState: {fileID: 11400000}
-  _zipBlendTree:
-    _FadeDuration: 0.25
+  durationValue: 75
+  _startZip:
+    _FadeDuration: 0.056333337
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
+    _Clip: {fileID: 7400000, guid: c5cbce2782c84fd44a89e4508ab1f188, type: 2}
     _Speed: 1
-    _Animations: []
-    _Speeds: []
-    _SynchronizeChildren: 
-    _Thresholds: []
-    _DefaultParameter: 0
-    _ExtrapolateSpeed: 1
-  durationValue: 0
+    _NormalizedStartTime: NaN
+  _zipping:
+    _FadeDuration: 0.11500001
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 2ec7850709ef0784f8b892fb5f0fd7d7, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _endZip:
+    _FadeDuration: 0.045
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 2f0cf5024c4c31b4ea595cd872afc936, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN

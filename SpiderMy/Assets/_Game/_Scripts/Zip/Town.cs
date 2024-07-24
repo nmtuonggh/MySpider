@@ -50,12 +50,12 @@ public class Town : UnityEngine.MonoBehaviour
 
             if (i == verticesList.Count - 1)
             {
-                Debug.DrawLine(verticesList[i], verticesList[0], Color.red);
+                //Debug.DrawLine(verticesList[i], verticesList[0], Color.red);
                 projectedPoint = ProjectPointOnLine(point, verticesList[i], verticesList[0]);
             }
             else
             {
-                Debug.DrawLine(verticesList[i], verticesList[i + 1], Color.red);
+                //Debug.DrawLine(verticesList[i], verticesList[i + 1], Color.red);
                 projectedPoint = ProjectPointOnLine(point, verticesList[i], verticesList[i + 1]);
             }
 
@@ -76,7 +76,7 @@ public class Town : UnityEngine.MonoBehaviour
         return Vector3.Project((p - a), (b - a)) + a;
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
 
@@ -84,5 +84,5 @@ public class Town : UnityEngine.MonoBehaviour
         {
             Gizmos.DrawSphere(verticies, 1);
         }
-    }
+    }*/
 }

@@ -10,21 +10,29 @@ namespace SFRemastered
     {
         [SerializeField] private ClipTransition idleZip;
         [SerializeField] private SprintState _sprintState;
-        [SerializeField] private ZipState _zipState;
-        [SerializeField] private LinearMixerTransition _zipBlendTree;
         [SerializeField] private float durationValue;
+        [SerializeField] private ClipTransition _startZip;
+        [SerializeField] private ClipTransition _zipping;
+        [SerializeField] private ClipTransition _endZip;
 
         public override void EnterState()
         {
             base.EnterState();
-            
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             
             var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position, _blackBoard.findZipPoint.zipPoint);
-            _blackBoard.rigidbody.DOMove(_blackBoard.findZipPoint.zipPoint, distance / durationValue);
+            float moveDuration = distance / durationValue;
+            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.findZipPoint.zipPoint, 0.2f, AxisConstraint.Y);
+            
+            Sequence seq = DOTween.Sequence();
+            seq.Append(_blackBoard.playerMovement.transform.DOMove(_blackBoard.findZipPoint.zipPoint +  new Vector3(0,0.9f,0), moveDuration));
+            seq.InsertCallback(moveDuration * 0.05f, () => _state = _blackBoard.animancer.Play(_startZip));
+            seq.InsertCallback(moveDuration * 0.2f, () => _state = _blackBoard.animancer.Play(_zipping)); 
+            seq.InsertCallback(moveDuration * 0.9f, () => _state = _blackBoard.animancer.Play(_endZip)); 
+            //seq.InsertCallback(moveDuration * 1.0f, () => _state = _blackBoard.animancer.Play(_startZip)); 
         }
 
         public override StateStatus UpdateState()
@@ -35,14 +43,14 @@ namespace SFRemastered
                 return baseStatus;
             }
             
-            _state = _blackBoard.animancer.Play(_zipBlendTree);
+            /*_state = _blackBoard.animancer.Play(_zipBlendTree);
             ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter, elapsedTime,
-                55 * Time.deltaTime);
+                55 * Time.deltaTime);*/
 
-            if (_blackBoard.playerMovement.GetVelocity() != Vector3.zero)
+            /*if (_blackBoard.playerMovement.GetVelocity() != Vector3.zero)
             {
                 _state = _blackBoard.animancer.Play(idleZip);
-            }
+            }*/
             
             if (_blackBoard.moveDirection != Vector3.zero)
             {
