@@ -27,7 +27,7 @@ namespace SFRemastered
                 {
                     _fsm.ChangeState(_sprintState);
                 }
-                else
+                else 
                 {
                     _fsm.ChangeState(_sprintToIdleState);
                 }

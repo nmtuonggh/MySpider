@@ -4,7 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="" />
+    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/AttackController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/AttackController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/CombatState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/CombatState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/FirstCombo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/FirstCombo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/SecondCombo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/SecondCombo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/ThirdCombo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/ThirdCombo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/EnemyInRange.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/EnemyInRange.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/IdleCombat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/IdleCombat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/LeapAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/LeapAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack1.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack1.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack2.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack2.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack3.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/Attack3.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/attack_03.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/attack_03.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/IdleState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/IdleState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandNormalState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandNormalState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandRollState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandRollState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandToIdleState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/LandToIdleState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintToIdleState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintToIdleState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintTurn180State.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/SprintTurn180State.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/WalkState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/WalkState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/WalkToIdleState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Locomotion/Grounded/WalkToIdleState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/BlackBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/InputPoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/InputPoller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/GroundState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintTurn180State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Locomotion/Ground/SprintTurn180State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/ZipState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Traversals/OnAir/ZipState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,15 +95,15 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\atomb\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -62,7 +111,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -124,6 +173,7 @@
       <workItem from="1721785287752" duration="20735000" />
       <workItem from="1721823042266" duration="4930000" />
       <workItem from="1721837065727" duration="1865000" />
+      <workItem from="1721874279314" duration="24973000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered.Combat;
 using UnityEngine;
 
 namespace SFRemastered
@@ -9,6 +10,7 @@ namespace SFRemastered
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
         [SerializeField] protected ZipState _zipState;
+        [SerializeField] protected AttackController _attackController;
 
         public bool canJump = true;
 
@@ -29,6 +31,12 @@ namespace SFRemastered
             if (_blackBoard.zip && _blackBoard.findZipPoint.focusZipPointPrefab.gameObject.activeSelf)
             {
                 _fsm.ChangeState(_zipState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.attack)
+            {
+                _fsm.ChangeState(_attackController);
                 return StateStatus.Success;
             }
 

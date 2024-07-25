@@ -28,6 +28,7 @@ namespace SFRemastered
         public bool swing;
         public bool zip;
         public bool foundWall;
+        public bool attack;
         public bool isGrounded;
         
         [Header("Swing")]
@@ -40,6 +41,9 @@ namespace SFRemastered
         [Header("Zip")]
         public Transform startZipLeft;
         public Transform startZipRight;
-        
+        [Header("Combat")]
+        public GameObject _targetEnemy;
+        public float _distanceToTargetEnemy;
+        public bool _detectedEnemy;
     }
 }
