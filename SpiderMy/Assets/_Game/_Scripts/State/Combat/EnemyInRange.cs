@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat
 {
     public class EnemyInRange : MonoBehaviour
     {

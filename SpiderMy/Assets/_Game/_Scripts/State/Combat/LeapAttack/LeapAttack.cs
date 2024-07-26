@@ -1,14 +1,15 @@
 ﻿using DG.Tweening;
+using SFRemastered.Combat;
 using UnityEngine;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/LeapAttack")]
 
     public class LeapAttack : StateBase
     {
         [SerializeField] private AttackController _attackController;
-        [SerializeField] private IdleCombat _idleCombat;
+        [SerializeField] private IdleCombat.IdleCombat _idleCombat;
         
         public override void EnterState()
         {
@@ -17,8 +18,8 @@ namespace SFRemastered.Combat
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y);
-            var targetPos = (_blackBoard._targetEnemy.transform.position - _blackBoard.transform.position).normalized;
-            _blackBoard.playerMovement.transform.DOMove(_blackBoard._targetEnemy.transform.position - targetPos*2, 0.5f);
+            var targetPos = (_blackBoard.transform.position - _blackBoard._targetEnemy.transform.position).normalized;
+            _blackBoard.playerMovement.transform.DOMove((_blackBoard._targetEnemy.transform.position + targetPos*2), 0.5f);
         }
         
         public override StateStatus UpdateState()
@@ -29,11 +30,11 @@ namespace SFRemastered.Combat
                 return baseStatus;
             }
 
-            if (_state.NormalizedTime > 0.9f)
+            /*if (_state.NormalizedTime > 0.9f)
             {
                 _fsm.ChangeState(_idleCombat);
                 return StateStatus.Success;
-            }
+            }*/
             return StateStatus.Running;
         }
 

@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat.IdleCombat
 {
-    using UnityEngine;
-
     namespace SFRemastered.Combat
     {
         [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/LowIdleCombat")]

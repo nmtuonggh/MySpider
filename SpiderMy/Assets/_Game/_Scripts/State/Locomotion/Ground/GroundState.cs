@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered._Game._Scripts.State.Combat;
 using SFRemastered.Combat;
 using UnityEngine;
 

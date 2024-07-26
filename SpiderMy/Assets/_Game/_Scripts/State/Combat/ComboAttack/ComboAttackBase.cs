@@ -1,15 +1,15 @@
 ﻿using Animancer;
-using SFRemastered.Combat.SFRemastered.Combat;
+using SFRemastered._Game._Scripts.State.Combat.IdleCombat.SFRemastered.Combat;
 using UnityEngine;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 {
     public abstract class ComboAttackBase : StateBase
     {
         [SerializeField] protected ClipTransitionAsset[] _firstComboClips;
         [SerializeField] protected ClipTransitionAsset[] _extraAttackClips;
         
-        [SerializeField] protected IdleCombat _idleCombat;
+        [SerializeField] protected IdleCombat.IdleCombat _idleCombat;
         [SerializeField] protected LowIdleCombat _lowIdleCombat;
         [SerializeField] protected AttackController _attackController;
         

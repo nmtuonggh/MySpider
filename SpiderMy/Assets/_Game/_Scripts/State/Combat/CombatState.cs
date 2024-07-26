@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat
 {
     public abstract class CombatState : StateBase
     {

@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
 using UnityEngine;
 
 namespace SFRemastered.Combat.ZipAttack
@@ -11,7 +12,7 @@ namespace SFRemastered.Combat.ZipAttack
         public override void EnterState()
         {
             base.EnterState();
-            //_blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
         }
 
         public override StateStatus UpdateState()

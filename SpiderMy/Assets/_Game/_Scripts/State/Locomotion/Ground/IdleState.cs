@@ -1,4 +1,5 @@
 ﻿ using System.Collections;
+ using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
  using SFRemastered.Combat;
  using UnityEngine;
 using UnityEngine.Serialization;

@@ -1,9 +1,7 @@
-﻿using System;
-using Animancer;
+﻿using SFRemastered.Combat;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-namespace SFRemastered.Combat
+namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/FirstCombo")]
     public class FirstCombo : ComboAttackBase

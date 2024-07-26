@@ -18,14 +18,14 @@ namespace SFRemastered.Combat.ZipAttack
             //var targetPos = (_blackBoard._targetEnemy.transform.position - playerPlanPos).normalized;
             var targetPos = (_blackBoard.transform.position - _blackBoard._targetEnemy.transform.position).normalized;
             _blackBoard.playerMovement.transform
-                .DOMove(_blackBoard._targetEnemy.transform.position + targetPos * 1.5f, 0.2f).OnComplete(
+                .DOMove((_blackBoard._targetEnemy.transform.position + targetPos * 1f) + new Vector3(0,0.1f,0), 0.35f).OnComplete(
                     () =>
                     {
                         _doneMove = true;
                         _blackBoard.lr.positionCount = 0;
                     });
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
-            _blackBoard.rigidbody.useGravity = false;
+            _blackBoard.rigidbody.useGravity = false; 
             _blackBoard.rigidbody.isKinematic = false;
         }
 
