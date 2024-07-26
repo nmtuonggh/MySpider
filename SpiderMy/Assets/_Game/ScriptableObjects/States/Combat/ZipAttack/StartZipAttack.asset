@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43892664d8742bcbac8a54a42d47e72, type: 3}
-  m_Name: LeapAttack
+  m_Script: {fileID: 11500000, guid: 0ce0af16dd5248dcb6b9de28cf2c3ae4, type: 3}
+  m_Name: StartZipAttack
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,8 +19,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: ef80986c488cee54593268d202dd2416, type: 2}
+    _Clip: {fileID: 7400000, guid: 73c1db5cfdb466d4093b2f2d21065986, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _attackController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
-  _idleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  _zipAttack: {fileID: 11400000, guid: 56a132c4d50d2234489cee34026a1fab, type: 2}

@@ -38,11 +38,14 @@ namespace SFRemastered
         public Transform startrope;
         public GameObject ropHolder;
         public LineRenderer lr;
+        
         [Header("Zip")]
         public Transform startZipLeft;
         public Transform startZipRight;
+        
         [Header("Combat")]
         public GameObject _targetEnemy;
+        public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
         public bool _detectedEnemy;
     }

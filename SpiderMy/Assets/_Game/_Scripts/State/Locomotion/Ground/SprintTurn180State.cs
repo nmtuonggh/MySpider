@@ -19,7 +19,7 @@ namespace SFRemastered
 
             _blackBoard.playerMovement.rootmotionSpeedMult = 2f;
 
-            _blackBoard.playerMovement.SetRotationMode(EasyCharacterMovement.RotationMode.OrientWithRootMotion);
+            _blackBoard.playerMovement.SetRotationMode(EasyCharacterMovement.RotationMode.None);
 
             _state.Events.OnEnd = () =>
             {

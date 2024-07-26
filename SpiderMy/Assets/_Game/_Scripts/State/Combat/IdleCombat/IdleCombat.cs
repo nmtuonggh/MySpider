@@ -2,13 +2,15 @@
 
 namespace SFRemastered.Combat
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/LeapAttack")]
+    [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/Idle")]
 
-    public class LeapAttack : CombatState
+    public class IdleCombat : CombatState
     {
+        
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
         }
         
         public override StateStatus UpdateState()
@@ -18,6 +20,7 @@ namespace SFRemastered.Combat
             {
                 return baseStatus;
             }
+            
             return StateStatus.Running;
         }
 

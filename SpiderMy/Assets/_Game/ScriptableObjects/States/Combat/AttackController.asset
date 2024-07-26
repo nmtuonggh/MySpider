@@ -24,3 +24,4 @@ MonoBehaviour:
     _NormalizedStartTime: NaN
   _leapAttack: {fileID: 11400000, guid: fdb27329260e8264781d3bb281c89c6a, type: 2}
   _firstCombo: {fileID: 11400000, guid: eb9331ed2e8388845a596521fbc62743, type: 2}
+  _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}

@@ -2,12 +2,14 @@
 
 namespace SFRemastered.Combat
 {
-    public class CombatState : StateBase
+    public abstract class CombatState : StateBase
     {
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
         [SerializeField] protected ZipState _zipState;
         [SerializeField] protected AttackController _attackController;
+        [SerializeField] protected SprintState _sprintState;
+        [SerializeField] protected JumpToSwing _jumpToSwing;
 
         public bool canJump = true;
 
@@ -34,6 +36,18 @@ namespace SFRemastered.Combat
             if (_blackBoard.attack)
             {
                 _fsm.ChangeState(_attackController);
+                return StateStatus.Success;
+            }
+            
+            if(_blackBoard.moveDirection.magnitude > 0f)
+            {
+                _fsm.ChangeState(_sprintState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_jumpToSwing);
                 return StateStatus.Success;
             }
 

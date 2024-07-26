@@ -22,44 +22,16 @@ MonoBehaviour:
     _Clip: {fileID: 0}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _comboClips:
-  - _FadeDuration: 0.15766667
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: e2960351219b7ff46932f8f84f779a69, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.165
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 508469fbff5879246a4c1eddabc6c6ee, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.15
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 6af2f0ec9373cca489a75fdd9e86df0b, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  - _FadeDuration: 0.25
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 85c8fb28391c7f74db38b6de667f6bcc, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
   _firstComboClips:
   - {fileID: 11400000, guid: cff07996c366801499da17d413e9a498, type: 2}
   - {fileID: 11400000, guid: 5b42ec1e7c0b8c1458e9d04ce8eeb8f3, type: 2}
   - {fileID: 11400000, guid: d033c019752bdf34aa60fb03df8c593f, type: 2}
+  _extraAttackClips:
+  - {fileID: 11400000, guid: f6d43c0739d8b37448f21c53fdea875c, type: 2}
+  - {fileID: 11400000, guid: 4b02e0e1836dc7c4b989ac32b52860bc, type: 2}
+  - {fileID: 11400000, guid: b9be1c86cfeb01649bdd080a6cfac061, type: 2}
   _idleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  _lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
   _attackController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   _currentComboIndex: 0
-  _delayTime: 1
+  _delayTime: 0.85
