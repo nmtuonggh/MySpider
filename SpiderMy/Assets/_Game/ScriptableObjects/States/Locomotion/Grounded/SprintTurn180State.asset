@@ -25,7 +25,8 @@ MonoBehaviour:
   _jumpState: {fileID: 11400000, guid: 6235abdc6b6054443b85e92c6db43ed7, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}
   _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
-  _attackController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
+  combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
+  _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   canJump: 1
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _sprintToIdleState: {fileID: 11400000, guid: b551b896c6cb1b04684787a4f4dec030, type: 2}

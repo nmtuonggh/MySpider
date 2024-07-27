@@ -1,21 +1,21 @@
 ﻿using DG.Tweening;
 using SFRemastered.Combat;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/LeapAttack")]
 
-    public class LeapAttack : StateBase
+    public class LeapAttack : CombatBase
     {
-        [SerializeField] private AttackController _attackController;
-        [SerializeField] private IdleCombat.IdleCombat _idleCombat;
+        [SerializeField] private CombatController combatController;
+        [SerializeField] private IdleCombat.NormalIdleCombat normalIdleCombat;
         
         public override void EnterState()
         {
             base.EnterState();
             _blackBoard.playerMovement.useRootMotion = true;
-            _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y);
             var targetPos = (_blackBoard.transform.position - _blackBoard._targetEnemy.transform.position).normalized;
@@ -30,11 +30,11 @@ namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
                 return baseStatus;
             }
 
-            /*if (_state.NormalizedTime > 0.9f)
+            if (_state.NormalizedTime > 0.9f)
             {
-                _fsm.ChangeState(_idleCombat);
+                _fsm.ChangeState(normalIdleCombat);
                 return StateStatus.Success;
-            }*/
+            }
             return StateStatus.Running;
         }
 
@@ -42,7 +42,6 @@ namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
         {
             base.ExitState();
             _blackBoard.playerMovement.useRootMotion = false;
-            //_blackBoard.playerMovement.rootmotionSpeedMult = 1;
         }
     }
 }

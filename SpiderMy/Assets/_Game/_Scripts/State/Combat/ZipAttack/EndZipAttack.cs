@@ -1,13 +1,14 @@
 ﻿using DG.Tweening;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered.Combat.ZipAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/EndZipAttack")]
     public class EndZipAttack : StateBase
     {
-        [SerializeField] private IdleCombat _idleCombat;
+        [FormerlySerializedAs("normalIdleCombatBase")] [FormerlySerializedAs("idleIdlesCombat")] [FormerlySerializedAs("_idleCombat")] [SerializeField] private NormalIdleCombat normalIdleCombat;
 
         public override void EnterState()
         {
@@ -21,7 +22,7 @@ namespace SFRemastered.Combat.ZipAttack
 
             if (_state.NormalizedTime >= 1)
             {
-                _fsm.ChangeState(_idleCombat);
+                _fsm.ChangeState(normalIdleCombat);
                 return StateStatus.Success;
             }
 

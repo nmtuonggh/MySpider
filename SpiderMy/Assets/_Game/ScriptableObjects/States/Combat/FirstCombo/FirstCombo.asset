@@ -22,6 +22,7 @@ MonoBehaviour:
     _Clip: {fileID: 0}
     _Speed: 1
     _NormalizedStartTime: NaN
+  _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   _firstComboClips:
   - {fileID: 11400000, guid: cff07996c366801499da17d413e9a498, type: 2}
   - {fileID: 11400000, guid: 5b42ec1e7c0b8c1458e9d04ce8eeb8f3, type: 2}
@@ -30,8 +31,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6d43c0739d8b37448f21c53fdea875c, type: 2}
   - {fileID: 11400000, guid: 4b02e0e1836dc7c4b989ac32b52860bc, type: 2}
   - {fileID: 11400000, guid: b9be1c86cfeb01649bdd080a6cfac061, type: 2}
-  _idleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
-  _lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
-  _attackController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
+  normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
+  combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   _currentComboIndex: 0
   _delayTime: 0.85

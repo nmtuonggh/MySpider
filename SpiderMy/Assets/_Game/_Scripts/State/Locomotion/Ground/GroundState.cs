@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using SFRemastered._Game._Scripts.State.Combat;
+using SFRemastered._Game._Scripts.State.Locomotion.Ground;
 using SFRemastered.Combat;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered
 {
@@ -11,7 +13,8 @@ namespace SFRemastered
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
         [SerializeField] protected ZipState _zipState;
-        [SerializeField] protected AttackController _attackController;
+        [FormerlySerializedAs("_attackController")] [SerializeField] protected CombatController combatController;
+        [SerializeField] protected DodgeState _dodgeState;
 
         public bool canJump = true;
 
@@ -37,7 +40,13 @@ namespace SFRemastered
 
             if (_blackBoard.attack)
             {
-                _fsm.ChangeState(_attackController);
+                _fsm.ChangeState(combatController);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.dodge)
+            {
+                _fsm.ChangeState(_dodgeState);
                 return StateStatus.Success;
             }
 

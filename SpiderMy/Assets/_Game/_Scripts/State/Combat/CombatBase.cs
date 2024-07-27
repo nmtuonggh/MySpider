@@ -1,16 +1,14 @@
-﻿using UnityEngine;
+﻿using SFRemastered._Game._Scripts.State.Locomotion.Ground;
+using UnityEngine;
 
-namespace SFRemastered._Game._Scripts.State.Combat.IdleCombat
+namespace SFRemastered._Game._Scripts.State.Combat
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/Idle")]
-
-    public class IdleCombat : CombatState
+    public abstract class CombatBase : StateBase
     {
-        
+        [SerializeField] protected DodgeState _dodgeState;
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
         }
         
         public override StateStatus UpdateState()
@@ -20,10 +18,16 @@ namespace SFRemastered._Game._Scripts.State.Combat.IdleCombat
             {
                 return baseStatus;
             }
+
+            if (_blackBoard.dodge)
+            {
+                _fsm.ChangeState(_dodgeState);
+                return StateStatus.Success;
+            }
             
             return StateStatus.Running;
         }
-
+        
         public override void ExitState()
         {
             base.ExitState();

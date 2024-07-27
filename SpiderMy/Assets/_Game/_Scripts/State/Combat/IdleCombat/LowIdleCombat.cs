@@ -5,7 +5,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.IdleCombat
     namespace SFRemastered.Combat
     {
         [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/LowIdleCombat")]
-        public class LowIdleCombat : CombatState
+        public class LowIdleCombat : IdlesCombatBase
         {
             public override void EnterState()
             {
@@ -24,10 +24,6 @@ namespace SFRemastered._Game._Scripts.State.Combat.IdleCombat
                 return StateStatus.Running;
             }
 
-            public override void ExitState()
-            {
-                base.ExitState();
-            }
         }
     }
 }

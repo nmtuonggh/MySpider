@@ -11,7 +11,7 @@ namespace SFRemastered
     {
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private JumpToSwing _jumpToSwing;
-        [SerializeField] private IdleCombat _idleCombat;
+        [FormerlySerializedAs("normalIdleCombatBase")] [FormerlySerializedAs("idleIdlesCombat")] [FormerlySerializedAs("_idleCombat")] [SerializeField] private NormalIdleCombat normalIdleCombat;
 
         public override void EnterState()
         {
@@ -42,7 +42,7 @@ namespace SFRemastered
 
             if (_blackBoard.attack)
             {
-                _fsm.ChangeState(_idleCombat);
+                _fsm.ChangeState(normalIdleCombat);
                 return StateStatus.Success;
             }
 

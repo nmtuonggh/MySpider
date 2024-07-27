@@ -22,9 +22,12 @@ MonoBehaviour:
       data:
         _FadeDuration: 0.25
         _Events:
-          _NormalizedTimes: []
+          _NormalizedTimes:
+          - 0.5
+          - NaN
           _Callbacks: []
-          _Names: []
+          _Names:
+          - X
         _Clip: {fileID: 7400000, guid: e2960351219b7ff46932f8f84f779a69, type: 2}
         _Speed: 1
         _NormalizedStartTime: NaN

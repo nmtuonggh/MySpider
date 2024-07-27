@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SFRemastered._Game._Scripts.State.Combat
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/AttackController")]
-    public class AttackController : StateBase
+    public class CombatController : CombatBase
     {
         [SerializeField] private LeapAttack.LeapAttack _leapAttack;
         [SerializeField] private FirstCombo _firstCombo;
@@ -43,7 +43,6 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 return StateStatus.Success;
             }else if (!_blackBoard._detectedEnemy)
             {
-                Debug.Log("no enemy detected  -  Run ramdom attack combo");
                 _fsm.ChangeState(_firstCombo);
                 return StateStatus.Success;
             }

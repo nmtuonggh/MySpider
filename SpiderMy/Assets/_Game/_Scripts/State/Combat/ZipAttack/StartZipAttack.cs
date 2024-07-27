@@ -1,35 +1,25 @@
 ﻿using DG.Tweening;
 using EasyCharacterMovement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered.Combat.ZipAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/StartZipAttack")]
     public class StartZipAttack : StateBase
     {
-        [SerializeField] private ZipAttack _zipAttack;
+        [FormerlySerializedAs("_zipAttack")] [SerializeField] private ZipGroundAttack zipGroundAttack;
         [SerializeField] private ZipAirAttack _zipAirAttack;
         public override void EnterState()
         {
             base.EnterState();
             
-            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y).OnComplete(
-                () =>
-                {
-                    DrawnWeb();
-                });
+            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.constraints =
                 RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _blackBoard.rigidbody.useGravity = false; 
             _blackBoard.rigidbody.isKinematic = false;
-        }
-
-        private void DrawnWeb()
-        {
-            _blackBoard.lr.positionCount = 2;
-            _blackBoard.lr.SetPosition(1, _blackBoard._targetEnemy.transform.position);
-            _blackBoard.lr.SetPosition(0, _blackBoard._zipAttackHandPositon.position);
         }
 
         public override StateStatus UpdateState()
@@ -40,7 +30,7 @@ namespace SFRemastered.Combat.ZipAttack
             {
                 if (_blackBoard.playerMovement.IsGrounded())
                 {
-                    _fsm.ChangeState(_zipAttack);
+                    _fsm.ChangeState(zipGroundAttack);
                 }
                 else
                 {

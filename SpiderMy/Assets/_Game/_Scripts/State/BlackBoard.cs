@@ -23,12 +23,14 @@ namespace SFRemastered
         
         public Vector3 moveDirection;
         public Vector3 wallMoveDirection;
+        [Header("Actions bools")]
         public bool jump;
         public bool sprint;
         public bool swing;
         public bool zip;
         public bool foundWall;
         public bool attack;
+        public bool dodge;
         public bool isGrounded;
         
         [Header("Swing")]

@@ -1,17 +1,19 @@
 ﻿using Animancer;
+using DG.Tweening;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat.SFRemastered.Combat;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 {
-    public abstract class ComboAttackBase : StateBase
+    public abstract class ComboAttackBase : CombatBase
     {
         [SerializeField] protected ClipTransitionAsset[] _firstComboClips;
         [SerializeField] protected ClipTransitionAsset[] _extraAttackClips;
         
-        [SerializeField] protected IdleCombat.IdleCombat _idleCombat;
-        [SerializeField] protected LowIdleCombat _lowIdleCombat;
-        [SerializeField] protected AttackController _attackController;
+        [SerializeField] protected IdleCombat.NormalIdleCombat normalIdleCombat;
+        [SerializeField] protected LowIdleCombat lowIdleCombat;
+        [SerializeField] protected CombatController combatController;
         
         [SerializeField] protected int _currentComboIndex = 0;
         [SerializeField] protected float _delayTime;
@@ -25,6 +27,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
             time = 0;
+            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y); 
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
         }
 
@@ -54,14 +57,14 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             else if (time >= _delayTime  )
             {
                 if (_blackBoard.attack)
-                    _fsm.ChangeState(_attackController);
+                    _fsm.ChangeState(combatController);
                 
                 else
                 {
                     if (_currentComboIndex < 3)
-                        _fsm.ChangeState(_idleCombat);
+                        _fsm.ChangeState(normalIdleCombat);
                     else
-                        _fsm.ChangeState(_lowIdleCombat);
+                        _fsm.ChangeState(lowIdleCombat);
                 }
                 return StateStatus.Success;
             }
@@ -71,6 +74,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 
         public void PlayComboAnimation(ClipTransitionAsset[] clip, int index)
         {
+            _blackBoard.playerMovement.RotateTowardsWithSlerp(new Vector3(0, _blackBoard._targetEnemy.transform.position.y, 0));
             _state = _blackBoard.animancer.Play(clip[index]);
             time = 0;
         }
