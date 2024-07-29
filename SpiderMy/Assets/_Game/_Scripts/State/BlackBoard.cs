@@ -23,11 +23,14 @@ namespace SFRemastered
         
         public Vector3 moveDirection;
         public Vector3 wallMoveDirection;
+        [Header("Actions bools")]
         public bool jump;
         public bool sprint;
         public bool swing;
         public bool zip;
         public bool foundWall;
+        public bool attack;
+        public bool dodge;
         public bool isGrounded;
         
         [Header("Swing")]
@@ -37,9 +40,16 @@ namespace SFRemastered
         public Transform startrope;
         public GameObject ropHolder;
         public LineRenderer lr;
+        
         [Header("Zip")]
         public Transform startZipLeft;
         public Transform startZipRight;
         
+        [Header("Combat")]
+        public OverlapSphereHit overlapSphereHit;
+        public GameObject _targetEnemy;
+        public Transform _zipAttackHandPositon;
+        public float _distanceToTargetEnemy;
+        public bool _detectedEnemy;
     }
 }

@@ -1,5 +1,7 @@
 ﻿ using System.Collections;
-using UnityEngine;
+ using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
+ using SFRemastered.Combat;
+ using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace SFRemastered
@@ -9,6 +11,7 @@ namespace SFRemastered
     {
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private JumpToSwing _jumpToSwing;
+        [FormerlySerializedAs("normalIdleCombatBase")] [FormerlySerializedAs("idleIdlesCombat")] [FormerlySerializedAs("_idleCombat")] [SerializeField] private NormalIdleCombat normalIdleCombat;
 
         public override void EnterState()
         {
@@ -34,6 +37,12 @@ namespace SFRemastered
             if (_blackBoard.swing)
             {
                 _fsm.ChangeState(_jumpToSwing);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.attack)
+            {
+                _fsm.ChangeState(normalIdleCombat);
                 return StateStatus.Success;
             }
 

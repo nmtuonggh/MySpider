@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18d1268a0fa4a468c856eb8ee068ad5, type: 3}
+  m_Name: FirstCombo
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 0}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
+  _firstComboClips:
+  - {fileID: 11400000, guid: 18a71a07df098584abe25c962e773350, type: 2}
+  - {fileID: 11400000, guid: 363785acc6159c84197901d21e05f1db, type: 2}
+  - {fileID: 11400000, guid: 65f0d64b21e3ab343b4f249b0ac01c0a, type: 2}
+  _extraAttackClips:
+  - {fileID: 11400000, guid: 7fcc312973ff7ab449ee29bd6b840958, type: 2}
+  - {fileID: 11400000, guid: b248ebd2a130a5e458da4350c2dcf680, type: 2}
+  - {fileID: 11400000, guid: 51103b9cf9a8dca47901a6c8109e0ead, type: 2}
+  normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
+  combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
+  _currentComboIndex: 0
+  _delayTime: 0.85

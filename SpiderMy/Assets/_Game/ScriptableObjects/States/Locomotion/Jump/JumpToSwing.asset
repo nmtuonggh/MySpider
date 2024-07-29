@@ -24,6 +24,7 @@ MonoBehaviour:
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
+  _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}
   jumpImpulseModifier: 1
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _fallState: {fileID: 11400000, guid: b4ed73479dbcc414ca0bbd1a2e498fd0, type: 2}

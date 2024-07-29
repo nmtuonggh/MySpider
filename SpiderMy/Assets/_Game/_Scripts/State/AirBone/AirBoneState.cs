@@ -1,4 +1,5 @@
-﻿using SFRemastered.Wall;
+﻿using SFRemastered.Combat.ZipAttack;
+using SFRemastered.Wall;
 using UnityEngine;
 
 namespace SFRemastered
@@ -7,6 +8,7 @@ namespace SFRemastered
     {
         [SerializeField] protected WallRun _wallRun;
         [SerializeField] protected ZipState _zipState;
+        [SerializeField] protected StartZipAttack _startZipAttack;
         public override void EnterState()
         {
             base.EnterState();
@@ -31,6 +33,12 @@ namespace SFRemastered
             {
                 _fsm.ChangeState(_zipState);
                 return StateStatus.Success;
+            }
+
+            if (_blackBoard._detectedEnemy && _blackBoard.attack)
+            {
+                _fsm.ChangeState(_startZipAttack);
+                return StateStatus.Success; 
             }
             
             return StateStatus.Running;

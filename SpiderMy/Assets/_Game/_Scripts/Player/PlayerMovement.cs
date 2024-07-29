@@ -2,6 +2,7 @@ using EasyCharacterMovement;
 using SFRemastered.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using ParadoxNotion.Design;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;

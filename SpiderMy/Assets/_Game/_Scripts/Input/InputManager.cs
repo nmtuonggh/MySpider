@@ -28,6 +28,8 @@ namespace SFRemastered.InputSystem
         public InputAction sprint;
         public InputAction swing;
         public InputAction zip;
+        public InputAction attack;
+        public InputAction dodge;
 
         public bool disableInput;
 

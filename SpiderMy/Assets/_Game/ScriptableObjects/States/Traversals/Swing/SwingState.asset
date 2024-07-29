@@ -24,6 +24,7 @@ MonoBehaviour:
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
   _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
+  _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _jumpFromSwingLow: {fileID: 11400000, guid: 9e7485a58cdfb6d44a90fffc6611c20a, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}

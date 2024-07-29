@@ -21,6 +21,7 @@ namespace SFRemastered
         public override void EnterState()  
         {
             base.EnterState();
+            //_blackBoard.playerMovement.TeleportRotation(Quaternion.LookRotation(_blackBoard.findZipPoint.zipPoint));
             _state = _blackBoard.animancer.Play(_startZip);
             _doneMove = false;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);

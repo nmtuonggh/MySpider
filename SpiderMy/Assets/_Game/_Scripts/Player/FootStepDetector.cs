@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 namespace SFRemastered
