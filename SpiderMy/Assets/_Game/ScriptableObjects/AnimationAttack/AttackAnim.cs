@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Animancer;
+using UnityEngine;
 
 namespace SFRemastered._Game.ScriptableObjects.AnimationAttack
 {
-    [CreateAssetMenu(fileName = "FILENAME", menuName = "MENUNAME", order = 0)]
+    [CreateAssetMenu(menuName = "ScriptableObjects/AttackAnimation")]
     public class AttackAnim : ScriptableObject
     {
-        
+        public ClipTransition clip;
+        public float damage;
+        public float duration;
     }
 }

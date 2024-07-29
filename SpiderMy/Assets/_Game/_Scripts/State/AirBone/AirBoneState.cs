@@ -38,7 +38,7 @@ namespace SFRemastered
             if (_blackBoard._detectedEnemy && _blackBoard.attack)
             {
                 _fsm.ChangeState(_startZipAttack);
-                return StateStatus.Success;
+                return StateStatus.Success; 
             }
             
             return StateStatus.Running;

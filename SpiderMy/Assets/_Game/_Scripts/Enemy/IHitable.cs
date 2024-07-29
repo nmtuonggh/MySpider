@@ -2,8 +2,11 @@
 
 namespace SFRemastered._Game._Scripts.Enemy
 {
-    public class IHitable : MonoBehaviour
+    public interface IHitable
     {
-        
+        void OnHit(float damage)
+        {
+            
+        }
     }
 }

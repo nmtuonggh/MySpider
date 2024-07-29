@@ -1,6 +1,7 @@
 ﻿using Animancer;
 using DG.Tweening;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat.SFRemastered.Combat;
+using SFRemastered._Game.ScriptableObjects.AnimationAttack;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,8 +9,8 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 {
     public abstract class ComboAttackBase : CombatBase
     {
-        [SerializeField] protected ClipTransitionAsset[] _firstComboClips;
-        [SerializeField] protected ClipTransitionAsset[] _extraAttackClips;
+        [SerializeField] protected AttackAnim[] _firstComboClips;
+        [SerializeField] protected AttackAnim[] _extraAttackClips;
         
         [SerializeField] protected IdleCombat.NormalIdleCombat normalIdleCombat;
         [SerializeField] protected LowIdleCombat lowIdleCombat;
@@ -18,16 +19,18 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         [SerializeField] protected int _currentComboIndex = 0;
         [SerializeField] protected float _delayTime;
         
+        /*private float _currentDamage;*/
         private float time;
 
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.rootmotionSpeedMult = 1;
+            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .1f : 1f;
             _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
             time = 0;
-            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y); 
+            if (_blackBoard._detectedEnemy)
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y); 
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
         }
 
@@ -40,7 +43,9 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             }
             
             time += Time.deltaTime;
-
+            
+            //TODO: replace _state.NormalizedTime by attackanim.duration
+            
             if (_blackBoard.attack && time < _delayTime && 
                 (_currentComboIndex < 3 ? _state.NormalizedTime >= 0.5f : _state.NormalizedTime >= 1f))
             {
@@ -72,13 +77,23 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             return StateStatus.Running;
         }
 
-        public void PlayComboAnimation(ClipTransitionAsset[] clip, int index)
+        public void PlayComboAnimation(AttackAnim[] clip, int index)
         {
-            _blackBoard.playerMovement.RotateTowardsWithSlerp(new Vector3(0, _blackBoard._targetEnemy.transform.position.y, 0));
-            _state = _blackBoard.animancer.Play(clip[index]);
+            //TODO: rotate player to enemy
+            
+            _currentDamage = clip[index].damage;
+            _state = _blackBoard.animancer.Play(clip[index].clip);
+            
+            if(_blackBoard._detectedEnemy)
+                _state.Events.SetCallback("Hit", GetHit);
+            
             time = 0;
         }
         
+        /*public void GetHit()
+        {
+            _blackBoard.overlapSphereHit.Hit(_currentDamage);
+        }*/
 
         public override void ExitState()
         {

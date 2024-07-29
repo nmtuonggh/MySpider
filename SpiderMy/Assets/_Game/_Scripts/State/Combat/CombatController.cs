@@ -24,11 +24,11 @@ namespace SFRemastered._Game._Scripts.State.Combat
 
             if (_blackBoard._detectedEnemy)
             {
-                if (_blackBoard._distanceToTargetEnemy is > 0 and <= 3)
+                if (_blackBoard._distanceToTargetEnemy is > 0 and <= 2)
                 {
                     //TODO: Random attack combo
                     _fsm.ChangeState(_firstCombo);
-                }else if (_blackBoard._distanceToTargetEnemy is > 3 and <= 10)
+                }else if (_blackBoard._distanceToTargetEnemy is > 2 and <= 10)
                 {
                     _fsm.ChangeState(_leapAttack);
                 }

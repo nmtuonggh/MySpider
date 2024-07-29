@@ -22,5 +22,5 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 73c1db5cfdb466d4093b2f2d21065986, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _zipAttack: {fileID: 11400000, guid: 56a132c4d50d2234489cee34026a1fab, type: 2}
+  zipGroundAttack: {fileID: 11400000, guid: 56a132c4d50d2234489cee34026a1fab, type: 2}
   _zipAirAttack: {fileID: 11400000, guid: 311429b4db0040f49b477d7a6e4c03b8, type: 2}

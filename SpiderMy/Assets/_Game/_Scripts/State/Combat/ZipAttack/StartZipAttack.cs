@@ -1,14 +1,15 @@
 ﻿using DG.Tweening;
 using EasyCharacterMovement;
+using SFRemastered._Game._Scripts.State.Combat;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace SFRemastered.Combat.ZipAttack
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/StartZipAttack")]
-    public class StartZipAttack : StateBase
+    public class StartZipAttack : CombatBase
     {
-        [FormerlySerializedAs("_zipAttack")] [SerializeField] private ZipGroundAttack zipGroundAttack;
+        [SerializeField] private ZipGroundAttack zipGroundAttack;
         [SerializeField] private ZipAirAttack _zipAirAttack;
         public override void EnterState()
         {

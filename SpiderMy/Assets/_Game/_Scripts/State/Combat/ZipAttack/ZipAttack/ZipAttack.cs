@@ -1,9 +1,10 @@
 ﻿using EasyCharacterMovement;
+using SFRemastered._Game._Scripts.State.Combat;
 using UnityEngine;
 
 namespace SFRemastered.Combat.ZipAttack
 {
-    public abstract class ZipAttack : StateBase
+    public abstract class ZipAttack : CombatBase
     {
         [SerializeField] protected EndZipAttack _endZipAttack;
         protected bool _doneMove = false;

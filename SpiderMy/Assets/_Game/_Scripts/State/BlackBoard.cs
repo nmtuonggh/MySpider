@@ -46,6 +46,7 @@ namespace SFRemastered
         public Transform startZipRight;
         
         [Header("Combat")]
+        public OverlapSphereHit overlapSphereHit;
         public GameObject _targetEnemy;
         public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
