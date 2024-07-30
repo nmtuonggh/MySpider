@@ -1,0 +1,74 @@
+﻿{
+  "BehaviorTree": {
+    "RootNode": "Selector",
+    "Nodes": [
+      {
+        "Type": "Sequence",
+        "Name": "Patrolling",
+        "Conditions": [
+          {
+            "Type": "PlayerNotInSightOrAttackRange",
+            "Parameters": {
+              "player": "GameObject",
+              "sightRange": "float",
+              "attackRange": "float"
+            }
+          }
+        ],
+        "Actions": [
+          {
+            "Type": "Patrol",
+            "Parameters": {
+              "patrolPoint": "Vector3",
+              "speed": "float"
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Sequence",
+        "Name": "Chase Player",
+        "Conditions": [
+          {
+            "Type": "PlayerInSightRange",
+            "Parameters": {
+              "player": "GameObject",
+              "sightRange": "float",
+              "attackRange": "float"
+            }
+          }
+        ],
+        "Actions": [
+          {
+            "Type": "Chase",
+            "Parameters": {
+              "player": "GameObject",
+              "speed": "float"
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Sequence",
+        "Name": "Attack Player",
+        "Conditions": [
+          {
+            "Type": "PlayerInAttackRange",
+            "Parameters": {
+              "player": "GameObject",
+              "attackRange": "float"
+            }
+          }
+        ],
+        "Actions": [
+          {
+            "Type": "Attack",
+            "Parameters": {
+              "player": "GameObject"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

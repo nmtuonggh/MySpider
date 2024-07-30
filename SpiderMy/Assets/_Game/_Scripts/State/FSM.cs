@@ -35,7 +35,7 @@ namespace SFRemastered
             }
 
             if (newState == null)
-            {
+            { 
                 return false;
             }
 

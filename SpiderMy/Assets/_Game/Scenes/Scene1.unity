@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17757884, g: 0.2223225, b: 0.3045184, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757848, g: 0.22232172, b: 0.30451703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: f0f629673c365e740a74c4bc3331009f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f73e5c236fae4bc43bd3dfe9cb9ac46f, type: 2}
 --- !u!1 &385550
 GameObject:
   m_ObjectHideFlags: 0
@@ -13558,6 +13558,9 @@ GameObject:
   - component: {fileID: 758608626}
   - component: {fileID: 758608625}
   - component: {fileID: 758608624}
+  - component: {fileID: 758608630}
+  - component: {fileID: 758608632}
+  - component: {fileID: 758608631}
   m_Layer: 10
   m_Name: Enemy (5)
   m_TagString: Enemy
@@ -13578,9 +13581,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
-  _objectReferences: []
-  _serializedVariables: []
+  _serializedBlackboard: '{"_variables":{"player":{"_value":1,"_name":"player","_id":"f95bb243-97fd-45dc-9457-5fd082a9d254","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 4832023996879537071}
+  _serializedVariables:
+  - _json: '{"_value":1,"_name":"player","_id":"f95bb243-97fd-45dc-9457-5fd082a9d254","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 4832023996879537071}
 --- !u!114 &758608625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13594,16 +13605,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":1069.797,"y":-224.4874},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_condition":{"targetObjects":{"_value":[1]},"distance":{"_value":30.0},"allResults":{"_name":""},"closerResult":{"_name":""},"$type":"NodeCanvas.Tasks.Conditions.CheckDistanceToGameObjectAny"},"_tag":"","_position":{"x":720.2479,"y":-174.2803},"_comment":"","$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"1"},{"_position":{"x":809.3972,"y":-57.1345},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"$type":"SFRemastered._Game._Scripts.Enemy.State.PatrollState"},"_position":{"x":710.4075,"y":30.86088},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":583.2892,"y":82.22968},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"dynamic":true,"_position":{"x":587.6155,"y":145.014},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_position":{"x":588.5062,"y":248.5993},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"2"},{"isDynamic":true,"_condition":{"checkTarget":{"_value":1},"checkType":4,"distance":{"_value":10.0},"$type":"NodeCanvas.Tasks.Conditions.CheckDistanceToGameObject"},"_position":{"x":531.4531,"y":337.3656},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"3"},{"repeaterMode":2,"repeatTimes":{"_value":1},"_position":{"x":574.3947,"y":468.7527},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"4"},{"_position":{"x":575.8824,"y":575.8828},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"policy":1,"_position":{"x":572.4697,"y":682.1304},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"6"},{"_action":{"layerIndex":{},"stateName":{"_value":"Walk"},"waitUntilFinish":true,"overrideAgent":{"_type":"UnityEngine.Animator","_value":2},"$type":"NodeCanvas.Tasks.Actions.MecanimPlayAnimation"},"_position":{"x":357.298,"y":857.0793},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"_action":{"target":{"_value":1},"speed":{"_value":5.0},"rotationSpeed":{"_value":5.0},"angleDifference":{"_value":5.0},"$type":"SFRemastered._Game._Scripts.Enemy.State.ChaseState"},"_position":{"x":514.0179,"y":855.0463},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"repeaterMode":1,"repeatTimes":{"_value":1},"repeatUntilStatus":0,"_position":{"x":1019.383,"y":736.3682},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"9"},{"_condition":{"checkTarget":{"_value":1},"checkType":4,"distance":{"_value":2.2},"$type":"NodeCanvas.Tasks.Conditions.CheckDistanceToGameObject"},"_position":{"x":954.192,"y":851.3369},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"10"},{"_position":{"x":1008.209,"y":943.6967},"$type":"NodeCanvas.BehaviourTrees.Parallel","$id":"11"},{"_action":{"target":{"_value":1},"speed":{"_value":2.0},"angleDifference":{"_value":5.0},"upVector":{"_value":{"y":1.0}},"$type":"NodeCanvas.Tasks.Actions.RotateTowards"},"_position":{"x":739.2562,"y":1058.853},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"12"},{"childWeights":[{"_value":1.0},{"_value":1.0}],"failChance":{},"_position":{"x":1014.463,"y":1066.521},"$type":"NodeCanvas.BehaviourTrees.ProbabilitySelector","$id":"13"},{"_action":{"log":{"_value":"Idle"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":916.1558,"y":1211.194},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"14"},{"_position":{"x":1101.243,"y":1219.645},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"15"},{"_action":{"log":{"_value":"Di
+    lai gan"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":952.808,"y":1337.28},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"16"},{"_action":{"log":{"_value":"Attack"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":1184.343,"y":1352.574},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"17"},{"_position":{"x":1642.919,"y":247.2119},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"18"},{"repeaterMode":2,"repeatTimes":{"_value":1},"_position":{"x":1633.546,"y":321.3752},"$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"19"},{"_position":{"x":1643.755,"y":412.8815},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"20"},{"_action":{"layerIndex":{},"stateName":{"_value":"Idle"},"waitUntilFinish":true,"overrideAgent":{"_type":"UnityEngine.Animator","_value":2},"$type":"NodeCanvas.Tasks.Actions.MecanimPlayAnimation"},"_position":{"x":1576.928,"y":526.3076},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"21"},{"_action":{"log":{"_value":"Hello
+    World"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":1696.93,"y":526.4194},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"22"},{"_position":{"x":377.946,"y":258.1765},"$type":"NodeCanvas.BehaviourTrees.Inverter","$id":"23"},{"_condition":{"checkTarget":{"_value":1},"checkType":1,"distance":{"_value":30.0},"$type":"NodeCanvas.Tasks.Conditions.CheckDistanceToGameObject"},"_position":{"x":294.0874,"y":355.4521},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"24"},{"_position":{"x":250.041,"y":758.3263},"$type":"NodeCanvas.BehaviourTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 4832023996879537071}
+  - {fileID: 758608630}
   _boundGraphSource:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: -49.895084, y: 353.25348}
-    _zoomFactor: 0.7361013
+    _translation: {x: 157.59412, y: -245.23486}
+    _zoomFactor: 0.73350334
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -13686,7 +13700,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.32
   m_Height: 2
@@ -13709,6 +13723,76 @@ Transform:
   - {fileID: 1992650686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &758608630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758608623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f1dc9847ba77344409f1f14f2d0c0fec, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1639554b1b1fd30458ca1099f18bde67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &758608631
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758608623}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &758608632
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758608623}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &759182652
 GameObject:
   m_ObjectHideFlags: 0
@@ -28599,7 +28683,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1103689761}
@@ -30815,6 +30899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1754284324}
+  - component: {fileID: 1754284325}
   m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
@@ -30842,6 +30927,37 @@ Transform:
   - {fileID: 283367777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &1754284325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754284323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: b0d8ae2c597b6d74e8fde91a3ad9b845, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1754996046
 GameObject:
   m_ObjectHideFlags: 0

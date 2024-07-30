@@ -21,6 +21,7 @@ namespace NodeCanvas.Tasks.Actions
         //holds the last played animationClip.value for each agent 
         private static Dictionary<Animation, AnimationClip> lastPlayedClips = new Dictionary<Animation, AnimationClip>();
 
+        
         protected override string info {
             get { return "Anim " + animationClip.ToString(); }
         }
@@ -50,7 +51,11 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnUpdate() {
 
-            if ( elapsedTime >= animationClip.value.length - crossFadeTime ) {
+            /*if ( elapsedTime >= animationClip.value.length - crossFadeTime ) {
+                EndAction(true);
+            }*/
+            if (elapsedTime is > 0 and <= 5)
+            {
                 EndAction(true);
             }
         }

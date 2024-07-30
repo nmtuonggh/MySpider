@@ -22,19 +22,19 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         private void Start()
         {
-            animancer.Play(idleAnimation);
+            //animancer.Play(idleAnimation);
         }
 
         private void Update()
         {
-            if (getHit)
+            /*if (getHit)
             {
                 animancer.Play(hitAnimation);
             }
             else
             {
                 animancer.Play(idleAnimation);
-            }
+            }*/
         }
 
         public void OnHit(float damage)

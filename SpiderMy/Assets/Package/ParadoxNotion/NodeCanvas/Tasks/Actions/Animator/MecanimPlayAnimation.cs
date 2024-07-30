@@ -10,7 +10,6 @@ namespace NodeCanvas.Tasks.Actions
     [Category("Animator")]
     public class MecanimPlayAnimation : ActionTask<Animator>
     {
-
         public BBParameter<int> layerIndex;
         [RequiredField]
         public BBParameter<string> stateName;
