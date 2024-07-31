@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using SFRemastered._Game._Scripts.Manager;
 using UnityEngine;
@@ -35,6 +36,17 @@ namespace SFRemastered._Game._Scripts.QuestSystem
             }
         }
 
+        private void Update()
+        {
+            foreach (var quest in questMap.Values)
+            {
+                if (quest.questState == QuestState.RequirementsNotMet)
+                {
+                    ChangeQuestState(quest.questInfor.id, QuestState.CanStart);
+                }
+            }
+        }
+
         private void ChangeQuestState(string id, QuestState state)
         {
             Quest quest = GetQuestByID(id);
@@ -44,15 +56,35 @@ namespace SFRemastered._Game._Scripts.QuestSystem
 
         private void StartQuest(string id)
         {
-            Debug.Log("Starting quest with id: " + id);
+            Quest quest = GetQuestByID(id);
+            quest.InstantiateCurrentQuestStep(this.transform);
+            ChangeQuestState(quest.questInfor.id, QuestState.InProgress);
         }
         private void AdvanceQuest(string id)
         {
-            Debug.Log("Advancing quest with id: " + id);
+           Quest quest = GetQuestByID(id);
+           quest.MoveToNextStep();
+
+           if (quest.CurrentStepExits())
+           {
+               quest.InstantiateCurrentQuestStep(this.transform);
+           }
+           else
+           {
+               ChangeQuestState(quest.questInfor.id, QuestState.CanFinish);
+           }
         }
         private void FinishQuest(string id)
         {
-            Debug.Log("Finishing quest with id: " + id);
+            Quest quest = GetQuestByID(id);
+            ClaimReward(quest);
+            ChangeQuestState(quest.questInfor.id, QuestState.Finished);
+        }
+
+        private void ClaimReward(Quest quest)
+        {
+            //TODO: Implement reward system
+            Debug.Log("Quest finished u got: " + quest.questInfor.cashReward + " cash" + quest.questInfor.expReward + " exp");
         }
 
         private Dictionary<string, Quest> CreateQuestMap()

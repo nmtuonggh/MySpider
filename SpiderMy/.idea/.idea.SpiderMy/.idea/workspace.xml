@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Manager.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Manager/GameEventManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Manager/GameEventManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/Fighting.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Quest/Fighting.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestStep.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestStep.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.general",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -149,7 +147,7 @@
       <workItem from="1722332034464" duration="4668000" />
       <workItem from="1722392168380" duration="1165000" />
       <workItem from="1722393519924" duration="232000" />
-      <workItem from="1722393781784" duration="13175000" />
+      <workItem from="1722393781784" duration="25694000" />
     </task>
     <servers />
   </component>

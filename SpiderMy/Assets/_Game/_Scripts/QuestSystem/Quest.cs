@@ -32,7 +32,8 @@ namespace SFRemastered
             GameObject questStepPrefab = GetCurrentQuestStepPrefab();
             if (questStepPrefab != null)
             {
-                Object.Instantiate<GameObject>(questStepPrefab, parent);
+                QuestStep questStep = Object.Instantiate<GameObject>(questStepPrefab, parent).GetComponent<QuestStep>();
+                questStep.InitializeQuestStep(questInfor.id);
             }
         }
         

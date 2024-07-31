@@ -14,7 +14,7 @@ namespace SFRemastered
         [SerializeField] private bool endQuest;
         
         
-        private bool playerIsNear = false;
+        public bool playerIsNear = false;
         private string questId;
         private QuestState currentQuestState;
 
@@ -33,7 +33,11 @@ namespace SFRemastered
             GameEventManager.instance.questEvent.onQuestStateChange -= QuestStateChange;
             
         }
-         
+
+        private void Update()
+        {
+        }
+
         private void SubmitQuest()
         {
             if (!playerIsNear)
@@ -41,6 +45,15 @@ namespace SFRemastered
                 return;
             }
             
+            if (currentQuestState.Equals(QuestState.CanStart) && startQuest)
+            {
+                GameEventManager.instance.questEvent.StartQuest(questId);
+            }
+            /*else if (currentQuestState.Equals(QuestState.CanFinish) && endQuest)
+            {
+                GameEventManager.instance.questEvent.FinishQuest(questId);
+                Debug.Log("Finishing quest with id: " + questId);
+            }*/
         }
         
         private void QuestStateChange(Quest quest)
@@ -49,19 +62,8 @@ namespace SFRemastered
             {
                 currentQuestState = quest.questState;
             }
-            
-            GameEventManager.instance.questEvent.AdvanceQuest(questId);
-            GameEventManager.instance.questEvent.FinishQuest(questId);
 
-            if (currentQuestState.Equals(QuestState.CanStart) && startQuest)
-            {
-                GameEventManager.instance.questEvent.StartQuest(questId);
-            }
-            else if (currentQuestState.Equals(QuestState.CanFinish) && endQuest)
-            {
-                GameEventManager.instance.questEvent.FinishQuest(questId);
-            }
-            
+            //SubmitQuest();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -69,6 +71,7 @@ namespace SFRemastered
             if (other.CompareTag("Player"))
             {
                 playerIsNear = true;
+                SubmitQuest();
             }
         }
         
@@ -79,5 +82,6 @@ namespace SFRemastered
                 playerIsNear = false;
             }
         }
-    }
+    }   
+    
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SFRemastered
 {
-    public class QuestEvent : MonoBehaviour
+    public class QuestEvent
     {
         public event Action<string> onStartQuest;
         
