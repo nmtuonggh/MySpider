@@ -56,12 +56,14 @@ namespace SFRemastered._Game._Scripts.QuestSystem
 
         private void StartQuest(string id)
         {
+            Debug.Log("Starting quest with id: " + id);
             Quest quest = GetQuestByID(id);
             quest.InstantiateCurrentQuestStep(this.transform);
             ChangeQuestState(quest.questInfor.id, QuestState.InProgress);
         }
         private void AdvanceQuest(string id)
         {
+            Debug.Log("Advancing quest with id: " + id);
            Quest quest = GetQuestByID(id);
            quest.MoveToNextStep();
 
@@ -76,6 +78,7 @@ namespace SFRemastered._Game._Scripts.QuestSystem
         }
         private void FinishQuest(string id)
         {
+            Debug.Log("Finishing quest with id: " + id);
             Quest quest = GetQuestByID(id);
             ClaimReward(quest);
             ChangeQuestState(quest.questInfor.id, QuestState.Finished);

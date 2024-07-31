@@ -36,6 +36,11 @@ namespace SFRemastered
 
         private void Update()
         {
+            if (currentQuestState.Equals(QuestState.CanFinish) && endQuest)
+            {
+                GameEventManager.instance.questEvent.FinishQuest(questId);
+                Debug.Log("Finishing quest with id: " + questId);
+            }
         }
 
         private void SubmitQuest()
