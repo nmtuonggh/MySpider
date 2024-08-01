@@ -4,7 +4,651 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="" />
+    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MainMission.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/FightingMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Material/BackCity01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Material/BackCity01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/BankHouse.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/BankHouse.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GB.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GB.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GD.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GD.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GF.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GF.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GG.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GG.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GL.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GL.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GP.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GP.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GS.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GS.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GT.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GT.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GTS.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GTS.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GV.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GV.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GV2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GV2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GW.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GW.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GlassHigh.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/House_GlassHigh.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_LOD.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_LOD.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_Update.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_Update.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_Window.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Building_Window.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Liberty.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Liberty.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Old_Building_LOD.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Old_Building_LOD.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Window_Update (1).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/Materials/Window_Update (1).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/TimeSquare.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Building/TimeSquare.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Construction.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Construction.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Materials/Crane_Diffuse.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Materials/Crane_Diffuse.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Materials/construction.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Construction/Materials/construction.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/BridgePillar_Big.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/BridgePillar_Big.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/BridgePillar_Small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/BridgePillar_Small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/EmpireState.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/EmpireState.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House03.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House03.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House05.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House05.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House07.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House07.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House08.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House08.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House09.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House09.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House10.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/House10.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/HouseGX.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/HouseGX.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Liberty.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Liberty.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/HouseUpdate.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/HouseUpdate.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/HouseWindow_Update.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/HouseWindow_Update.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/House_LOD.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/House_LOD.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/House_LOD2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/Materials/House_LOD2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/WTC_BUilding.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/House/WTC_BUilding.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseBL.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseBL.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseCN.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseCN.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseGS.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseGS.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseGT.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseGT.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseRG.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/HouseRG.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/House_Corner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/House_Corner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/House_GP.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Old_Building/House_GP.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_01.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_01.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_02.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_02.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_03.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_03.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_04.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/SM_Env_Skyline_04.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/TCP2_Demo_WaterCircle.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Building 3.0/Skyline/TCP2_Demo_WaterCircle.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Slide.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Slide/SlideBillBoard_TimeSquare.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Slide/SlideBillBoard_TimeSquare.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Stand.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Stand/Big_BillBoard_04.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/BillBoard/Stand/Big_BillBoard_04.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Bus_Stop.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Bus_Stop/Bus_Stop.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Bus_Stop/Bus_Stop.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Street_Light.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Street_Light.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Barricade.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Barricade.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Barricade_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Barricade_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Cone_03.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Cone_03.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Lights.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/Traffic_Lights.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/grass_block.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_01/grass_block.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Bench.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Bench.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Dumpster_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Dumpster_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Dumpster_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Dumpster_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Metal_Mailbox.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Metal_Mailbox.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Public_Trashcan.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/Public_Trashcan.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/TrashBag.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/TrashBag.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/TrashCan.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_02/TrashCan.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/CashMachine.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/CashMachine.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/Generator.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/Generator.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/Rooftop_AirConditioner.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Fbx/Props_03/Rooftop_AirConditioner.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/BillBoard_Slide.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/BillBoard_Slide.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Billboard_Stand.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Billboard_Stand.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Bus 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Bus 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/New Props 3.0/Material/Props_3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_13.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_13.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_17.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_17.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_21.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_21.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_29.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Area_29.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/BorderLIne_Culling.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/BorderLIne_Culling.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Bridge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Bridge/Bridge.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Bridge/Bridge.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Bridge/Bridge_Collider.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Bridge/Bridge_Collider.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_03.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_03.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_04.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_04.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_05.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_05.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Area_06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Border.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Border.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Collider.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Collider.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Edge.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island/Island_Edge.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island_Area_04.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island_Area_04.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island_Area_06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Island_Area_06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Asphalt_Manhattan_0.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Asphalt_Manhattan_0.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Grass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Grass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Road_Alpha.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Road_Alpha.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Road_Set.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/Road_Set.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/SideWalk_Tile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/SideWalk_Tile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/stoneroad.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/Materials/stoneroad.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/Asphalt_Manhattan_0.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/Asphalt_Manhattan_0.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/Road_Set_MI.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/Road_Set_MI.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/SideWalk_Tile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Fix Road Edge/SideWalk_Tile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Asphalt_Manhattan_0.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Asphalt_Manhattan_0.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Buidling.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Buidling.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Road_Set_MI.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/Road_Set_MI.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/SideWalk_Tile.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/FixMaterial/SideWalk_Tile.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_07.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_07.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_11.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_11.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_12.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_12.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_13.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_13.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_14.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_14.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_15.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_15.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_16.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_16.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_17.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_17.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_18.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_18.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_19.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_19.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_20.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_20.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_21.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_21.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_22.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_22.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_23.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_23.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_24.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_24.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_25.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_25.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_26.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_26.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_27.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_27.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_28.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_28.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_29.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_29.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_30.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Area_30.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Border.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Border.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Border_Collider.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Border_Collider.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Collider.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Collider.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Edge.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Edge.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Grass_Collider.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/New_Terrain_Grass_Collider.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Road_Set_MI.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Road_Set_MI.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_03.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_03.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_04.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_04.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_05.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_05.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_08.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_08.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_09.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_09.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_10.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/NewTerrain 3.0/NewTerrain/Terrain_Area_10.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Asphalt_Manhattan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Asphalt_Manhattan.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Asphalt_Manhattan.png_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Asphalt_Manhattan.png_normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Bank_Grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Bank_Grass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/BillBoard_Slide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/BillBoard_Slide.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Billboard_Stand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Billboard_Stand.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_02_LOD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_02_LOD.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_LOD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_LOD.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_Pack_02_LOD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_Pack_02_LOD.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_Update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Building_Update.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/BusStop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/BusStop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Crane_Diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Crane_Diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/HouseWindow_Update.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/HouseWindow_Update.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/House_LOD_Texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/House_LOD_Texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/House_Update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/House_Update.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Liberty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Liberty.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/MossWall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/MossWall.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/MossWall_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/MossWall_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/PolygonCity_Texture_Skyline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/PolygonCity_Texture_Skyline.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Props_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Road_Set_AM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Road_Set_AM.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/SideWalk_Tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/SideWalk_Tile.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/SideWalk_Tile_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/SideWalk_Tile_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Window_Update.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/Window_Update.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/construction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/construction.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/stoneroad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Map 3.0.1/Texture/stoneroad.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameBase.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameBase.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameCutout.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameCutout.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameSmooth.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/3D_Arts_Visuals/Shaders/iKameSmooth.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/JumpAfterSwing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/JumpAfterSwing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/SwingEnd13.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/SwingEnd13.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/SwingEnd14.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/Animations/RippedAssets_V2/SwingEnd/Using/SwingEnd14.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaBig.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaBig.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaMedium.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaMedium.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaSmall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/RastaSmall.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinBig.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinBig.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinMedium.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinMedium.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinSmall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/Enemies/Mobs/SkinOptimize/SkinSmall.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Air_ZipPoint_A.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Air_ZipPoint_A.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Air_ZipPoint_A.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Air_ZipPoint_A.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ArmatureArmatureAction_23.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ArmatureArmatureAction_23.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/CornerJump.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/CornerJump.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Glide.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Glide.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Glide.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Glide.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/IndyGrabRight.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/IndyGrabRight.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jmp_Base_A.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jmp_Base_A.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jump_Front.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jump_Front.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jump_Front.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Jump_Front.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Mvm_PowerDash_Front.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Mvm_PowerDash_Front.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Mvm_PowerDash_Front.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Mvm_PowerDash_Front.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/JumpAfterSwingMirror.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/JumpAfterSwingMirror.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/TrickLeft.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/TrickLeft.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/TrickRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/JumpAfterSwing/TrickRight.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/LoopdeLoop.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/LoopdeLoop.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/NewSwing4_Fix.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/NewSwing4_Fix.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/NewSwing4_Fix_Mirror.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/NewSwing4_Fix_Mirror.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Swing8.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Swing8.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing3.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing3Mirror.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing3Mirror.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing6.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing6.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing6Mirror.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing6Mirror.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing7.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/Swing/Using/Swing7.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd10.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd10.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd10R.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd10R.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd11.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd11.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd12.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd12.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd7.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd7.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd8.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd8.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd9.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/SwingAnim/SwingEnd/SwingEnd9.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawl.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawl.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawlIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawlIdle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawlIdle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/WallCrawlIdle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Lf_InPlace.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Lf_InPlace.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Lf_InPlace.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Lf_InPlace.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Rt_InPlace.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Rt_InPlace.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Rt_InPlace.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Run_Rt_InPlace.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Vertical_Dash_Loop.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/Wall_Vertical_Dash_Loop.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_C.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_C.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_C.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_C.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_Jump.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipPoint_Jump.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipTank.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/ZipTank.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/s20_Armature_s20_Armature.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/s20_Armature_s20_Armature.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/Chest.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/Chest.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Font/LegacyRuntime.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Font/LegacyRuntime.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Font/LiberationSans.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Font/LiberationSans.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/SpeedMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/SpeedMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/SpeedMat.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/SpeedMat.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/TextMeshPro_Sprite.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/TextMeshPro_Sprite.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/TextMeshPro_Sprite.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Material/TextMeshPro_Sprite.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House01_LOD2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House01_LOD2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House03_LOD2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House03_LOD2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House05_LOD2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/House05_LOD2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/Plane.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/Plane.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/Plane.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Mesh/Plane.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/PhysicMaterial/NoFriction.physicMaterial.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/PhysicMaterial/NoFriction.physicMaterial.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/RenderTexture/Minimap.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/RenderTexture/Minimap.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/LoadingDynamic.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/LoadingDynamic.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/PzoBuilderCity.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/PzoBuilderCity.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/LightProbes.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/LightProbes.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-0_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-0_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-10_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-10_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-11_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-11_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-12_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-12_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-13_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-13_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-14_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-14_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-15_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-15_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-16_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-16_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-17_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-17_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-18_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-18_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-19_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-19_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-1_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-1_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-20_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-20_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-21_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-21_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-22_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-22_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-2_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-2_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-3_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-3_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-4_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-4_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-5_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-5_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-6_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-6_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-7_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-7_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-8_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-8_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-9_comp_light.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Scenes/Spider-fighting-main-city-Optimize/Lightmap-9_comp_light.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_BlitCopyHDRTonemap.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_BlitCopyHDRTonemap.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_BlitCopyHDRTonemap.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_BlitCopyHDRTonemap.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_EdgePicker.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_EdgePicker.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_FacePicker.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_FacePicker.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_HideVertices.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_HideVertices.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_VertexPicker.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/Hidden_ProBuilder_VertexPicker.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/ProBuilder_Standard Vertex Color.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/ProBuilder_Standard Vertex Color.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/ProBuilder_UnlitVertexColor.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/ProBuilder_UnlitVertexColor.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/TextMeshPro_Mobile_Distance Field.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/TextMeshPro_Mobile_Distance Field.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/TextMeshPro_Sprite.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Shader/TextMeshPro_Sprite.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Handle_Plain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Handle_Plain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Handle_Plain.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Handle_Plain.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Sprite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Sprite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Sprite.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Sprite/Sprite.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EmojiOne.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EmojiOne.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EscToExit_Text.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EscToExit_Text.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EscToExit_back.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/EscToExit_back.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_Collider.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_Collider.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_NoDraw.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_NoDraw.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_Trigger.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/GridBox_Trigger.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/Handle_Plain.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/Handle_Plain.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/Soft.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/Soft.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UISprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UISprite.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnitySplash-HolographicTrackingLoss.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnitySplash-HolographicTrackingLoss.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-beta.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-beta.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-dev.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-dev.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-edu.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-edu.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-proto.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-proto.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-small.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-small.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-trial-big.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-trial-big.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-trial.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermark-trial.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermarkPlugin-beta.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/UnityWatermarkPlugin-beta.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/WarningSign.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/WarningSign.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/box.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/box.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button active.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button active.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button on hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button on hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontal scrollbar thumb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontal scrollbar thumb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontal scrollbar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontal scrollbar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontalslider.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/horizontalslider.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slider thumb active.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slider thumb active.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slider thumb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slider thumb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slidert humb hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/slidert humb hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/textfield.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle active.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle active.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on active.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on active.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on hover.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/toggle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/vertical scrollbar thumb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/vertical scrollbar thumb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/vertical scrollbar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/vertical scrollbar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/verticalslider.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/verticalslider.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/window on.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/window on.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/window.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/Texture2D/window.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/Fighting.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/Fighting.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/FightingQuestStep.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/FightingQuestStep.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/FightingQuestStep.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Quest/FightingQuestStep.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/materials/ProBuilderDefault.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/materials/ProBuilderDefault.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/DayLight_SK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/DayLight_SK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/NightLight_SK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/NightLight_SK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/Skybox Master.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/Skybox Master.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SkyboxMastered.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SkyboxMastered.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SunRise_SK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SunRise_SK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SunSet_SK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPM Assets/Scenes/SkyBoxMaster/SunSet_SK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize/New Lighting Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize/New Lighting Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize/OcclusionCullingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city-Optimize/OcclusionCullingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spider-fighting-main-city/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPartyAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPartyAssets/DemoMap.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPartyAssets/DemoMap/Map.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPartyAssets/DemoMap/Map/Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPartyAssets/DemoMap/Map/Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Manager/GameEventManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Manager/GameEventManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/BaseMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/BaseMission.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMission.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/FightingMission.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/FightingMission.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/FightingMission.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MainMission.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/Wave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/Wave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/Wave.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/Wave.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/Quest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestEvent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestInforSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestInforSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestStep.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/QuestSystem/QuestStep.cs.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,15 +693,15 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\atomb\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -65,7 +709,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -140,6 +784,7 @@
       <workItem from="1722393519924" duration="232000" />
       <workItem from="1722393781784" duration="25694000" />
       <workItem from="1722444410343" duration="8031000" />
+      <workItem from="1722477424942" duration="19551000" />
     </task>
     <servers />
   </component>
