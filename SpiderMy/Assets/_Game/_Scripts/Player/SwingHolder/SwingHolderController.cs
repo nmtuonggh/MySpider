@@ -10,7 +10,7 @@ namespace SFRemastered.SwingHolder
 
         private void Update()
         {
-            Vector3 position = _player.transform.position + _player.transform.forward*10f + _offset;
+            Vector3 position = _player.transform.position + _player.transform.forward * 10f + _offset;
             transform.position = position;
             float yRotation = _player.transform.rotation.eulerAngles.y;
             
