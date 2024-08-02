@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _Game.Scripts.Event;
 using Animancer;
 using UnityEngine;
 
@@ -16,7 +17,9 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         [SerializeField] private AnimancerComponent animancer;
         [SerializeField] private HealthBar healthBar;
-
+        
+        [Header("Events")]
+        public GameEvent onEnemyDeath;
 
         //[SerializeField] private ClipTransition knockBackAnimation;
 
@@ -39,6 +42,8 @@ namespace SFRemastered._Game._Scripts.Enemy
 
             if (health <= 0)
             {
+                Debug.Log("Enemy Die");
+                onEnemyDeath.Raise();
                 Die();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Game.Scripts.Event;
 using SFRemastered._Game._Scripts.Enemy;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,6 +15,8 @@ namespace SFRemastered._Game._Scripts.Mission
         public List<Wave> listWave;
         public int currentWaveIndex = 0;
         public int currentWaveEnemyCount = 0;
+        public GameEventListener onEnemyDead;
+        
         
         public override void StartMission()
         {
@@ -27,7 +30,6 @@ namespace SFRemastered._Game._Scripts.Mission
         public override void UpdateMission()
         {
             base.UpdateMission();
-            Debug.Log("UpdateMission FightingMission");
         }
         
         private void StartNextWave()
@@ -44,10 +46,15 @@ namespace SFRemastered._Game._Scripts.Mission
             }
         }
         
-        public void OnEnemyDefeated()
+        public void OnEnemyDie()
         {
-            // Check if all enemies in the current wave are defeated
-            // If yes, call StartNextWave()
+            
+            Debug.Log("On Enemy d");
+            currentWaveEnemyCount--;
+            if (currentWaveEnemyCount <=0)
+            {
+                StartNextWave();
+            }
         }
 
         public void OnPlayerLeaveWarningRange()

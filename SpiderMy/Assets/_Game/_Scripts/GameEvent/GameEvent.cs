@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Game.Scripts.Event
@@ -9,7 +10,7 @@ namespace _Game.Scripts.Event
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>
-        private readonly List<GameEventListener> eventListeners = 
+        [SerializeField] private List<GameEventListener> eventListeners = 
             new List<GameEventListener>();
 
         public void Raise()

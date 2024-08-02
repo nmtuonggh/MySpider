@@ -8,7 +8,7 @@ namespace SFRemastered._Game._Scripts.Mission
     {
         [Header("General Information")]
         public Transform spawnPosition;
-        public float missionRange;
+        public GameObject missionRange;
         
         [Header("Rewards")] 
         public float cashReward;
@@ -20,6 +20,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public event Action OnMissionComplete;
         public event Action OnMissionFail;
         
+        
         public virtual void StartMission()
         {
             OnMissionStart?.Invoke();
@@ -27,6 +28,7 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public virtual void UpdateMission()
         {
+            
         }
         
         public virtual void CompleteMission()

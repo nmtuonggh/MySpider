@@ -9,27 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9877941974fd4d678f19e848d0fadc97, type: 3}
-  m_Name: Fighting Mission
+  m_Script: {fileID: 11500000, guid: e26e6e9e78e84ef6a9d49b3fb780aaf0, type: 3}
+  m_Name: EnemyDead
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 0}
-  missionRange: 0
-  cashReward: 0
-  expReward: 0
-  timeLimit: 0
-  warningRange: 15
-  spawnRange: 5
-  listWave:
-  - {fileID: 11400000, guid: 7af31aa29d47c1142b0d92e6826d7f8f, type: 2}
-  - {fileID: 11400000, guid: 9414d80f704abb74a9a742a397d6fe92, type: 2}
-  currentWaveIndex: 1
-  currentWaveEnemyCount: 4
-  onEnemyDead:
-    Event: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
+  eventListeners:
+  - Event: {fileID: 11400000}
     Response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000}
+        - m_Target: {fileID: 11400000, guid: 3340bd692b505f643b048bf83d42f0bc, type: 2}
           m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
             Assembly-CSharp
           m_MethodName: OnEnemyDie
