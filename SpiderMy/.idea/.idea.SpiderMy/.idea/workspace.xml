@@ -5,26 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionRange.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionRange.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/WaveCombat.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Female1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Female1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Female_Black_01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Female_Black_01.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male2.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male_black_beach_3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Male_black_beach_3.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Police_specops.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Police_specops.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Police_traffic.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/NPCs/NPC_Civiliance/NPC_toiuu/Police_traffic.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Borodar/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Borodar/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Gangster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Gangster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/EnemyType2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/EnemyType2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/EnemyType3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/EnemyType3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Gangster.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Gangster.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Gangster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Gangster.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mafia.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mafia.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mercenary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mercenary.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/Fighting Mission.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/Fighting Mission.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/GameEvent/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/GameEvent/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/Fighting Mission.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/Fighting Mission.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MainMissionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MainMissionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMission.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/FightingMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/FightingMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/CombatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/CombatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/ComboAttackBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/ComboAttackBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/FirstCombo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/State/Combat/ComboAttack/FirstCombo.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +163,7 @@
       <workItem from="1722477424942" duration="19551000" />
       <workItem from="1722561862620" duration="12532000" />
       <workItem from="1722581849740" duration="17819000" />
+      <workItem from="1722667843914" duration="13722000" />
     </task>
     <servers />
   </component>

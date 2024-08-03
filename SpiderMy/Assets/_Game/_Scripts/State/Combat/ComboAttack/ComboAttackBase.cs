@@ -25,7 +25,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .1f : 1f;
+            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .5f : 1f;
             _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
             time = 0;
@@ -83,10 +83,13 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
-            
-            if(_blackBoard._detectedEnemy)
+
+            if (_blackBoard._detectedEnemy)
+            {
+                _state.Events.SetShouldNotModifyReason(null);
                 _state.Events.SetCallback("Hit", GetHit);
-            
+            }
+
             time = 0;
         }
         

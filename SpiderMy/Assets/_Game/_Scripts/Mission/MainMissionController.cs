@@ -11,24 +11,31 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public BaseMission currentMission;
         public GameObject indicatorPrefab;
+        
+        private GameObject currentIndicator;
 
         private void OnEnable()
         {
-            //currentMission.OnMissionStart += HandleMissionComplete;
-            currentMission.OnMissionComplete += HandleMissionComplete;
-            currentMission.OnMissionFail += HandleMissionFail;
+            currentMission = mainMissionData.GetCurrentMission();
+
+            if(currentMission != null)
+            { 
+                currentMission.OnMissionComplete += HandleMissionComplete;
+                currentMission.OnMissionFail += HandleMissionFail;
+            }
         }
 
         private void OnDisable()
         {
-            //currentMission.OnMissionStart -= HandleMissionComplete;
-            currentMission.OnMissionComplete -= HandleMissionComplete;
-            currentMission.OnMissionFail -= HandleMissionFail;
+            if(currentMission != null)
+            {
+                currentMission.OnMissionComplete += HandleMissionComplete;
+                currentMission.OnMissionFail += HandleMissionFail;
+            }
         }
 
         private void Start()
         {
-            currentMission = mainMissionData.GetCurrentMission();
             //TODO : Bo cai nay luc lam xong
             mainMissionData.currentMissionIndex = 0;
             StartMission();
@@ -41,29 +48,13 @@ namespace SFRemastered._Game._Scripts.Mission
                 currentMission.UpdateMission();
             }
         }
-
-        /*private void DrawnMissionRange()
-        {
-            if (currentMission != null)
-            {
-                GameObject missionRange = Instantiate(currentMission.missionRange, currentMission.spawnPosition.position, Quaternion.identity);
-                missionRange.transform.SetParent(currentMission.spawnPosition);
-            }
-        }*/
-
-        private void DrawnIndicator()
-        {
-            GameObject indicator =
-                Instantiate(indicatorPrefab, currentMission.spawnPosition.position, Quaternion.identity);
-            indicator.transform.SetParent(currentMission.spawnPosition);
-        }
+        
 
         private void StartMission()
         {
             currentMission = mainMissionData.GetCurrentMission();
             if (currentMission != null)
             {
-                DrawnIndicator();
                 currentMission.spawnPosition = listMissionPoint[mainMissionData.currentMissionIndex];
                 currentMission.StartMission();
             }
@@ -72,6 +63,7 @@ namespace SFRemastered._Game._Scripts.Mission
         private void HandleMissionComplete()
         {
             mainMissionData.AdvanceMission();
+            StartMission();
         }
 
         private void HandleMissionFail()

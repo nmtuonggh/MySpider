@@ -13,17 +13,26 @@ MonoBehaviour:
   m_Name: Fighting Mission
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
-  missionRange: 0
+  missionRangePrefab: {fileID: 0}
   cashReward: 0
   expReward: 0
   timeLimit: 0
-  warningRange: 15
+  indicatorPrefab: {fileID: 4149666423416372151, guid: 432861d253b5d994f829d7bd5bfc6b06, type: 3}
+  warningRange: {fileID: 0}
   spawnRange: 5
-  listWave:
-  - {fileID: 11400000, guid: 7af31aa29d47c1142b0d92e6826d7f8f, type: 2}
-  - {fileID: 11400000, guid: 9414d80f704abb74a9a742a397d6fe92, type: 2}
+  indicator: {fileID: 0}
+  missionRange: {fileID: 7617848672185236956, guid: 13fccdc6deff1a14fa017a207133f723, type: 3}
   currentWaveIndex: 1
-  currentWaveEnemyCount: 4
+  currentWaveEnemyCount: 1
+  listWaveCombat:
+  - listGangster: []
+    listMercenary:
+    - {fileID: 11400000, guid: 3d0243bd42c1d394b950613d67080665, type: 2}
+    listMafia: []
+  - listGangster: []
+    listMercenary:
+    - {fileID: 11400000, guid: 3d0243bd42c1d394b950613d67080665, type: 2}
+    listMafia: []
   onEnemyDead:
     Event: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
     Response:

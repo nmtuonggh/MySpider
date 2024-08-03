@@ -8,13 +8,14 @@ namespace SFRemastered._Game._Scripts.Mission
     {
         [Header("General Information")]
         public Transform spawnPosition;
-        public GameObject missionRange;
+        public GameObject missionRangePrefab;
         
         [Header("Rewards")] 
         public float cashReward;
         public float expReward;
         
         public float timeLimit;
+        public GameObject indicatorPrefab;
         
         public event Action OnMissionStart;
         public event Action OnMissionComplete;
