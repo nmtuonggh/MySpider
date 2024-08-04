@@ -10,13 +10,13 @@ namespace SFRemastered._Game._Scripts.Mission
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/Mission/FightingMission")]
     [System.Serializable]
-    public class FightingMission : BaseMission
+    public class FightingMissionSo : BaseMissionSO
     {
+        
         [Header("Fight Mission")]
         public GameObject warningRange;
         public float spawnRange;
-        public GameObject indicator;
-        public GameObject missionRange;
+        
         
 
         [Header("Wave Data")]
@@ -24,9 +24,9 @@ namespace SFRemastered._Game._Scripts.Mission
         public int currentWaveEnemyCount = 0;
         public List<WaveCombat> listWaveCombat;
 
-        public GameEventListener onEnemyDead;
+        //public GameEventListener onEnemyDead;
 
-        public override void StartMission()
+        /*public override void StartMission()
         {
             //TODO : Bo cai nay luc lam xong
             currentWaveIndex = 0;
@@ -51,15 +51,15 @@ namespace SFRemastered._Game._Scripts.Mission
         
         private void SetupMissionRange()
         {
-            missionRange = Instantiate(missionRangePrefab, spawnPosition.position, Quaternion.identity);
-            missionRange.transform.SetParent(spawnPosition);
+            missionRange = Instantiate(missionRangePrefab, SpawnPosition.position, Quaternion.identity);
+            missionRange.transform.SetParent(SpawnPosition);
         }
         
         private void DrawnIndicator()
         {
             indicator =
-                Instantiate(indicatorPrefab, spawnPosition.position, Quaternion.identity);
-            indicator.transform.SetParent(spawnPosition);
+                Instantiate(indicatorPrefab, SpawnPosition.position, Quaternion.identity);
+            indicator.transform.SetParent(SpawnPosition);
         }
         
         private void ReMoveIndicator()
@@ -129,12 +129,12 @@ namespace SFRemastered._Game._Scripts.Mission
             float distance = Random.Range(0f, spawnRange);
 
             Vector3 spawnPos = new Vector3(
-                spawnPosition.position.x + Mathf.Cos(angle) * distance,
-                spawnPosition.position.y,
-                spawnPosition.position.z + Mathf.Sin(angle) * distance
+                SpawnPosition.position.x + Mathf.Cos(angle) * distance,
+                SpawnPosition.position.y,
+                SpawnPosition.position.z + Mathf.Sin(angle) * distance
             );
 
             Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
-        }
+        }*/
     }
 }

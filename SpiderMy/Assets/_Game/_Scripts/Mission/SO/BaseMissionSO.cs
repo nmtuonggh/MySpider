@@ -4,25 +4,32 @@ using UnityEngine;
 namespace SFRemastered._Game._Scripts.Mission
 {
     
-    public abstract class BaseMission : ScriptableObject
+    public abstract class BaseMissionSO : ScriptableObject
     {
         [Header("General Information")]
-        public Transform spawnPosition;
+        private Transform spawnPosition;
+        public GameObject missionPrefab;
         public GameObject missionRangePrefab;
-        
+        public GameObject indicatorPrefab;
+
         [Header("Rewards")] 
         public float cashReward;
         public float expReward;
         
         public float timeLimit;
-        public GameObject indicatorPrefab;
         
         public event Action OnMissionStart;
         public event Action OnMissionComplete;
         public event Action OnMissionFail;
-        
-        
-        public virtual void StartMission()
+
+        public Transform SpawnPosition
+        {
+            get => spawnPosition;
+            set => spawnPosition = value;
+        }
+
+
+        /*public virtual void StartMission()
         {
             OnMissionStart?.Invoke();
         }
@@ -40,6 +47,6 @@ namespace SFRemastered._Game._Scripts.Mission
         public virtual void FailMission()
         {
             OnMissionFail?.Invoke();
-        }
+        }*/
     }
 }

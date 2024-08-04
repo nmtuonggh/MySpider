@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9877941974fd4d678f19e848d0fadc97, type: 3}
   m_Name: Fighting Mission
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 0}
-  missionRangePrefab: {fileID: 0}
+  missionPrefab: {fileID: 3925484155556967002, guid: 11ec99dca7a81ca4e92d765226ff57c5, type: 3}
+  missionRangePrefab: {fileID: 7617848672185236956, guid: 13fccdc6deff1a14fa017a207133f723, type: 3}
+  indicatorPrefab: {fileID: 4149666423416372151, guid: 432861d253b5d994f829d7bd5bfc6b06, type: 3}
   cashReward: 0
   expReward: 0
   timeLimit: 0
-  indicatorPrefab: {fileID: 4149666423416372151, guid: 432861d253b5d994f829d7bd5bfc6b06, type: 3}
   warningRange: {fileID: 0}
   spawnRange: 5
-  indicator: {fileID: 0}
-  missionRange: {fileID: 7617848672185236956, guid: 13fccdc6deff1a14fa017a207133f723, type: 3}
   currentWaveIndex: 1
   currentWaveEnemyCount: 1
   listWaveCombat:
@@ -33,21 +31,3 @@ MonoBehaviour:
     listMercenary:
     - {fileID: 11400000, guid: 3d0243bd42c1d394b950613d67080665, type: 2}
     listMafia: []
-  onEnemyDead:
-    Event: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000}
-          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
-            Assembly-CSharp
-          m_MethodName: OnEnemyDie
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
