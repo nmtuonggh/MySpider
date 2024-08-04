@@ -20,10 +20,5 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             }
             return StateStatus.Running;
         }
-        
-        public void X()
-        {
-            Debug.Log("X");
-        }
     }
 }

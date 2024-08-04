@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   enemyCount: 0
-  listGangster: []
-  listMercenary: []
+  listGangster:
+  - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
+  - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
+  listMercenary:
+  - {fileID: 11400000, guid: 3d0243bd42c1d394b950613d67080665, type: 2}
+  - {fileID: 11400000, guid: 3d0243bd42c1d394b950613d67080665, type: 2}
   listMafia: []
