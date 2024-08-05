@@ -42,7 +42,6 @@ namespace SFRemastered._Game._Scripts.Enemy
 
             if (health <= 0)
             {
-                Debug.Log("Enemy Die");
                 onEnemyDeath.Raise();
                 Die();
             }

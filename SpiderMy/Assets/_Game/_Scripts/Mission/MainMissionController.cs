@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.Mission
 {
@@ -9,28 +10,28 @@ namespace SFRemastered._Game._Scripts.Mission
         public List<Transform> listMissionPoint;
         public MainMissionSO mainMissionData;
 
-        public BaseMission currentMission;
+        [FormerlySerializedAs("currentMission")] public BaseMissionSO currentMissionSo;
         public GameObject indicatorPrefab;
         
         private GameObject currentIndicator;
 
-        private void OnEnable()
+        /*private void OnEnable()
         {
-            currentMission = mainMissionData.GetCurrentMission();
+            currentMissionSo = mainMissionData.GetCurrentMission();
 
-            if(currentMission != null)
+            if(currentMissionSo != null)
             { 
-                currentMission.OnMissionComplete += HandleMissionComplete;
-                currentMission.OnMissionFail += HandleMissionFail;
+                currentMissionSo.OnMissionComplete += HandleMissionSoComplete;
+                currentMissionSo.OnMissionFail += HandleMissionSoFail;
             }
         }
 
         private void OnDisable()
         {
-            if(currentMission != null)
+            if(currentMissionSo != null)
             {
-                currentMission.OnMissionComplete += HandleMissionComplete;
-                currentMission.OnMissionFail += HandleMissionFail;
+                currentMissionSo.OnMissionComplete += HandleMissionSoComplete;
+                currentMissionSo.OnMissionFail += HandleMissionSoFail;
             }
         }
 
@@ -43,32 +44,32 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private void Update()
         {
-            if (currentMission != null)
+            if (currentMissionSo != null)
             {
-                currentMission.UpdateMission();
+                currentMissionSo.UpdateMission();
             }
         }
         
 
         private void StartMission()
         {
-            currentMission = mainMissionData.GetCurrentMission();
-            if (currentMission != null)
+            currentMissionSo = mainMissionData.GetCurrentMission();
+            if (currentMissionSo != null)
             {
-                currentMission.spawnPosition = listMissionPoint[mainMissionData.currentMissionIndex];
-                currentMission.StartMission();
+                currentMissionSo.SpawnPosition = listMissionPoint[mainMissionData.currentMissionIndex];
+                currentMissionSo.StartMission();
             }
         }
 
-        private void HandleMissionComplete()
+        private void HandleMissionSoComplete()
         {
             mainMissionData.AdvanceMission();
             StartMission();
         }
 
-        private void HandleMissionFail()
+        private void HandleMissionSoFail()
         {
             //TODO: Logic to handle mission failure
-        }
+        }*/
     }
 }

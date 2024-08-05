@@ -6,10 +6,11 @@ namespace SFRemastered._Game._Scripts.Mission
     [CreateAssetMenu(menuName = "ScriptableObjects/Mission/MainMissionSO")]
     public class MainMissionSO : ScriptableObject
     {
-        public List<BaseMission> listMission;
+        public List<BaseMissionSO> listMission;
+        public List<GameObject> listMissionPrefab;
         public int currentMissionIndex;
 
-        public BaseMission GetCurrentMission()
+        public BaseMissionSO GetCurrentMission()
         {
             if (currentMissionIndex < listMission.Count)
             {
@@ -20,7 +21,14 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void AdvanceMission()
         {
-            currentMissionIndex++;
+            if (currentMissionIndex < listMission.Count)
+            {
+                currentMissionIndex++;
+            }
+            else
+            {
+                currentMissionIndex= 0;
+            }
         }
     }
 }
