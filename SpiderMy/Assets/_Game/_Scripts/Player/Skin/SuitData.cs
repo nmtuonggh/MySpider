@@ -8,9 +8,7 @@ namespace SFRemastered
         public GameObject skinPrefab;
         
         public float health;
-        public float damage;
-        public float speed;
-        
+
         public Transform zipPointLeft;
         public Transform zipPointRight;
         public Transform handSwing;
