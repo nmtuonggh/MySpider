@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 982610ed1a1846f5ab631d6824c76180, type: 3}
-  m_Name: AttackController
+  m_Script: {fileID: 11500000, guid: b473a991f8cf4cb39eed492832040f5f, type: 3}
+  m_Name: UltimateSkill
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
@@ -19,11 +19,11 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 0}
+    _Clip: {fileID: 7400000, guid: a8db76bbb13b49f4f83c43af31507f0a, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
-  _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
-  _leapAttack: {fileID: 11400000, guid: fdb27329260e8264781d3bb281c89c6a, type: 2}
-  _firstCombo: {fileID: 11400000, guid: eb9331ed2e8388845a596521fbc62743, type: 2}
-  _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}
+  _ultimateSkill: {fileID: 11400000}
+  _anim: {fileID: 11400000, guid: 1ab5d150156aa3544a4df7e4c88f8c4e, type: 2}
+  _ultimateSkillEffect: {fileID: 8388392196729623235, guid: f04ccd5823946f94887025abc516a35d, type: 3}
+  _normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}

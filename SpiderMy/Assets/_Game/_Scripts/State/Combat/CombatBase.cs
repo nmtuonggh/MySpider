@@ -7,6 +7,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
     public abstract class CombatBase : StateBase
     {
         [SerializeField] protected DodgeState _dodgeState;
+        [SerializeField] protected UltimateSkill _ultimateSkill;
         
         protected float _currentDamage;
         public override void EnterState()
@@ -25,6 +26,12 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.dodge)
             {
                 _fsm.ChangeState(_dodgeState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.ultimate)
+            {
+                _fsm.ChangeState(_ultimateSkill);
                 return StateStatus.Success;
             }
             

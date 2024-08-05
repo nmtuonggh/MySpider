@@ -34,7 +34,7 @@ namespace SFRemastered.Wall
             HandleAnimation();
             _blackBoard.rigidbody.velocity = _blackBoard.wallMoveDirection * wallRunSpeed;
 
-            if (_blackBoard.foundWall && _blackBoard.jump)
+            if (_blackBoard.foundWall && _blackBoard.swing)
             {
                 _fsm.ChangeState(_jumpOffWallState);
                 return StateStatus.Success;

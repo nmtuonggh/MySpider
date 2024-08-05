@@ -48,6 +48,8 @@ namespace SFRemastered
             blackBoard.zip = InputManager.instance.zip.Pressing;
             blackBoard.attack = InputManager.instance.attack.Pressing;
             blackBoard.dodge = InputManager.instance.dodge.Pressing;
+            blackBoard.swapskin = InputManager.instance.swapSkin.Down;
+            blackBoard.ultimate = InputManager.instance.ultimate.Down;
             blackBoard.isGrounded = playerMovement.IsGrounded();
         }
     }
