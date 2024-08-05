@@ -12,24 +12,16 @@ namespace SFRemastered._Game._Scripts.Mission
         public LayerMask layer;
         public float radius;
         public Collider[] hitColliders;
-        /*private void OnTriggerEnter(Collider other)
+
+        private void OnValidate()
         {
-            if (other.CompareTag("Player"))
-            {
-                playerInRange = true;
-                OnPlayerInRange.Raise();
-                Debug.Log("Trigge");
-            }
+            #if UNITY_EDITOR
+            
+            OnPlayerInRange = UnityEditor.AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/_Game/ScriptableObjects/EventSO/PlayerInRangeMission.asset");
+            OnPlayerOutOfRange = UnityEditor.AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/_Game/ScriptableObjects/EventSO/PlayerOutRangeMission.asset");
+            
+            #endif
         }
-        
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                playerInRange = false;
-                OnPlayerOutOfRange.Raise();
-            }
-        }*/
 
         private void Update()
         {
@@ -47,10 +39,34 @@ namespace SFRemastered._Game._Scripts.Mission
             }
         }
         
+        //draw the sphere in the editor
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, radius);
         }
+        
+        #region TriggerButFail
+
+        /*private void OnTriggerEnter(Collider other)
+       {
+           if (other.CompareTag("Player"))
+           {
+               playerInRange = true;
+               OnPlayerInRange.Raise();
+               Debug.Log("Trigge");
+           }
+       }
+
+       private void OnTriggerExit(Collider other)
+       {
+           if (other.CompareTag("Player"))
+           {
+               playerInRange = false;
+               OnPlayerOutOfRange.Raise();
+           }
+       }*/
+
+        #endregion
     }
 }

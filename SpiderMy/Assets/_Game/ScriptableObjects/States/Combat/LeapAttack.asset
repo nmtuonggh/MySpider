@@ -23,6 +23,7 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
+  _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
   attackAnim: {fileID: 11400000, guid: 98429b4e59d7f1d4e82f600ee0352089, type: 2}
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}

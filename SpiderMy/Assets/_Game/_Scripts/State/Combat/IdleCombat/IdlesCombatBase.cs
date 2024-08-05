@@ -13,6 +13,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected SprintState _sprintState;
         [SerializeField] protected JumpToSwing _jumpToSwing;
         [SerializeField] protected DodgeState _dodgeState;
+        [SerializeField] protected UltimateSkill _ultimateSkill;
 
         public bool canJump = true;
 
@@ -57,6 +58,12 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.dodge)
             {
                 _fsm.ChangeState(_dodgeState);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.ultimate)
+            {
+                _fsm.ChangeState(_ultimateSkill);
                 return StateStatus.Success;
             }
 

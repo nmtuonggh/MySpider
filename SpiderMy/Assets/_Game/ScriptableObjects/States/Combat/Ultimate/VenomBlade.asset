@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65baa284d24adb24b90b39482364509c, type: 3}
+  m_Name: VenomBlade
+  m_EditorClassIdentifier: 
+  _Transition:
+    rid: 2107986015035588616
+  references:
+    version: 2
+    RefIds:
+    - rid: 2107986015035588616
+      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
+      data:
+        _FadeDuration: 0.25
+        _Events:
+          _NormalizedTimes:
+          - 0.35215694
+          - NaN
+          _Callbacks: []
+          _Names:
+          - BumChiu
+        _Clip: {fileID: 7400000, guid: a8db76bbb13b49f4f83c43af31507f0a, type: 2}
+        _Speed: 1
+        _NormalizedStartTime: NaN

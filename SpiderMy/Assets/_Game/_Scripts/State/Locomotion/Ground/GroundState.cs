@@ -15,6 +15,7 @@ namespace SFRemastered
         [SerializeField] protected ZipState _zipState;
         [FormerlySerializedAs("_attackController")] [SerializeField] protected CombatController combatController;
         [SerializeField] protected DodgeState _dodgeState;
+        [SerializeField] protected UltimateSkill _ultimateSkill;
 
         public bool canJump = true;
 
@@ -47,6 +48,12 @@ namespace SFRemastered
             if (_blackBoard.dodge)
             {
                 _fsm.ChangeState(_dodgeState);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.ultimate)
+            {
+                _fsm.ChangeState(_ultimateSkill);
                 return StateStatus.Success;
             }
 

@@ -38,6 +38,8 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private void Start()
         {
+            //TODO Fix it when build
+            mainMissionSO.currentMissionIndex = 0;
             StartMission();
         }
         
@@ -56,7 +58,6 @@ namespace SFRemastered._Game._Scripts.Mission
             mainMissionSO.AdvanceMission();
             Destroy(currentMissionPrefab);
             StartMission();
-            
         }
         
         public void HandlerMissionFail()
@@ -68,11 +69,18 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void StartMission()
         {
-            currentMission = mainMissionSO.listMission[mainMissionSO.currentMissionIndex];
-            currentMission.SpawnPosition = missionPositions[mainMissionSO.currentMissionIndex];
-            currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position, Quaternion.identity);
-            currentMissionPrefab.transform.SetParent(transform);
-            currentMissionPrefab.GetComponent<BaseMission>().StartMission();
+            if (mainMissionSO.currentMissionIndex <= mainMissionSO.listMission.Count)
+            {
+                currentMission = mainMissionSO.GetCurrentMission();
+                currentMission.SpawnPosition = missionPositions[mainMissionSO.currentMissionIndex];
+                currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position, Quaternion.identity);
+                currentMissionPrefab.transform.SetParent(transform);
+                currentMissionPrefab.GetComponent<BaseMission>().StartMission();
+            }
+            else
+            {
+                Debug.Log("Het nhiem vu roi'");
+            }
         }
     }
 }

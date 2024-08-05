@@ -57,8 +57,6 @@ namespace SFRemastered._Game._Scripts.Mission
         public override void FailMission()
         {
             progressing = false;
-            //Destroy(_indicator);
-            //Destroy(_missionRange);
             base.FailMission();
         }
         
@@ -98,7 +96,6 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void OnEnemyDie()
         {
-            Debug.Log("Enemy die");
             fightingMissionSo.currentWaveEnemyCount--;
             if (fightingMissionSo.currentWaveEnemyCount <= 0)
             {
@@ -106,7 +103,7 @@ namespace SFRemastered._Game._Scripts.Mission
             }
         }
 
-
+        #region SpawnWave&Enemies
         private void SetupWave()
         {
             if (fightingMissionSo.currentWaveIndex < fightingMissionSo.listWaveCombat.Count)
@@ -154,5 +151,6 @@ namespace SFRemastered._Game._Scripts.Mission
 
             Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
         }
+        #endregion
     }
 }

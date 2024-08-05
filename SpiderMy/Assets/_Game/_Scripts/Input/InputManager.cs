@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace SFRemastered.InputSystem
 {
@@ -30,6 +31,8 @@ namespace SFRemastered.InputSystem
         public InputAction zip;
         public InputAction attack;
         public InputAction dodge;
+        public InputAction swapSkin;
+        public InputAction ultimate;
 
         public bool disableInput;
 

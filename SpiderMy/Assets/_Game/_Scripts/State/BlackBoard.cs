@@ -31,6 +31,8 @@ namespace SFRemastered
         public bool foundWall;
         public bool attack;
         public bool dodge;
+        public bool swapskin;
+        public bool ultimate;
         public bool isGrounded;
         
         [Header("Swing")]
@@ -51,5 +53,11 @@ namespace SFRemastered
         public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
         public bool _detectedEnemy;
+        
+        public void SetSuitData(SuitData suitData)
+        {
+            suitData.ApplySkin(this);
+            animancer.Animator = suitData.gameObject.GetComponent<Animator>();
+        }
     }
 }
