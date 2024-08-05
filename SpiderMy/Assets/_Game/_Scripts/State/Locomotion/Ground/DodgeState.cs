@@ -19,7 +19,6 @@ namespace SFRemastered._Game._Scripts.State.Locomotion.Ground
         public override void EnterState()
         {
             base.EnterState();
-            Debug.Log("entering dodge state " +_done);
             _blackBoard.playerMovement.useRootMotion = true;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _state = _blackBoard.animancer.Play(HandelDodge());
@@ -29,7 +28,6 @@ namespace SFRemastered._Game._Scripts.State.Locomotion.Ground
 
         public override StateStatus UpdateState()
         {
-            Debug.Log(_done);
             StateStatus baseStatus = base.UpdateState();
             if (baseStatus != StateStatus.Running)
             {
@@ -59,12 +57,9 @@ namespace SFRemastered._Game._Scripts.State.Locomotion.Ground
         public override void ExitState()
         {
             base.ExitState();
-            Debug.Log("exiting dodge state");
             _blackBoard.playerMovement.useRootMotion = false;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _done = false;
-            //_state.Weight = 0;
-            //_state.Stop();
         }
 
         private ClipTransition HandelDodge()

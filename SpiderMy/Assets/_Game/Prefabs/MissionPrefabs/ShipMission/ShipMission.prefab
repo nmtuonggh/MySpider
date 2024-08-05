@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &706990304470223936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052606628774895562}
+  - component: {fileID: 1170250278357941222}
+  m_Layer: 0
+  m_Name: ShipMission
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1052606628774895562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706990304470223936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170250278357941222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706990304470223936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f0c99ea5734d46bdfce7d3bac7da35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onMissionStart: {fileID: 11400000, guid: 5a0c99fc986663d46aafae8c0c379486, type: 2}
+  onMissionComplete: {fileID: 11400000, guid: b6afc6932acc7bf4ebe9bf6cd3d87c40, type: 2}
+  onMissionFail: {fileID: 11400000, guid: 321c9655ab8c09a48b87e5e41cbd127a, type: 2}
+  onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
+  progressing: 0
+  shippingMissionSO: {fileID: 11400000, guid: 3e1051c6010fccb449b49d9d0c00c850, type: 2}
+  deliverySuccess: 0
+  deliveryPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pickupNPCPrefab: {fileID: 366291745584831357, guid: 819b88ade4659a74ea92ed4205f87e62, type: 3}
+  deliveryNPCPrefab: {fileID: 6848197603787548323, guid: e2bf1d8a51450ff448a521e5ef8fad08, type: 3}
+  onInPickup:
+    Event: {fileID: 11400000, guid: 3c90e9f4432ea8c47ad910452c35de82, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1170250278357941222}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.ShipMission,
+            Assembly-CSharp
+          m_MethodName: InPickup
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onOutPickup:
+    Event: {fileID: 11400000, guid: 4917f4ec0b992c04584da5a5da572426, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls: []
+  onInDelivery:
+    Event: {fileID: 11400000, guid: 88bb69ad664a82949b52e460f693fcc3, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1170250278357941222}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.ShipMission,
+            Assembly-CSharp
+          m_MethodName: OnInDelivery
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onOutDelivery:
+    Event: {fileID: 0}
+    Response:
+      m_PersistentCalls:
+        m_Calls: []
