@@ -3,6 +3,7 @@ using Animancer;
 using System.Collections;
 using System.Collections.Generic;
 using SFRemastered._Game._Scripts.CastCheck.Raycast;
+using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -53,13 +54,22 @@ namespace SFRemastered
         public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
         public bool _detectedEnemy;
+        
+        [Header("=====GameObject References======")]
+        public GameObjectRef playerRef;
+        
         public enum HitType
         {
             stagger,
             knockBack,
             stunLock
         }
-        
+
+        private void Awake()
+        {
+            playerRef.obj = this.gameObject;
+        }
+
         public void SetSuitData(SuitData suitData)
         {
             suitData.ApplySkin(this);

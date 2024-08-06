@@ -35,13 +35,24 @@ namespace SFRemastered._Game._Scripts.Enemy
             
         }
 
-        public void OnHit(float damage)
+        public void OnStaggerHit(float damage)
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            StartCoroutine(GetHit());
-            _bb.SetVariableValue("hit", true);
-
+           //StartCoroutine(GetHit("staggerHit"));
+           _bb.SetVariableValue("staggerHit", true);
+            if (health <= 0)
+            {
+                onEnemyDeath.Raise();
+                Die();
+            }
+        }
+        public void OnStunLockHit(float damage)
+        {
+            health -= damage;
+            healthBar.TakeDamage(damage);
+            //StartCoroutine(GetHit("stunLockHit"));
+            _bb.SetVariableValue("stunLockHit", true);
             if (health <= 0)
             {
                 onEnemyDeath.Raise();
@@ -49,12 +60,12 @@ namespace SFRemastered._Game._Scripts.Enemy
             }
         }
 
-        private IEnumerator GetHit()
+        private IEnumerator GetHit(string hitType)
         {
             getHit = true;
-            _bb.SetVariableValue("hit", true);
+            _bb.SetVariableValue(hitType, true);
             yield return new WaitForSeconds(0.15f);
-            _bb.SetVariableValue("hit", false);
+            _bb.SetVariableValue(hitType, false);
             getHit = false;
         }
 
