@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -24.6, y: 28.3}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -17.692993, y: 17.6857}
+  m_SizeDelta: {x: 36.186, y: 35.3715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4717785333266363051
 CanvasRenderer:
@@ -161,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3283391522763216321}
   - component: {fileID: 4130239467743385009}
+  - component: {fileID: 715472024547566166}
   m_Layer: 5
   m_Name: SUIT_Item
   m_TagString: Untagged
@@ -187,9 +188,9 @@ RectTransform:
   - {fileID: 334061003160035767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -1060, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4130239467743385009
@@ -235,7 +236,39 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 715472024547566166}
+        m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.SuitUI.SkinItemUI,
+          Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &715472024547566166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412066079281928183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8daf8c68943849e0b22fc5e8c821e4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinImage: {fileID: 6982371866169348850}
+  background: {fileID: 8965683846046958647}
+  cardData: {fileID: 8913039701282177082}
+  blockUI: {fileID: 2618073188943173148}
+  activeUI: {fileID: 1508330984463031901}
+  cardUI: {fileID: 811651334877462480}
+  Focus: {fileID: 0}
 --- !u!1 &1585020620987060759
 GameObject:
   m_ObjectHideFlags: 0

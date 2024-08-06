@@ -1,44 +1,52 @@
-﻿
-using Animancer;
-using NodeCanvas.BehaviourTrees;
-using NodeCanvas.Framework;
-using NodeCanvas.Tasks.Actions;
+﻿using NodeCanvas.Framework;
 using UnityEngine;
 
-namespace SFRemastered._Game._Scripts.Enemy.State
+namespace SFRemastered
 {
-    public class ChaseState : ActionTask<Transform>
+    public class ChaseState : EnemyBaseState
     {
-        [Header("Move Towards")]
-        public BBParameter<GameObject> target;
-        public BBParameter<float> speed = 2;
-        public float stopDistance ;
-        [Header("Rotate Towards")]
-        public BBParameter<float> rotationSpeed;
-        public BBParameter<float> angleDifference = 5;
-        
-        
-        protected override string info {
-            get { return "Chase player until distance equal 2 to 5 meter"; }
+        [SerializeField] private float rotationSpeed;
+        [SerializeField] private float speed;
+
+        public override void EnterState()
+        {
+            base.EnterState();
         }
 
-        protected override void OnExecute()
+        public override StateStatus UpdateState()
         {
-            base.OnExecute();
-            stopDistance = Random.Range(2f, 5f);
-        }
-        
-        protected override void OnUpdate()
-        {
-            if (( agent.position - target.value.transform.position ).magnitude <= stopDistance ) {
-                EndAction();
-                return;
+            StateStatus baseStatus = base.UpdateState();
+            if (baseStatus != StateStatus.Running)
+            {
+                return baseStatus;
             }
-            
-            var dir = target.value.transform.position - agent.position;
-            agent.position = Vector3.MoveTowards(agent.position, target.value.transform.position, speed.value * Time.deltaTime);
-            agent.rotation = Quaternion.LookRotation(Vector3.RotateTowards(agent.forward, dir, speed.value * Time.deltaTime, 0), Vector3.up);
+            //Lerp Rotation to target
+            if (Vector3.Distance(_blackBoard.characterController.transform.position, _blackBoard.target.position) > 3)
+            {
+                Vector3 targetDir = _blackBoard.target.position - transform.position;
+                targetDir.y = 0;
+                
+                //rotate to target with smoothness with CharacterController
+                _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
+                    Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
+                _blackBoard.characterController.Move(_blackBoard.characterController.transform.forward * speed * Time.deltaTime);
+            }else
+            {
+                return StateStatus.Success;
+            }
 
+            return StateStatus.Running;
+        }
+
+        public override void FixedUpdateState()
+        {
+            base.FixedUpdateState();
+            
+        }
+
+        public override void ExitState()
+        {
+            base.ExitState();
         }
     }
 }
