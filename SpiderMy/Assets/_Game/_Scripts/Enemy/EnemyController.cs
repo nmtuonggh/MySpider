@@ -2,6 +2,7 @@
 using System.Collections;
 using _Game.Scripts.Event;
 using Animancer;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Enemy
@@ -17,6 +18,7 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         [SerializeField] private AnimancerComponent animancer;
         [SerializeField] private HealthBar healthBar;
+        [SerializeField] private Blackboard _bb;
         
         [Header("Events")]
         public GameEvent onEnemyDeath;
@@ -37,8 +39,8 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            getHit = true;
             StartCoroutine(GetHit());
+            _bb.SetVariableValue("hit", true);
 
             if (health <= 0)
             {
@@ -50,7 +52,9 @@ namespace SFRemastered._Game._Scripts.Enemy
         private IEnumerator GetHit()
         {
             getHit = true;
-            yield return new WaitForSeconds(0.2f);
+            _bb.SetVariableValue("hit", true);
+            yield return new WaitForSeconds(0.15f);
+            _bb.SetVariableValue("hit", false);
             getHit = false;
         }
 
