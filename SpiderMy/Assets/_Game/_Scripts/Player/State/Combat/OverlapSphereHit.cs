@@ -19,7 +19,7 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<IHitable>();
-                enemy.OnHit(damage);
+                enemy.OnStaggerHit(damage);
             }
         }
         
@@ -29,7 +29,7 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<IHitable>();
-                enemy.OnHit(damage);
+                enemy.OnStaggerHit(damage);
             }
         }
         

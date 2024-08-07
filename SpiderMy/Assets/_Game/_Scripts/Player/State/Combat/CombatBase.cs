@@ -50,7 +50,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
         
         public void GetMidRangeHit()
         {
-            _blackBoard.overlapSphereHit.MidHit(_currentDamage);
+            _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
         }
         
         /*public void GetExtraHit()
