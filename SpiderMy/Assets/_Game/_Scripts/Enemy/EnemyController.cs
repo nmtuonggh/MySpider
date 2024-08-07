@@ -3,6 +3,7 @@ using System.Collections;
 using _Game.Scripts.Event;
 using Animancer;
 using NodeCanvas.Framework;
+using SFRemastered._Game._Scripts.Enemy.State;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Enemy
@@ -11,14 +12,13 @@ namespace SFRemastered._Game._Scripts.Enemy
     {
         public float health;
         [SerializeField] private bool getHit;
-
-        [SerializeField] private ClipTransition deathAnimation;
-        [SerializeField] private ClipTransition hitAnimation;
-        [SerializeField] private ClipTransition idleAnimation;
-
-        [SerializeField] private AnimancerComponent animancer;
+        
         [SerializeField] private HealthBar healthBar;
         [SerializeField] private Blackboard _bb;
+        [SerializeField] private EnemyBlackBoard blackBoard;
+        
+        private Vector3 velocity;
+        public float gravity = -9.81f;
         
         [Header("Events")]
         public GameEvent onEnemyDeath;
@@ -33,6 +33,16 @@ namespace SFRemastered._Game._Scripts.Enemy
         private void Update()
         {
             
+            if (!blackBoard.characterController.isGrounded)
+            {
+                velocity.y += gravity * Time.deltaTime;
+            }
+            else
+            {
+                velocity.y = 0;
+            }
+
+            blackBoard.characterController.Move(velocity * Time.deltaTime);
         }
 
         public void OnStaggerHit(float damage)

@@ -1,4 +1,5 @@
-﻿using NodeCanvas.Framework;
+﻿using DG.Tweening;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 namespace SFRemastered
@@ -21,19 +22,19 @@ namespace SFRemastered
                 return baseStatus;
             }
             //Lerp Rotation to target
-            if (Vector3.Distance(_blackBoard.characterController.transform.position, _blackBoard.target.position) > 3)
+            /*var targetPos = new Vector3(_blackBoard.target.obj.transform.position.x, 0,
+                _blackBoard.target.obj.transform.position.z);*/
+            if (Vector3.Distance(_blackBoard.characterController.transform.position, _blackBoard.target.obj.transform.position) > 0)
             {
-                Vector3 targetDir = _blackBoard.target.position - transform.position;
-                targetDir.y = 0;
-                
-                //rotate to target with smoothness with CharacterController
-                _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
-                    Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
+                //Move to target
+                _blackBoard.characterController.transform.LookAt(_blackBoard.target.obj.transform.position);
                 _blackBoard.characterController.Move(_blackBoard.characterController.transform.forward * speed * Time.deltaTime);
             }else
             {
                 return StateStatus.Success;
             }
+            
+            transform.DOMove(transform.position + (transform.forward / 1), .5f);
 
             return StateStatus.Running;
         }

@@ -9,22 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65baa284d24adb24b90b39482364509c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ddf265f01644c248ac0fafad93bb29f, type: 3}
   m_Name: Attack 2
   m_EditorClassIdentifier: 
-  _Transition:
-    rid: 4300264221306519553
-  references:
-    version: 2
-    RefIds:
-    - rid: 4300264221306519553
-      type: {class: ClipTransition, ns: Animancer, asm: Animancer}
-      data:
-        _FadeDuration: 0.25
-        _Events:
-          _NormalizedTimes: []
-          _Callbacks: []
-          _Names: []
-        _Clip: {fileID: 7400000, guid: 508469fbff5879246a4c1eddabc6c6ee, type: 2}
-        _Speed: 1
-        _NormalizedStartTime: NaN
+  clip:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes:
+      - 0.2675254
+      - NaN
+      _Callbacks: []
+      _Names:
+      - Hit
+    _Clip: {fileID: 7400000, guid: 508469fbff5879246a4c1eddabc6c6ee, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  damage: 30
+  duration: 0

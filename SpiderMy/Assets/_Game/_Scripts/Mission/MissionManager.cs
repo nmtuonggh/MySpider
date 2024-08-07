@@ -55,9 +55,13 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void HandlerMissionComplete()
         {
-            mainMissionSO.AdvanceMission();
-            Destroy(currentMissionPrefab);
-            StartMission();
+            if (mainMissionSO.currentMissionIndex <= mainMissionSO.listMission.Count -1)
+            {
+                mainMissionSO.AdvanceMission();
+                Destroy(currentMissionPrefab);
+                StartMission();
+            }
+            
         }
         
         public void HandlerMissionFail()

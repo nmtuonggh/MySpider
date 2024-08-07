@@ -24,5 +24,5 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 1087f8e0eb563224b8aeb2684586386d, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  damage: 0
+  damage: 30
   duration: 0

@@ -35,7 +35,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 return StateStatus.Success;
             }
             
-            return StateStatus.Running;
+            return StateStatus.Running; 
         }
         
         public override void ExitState()

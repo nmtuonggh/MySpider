@@ -1,17 +1,17 @@
-﻿using NodeCanvas.Framework;
-using ParadoxNotion;
-using SFRemastered._Game._Scripts.ReferentSO;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SFRemastered
 {
-    public class EnemyIdle : EnemyBaseState
+    public class Retreat : EnemyBaseState
     {
-        public float rotationSpeed = 3f;
-        
-        //public GameObjectRef player;
+        [SerializeField] private float randomRange;
+        [SerializeField] private float minRange = 2.5f;
+        [SerializeField] private float maxRange = 5f;
+        [SerializeField] private float rotationSpeed = 3f;
+        [SerializeField] private float speed = 3f;
         public override void EnterState()
         {
+            randomRange = Random.Range(minRange, maxRange);
             base.EnterState();
         }
         
@@ -22,7 +22,7 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-
+            
             var target = _blackBoard.target.obj.transform.position;
             Vector3 targetDir = target -  transform.position;
             targetDir.y = 0;
@@ -31,9 +31,17 @@ namespace SFRemastered
             _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
             
+            _blackBoard.characterController.Move(-_blackBoard.characterController.transform.forward * speed * Time.deltaTime);
+
+            if (Vector3.Distance(_blackBoard.target.obj.transform.position,
+                    _blackBoard.characterController.transform.position) > randomRange)
+            {
+                return StateStatus.Failure;
+            }
+            
             return StateStatus.Running;
         }
-
+        
         public override void ExitState()
         {
             base.ExitState();

@@ -5,11 +5,8 @@ using UnityEngine;
 
 namespace SFRemastered
 {
-    public class EnemyIdle : EnemyBaseState
+    public class Attack : EnemyBaseState
     {
-        public float rotationSpeed = 3f;
-        
-        //public GameObjectRef player;
         public override void EnterState()
         {
             base.EnterState();
@@ -23,13 +20,10 @@ namespace SFRemastered
                 return baseStatus;
             }
 
-            var target = _blackBoard.target.obj.transform.position;
-            Vector3 targetDir = target -  transform.position;
-            targetDir.y = 0;
-            
-            //rotate to target with smoothness with CharacterController
-            _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
+            if (_state.NormalizedTime >= 1f)
+            {
+                return StateStatus.Success;
+            }
             
             return StateStatus.Running;
         }

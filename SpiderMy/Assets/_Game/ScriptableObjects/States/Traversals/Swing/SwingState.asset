@@ -34,7 +34,9 @@ MonoBehaviour:
   _ListAnim:
   - _FadeDuration: 0.2533334
     _Events:
-      _NormalizedTimes: []
+      _NormalizedTimes:
+      - 0.478338
+      - NaN
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: 99adb87cd68c78c42b9fc72f49a754b4, type: 2}
