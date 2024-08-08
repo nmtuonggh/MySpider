@@ -168,7 +168,6 @@ namespace SFRemastered
             _springJoint.spring = 4.5f;
             _springJoint.damper = 7f;
             _springJoint.massScale = 1f;
-            
         }
 
         private void SetupExitState()

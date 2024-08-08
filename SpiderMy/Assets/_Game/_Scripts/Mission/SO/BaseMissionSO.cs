@@ -22,5 +22,10 @@ namespace SFRemastered._Game._Scripts.Mission
             get => spawnPosition;
             set => spawnPosition = value;
         }
+
+        public virtual void GetMissionPosition(Transform mssPoint)
+        {
+            spawnPosition = mssPoint;
+        }
     }
 }

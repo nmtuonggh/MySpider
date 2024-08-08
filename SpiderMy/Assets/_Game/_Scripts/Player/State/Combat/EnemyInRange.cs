@@ -45,6 +45,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
             {
                 _blackBoard._detectedEnemy = true;
                 _blackBoard._targetEnemy = FindClosestEnemy();
+                _blackBoard._closestEnemyNotStun = FindClosestEnemyNotStun();
                 _blackBoard._distanceToTargetEnemy = Vector3.Distance(transform.position, _blackBoard._targetEnemy.transform.position);
             }
             else

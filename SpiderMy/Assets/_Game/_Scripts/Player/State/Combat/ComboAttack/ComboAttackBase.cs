@@ -11,14 +11,15 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
     {
         [SerializeField] protected AttackAnim[] _firstComboClips;
         [SerializeField] protected AttackAnim[] _extraAttackClips;
-        
+
         [SerializeField] protected IdleCombat.NormalIdleCombat normalIdleCombat;
         [SerializeField] protected LowIdleCombat lowIdleCombat;
         [SerializeField] protected CombatController combatController;
-        
+
         [SerializeField] protected int _currentComboIndex = 0;
         [SerializeField] protected float _delayTime;
-        
+        [SerializeField] protected bool _canGoToNextAttack = false;
+
         /*private float _currentDamage;*/
         private float time;
 
@@ -30,7 +31,8 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _currentComboIndex = 0;
             time = 0;
             if (_blackBoard._detectedEnemy)
-                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f, AxisConstraint.Y); 
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f,
+                    AxisConstraint.Y);
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
         }
 
@@ -41,13 +43,12 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             {
                 return baseStatus;
             }
-            
+
             time += Time.deltaTime;
-            
+
             //TODO: replace _state.NormalizedTime by attackanim.duration
-            
-            if (_blackBoard.attack && time < _delayTime && 
-                (_currentComboIndex < 3 ? _state.NormalizedTime >= 0.5f : _state.NormalizedTime >= 1f))
+
+            if (_blackBoard.attack && time < _delayTime && _canGoToNextAttack)
             {
                 if (_currentComboIndex < 3)
                     _currentComboIndex++;
@@ -59,11 +60,11 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
                 else
                     PlayComboAnimation(_extraAttackClips, Random.Range(0, _extraAttackClips.Length));
             }
-            else if (time >= _delayTime  )
+            else if (time >= _delayTime)
             {
                 if (_blackBoard.attack)
                     _fsm.ChangeState(combatController);
-                
+
                 else
                 {
                     if (_currentComboIndex < 3)
@@ -71,6 +72,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
                     else
                         _fsm.ChangeState(lowIdleCombat);
                 }
+
                 return StateStatus.Success;
             }
 
@@ -79,20 +81,24 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 
         public void PlayComboAnimation(AttackAnim[] clip, int index)
         {
-            //TODO: rotate player to enemy
+            _canGoToNextAttack = false;
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
             _state.Events.Add(0.1f, RotateToTarget);
             time = 0;
-            //kill tweens
-            
+        }
+
+        public void CanGoToNextAttack()
+        {
+            _canGoToNextAttack = true;
         }
 
         public void RotateToTarget()
         {
             if (_blackBoard._detectedEnemy)
             {
-                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f,
+                    AxisConstraint.Y);
             }
         }
 
