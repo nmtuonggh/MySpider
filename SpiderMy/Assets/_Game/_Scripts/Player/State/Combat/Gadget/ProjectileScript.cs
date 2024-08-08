@@ -18,6 +18,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         {
             if (other.CompareTag("Enemy"))
             {
+                other.GetComponent<EnemyBlackBoard>().webHitStun += 1;
                 other.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                 projectileData.ReturnToPool(this.gameObject);
             }
