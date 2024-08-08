@@ -1,4 +1,5 @@
-﻿using SFRemastered._Game._Scripts.State.Locomotion.Ground;
+﻿using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
+using SFRemastered._Game._Scripts.State.Locomotion.Ground;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected JumpToSwing _jumpToSwing;
         [SerializeField] protected DodgeState _dodgeState;
         [SerializeField] protected UltimateSkill _ultimateSkill;
+        [SerializeField] protected WebShooter _webShooter;
 
         public bool canJump = true;
 
@@ -64,6 +66,12 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.ultimate)
             {
                 _fsm.ChangeState(_ultimateSkill);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.gadget)
+            {
+                _fsm.ChangeState(_webShooter);
                 return StateStatus.Success;
             }
 

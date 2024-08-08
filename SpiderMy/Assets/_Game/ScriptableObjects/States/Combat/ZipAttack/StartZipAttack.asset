@@ -26,3 +26,4 @@ MonoBehaviour:
   _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
   zipGroundAttack: {fileID: 11400000, guid: 56a132c4d50d2234489cee34026a1fab, type: 2}
   _zipAirAttack: {fileID: 11400000, guid: 311429b4db0040f49b477d7a6e4c03b8, type: 2}
+  onZipAttackStart: {fileID: 11400000, guid: e58c060eac5999a4db521271fb70a659, type: 2}

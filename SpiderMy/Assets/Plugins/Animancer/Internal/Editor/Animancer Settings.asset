@@ -27,4 +27,4 @@ MonoBehaviour:
   _InspectorRepaintInterval: 0.25
   _FrameStep: 0.02
   _NewAnimationFrameRate: 12
-  _HideEventCallbacks: 1
+  _HideEventCallbacks: 0

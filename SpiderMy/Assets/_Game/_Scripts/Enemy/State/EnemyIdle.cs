@@ -1,4 +1,6 @@
-﻿using ParadoxNotion;
+﻿using NodeCanvas.Framework;
+using ParadoxNotion;
+using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
 
 namespace SFRemastered
@@ -6,6 +8,8 @@ namespace SFRemastered
     public class EnemyIdle : EnemyBaseState
     {
         public float rotationSpeed = 3f;
+        
+        //public GameObjectRef player;
         public override void EnterState()
         {
             base.EnterState();
@@ -18,10 +22,11 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-            
-            Vector3 targetDir = _blackBoard.target.position - transform.position;
+
+            var target = _blackBoard.target.obj.transform.position;
+            Vector3 targetDir = target -  transform.position;
             targetDir.y = 0;
-                
+            
             //rotate to target with smoothness with CharacterController
             _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);

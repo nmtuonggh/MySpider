@@ -3,6 +3,7 @@ using Animancer;
 using System.Collections;
 using System.Collections.Generic;
 using SFRemastered._Game._Scripts.CastCheck.Raycast;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -20,11 +21,14 @@ namespace SFRemastered
         public SFXManager sfxManager;
         public new Camera camera;
         public new Rigidbody rigidbody;
+        public GameObject poolManager;
         public GameObject characterVisual;
         
         public Vector3 moveDirection;
         public Vector3 wallMoveDirection;
-        [Header("Actions bools")]
+            
+        
+        [Header("=====Actions bool=====")]
         public bool jump;
         public bool sprint;
         public bool swing;
@@ -32,11 +36,11 @@ namespace SFRemastered
         public bool foundWall;
         public bool attack;
         public bool dodge;
-        public bool swapskin;
         public bool ultimate;
+        public bool gadget;
         public bool isGrounded;
         
-        [Header("Swing")]
+        [Header("=====Swing=====")]
         public LayerMask groundLayers;
         [FormerlySerializedAs("playerHand")] public Transform playerSwingPos;
         public Transform swingPoint;
@@ -44,13 +48,15 @@ namespace SFRemastered
         public GameObject ropHolder;
         public LineRenderer lr;
         
-        [Header("Zip")]
+        [Header("=====Zip=====")]
         public Transform startZipLeft;
         public Transform startZipRight;
         
-        [Header("Combat")]
+        [Header("=====Combat=====")]
         public OverlapSphereHit overlapSphereHit;
         public GameObject _targetEnemy;
+        public GameObject _closestEnemyNotStun;
+        public ProjectileData projectileData;
         public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
         public bool _detectedEnemy;

@@ -1,6 +1,8 @@
 using Animancer;
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
+using SFRemastered._Game._Scripts.State.Combat;
 using SFRemastered.Wall;
 using UnityEngine;
 
@@ -15,6 +17,8 @@ namespace SFRemastered
         [SerializeField] private JumpToSwing _jumpToSwing;
         [SerializeField] private WallRun _wallRun;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
+        [SerializeField] private WebShooter _webShooter;
+        [SerializeField] private UltimateSkill _ultimateSkill;
 
         public override void EnterState()
         {
@@ -66,6 +70,18 @@ namespace SFRemastered
             if (_blackBoard.swing)
             {
                 _fsm.ChangeState(_jumpToSwing);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.ultimate)
+            {
+                _fsm.ChangeState(_ultimateSkill);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.gadget)
+            {
+                _fsm.ChangeState(_webShooter);
                 return StateStatus.Success;
             }
 

@@ -15,7 +15,7 @@ namespace SFRemastered {
 
         public EnemyBaseState state;
         [RequiredField]
-        public BBParameter<Transform> target;
+        public BBParameter<GameObjectRef> target;
         public float minDistance;
         public float maxDistance;
         private float randomDistance;
@@ -49,7 +49,7 @@ namespace SFRemastered {
             }
             
 
-            if(Vector3.Distance(agent.transform.position, target.value.transform.position) <= randomDistance) {
+            if(Vector3.Distance(agent.transform.position, target.value.obj.transform.position) <= randomDistance) {
                 EndAction(true);
             }
         }

@@ -355,7 +355,7 @@ namespace Animancer
         /// Tries to ensure that an <see cref="Animator"/> is present using
         /// <see cref="Component.TryGetComponent{T}(out T)"/> if necessary.
         /// </summary>
-        public bool TryGetAnimator()
+        public bool TryGetAnimator() 
             => _Animator != null
             || TryGetComponent(out _Animator);
 

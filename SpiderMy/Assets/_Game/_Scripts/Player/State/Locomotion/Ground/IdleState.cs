@@ -1,4 +1,6 @@
 ﻿ using System.Collections;
+ using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
+ using SFRemastered._Game._Scripts.State.Combat;
  using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
  using SFRemastered.Combat;
  using UnityEngine;
@@ -12,7 +14,8 @@ namespace SFRemastered
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private JumpToSwing _jumpToSwing;
         [FormerlySerializedAs("normalIdleCombatBase")] [FormerlySerializedAs("idleIdlesCombat")] [FormerlySerializedAs("_idleCombat")] [SerializeField] private NormalIdleCombat normalIdleCombat;
-
+        [SerializeField] private WebShooter _webShooter;
+        [SerializeField] private UltimateSkill _ultimateSkill;
         public override void EnterState()
         {
             base.EnterState();
@@ -43,6 +46,18 @@ namespace SFRemastered
             if (_blackBoard.attack)
             {
                 _fsm.ChangeState(normalIdleCombat);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.ultimate)
+            {
+                _fsm.ChangeState(_ultimateSkill);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.gadget)
+            {
+                _fsm.ChangeState(_webShooter);
                 return StateStatus.Success;
             }
 

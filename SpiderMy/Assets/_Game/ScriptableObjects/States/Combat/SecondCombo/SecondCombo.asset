@@ -23,7 +23,6 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
-  _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
   _firstComboClips:
   - {fileID: 11400000, guid: f930f739c83793348aba3e4050deabed, type: 2}
   - {fileID: 11400000, guid: 911f5a16b12508f44ba020bd63120946, type: 2}
@@ -35,4 +34,4 @@ MonoBehaviour:
   lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   _currentComboIndex: 0
-  _delayTime: 0.85
+  _delayTime: 0.9
