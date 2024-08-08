@@ -27,7 +27,7 @@ namespace SFRemastered
             
             if (elapsedTime < 5f)
             {
-                var moveDirection = randomDirection == 1 ? _blackBoard.transform.right : -_blackBoard.transform.right;
+                var moveDirection = randomDirection == 1 ? _blackBoard.characterController.transform.right : -_blackBoard.characterController.transform.right;
                 _blackBoard.characterController.Move(moveDirection * speed * Time.deltaTime);
                 _state = _blackBoard.animancer.Play(randomDirection == 0 ? _moveLeft : _moveRight);
 
