@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using _Game.Scripts.Event;
+using DG.Tweening;
 using EasyCharacterMovement;
+using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.State.Combat;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,10 +13,13 @@ namespace SFRemastered.Combat.ZipAttack
     {
         [SerializeField] private ZipGroundAttack zipGroundAttack;
         [SerializeField] private ZipAirAttack _zipAirAttack;
+        
+        //public GameEvent onZipAttackStart;
         public override void EnterState()
         {
             base.EnterState();
-            
+            //onZipAttackStart.Raise();
+            _blackBoard._targetEnemy.gameObject.GetComponent<EnemyController>().zipAttackStun = true;
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.constraints =

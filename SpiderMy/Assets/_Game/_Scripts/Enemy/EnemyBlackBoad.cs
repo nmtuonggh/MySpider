@@ -11,5 +11,14 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public AnimancerComponent animancer;
         public CharacterController characterController;
         public GameObjectRef target;
+        
+        [Header("Actions bools")]
+        public bool attack;
+        public bool zipAttackStun;
+        public bool staggerHit;
+        public bool stunLockHit;
+        public bool webHitStun;
+        
+        public float stunLockTime;
     }
 }

@@ -30,4 +30,5 @@ MonoBehaviour:
   _jumpToSwing: {fileID: 11400000, guid: 26613c97ed450e44ea2b115f647a508e, type: 2}
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
+  _webShooter: {fileID: 11400000, guid: 90f085d8e85bb644fb398677d8952a8b, type: 2}
   canJump: 1

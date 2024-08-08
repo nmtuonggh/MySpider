@@ -5,10 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileScript.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileScript.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool/ProjectilePool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool/ProjectilePool.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/NiorShowup.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/NiorShowup.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/MenuPose.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/MenuPose.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/PrefabInstance/ProjectilesWeb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/PrefabInstance/ProjectilesWeb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/IdleCombat.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/IdleCombat.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/LowIdleCombat.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/LowIdleCombat.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ChaseState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Encircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Encircle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Retreat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Retreat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/IdleCombat/IdlesCombatBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/IdleCombat/IdlesCombatBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ZipAttack/StartZipAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ZipAttack/StartZipAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/InputPoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/InputPoller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/GroundState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/GroundState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/SprintState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/SprintState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,10 +126,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27044">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27044" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -160,7 +194,7 @@
       <workItem from="1722909721565" duration="36717000" />
       <workItem from="1722963832234" duration="6145000" />
       <workItem from="1722997648539" duration="23874000" />
-      <workItem from="1723081543861" duration="3488000" />
+      <workItem from="1723081543861" duration="17392000" />
     </task>
     <servers />
   </component>
@@ -179,6 +213,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs</url>
+          <line>37</line>
+          <properties documentPath="C:\Users\Admin\Documents\EFAS_2\SpiderMy\Assets\_Game\_Scripts\Player\State\Combat\Gadget\WebShooter.cs" containingFunctionPresentation="Method 'ShootWeb'">
+            <startOffsets>
+              <option value="1237" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1238" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="this" language="C#" />

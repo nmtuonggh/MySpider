@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,6 +10,7 @@ namespace SFRemastered
     public class SprintToIdleState : GroundState
     {
         [SerializeField] private IdleState _idleState;
+        [SerializeField] private WebShooter _webShooter;
         [FormerlySerializedAs("_walkState")] [SerializeField] private SprintState _sprintState;
         public override void EnterState()
         {
@@ -34,6 +36,12 @@ namespace SFRemastered
             if (_blackBoard.moveDirection.magnitude > 0.1f)
             {
                 _fsm.ChangeState(_sprintState);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.gadget)
+            {
+                _fsm.ChangeState(_webShooter);
                 return StateStatus.Success;
             }
 

@@ -21,13 +21,14 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-            //Lerp Rotation to target
-            /*var targetPos = new Vector3(_blackBoard.target.obj.transform.position.x, 0,
-                _blackBoard.target.obj.transform.position.z);*/
-            if (Vector3.Distance(_blackBoard.characterController.transform.position, _blackBoard.target.obj.transform.position) > 0)
+            
+            var targetPosition = _blackBoard.target.obj.transform.position;
+            var groundTargetPosition = new Vector3(targetPosition.x, _blackBoard.characterController.transform.position.y, targetPosition.z);
+            
+            if (Vector3.Distance(_blackBoard.characterController.transform.position, groundTargetPosition) > 0)
             {
                 //Move to target
-                _blackBoard.characterController.transform.LookAt(_blackBoard.target.obj.transform.position);
+                _blackBoard.characterController.transform.LookAt(groundTargetPosition);
                 _blackBoard.characterController.Move(_blackBoard.characterController.transform.forward * speed * Time.deltaTime);
             }else
             {

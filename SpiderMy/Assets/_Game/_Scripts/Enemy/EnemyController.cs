@@ -12,9 +12,9 @@ namespace SFRemastered._Game._Scripts.Enemy
     {
         public float health;
         [SerializeField] private bool getHit;
+        [SerializeField] public bool zipAttackStun;
         
         [SerializeField] private HealthBar healthBar;
-        [SerializeField] private Blackboard _bb;
         [SerializeField] private EnemyBlackBoard blackBoard;
         
         private Vector3 velocity;
@@ -22,8 +22,9 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         [Header("Events")]
         public GameEvent onEnemyDeath;
-
-        //[SerializeField] private ClipTransition knockBackAnimation;
+        
+        //[Header("Events Listener")]
+        //public GameEventListener onStaggerHit;
 
         private void Start()
         {
@@ -49,8 +50,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-           //StartCoroutine(GetHit("staggerHit"));
-           _bb.SetVariableValue("staggerHit", true);
+            blackBoard.staggerHit = true;
             if (health <= 0)
             {
                 onEnemyDeath.Raise();
@@ -61,22 +61,12 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            //StartCoroutine(GetHit("stunLockHit"));
-            _bb.SetVariableValue("stunLockHit", true);
+            blackBoard.stunLockHit = true;
             if (health <= 0)
             {
                 onEnemyDeath.Raise();
                 Die();
             }
-        }
-
-        private IEnumerator GetHit(string hitType)
-        {
-            getHit = true;
-            _bb.SetVariableValue(hitType, true);
-            yield return new WaitForSeconds(0.15f);
-            _bb.SetVariableValue(hitType, false);
-            getHit = false;
         }
 
         private void Die()

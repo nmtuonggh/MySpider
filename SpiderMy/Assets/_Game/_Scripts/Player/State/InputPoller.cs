@@ -26,30 +26,32 @@ namespace SFRemastered
 
             movementDirection += Vector3.right * movementInput.x;
             movementDirection += Vector3.forward * movementInput.y;
-            
-            wallMovementDirection +=movementInput.x * blackBoard.characterVisual.transform.right;
+
+            wallMovementDirection += movementInput.x * blackBoard.characterVisual.transform.right;
             if (movementInput.y >= 0)
             {
                 wallMovementDirection += blackBoard.characterVisual.transform.up * movementInput.y;
             }
-            
+
             // If Camera is assigned, add input movement relative to camera look direction
 
             if (blackBoard.camera != null)
             {
                 movementDirection = movementDirection.relativeTo(blackBoard.camera.transform);
             }
-            
+
             blackBoard.wallMoveDirection = wallMovementDirection;
             blackBoard.moveDirection = movementDirection;
+
             blackBoard.jump = InputManager.instance.jump.Pressing;
             blackBoard.sprint = InputManager.instance.sprint.Pressing;
             blackBoard.swing = InputManager.instance.swing.Pressing;
             blackBoard.zip = InputManager.instance.zip.Pressing;
             blackBoard.attack = InputManager.instance.attack.Pressing;
             blackBoard.dodge = InputManager.instance.dodge.Pressing;
-            blackBoard.swapskin = InputManager.instance.swapSkin.Down;
-            blackBoard.ultimate = InputManager.instance.ultimate.Down;
+            blackBoard.ultimate = InputManager.instance.ultimate.Pressing;
+            blackBoard.gadget = InputManager.instance.gadget.Pressing;
+
             blackBoard.isGrounded = playerMovement.IsGrounded();
         }
     }

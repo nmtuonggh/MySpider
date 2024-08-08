@@ -1,3 +1,4 @@
+using System;
 using SFRemastered.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace SFRemastered.InputSystem
         public InputAction dodge;
         public InputAction swapSkin;
         public InputAction ultimate;
+        public InputAction gadget;
 
         public bool disableInput;
 

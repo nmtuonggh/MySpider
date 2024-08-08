@@ -23,7 +23,9 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-
+            
+            var targetPosition = _blackBoard.target.obj.transform.position;
+            var groundTargetPosition = new Vector3(targetPosition.x, _blackBoard.characterController.transform.position.y, targetPosition.z);
             
             if (elapsedTime < 5f)
             {
@@ -31,7 +33,7 @@ namespace SFRemastered
                 _blackBoard.characterController.Move(moveDirection * speed * Time.deltaTime);
                 _state = _blackBoard.animancer.Play(randomDirection == 0 ? _moveLeft : _moveRight);
 
-                _blackBoard.characterController.transform.LookAt(_blackBoard.target.obj.transform.position);
+                _blackBoard.characterController.transform.LookAt(groundTargetPosition);
             }
             else
             {

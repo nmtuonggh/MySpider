@@ -13,15 +13,30 @@ MonoBehaviour:
   m_Name: AttackAnim 1
   m_EditorClassIdentifier: 
   clip:
-    _FadeDuration: 0.25
+    _FadeDuration: 0.1
     _Events:
       _NormalizedTimes:
-      - 0.5599194
+      - 0.342827
       - NaN
-      _Callbacks: []
+      _Callbacks:
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: d31ba91d4b849004ba350f833f7e3ef8, type: 2}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.CombatBase,
+              Assembly-CSharp
+            m_MethodName: GetNormalHit
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       _Names:
       - Hit
-    _Clip: {fileID: 7400000, guid: 1087f8e0eb563224b8aeb2684586386d, type: 2}
+    _Clip: {fileID: 7400000, guid: ab39cd7e89df4da4199db33f4caa63c9, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 30

@@ -32,9 +32,12 @@ namespace SFRemastered
                 Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
             
             _blackBoard.characterController.Move(-_blackBoard.characterController.transform.forward * speed * Time.deltaTime);
+            
+            var targetPosition = _blackBoard.target.obj.transform.position;
+            var groundTargetPosition = new Vector3(targetPosition.x, _blackBoard.characterController.transform.position.y, targetPosition.z);
 
-            if (Vector3.Distance(_blackBoard.target.obj.transform.position,
-                    _blackBoard.characterController.transform.position) > randomRange)
+            if (Vector3.Distance(
+                    _blackBoard.characterController.transform.position, groundTargetPosition) > randomRange)
             {
                 return StateStatus.Failure;
             }

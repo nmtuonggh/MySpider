@@ -1,4 +1,6 @@
-﻿using SFRemastered._Game._Scripts.State.Locomotion.Ground;
+﻿using DG.Tweening;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
+using SFRemastered._Game._Scripts.State.Locomotion.Ground;
 using SFRemastered._Game.ScriptableObjects.AnimationAttack;
 using UnityEngine;
 
@@ -7,7 +9,6 @@ namespace SFRemastered._Game._Scripts.State.Combat
     public abstract class CombatBase : StateBase
     {
         [SerializeField] protected DodgeState _dodgeState;
-        [SerializeField] protected UltimateSkill _ultimateSkill;
         
         protected float _currentDamage;
         public override void EnterState()
@@ -28,12 +29,6 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 _fsm.ChangeState(_dodgeState);
                 return StateStatus.Success;
             }
-
-            if (_blackBoard.ultimate)
-            {
-                _fsm.ChangeState(_ultimateSkill);
-                return StateStatus.Success;
-            }
             
             return StateStatus.Running; 
         }
@@ -45,7 +40,11 @@ namespace SFRemastered._Game._Scripts.State.Combat
         
         public void GetNormalHit()
         {
-            _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
+            if (_blackBoard._detectedEnemy)
+            {
+               
+                _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
+            }
         }
         
         public void GetMidRangeHit()
@@ -53,9 +52,5 @@ namespace SFRemastered._Game._Scripts.State.Combat
             _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
         }
         
-        /*public void GetExtraHit()
-        {
-            _blackBoard.overlapSphereHit.HighKickHit(_currentDamage);
-        }*/
     }
 }

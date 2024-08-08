@@ -12,8 +12,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private BaseMissionSO currentMission;
         private GameObject currentMissionPrefab;
-        [Header("Mission Event")]
-        public GameEventListener onMissionStart;
+        [Header("Mission Event")] public GameEventListener onMissionStart;
         public GameEventListener onMissionUpdate;
         public GameEventListener onMissionComplete;
         public GameEventListener onMissionFail;
@@ -25,9 +24,8 @@ namespace SFRemastered._Game._Scripts.Mission
             onMissionComplete.OnEnable();
             onMissionFail.OnEnable();
         }
-        
-        
-        
+
+
         private void OnDisable()
         {
             onMissionStart.OnDisable();
@@ -42,28 +40,25 @@ namespace SFRemastered._Game._Scripts.Mission
             mainMissionSO.currentMissionIndex = 0;
             StartMission();
         }
-        
+
         public void HandlerMissionStart()
         {
-            
         }
-        
+
         public void HandlerMissionUpdate()
         {
-            
         }
-        
+
         public void HandlerMissionComplete()
         {
-            if (mainMissionSO.currentMissionIndex <= mainMissionSO.listMission.Count -1)
+            if (mainMissionSO.currentMissionIndex < mainMissionSO.listMission.Count - 1)
             {
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
                 StartMission();
             }
-            
         }
-        
+
         public void HandlerMissionFail()
         {
             Destroy(currentMissionPrefab);
@@ -73,18 +68,12 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void StartMission()
         {
-            if (mainMissionSO.currentMissionIndex <= mainMissionSO.listMission.Count)
-            {
-                currentMission = mainMissionSO.GetCurrentMission();
-                currentMission.SpawnPosition = missionPositions[mainMissionSO.currentMissionIndex];
-                currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position, Quaternion.identity);
-                currentMissionPrefab.transform.SetParent(transform);
-                currentMissionPrefab.GetComponent<BaseMission>().StartMission();
-            }
-            else
-            {
-                Debug.Log("Het nhiem vu roi'");
-            }
+            currentMission = mainMissionSO.GetCurrentMission();
+            currentMission.SpawnPosition = missionPositions[mainMissionSO.currentMissionIndex];
+            currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position,
+                Quaternion.identity);
+            currentMissionPrefab.transform.SetParent(transform);
+            currentMissionPrefab.GetComponent<BaseMission>().StartMission();
         }
     }
 }

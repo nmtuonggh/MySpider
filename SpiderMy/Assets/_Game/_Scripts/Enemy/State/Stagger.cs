@@ -1,16 +1,11 @@
 ﻿namespace SFRemastered
 {
     public class Stagger : EnemyBaseState
-    {
-        private bool done;
+    { 
         public override void EnterState()
         {
-            done = false;
             base.EnterState();
-            _state.Events.OnEnd = () =>
-            {
-               done = true;
-            };
+            //_state.Speed = ;
         }
         
 

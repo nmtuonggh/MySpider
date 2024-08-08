@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3e87b3e0924520a84a3a824d6c7667, type: 3}
+  m_Name: WebShooter
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.089999996
+    _Events:
+      _NormalizedTimes:
+      - 0.20503876
+      - 0.4368217
+      - NaN
+      _Callbacks:
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Player.State.Combat.Gadget.WebShooter,
+              Assembly-CSharp
+            m_MethodName: ShootWebLeft
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Player.State.Combat.Gadget.WebShooter,
+              Assembly-CSharp
+            m_MethodName: ShootWebRight
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      _Names:
+      - Shoot 1
+      - Shoot 2
+    _Clip: {fileID: 7400000, guid: a663f3a683a3adc4f85ada7be8fc2af6, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
+  _normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}

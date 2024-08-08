@@ -80,23 +80,21 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         public void PlayComboAnimation(AttackAnim[] clip, int index)
         {
             //TODO: rotate player to enemy
-            
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
+            _state.Events.Add(0.1f, RotateToTarget);
+            time = 0;
+            //kill tweens
+            
+        }
 
+        public void RotateToTarget()
+        {
             if (_blackBoard._detectedEnemy)
             {
-                _state.Events.SetShouldNotModifyReason(null);
-                _state.Events.SetCallback("Hit", GetNormalHit);
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
             }
-
-            time = 0;
         }
-        
-        /*public void GetHit()
-        {
-            _blackBoard.overlapSphereHit.Hit(_currentDamage);
-        }*/
 
         public override void ExitState()
         {

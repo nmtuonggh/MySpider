@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Enemy.State;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.State.Combat
@@ -72,6 +74,26 @@ namespace SFRemastered._Game._Scripts.State.Combat
             foreach (var enemy in _listEnemy)
             {
                 if (enemy != null)
+                {
+                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestEnemy = enemy;
+                    }
+                }
+            }
+
+            return closestEnemy;
+        }
+        
+        private GameObject FindClosestEnemyNotStun()
+        {
+            float minDistance = Mathf.Infinity;
+            GameObject closestEnemy = null;
+            foreach (var enemy in _listEnemy)
+            {
+                if (enemy != null && !enemy.GetComponent<EnemyBlackBoard>().webHitStun)
                 {
                     float distance = Vector3.Distance(transform.position, enemy.transform.position);
                     if (distance < minDistance)
