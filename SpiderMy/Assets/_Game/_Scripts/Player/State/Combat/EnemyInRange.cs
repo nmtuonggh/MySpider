@@ -98,7 +98,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
             GameObject closestEnemy = null;
             foreach (var enemy in _listEnemy)
             {
-                if (enemy != null && enemy.GetComponent<EnemyBlackBoard>().stunLockHit == false)
+                if (enemy != null && enemy.GetComponent<EnemyBlackBoard>().webHitStun < 2)
                 {
                     float distance = Vector3.Distance(transform.position, enemy.transform.position);
                     if (distance < minDistance)

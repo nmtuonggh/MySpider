@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using SFRemastered._Game._Scripts.Enemy.State;
 using SFRemastered._Game._Scripts.State.Combat;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
 using UnityEngine;
@@ -41,16 +42,28 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         {
             var rotation = Quaternion.LookRotation(_blackBoard._closestEnemyNotStun.transform.position -
                                                    _blackBoard.playerMovement.transform.position);
-            _blackBoard.projectileData.Spawn(_blackBoard.startrope.position, rotation,
+            var web = _blackBoard.projectileData.Spawn(_blackBoard.startrope.position, rotation,
                 _blackBoard.poolManager.transform);
+            web.transform.DOMove(_blackBoard._closestEnemyNotStun.transform.position, 0.2f).OnComplete(() =>
+            {
+                _blackBoard._closestEnemyNotStun.GetComponent<EnemyBlackBoard>().webHitStun += 1;
+                _blackBoard._closestEnemyNotStun.GetComponent<EnemyBlackBoard>().stunLockHit = true;
+                _blackBoard.projectileData.ReturnToPool(web);
+            });
         }
 
         public void ShootWebRight()
         {
             var rotation = Quaternion.LookRotation(_blackBoard._closestEnemyNotStun.transform.position -
                                                    _blackBoard.playerMovement.transform.position);
-            _blackBoard.projectileData.Spawn(_blackBoard._zipAttackHandPositon.position, rotation,
+            var web = _blackBoard.projectileData.Spawn(_blackBoard._zipAttackHandPositon.position, rotation,
                 _blackBoard.poolManager.transform);
+            web.transform.DOMove(_blackBoard._closestEnemyNotStun.transform.position, 0.2f).OnComplete(() =>
+            {
+                _blackBoard._closestEnemyNotStun.GetComponent<EnemyBlackBoard>().webHitStun += 1;
+                _blackBoard._closestEnemyNotStun.GetComponent<EnemyBlackBoard>().stunLockHit = true;
+                _blackBoard.projectileData.ReturnToPool(web);
+            });
         }
 
         public override void ExitState()

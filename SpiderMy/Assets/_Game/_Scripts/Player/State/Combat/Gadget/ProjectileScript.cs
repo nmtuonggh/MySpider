@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.Enemy.State;
 using UnityEngine;
@@ -9,9 +10,14 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
     {
         [SerializeField] private float speed;
         [SerializeField] private ProjectileData projectileData;
-        private void Update()
+        /*private void Update()
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+
+        private void Start()
+        {
+            transform.DOMove()
         }
 
         private void OnTriggerEnter(Collider other)
@@ -22,6 +28,6 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
                 other.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                 projectileData.ReturnToPool(this.gameObject);
             }
-        }
+        }*/
     }
 }
