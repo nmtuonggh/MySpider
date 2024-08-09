@@ -57,6 +57,7 @@ namespace SFRemastered
         public GameObject _targetEnemy;
         public GameObject _closestEnemyNotStun;
         public ProjectileData projectileData;
+        public HealingBotSO healingBotSO;
         public Transform _zipAttackHandPositon;
         public float _distanceToTargetEnemy;
         public bool _detectedEnemy;

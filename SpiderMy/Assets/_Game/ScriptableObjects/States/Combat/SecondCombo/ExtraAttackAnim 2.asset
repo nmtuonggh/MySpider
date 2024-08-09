@@ -16,10 +16,26 @@ MonoBehaviour:
     _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.417314
-      - 0.94683117
+      - 0.4535056
+      - 0.45693508
+      - 0.7638
       - NaN
       _Callbacks:
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: d31ba91d4b849004ba350f833f7e3ef8, type: 2}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.CombatBase,
+              Assembly-CSharp
+            m_MethodName: GetNormalHit
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       - m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 11400000, guid: d31ba91d4b849004ba350f833f7e3ef8, type: 2}
@@ -52,8 +68,9 @@ MonoBehaviour:
             m_CallState: 2
       _Names:
       - Hit
+      - Hit2
       - CanGoNext
-    _Clip: {fileID: 7400000, guid: 2c7d478659e3689418519456cab842c0, type: 2}
+    _Clip: {fileID: 7400000, guid: 02533fddf0601cc4ba2ed1890c41a4a1, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 40

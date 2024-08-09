@@ -27,8 +27,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
 
         private void Awake()
         {
-            startWanderPosition = characterController.transform.position;
-            wanderPositionIndex = 0;
+           
         }
     }
 }

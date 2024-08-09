@@ -30,7 +30,11 @@ namespace SFRemastered {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			agent.ChangeState(state, true);
+			
+			if (state != null) // Ensure state is not null
+			{
+				agent.ChangeState(state, true);
+			}
 			currentTime = 0;
 		}
 
@@ -45,7 +49,7 @@ namespace SFRemastered {
                 EndAction(false);
             }
 
-			if (time!=0 && time>=currentTime) {
+			if (time!=0 && currentTime>=time) {
 				EndAction(true);
 			}
 		}

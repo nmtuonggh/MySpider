@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bac98a8928465da9ae0c5062798379, type: 3}
   m_Name: HealingBotSO
   m_EditorClassIdentifier: 
-  healingBotPrefab: {fileID: 0}
+  healingBotPrefab: {fileID: 3805660406833946979, guid: a0bad91dda3f5b840991e238d53e10cf, type: 3}

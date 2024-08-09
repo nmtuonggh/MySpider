@@ -28,13 +28,13 @@ namespace SFRemastered._Game._Scripts.Enemy.State
 
         public bool ChangeState(EnemyBaseState newState, bool force = false)
         {
-            if(_isAIControlled && !force)
+            if (_isAIControlled && !force)
             {
                 return false;
             }
 
             if (newState == null)
-            { 
+            {
                 return false;
             }
 
@@ -42,7 +42,12 @@ namespace SFRemastered._Game._Scripts.Enemy.State
             {
                 return false;
             }
-            _currentState.ExitState();
+
+            if (_currentState != null)
+            {
+                _currentState.ExitState();
+            }
+
             _previousState = _currentState;
             _currentState = newState;
             _currentState.EnterState();
@@ -56,20 +61,20 @@ namespace SFRemastered._Game._Scripts.Enemy.State
             InitFSM(_isAIControlled);
         }
 
-        //update state
         private void Update()
         {
-            if(!_isAIControlled)
-                OnUpdate(); 
+            if (!_isAIControlled)
+                OnUpdate();
         }
 
         public StateStatus OnUpdate()
         {
+            if (_currentState == null) return StateStatus.Failure;
+
             _currentState.ConsistentUpdateState();
             return _currentState.UpdateState();
         }
 
-        //fixed update state
         private void FixedUpdate()
         {
             if (!_isAIControlled)
@@ -78,7 +83,17 @@ namespace SFRemastered._Game._Scripts.Enemy.State
 
         public void OnFixedUpdate()
         {
+            if (_currentState == null) return;
+
             _currentState.FixedUpdateState();
+        }
+
+        private void OnDestroy()
+        {
+            if (_currentState != null)
+            {
+                _currentState.ExitState();
+            }
         }
     }
 }

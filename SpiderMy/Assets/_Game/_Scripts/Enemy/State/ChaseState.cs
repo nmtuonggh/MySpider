@@ -12,6 +12,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            Debug.Log("Enter Chase State");
         }
 
         public override StateStatus UpdateState()
@@ -35,7 +36,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            transform.DOMove(transform.position + (transform.forward / 1), .5f);
+            //transform.DOMove(transform.position + (transform.forward / 1), .5f);
 
             return StateStatus.Running;
         }
