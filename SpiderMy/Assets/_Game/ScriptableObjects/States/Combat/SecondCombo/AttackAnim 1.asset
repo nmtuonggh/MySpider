@@ -17,6 +17,7 @@ MonoBehaviour:
     _Events:
       _NormalizedTimes:
       - 0.342827
+      - 0.76295733
       - NaN
       _Callbacks:
       - m_PersistentCalls:
@@ -34,8 +35,24 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: d31ba91d4b849004ba350f833f7e3ef8, type: 2}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.ComboAttack.ComboAttackBase,
+              Assembly-CSharp
+            m_MethodName: CanGoToNextAttack
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       _Names:
       - Hit
+      - CanGoNext
     _Clip: {fileID: 7400000, guid: ab39cd7e89df4da4199db33f4caa63c9, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN

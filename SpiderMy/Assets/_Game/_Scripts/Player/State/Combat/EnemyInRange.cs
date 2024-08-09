@@ -45,6 +45,11 @@ namespace SFRemastered._Game._Scripts.State.Combat
             {
                 _blackBoard._detectedEnemy = true;
                 _blackBoard._targetEnemy = FindClosestEnemy();
+                if (FindClosestEnemyNotStun() != null)
+                {
+                    _blackBoard._closestEnemyNotStun = FindClosestEnemyNotStun();
+                }
+                
                 _blackBoard._distanceToTargetEnemy = Vector3.Distance(transform.position, _blackBoard._targetEnemy.transform.position);
             }
             else
@@ -93,7 +98,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
             GameObject closestEnemy = null;
             foreach (var enemy in _listEnemy)
             {
-                if (enemy != null && !enemy.GetComponent<EnemyBlackBoard>().webHitStun)
+                if (enemy != null && enemy.GetComponent<EnemyBlackBoard>().stunLockHit == false)
                 {
                     float distance = Vector3.Distance(transform.position, enemy.transform.position);
                     if (distance < minDistance)

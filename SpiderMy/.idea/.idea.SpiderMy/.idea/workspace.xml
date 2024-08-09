@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/ProjectileScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool/ProjectilePool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Pool/ProjectilePool.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/NiorShowup.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimationClip/NiorShowup.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/MenuPose.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/AnimatorController/MenuPose.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package/_DPackage/PrefabInstance/ProjectilesWeb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package/_DPackage/PrefabInstance/ProjectilesWeb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Enemy (2).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/IdleCombat.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/IdleCombat.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/LowIdleCombat.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/Idles/LowIdleCombat.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Encircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Encircle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Retreat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Retreat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Input/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/IdleCombat/IdlesCombatBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/IdleCombat/IdlesCombatBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ZipAttack/StartZipAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ZipAttack/StartZipAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/InputPoller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/InputPoller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/GroundState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/GroundState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/IdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/SprintState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/SprintState.cs" afterDir="false" />
-    </list>
+    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,33 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Admin\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\atomb\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -109,7 +70,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -126,10 +87,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27044">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="27044" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -195,6 +156,7 @@
       <workItem from="1722963832234" duration="6145000" />
       <workItem from="1722997648539" duration="23874000" />
       <workItem from="1723081543861" duration="17392000" />
+      <workItem from="1723135903496" duration="9044000" />
     </task>
     <servers />
   </component>
@@ -213,23 +175,6 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/WebShooter.cs</url>
-          <line>37</line>
-          <properties documentPath="C:\Users\Admin\Documents\EFAS_2\SpiderMy\Assets\_Game\_Scripts\Player\State\Combat\Gadget\WebShooter.cs" containingFunctionPresentation="Method 'ShootWeb'">
-            <startOffsets>
-              <option value="1237" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1238" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
         <watch expression="this" language="C#" />

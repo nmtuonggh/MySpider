@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using Animancer;
+using UnityEngine;
 
 namespace SFRemastered
 {
     public class StunLock : EnemyBaseState
     {
+        [SerializeField] private ClipTransition startStunLock;
+        [SerializeField] private ClipTransition loopStunLock;
+        [SerializeField] private ClipTransition endStunLock;
+        
         private float currentTime;
         
         public override void EnterState()
         {
             base.EnterState();
             currentTime = 0;
+            _state = _blackBoard.animancer.Play(startStunLock);
         }
         
 
@@ -22,9 +28,19 @@ namespace SFRemastered
             }
             
             currentTime += Time.deltaTime;
-
+            
+            if (_state.NormalizedTime >= .95f && _state.Clip == startStunLock.Clip)
+            {
+                _state = _blackBoard.animancer.Play(loopStunLock);
+            }
+            if (currentTime >= _blackBoard.stunLockTime - 1 && _state.Clip == loopStunLock.Clip)  
+            {
+                _state = _blackBoard.animancer.Play(endStunLock);
+            }
+            
             if (currentTime >= _blackBoard.stunLockTime)
             {
+                _blackBoard.stunLockHit = false;
                 return StateStatus.Success;
             }
             
