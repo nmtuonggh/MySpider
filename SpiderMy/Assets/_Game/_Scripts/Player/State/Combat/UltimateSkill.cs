@@ -1,5 +1,7 @@
 ﻿using Animancer;
+using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
+using SFRemastered._Game.ScriptableObjects.AnimationAttack;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.State.Combat
@@ -7,22 +9,17 @@ namespace SFRemastered._Game._Scripts.State.Combat
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/UltimateSkill")]
     public class UltimateSkill : CombatBase
     {
-        [SerializeField] private ClipTransitionAsset _anim;
-
-        [SerializeField] private ParticleSystem _ultimateSkillEffect;
+        [SerializeField] private AttackAnim anim;
         [SerializeField] private NormalIdleCombat _normalIdleCombat;
-        private ParticleSystem _effect;
+        [SerializeField] private LayerMask layer;
         
         public override void EnterState()
         {
+            _state = _blackBoard.animancer.Play(anim.clip);
             base.EnterState();
             _blackBoard.playerMovement.useRootMotion = true;
-            
-            _effect = Instantiate(_ultimateSkillEffect, _blackBoard.playerMovement.transform);
-            _state = _blackBoard.animancer.Play(_anim);
-            //BumChiu();
+            _blackBoard.ultimateEffectPrefab.gameObject.SetActive(true);
             _state.Events.SetShouldNotModifyReason(null);
-            _state.Events.SetCallback("BumChiu", BumChiu);
             _state.Events.OnEnd = () =>
             {
                 _fsm.ChangeState(_normalIdleCombat);
@@ -31,6 +28,9 @@ namespace SFRemastered._Game._Scripts.State.Combat
         
         public override StateStatus UpdateState()
         {
+            
+            
+            
             StateStatus baseStatus = base.UpdateState();
             if(baseStatus != StateStatus.Running)
             {
@@ -40,17 +40,20 @@ namespace SFRemastered._Game._Scripts.State.Combat
             return StateStatus.Running;
         }
         
-        private void BumChiu()
+        public void BumChiu()
         {
-            //increase speed of effect
-            
-            _effect.Play();
+            _blackBoard.ultimateEffectPrefab.Play();
+        }
+
+        public void HitDame()
+        {
+            _blackBoard.overlapSphereHit.UltimateHit(_blackBoard.ultimateEffectPrefab.gameObject.transform, anim.damage);
         }
         
         public override void ExitState()
         {
             base.ExitState();
-            Destroy(_effect);
+            _blackBoard.ultimateEffectPrefab.gameObject.SetActive(false);
             _blackBoard.playerMovement.useRootMotion = false;
         }
     }

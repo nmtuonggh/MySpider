@@ -58,6 +58,7 @@ namespace SFRemastered
         public Transform _zipAttackHandPositon;
         public bool _detectedEnemy;
         public EnemyInRange enemyInRange;
+        public ParticleSystem ultimateEffectPrefab;
         
         [Header("Gadget")]
         public int gadgetIndex;
