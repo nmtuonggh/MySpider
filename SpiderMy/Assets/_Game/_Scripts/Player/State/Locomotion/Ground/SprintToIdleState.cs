@@ -10,8 +10,8 @@ namespace SFRemastered
     public class SprintToIdleState : GroundState
     {
         [SerializeField] private IdleState _idleState;
-        [SerializeField] private WebShooter _webShooter;
-        [FormerlySerializedAs("_walkState")] [SerializeField] private SprintState _sprintState;
+        [SerializeField] private GadgetAdapter _gadgetAdapter;
+        [SerializeField] private SprintState _sprintState;
         public override void EnterState()
         {
             base.EnterState();
@@ -39,9 +39,9 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.gadget)
+            if (_blackBoard.gadget && _blackBoard.gadgetIndex != -1)
             {
-                _fsm.ChangeState(_webShooter);
+                _fsm.ChangeState(_gadgetAdapter);
                 return StateStatus.Success;
             }
 

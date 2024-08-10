@@ -53,5 +53,5 @@ MonoBehaviour:
     - 10.8
     _DefaultParameter: 0
     _ExtrapolateSpeed: 1
-  _webShooter: {fileID: 11400000, guid: 90f085d8e85bb644fb398677d8952a8b, type: 2}
+  _gadgetAdapter: {fileID: 11400000, guid: 6de9178b9bebaff4d817785506b4e89f, type: 2}
   _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}

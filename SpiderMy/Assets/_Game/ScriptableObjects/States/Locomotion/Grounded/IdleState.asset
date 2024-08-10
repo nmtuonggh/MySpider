@@ -31,5 +31,5 @@ MonoBehaviour:
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _jumpToSwing: {fileID: 11400000, guid: 26613c97ed450e44ea2b115f647a508e, type: 2}
   normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
-  _webShooter: {fileID: 11400000, guid: 90f085d8e85bb644fb398677d8952a8b, type: 2}
+  _gadgetAdapter: {fileID: 11400000, guid: 6de9178b9bebaff4d817785506b4e89f, type: 2}
   _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}

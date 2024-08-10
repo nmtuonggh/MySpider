@@ -41,22 +41,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 CheckEnemiesInRange();
             }
 
-            if (_listEnemy.Count > 0)
-            {
-                _blackBoard._detectedEnemy = true;
-                _blackBoard._targetEnemy = FindClosestEnemy();
-                if (FindClosestEnemyNotStun() != null)
-                {
-                    _blackBoard._closestEnemyNotStun = FindClosestEnemyNotStun();
-                }
-                
-                _blackBoard._distanceToTargetEnemy = Vector3.Distance(transform.position, _blackBoard._targetEnemy.transform.position);
-            }
-            else
-            {
-                _blackBoard._detectedEnemy = false;
-                _blackBoard._targetEnemy = null;
-            }
+            _blackBoard._detectedEnemy = _listEnemy.Count > 0;
         }
 
         private void CheckEnemiesInRange()
@@ -72,44 +57,69 @@ namespace SFRemastered._Game._Scripts.State.Combat
             }
         }
 
-        private GameObject FindClosestEnemy()
+        public GameObject FindClosestEnemy()
         {
-            float minDistance = Mathf.Infinity;
-            GameObject closestEnemy = null;
-            foreach (var enemy in _listEnemy)
+            if (_listEnemy.Count > 0)
             {
-                if (enemy != null)
+                float minDistance = Mathf.Infinity;
+                GameObject closestEnemy = null;
+                foreach (var enemy in _listEnemy)
                 {
-                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
-                    if (distance < minDistance)
+                    if (enemy != null)
                     {
-                        minDistance = distance;
-                        closestEnemy = enemy;
+                        float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            closestEnemy = enemy;
+                        }
                     }
                 }
-            }
 
-            return closestEnemy;
+                return closestEnemy;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public GameObject FindClosestEnemyNotStun()
+        {
+            if (_listEnemy.Count > 0)
+            {
+                float minDistance = Mathf.Infinity;
+                GameObject closestEnemy = null;
+                foreach (var enemy in _listEnemy)
+                {
+                    if (enemy != null && enemy.GetComponent<EnemyBlackBoard>().webHitStun < 2)
+                    {
+                        float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            closestEnemy = enemy;
+                        }
+                    }
+                }
+
+                return closestEnemy;
+            }
+            else
+            {
+                return null;
+            }
         }
         
-        private GameObject FindClosestEnemyNotStun()
+        public float GetDistanceToTargetEnemy()
         {
-            float minDistance = Mathf.Infinity;
-            GameObject closestEnemy = null;
-            foreach (var enemy in _listEnemy)
+            if (FindClosestEnemy()!=null)
             {
-                if (enemy != null && enemy.GetComponent<EnemyBlackBoard>().webHitStun < 2)
-                {
-                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        closestEnemy = enemy;
-                    }
-                }
+                return Vector3.Distance(transform.position, FindClosestEnemy().transform.position);
             }
 
-            return closestEnemy;
+            return 0;
         }
+        
     }
 }

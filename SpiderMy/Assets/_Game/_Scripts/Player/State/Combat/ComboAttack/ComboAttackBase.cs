@@ -31,7 +31,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _currentComboIndex = 0;
             time = 0;
             if (_blackBoard._detectedEnemy)
-                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.3f,
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.3f,
                     AxisConstraint.Y);
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
         }
@@ -97,7 +97,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         {
             if (_blackBoard._detectedEnemy)
             {
-                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f,
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f,
                     AxisConstraint.Y);
             }
         }

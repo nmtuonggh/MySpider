@@ -17,7 +17,7 @@ namespace SFRemastered
         [SerializeField] private JumpToSwing _jumpToSwing;
         [SerializeField] private WallRun _wallRun;
         [SerializeField] private LinearMixerTransition _sprintingBlendTree;
-        [SerializeField] private WebShooter _webShooter;
+        [SerializeField] private GadgetAdapter _gadgetAdapter;
         [SerializeField] private UltimateSkill _ultimateSkill;
 
         public override void EnterState()
@@ -79,9 +79,9 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.gadget)
+            if (_blackBoard.gadget && _blackBoard.gadgetIndex != -1)
             {
-                _fsm.ChangeState(_webShooter);
+                _fsm.ChangeState(_gadgetAdapter);
                 return StateStatus.Success;
             }
 

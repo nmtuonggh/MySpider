@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using SFRemastered._Game._Scripts.CastCheck.Raycast;
 using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
+using SFRemastered._Game._Scripts.State.Combat;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -28,7 +29,7 @@ namespace SFRemastered
         public Vector3 wallMoveDirection;
             
         
-        [Header("=====Actions bool=====")]
+        [Header("=====Actions bool==========================")]
         public bool jump;
         public bool sprint;
         public bool swing;
@@ -40,7 +41,7 @@ namespace SFRemastered
         public bool gadget;
         public bool isGrounded;
         
-        [Header("=====Swing=====")]
+        [Header("=====Swing================================")]
         public LayerMask groundLayers;
         [FormerlySerializedAs("playerHand")] public Transform playerSwingPos;
         public Transform swingPoint;
@@ -48,21 +49,25 @@ namespace SFRemastered
         public GameObject ropHolder;
         public LineRenderer lr;
         
-        [Header("=====Zip=====")]
+        [Header("=====Zip================================")]
         public Transform startZipLeft;
         public Transform startZipRight;
         
-        [Header("=====Combat=====")]
+        [Header("=====Combat================================")]
         public OverlapSphereHit overlapSphereHit;
-        public GameObject _targetEnemy;
-        public GameObject _closestEnemyNotStun;
-        public ProjectileData projectileData;
-        public HealingBotSO healingBotSO;
         public Transform _zipAttackHandPositon;
-        public float _distanceToTargetEnemy;
         public bool _detectedEnemy;
+        public EnemyInRange enemyInRange;
         
-        [Header("=====GameObject References======")]
+        [Header("Gadget")]
+        public int gadgetIndex;
+        public HealingBotSO healingBotSO;
+        public GameObject healingBot;
+        public ProjectileWebShooterSO projectileWebShooterSo;
+        public Transform projectileHealingBotPosition;
+        
+        
+        [Header("=====GameObject References================")]
         public GameObjectRef playerRef;
         
         public enum HitType
@@ -75,6 +80,7 @@ namespace SFRemastered
         private void Awake()
         {
             playerRef.obj = this.gameObject;
+            gadgetIndex = -1;
         }
 
         public void SetSuitData(SuitData suitData)

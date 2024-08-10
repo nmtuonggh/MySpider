@@ -5,6 +5,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
     public class HealingBotController : MonoBehaviour
     {
         [SerializeField] private Transform playerTransform;
+        [SerializeField] private Transform startPosition;
         [SerializeField] private float rotationSpeed = 50f;
         [SerializeField] private float radius = 2f;
         [SerializeField] private float angle = 0f;
@@ -18,7 +19,10 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         private void Start()
         {
             elapsedTime = 0;
-            currentOffset = new Vector3(Mathf.Cos(angle) * radius, 2, Mathf.Sin(angle) * radius);
+            /*currentOffset = new Vector3(Mathf.Cos(angle) * radius, 2, Mathf.Sin(angle) * radius);
+            transform.position = startPosition.position;*/
+            currentOffset = startPosition.position - playerTransform.position;
+            transform.position = startPosition.position;
         }
 
         private void LateUpdate()
@@ -29,7 +33,8 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= duration)
             {
-                healingBotSO.ReturnToPool(gameObject);
+                //healingBotSO.ReturnToPool(gameObject);
+                gameObject.SetActive(false);
                 return;
             }
 

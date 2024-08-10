@@ -6,13 +6,13 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
     [CreateAssetMenu(menuName = "ScriptableObjects/States/CombatStates/GadgetAdapter")]
     public class GadgetAdapter : StateBase
     {
-        [SerializeField] private int gadgetIndex;
-        [SerializeField] private List<StateBase> listGadgetStates;
+        //[SerializeField] private int gadgetIndex;
+        [SerializeField] public List<StateBase> listGadgetStates;
         public override void EnterState()
         {
             base.EnterState();
             
-            _fsm.ChangeState(listGadgetStates[gadgetIndex]);
+            _fsm.ChangeState(listGadgetStates[_blackBoard.gadgetIndex]);
         }
         
         public override StateStatus UpdateState()
@@ -33,7 +33,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 
         public void SetGadgetIndex(int x)
         {
-            gadgetIndex = x;
+            _blackBoard.gadgetIndex = x;
         }
     }
 }

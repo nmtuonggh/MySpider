@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/ProjectileData")]
-    public class ProjectileData : ScriptableObject
+    public class ProjectileWebShooterSO : ScriptableObject
     {
         public GameObject projectilePrefab;
         public Queue<GameObject> PoolProjectileData = new Queue<GameObject>();
