@@ -18,6 +18,7 @@ MonoBehaviour:
     _Events:
       _NormalizedTimes:
       - 0.12661457
+      - 0.41401654
       - NaN
       _Callbacks:
       - m_PersistentCalls:
@@ -35,8 +36,24 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.UltimateSkill,
+              Assembly-CSharp
+            m_MethodName: HitDame
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       _Names:
       - PlayEffect
+      - HitDAme
     _Clip: {fileID: 7400000, guid: a8db76bbb13b49f4f83c43af31507f0a, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN

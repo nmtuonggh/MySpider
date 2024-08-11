@@ -64,7 +64,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            blackBoard.staggerHit = true;
+            blackBoard.knockBackHit = true;
             if (health <= 0)
             {
                 onEnemyDeath.Raise();

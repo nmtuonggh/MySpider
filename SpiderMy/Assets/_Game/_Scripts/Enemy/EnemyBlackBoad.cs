@@ -18,6 +18,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool zipAttackStun;
         public bool staggerHit;
         public bool stunLockHit;
+        public bool knockBackHit;
         [Header("WebShooter variables")]
         public float webHitStun;
         public float stunLockTime;
