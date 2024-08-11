@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddf265f01644c248ac0fafad93bb29f, type: 3}
+  m_Name: UltimateAnim
+  m_EditorClassIdentifier: 
+  clip:
+    _FadeDuration: 0.10666668
+    _Events:
+      _NormalizedTimes:
+      - 0.0884901
+      - 0.4543229
+      - NaN
+      _Callbacks:
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.UltimateSkill,
+              Assembly-CSharp
+            m_MethodName: BumChiu
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.UltimateSkill,
+              Assembly-CSharp
+            m_MethodName: HitDame
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      _Names:
+      - PlayEffect
+      - HitDame
+    _Clip: {fileID: 7400000, guid: a8db76bbb13b49f4f83c43af31507f0a, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  damage: 70
+  duration: 0

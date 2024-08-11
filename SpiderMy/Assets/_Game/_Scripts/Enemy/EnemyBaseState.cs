@@ -26,22 +26,21 @@ namespace SFRemastered
 
         public virtual void InitState(EnemyFSM enemyFsm, EnemyBlackBoard blackBoard, bool isAIControlled)
         {
-            //Init
             _enemyFsmfsm = enemyFsm;
             _blackBoard = blackBoard;
             _isAIControlled = isAIControlled;
             elapsedTime = 0;
         }
 
-        public virtual void EnterState() 
+        public virtual void EnterState()
         {
-            //  Debug.Log("Entering State: " + this);
             elapsedTime = 0;
 
-            if(_mainAnimation.Clip != null)
+            if (_mainAnimation.Clip != null)
                 _state = _blackBoard.animancer.Play(_mainAnimation);
         }
-        public virtual void ConsistentUpdateState() 
+
+        public virtual void ConsistentUpdateState()
         {
             elapsedTime += Time.deltaTime;
         }
@@ -50,12 +49,9 @@ namespace SFRemastered
         {
             return StateStatus.Running;
         }
-        public virtual void FixedUpdateState() { }
-        public virtual void ExitState() { }
 
-        protected void print(string msg)
-        {
-            Debug.Log(msg);
-        }
+        public virtual void FixedUpdateState() { }
+
+        public virtual void ExitState() { }
     }
 }

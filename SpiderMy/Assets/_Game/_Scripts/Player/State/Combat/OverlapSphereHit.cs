@@ -33,6 +33,16 @@ namespace SFRemastered
             }
         }
         
+        public void UltimateHit(Transform transform, float damage)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.transform.position ,0.3f, layer);
+            foreach (var hitCollider in hitColliders)
+            {
+                var enemy = hitCollider.GetComponent<IHitable>();
+                enemy.OnKnockBackHit(damage);
+            }
+        }
+        
         
         
         private void OnDrawGizmos()

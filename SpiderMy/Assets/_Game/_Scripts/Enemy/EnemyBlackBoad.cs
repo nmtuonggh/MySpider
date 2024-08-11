@@ -1,4 +1,5 @@
-﻿using Animancer;
+﻿using System;
+using Animancer;
 using NodeCanvas.Framework;
 using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
@@ -17,9 +18,16 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool zipAttackStun;
         public bool staggerHit;
         public bool stunLockHit;
-        
+        [Header("WebShooter variables")]
         public float webHitStun;
-        
         public float stunLockTime;
+        
+        public Vector3 startWanderPosition;
+        public int wanderPositionIndex;
+
+        private void Awake()
+        {
+           
+        }
     }
 }

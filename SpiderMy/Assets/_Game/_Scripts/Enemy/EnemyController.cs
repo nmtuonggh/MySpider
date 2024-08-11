@@ -57,11 +57,14 @@ namespace SFRemastered._Game._Scripts.Enemy
                 Die();
             }
         }
-        public void OnStunLockHit(float damage)
+        
+        
+
+        public void OnKnockBackHit(float damage)
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            blackBoard.stunLockHit = true;
+            blackBoard.staggerHit = true;
             if (health <= 0)
             {
                 onEnemyDeath.Raise();

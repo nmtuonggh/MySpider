@@ -25,16 +25,16 @@ namespace SFRemastered._Game._Scripts.State.Combat
 
             if (_blackBoard._detectedEnemy)
             {
-                if (_blackBoard._distanceToTargetEnemy is > 0 and <= 2.5f)
+                if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() is > 0 and <= 2.5f)
                 {
                     //TODO: Random attack combo
                     RandomAttackCombo();
                 }
-                else if (_blackBoard._distanceToTargetEnemy is > 2.5f and <= 8)
+                else if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() is > 2.5f and <= 8)
                 {
                     _fsm.ChangeState(_leapAttack);
                 }
-                else if (_blackBoard._distanceToTargetEnemy is > 8 and <= 25)
+                else if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() is > 8 and <= 25)
                 {
                     _fsm.ChangeState(_startZipAttack);
                 }

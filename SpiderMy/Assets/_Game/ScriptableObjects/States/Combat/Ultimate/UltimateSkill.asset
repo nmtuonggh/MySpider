@@ -14,16 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canTransitionToSelf: 0
   _mainAnimation:
-    _FadeDuration: 0.25
+    _FadeDuration: 0.08533334
     _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
+      _NormalizedTimes:
+      - 0.12661457
+      - NaN
+      _Callbacks:
+      - m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000}
+            m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.UltimateSkill,
+              Assembly-CSharp
+            m_MethodName: BumChiu
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+      _Names:
+      - PlayEffect
     _Clip: {fileID: 7400000, guid: a8db76bbb13b49f4f83c43af31507f0a, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
-  _ultimateSkill: {fileID: 11400000}
-  _anim: {fileID: 11400000, guid: 1ab5d150156aa3544a4df7e4c88f8c4e, type: 2}
-  _ultimateSkillEffect: {fileID: 8388392196729623235, guid: f04ccd5823946f94887025abc516a35d, type: 3}
+  anim: {fileID: 11400000, guid: d08efc543b8aa84489aac7770dad185a, type: 2}
   _normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0

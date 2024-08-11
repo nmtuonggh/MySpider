@@ -16,6 +16,7 @@ namespace SFRemastered
             base.EnterState();
             currentTime = 0;
             _state = _blackBoard.animancer.Play(startStunLock);
+            _blackBoard.animancer.Animator.applyRootMotion = true;
         }
         
 
@@ -41,6 +42,7 @@ namespace SFRemastered
             if (currentTime >= _blackBoard.stunLockTime)
             {
                 _blackBoard.stunLockHit = false;
+                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
             

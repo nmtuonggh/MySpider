@@ -19,8 +19,8 @@ namespace SFRemastered.Combat.ZipAttack
         {
             base.EnterState();
             //onZipAttackStart.Raise();
-            _blackBoard._targetEnemy.gameObject.GetComponent<EnemyController>().zipAttackStun = true;
-            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard._targetEnemy.transform.position, 0.2f, AxisConstraint.Y);
+            _blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyController>().zipAttackStun = true;
+            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f, AxisConstraint.Y);
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.constraints =
                 RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;

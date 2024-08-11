@@ -15,7 +15,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected JumpToSwing _jumpToSwing;
         [SerializeField] protected DodgeState _dodgeState;
         [SerializeField] protected UltimateSkill _ultimateSkill;
-        [SerializeField] protected WebShooter _webShooter;
+        [SerializeField] protected GadgetAdapter _gadgetAdapter;
 
         public bool canJump = true;
 
@@ -69,9 +69,9 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.gadget)
+            if (_blackBoard.gadget && _blackBoard.gadgetIndex != -1)
             {
-                _fsm.ChangeState(_webShooter);
+                _fsm.ChangeState(_gadgetAdapter);
                 return StateStatus.Success;
             }
 

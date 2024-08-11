@@ -10,7 +10,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.animancer.Animator.applyRootMotion = false;
+            _blackBoard.animancer.Animator.applyRootMotion = true;
         }
         
         public override StateStatus UpdateState()
@@ -23,6 +23,7 @@ namespace SFRemastered
             
             if (_state.NormalizedTime >= 1f)
             {
+                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
             

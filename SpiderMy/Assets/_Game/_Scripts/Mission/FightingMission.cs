@@ -75,6 +75,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 foreach (var enemy in enemies)
                 {
                     Destroy(enemy);
+                    //enemy.SetActive(false);
                 }
                 FailMission();
             }

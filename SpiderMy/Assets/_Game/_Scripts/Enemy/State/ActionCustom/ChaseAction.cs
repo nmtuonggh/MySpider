@@ -48,7 +48,6 @@ namespace SFRemastered {
                 EndAction(false);
             }
             
-
             if(Vector3.Distance(agent.transform.position, target.value.obj.transform.position) <= randomDistance) {
                 EndAction(true);
             }

@@ -13,8 +13,8 @@ namespace SFRemastered
     {
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private JumpToSwing _jumpToSwing;
-        [FormerlySerializedAs("normalIdleCombatBase")] [FormerlySerializedAs("idleIdlesCombat")] [FormerlySerializedAs("_idleCombat")] [SerializeField] private NormalIdleCombat normalIdleCombat;
-        [SerializeField] private WebShooter _webShooter;
+        [SerializeField] private NormalIdleCombat normalIdleCombat;
+        [SerializeField] private GadgetAdapter _gadgetAdapter;
         [SerializeField] private UltimateSkill _ultimateSkill;
         public override void EnterState()
         {
@@ -55,9 +55,9 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.gadget)
+            if (_blackBoard.gadget && _blackBoard.gadgetIndex != -1)
             {
-                _fsm.ChangeState(_webShooter);
+                _fsm.ChangeState(_gadgetAdapter);
                 return StateStatus.Success;
             }
 

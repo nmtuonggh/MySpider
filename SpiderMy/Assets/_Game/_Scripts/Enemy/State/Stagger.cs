@@ -5,7 +5,7 @@
         public override void EnterState()
         {
             base.EnterState();
-            //_state.Speed = ;
+            _blackBoard.animancer.Animator.applyRootMotion = true;
         }
         
 
@@ -19,6 +19,7 @@
             
             if (_state.NormalizedTime >= .8f)
             {
+                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
             

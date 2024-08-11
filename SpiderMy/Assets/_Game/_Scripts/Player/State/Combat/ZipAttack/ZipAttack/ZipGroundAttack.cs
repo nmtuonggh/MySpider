@@ -10,13 +10,13 @@ namespace SFRemastered.Combat.ZipAttack
         public override void EnterState()
         {
             base.EnterState();
-            var targetPos = (_blackBoard.transform.position - _blackBoard._targetEnemy.transform.position).normalized;
+            var targetPos = (_blackBoard.transform.position - _blackBoard.enemyInRange.FindClosestEnemy().transform.position).normalized;
 
             DrawnWeb(_blackBoard._zipAttackHandPositon.transform.position,
-                _blackBoard._targetEnemy.transform.position + new Vector3(0, 0.2f, 0));
+                _blackBoard.enemyInRange.FindClosestEnemy().transform.position + new Vector3(0, 0.2f, 0));
 
             _blackBoard.playerMovement.transform
-                .DOMove((_blackBoard._targetEnemy.transform.position + targetPos * .3f) + new Vector3(0, 0.05f, 0), 0.35f)
+                .DOMove((_blackBoard.enemyInRange.FindClosestEnemy().transform.position + targetPos * .3f) + new Vector3(0, 0.05f, 0), 0.35f)
                 .OnComplete(
                     () =>
                     {

@@ -16,8 +16,8 @@ MonoBehaviour:
     _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.5406118
-      - 0.8663618
+      - 0.38500056
+      - 0.7712158
       - NaN
       _Callbacks:
       - m_PersistentCalls:
@@ -53,7 +53,7 @@ MonoBehaviour:
       _Names:
       - Hit
       - CanGoNext
-    _Clip: {fileID: 7400000, guid: 39bd94f2c7ed9324ab8c5b6e8fe9bea9, type: 2}
+    _Clip: {fileID: 7400000, guid: f1b21e6f0b225704bb64d3fad71012b4, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 40
