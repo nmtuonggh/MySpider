@@ -15,6 +15,8 @@ namespace SFRemastered
 
         [SerializeReference] private List<StateBase> _states;
 
+        public StateBase PreviousState => _previousState;
+
         public void InitFSM(bool isAIControlled)
         {
             _blackBoard = GetComponent<BlackBoard>();
