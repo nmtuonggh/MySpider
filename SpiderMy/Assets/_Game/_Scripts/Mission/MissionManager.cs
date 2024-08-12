@@ -12,7 +12,13 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private BaseMissionSO currentMission;
         private GameObject currentMissionPrefab;
-        [Header("Mission Event")] public GameEventListener onMissionStart;
+        
+        [Header("==========Mission UI==========")]
+        public UI_ShowMission MissionUIScript;
+        public GameObject missionUI;
+        
+        [Header("==========Mission Event Listener==========")]
+        public GameEventListener onMissionStart;
         public GameEventListener onMissionUpdate;
         public GameEventListener onMissionComplete;
         public GameEventListener onMissionFail;
@@ -53,6 +59,7 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             if (mainMissionSO.currentMissionIndex < mainMissionSO.listMission.Count - 1)
             {
+                MissionUIScript.ShowMissionUI(missionUI, false);
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
                 StartMission();
@@ -68,8 +75,8 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void StartMission()
         {
+            //MissionUIScript.ShowMissionUI(missionUI, true);
             currentMission = mainMissionSO.GetCurrentMission();
-            //currentMission.SpawnPosition = missionPositions[mainMissionSO.currentMissionIndex];
             currentMission.GetMissionPosition(missionPositions[mainMissionSO.currentMissionIndex]);
             currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position,
                 Quaternion.identity);

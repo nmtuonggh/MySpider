@@ -43,13 +43,13 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard._detectedEnemy)
             {
                
-                _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
+                _blackBoard.overlapSphereHit.Hit( _currentDamage);
             }
         }
         
         public void GetMidRangeHit()
         {
-            _blackBoard.overlapSphereHit.Hit(BlackBoard.HitType.stagger, _currentDamage);
+            _blackBoard.overlapSphereHit.Hit( _currentDamage);
         }
         
     }

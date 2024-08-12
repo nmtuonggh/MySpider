@@ -13,7 +13,7 @@ namespace SFRemastered
         [SerializeField] private float radius;
         [SerializeField] private LayerMask layer;
         
-        public void Hit(BlackBoard.HitType hitType,float damage)
+        public void Hit(float damage)
         {
             Collider[] hitColliders = Physics.OverlapCapsule(start.transform.position, end.transform.position,radius, layer);
             foreach (var hitCollider in hitColliders)
@@ -35,9 +35,11 @@ namespace SFRemastered
         
         public void UltimateHit(Transform transform, float damage)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.transform.position ,0.3f, layer);
+            Debug.Log("Ultimate hit!");
+            Collider[] hitColliders = Physics.OverlapSphere(transform.transform.position ,15f, layer);
             foreach (var hitCollider in hitColliders)
             {
+                Debug.Log(hitCollider.name + " hit!");
                 var enemy = hitCollider.GetComponent<IHitable>();
                 enemy.OnKnockBackHit(damage);
             }
