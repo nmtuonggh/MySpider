@@ -76,7 +76,9 @@ namespace SFRemastered._Game._Scripts.Mission
         public void StartMission()
         {
             //MissionUIScript.ShowMissionUI(missionUI, true);
+           
             currentMission = mainMissionSO.GetCurrentMission();
+            Debug.Log("Start Mission" + currentMission.name);
             currentMission.GetMissionPosition(missionPositions[mainMissionSO.currentMissionIndex]);
             currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position,
                 Quaternion.identity);

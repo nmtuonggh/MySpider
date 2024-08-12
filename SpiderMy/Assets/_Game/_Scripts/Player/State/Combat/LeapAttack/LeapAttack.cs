@@ -19,6 +19,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.useRootMotion = true;
             _state = _blackBoard.animancer.Play(attackAnim.clip);
             _currentDamage = attackAnim.damage;
@@ -47,6 +48,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
             _blackBoard.playerMovement.useRootMotion = false;
         }
     }

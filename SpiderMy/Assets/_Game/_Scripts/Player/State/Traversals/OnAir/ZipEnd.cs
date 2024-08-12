@@ -13,6 +13,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         }
 
         public override StateStatus UpdateState()
@@ -30,6 +31,7 @@ namespace SFRemastered
         
         public override void ExitState()
         {
+            
             base.ExitState();
         }
     }

@@ -17,7 +17,7 @@ MonoBehaviour:
     _Events:
       _NormalizedTimes:
       - 0.26948228
-      - 0.8160532
+      - 0.83604294
       - NaN
       _Callbacks:
       - m_PersistentCalls:
@@ -57,4 +57,4 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 40
-  duration: 0
+  delayAttack: 1.6

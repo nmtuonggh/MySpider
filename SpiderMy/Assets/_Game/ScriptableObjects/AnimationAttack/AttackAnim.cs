@@ -8,6 +8,6 @@ namespace SFRemastered._Game.ScriptableObjects.AnimationAttack
     {
         public ClipTransition clip;
         public float damage;
-        public float duration;
+        public float delayAttack;
     }
 }

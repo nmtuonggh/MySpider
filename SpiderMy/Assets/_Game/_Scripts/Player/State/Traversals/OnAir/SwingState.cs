@@ -50,6 +50,7 @@ namespace SFRemastered
             SwitchAnim();
 
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
+            
             if (GroundCheck())
             {
                 _fsm.ChangeState(_landRollState);
@@ -103,15 +104,6 @@ namespace SFRemastered
             {
                 _state = _blackBoard.animancer.Play(_ListAnim[animIndex]);
             }
-        }
-
-        private void RotationPlayerWhileSwing()
-        {
-            var direction = _randomRopePosition - _blackBoard.startrope.position;
-            _blackBoard.playerMovement.RotateTowardsWithSlerp(_blackBoard.rigidbody.velocity.normalized, false);
-            Quaternion rotation =
-                Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, direction.normalized);
-            _blackBoard.playerMovement.transform.rotation = rotation;
         }
 
         private void RotateVisual()
@@ -182,7 +174,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
             //_blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
-            //_blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
+            // _blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
 

@@ -51,24 +51,24 @@ namespace SFRemastered._Game._Scripts.Enemy
             health -= damage;
             healthBar.TakeDamage(damage);
             blackBoard.staggerHit = true;
-            if (health <= 0)
-            {
-                onEnemyDeath.Raise();
-                Die();
-            }
+            CheckHealth();
         }
         
-        
-
         public void OnKnockBackHit(float damage)
         {
             health -= damage;
             healthBar.TakeDamage(damage);
             blackBoard.knockBackHit = true;
+            CheckHealth();
+        }
+        
+        private void CheckHealth()
+        {
             if (health <= 0)
             {
                 onEnemyDeath.Raise();
-                Die();
+                blackBoard.die = true;
+                //Die();
             }
         }
 

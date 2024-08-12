@@ -20,10 +20,12 @@ MonoBehaviour:
   timeLimit: 0
   warningRange: {fileID: 0}
   spawnRange: 5
-  currentWaveIndex: 1
-  currentWaveEnemyCount: 1
+  currentWaveIndex: 2
+  currentWaveEnemyCount: 0
   listWaveCombat:
   - listGangster:
+    - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
+    - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     listMercenary: []
     listMafia: []

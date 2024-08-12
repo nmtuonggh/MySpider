@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2416655219811386422
 Transform:
   m_ObjectHideFlags: 0
@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
+  startPosition: {fileID: 0}
   rotationSpeed: 1
   radius: 2
   angle: 0
-  smoothSpeed: 0.125
+  smoothSpeed: 0.1
   duration: 10
   healingBotSO: {fileID: 11400000, guid: 1a6890698453d734182857e160254945, type: 2}
 --- !u!1001 &8501531285386631909

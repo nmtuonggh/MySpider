@@ -1,4 +1,5 @@
 ﻿using Animancer;
+using DG.Tweening;
 using UnityEngine;
 
 namespace SFRemastered
@@ -22,6 +23,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
             //add force
             var totalForce = forceDirecton * forceValue;
@@ -63,6 +65,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
         }
         
         private void RandomAnim()

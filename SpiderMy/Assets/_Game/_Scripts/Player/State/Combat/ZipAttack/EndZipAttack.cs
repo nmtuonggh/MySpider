@@ -39,6 +39,7 @@ namespace SFRemastered.Combat.ZipAttack
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         }
     }
 }

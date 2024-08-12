@@ -13,7 +13,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 
         public override void EnterState()
         {
-            if (_blackBoard.enemyInRange.FindClosestEnemy() != null)
+            if (_blackBoard.enemyInRange.FindClosestEnemyNotStun() != null)
             {
                 _blackBoard.playerMovement.transform
                     .DOLookAt(_blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position, 0.2f,

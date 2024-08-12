@@ -46,6 +46,14 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             base.StartMission();
             SpawnPickupLocation();
+            DrawnIndicator();
+        }
+        
+        private void DrawnIndicator()
+        {
+            _indicator = Instantiate(shippingMissionSO.indicatorPrefab, shippingMissionSO.SpawnPosition.position,
+                Quaternion.identity);
+            _indicator.transform.SetParent(shippingMissionSO.SpawnPosition);
         }
 
         private void SpawnPickupLocation()
@@ -63,7 +71,7 @@ namespace SFRemastered._Game._Scripts.Mission
             
             foreach (var shipPoint in selectedPoints)
             {
-                Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint.position, Quaternion.identity);
+                Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity);
             }
             
             Destroy(_missionRange);
