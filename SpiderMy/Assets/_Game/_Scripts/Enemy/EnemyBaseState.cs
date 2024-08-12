@@ -16,7 +16,7 @@ namespace SFRemastered
 
     public abstract class EnemyBaseState : MonoBehaviour
     {
-        protected EnemyFSM _enemyFsmfsm;
+        protected EnemyFSM _enemyFsm;
         protected EnemyBlackBoard _blackBoard;
         protected bool _isAIControlled;
         public bool canTransitionToSelf = false;
@@ -26,7 +26,7 @@ namespace SFRemastered
 
         public virtual void InitState(EnemyFSM enemyFsm, EnemyBlackBoard blackBoard, bool isAIControlled)
         {
-            _enemyFsmfsm = enemyFsm;
+            _enemyFsm = enemyFsm;
             _blackBoard = blackBoard;
             _isAIControlled = isAIControlled;
             elapsedTime = 0;

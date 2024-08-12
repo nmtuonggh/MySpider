@@ -8,9 +8,7 @@ namespace SFRemastered
     public class JumpFromSwingLow : AirBoneState
     {
         [SerializeField] private FallState _fallState;
-        [SerializeField] private LandToIdleState _landIdleState;
-        [SerializeField] private LandNormalState _landNormalState;
-        [SerializeField] private SprintState _sprintState;
+        [SerializeField] private LandRollState _landRollState;
         [SerializeField] private List<ClipTransition> _litsAnimation;
         
         [SerializeField] float forceValue;
@@ -39,13 +37,7 @@ namespace SFRemastered
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
-                if (_blackBoard.moveDirection.magnitude < 0.3f)
-                    _fsm.ChangeState(_landIdleState);
-                else if (elapsedTime > .4f)
-                    _fsm.ChangeState(_landNormalState);
-                else
-                    _fsm.ChangeState(_sprintState);
-
+                _fsm.ChangeState(_landRollState);
                 return StateStatus.Success;
             }
 

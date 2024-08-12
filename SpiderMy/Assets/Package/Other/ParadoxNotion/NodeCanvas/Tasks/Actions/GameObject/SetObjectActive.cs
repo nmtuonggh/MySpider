@@ -1,3 +1,4 @@
+
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
@@ -12,6 +13,9 @@ namespace NodeCanvas.Tasks.Actions
     public class SetObjectActive : ActionTask<Transform>
     {
 
+        [RequiredField]
+        public BBParameter<GameObject> obj;
+
         public enum SetActiveMode
         {
             Deactivate = 0,
@@ -22,7 +26,7 @@ namespace NodeCanvas.Tasks.Actions
         public SetActiveMode setTo = SetActiveMode.Toggle;
 
         protected override string info {
-            get { return string.Format("{0} {1}", setTo, agentInfo); }
+            get { return string.Format("{0} {1}", setTo, obj); }
         }
 
         protected override void OnExecute() {
@@ -38,7 +42,7 @@ namespace NodeCanvas.Tasks.Actions
                 value = (int)setTo == 1;
             }
 
-            agent.gameObject.SetActive(value);
+            obj.value.SetActive(value);
             EndAction();
         }
     }

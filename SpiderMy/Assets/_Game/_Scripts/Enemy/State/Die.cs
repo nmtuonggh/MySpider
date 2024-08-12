@@ -7,7 +7,7 @@
             base.EnterState();
             _state.Events.OnEnd += () =>
             {
-                Destroy(this.gameObject);
+                Destroy(_enemyFsm.gameObject);
             };
         }
         

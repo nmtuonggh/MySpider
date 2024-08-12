@@ -22,7 +22,8 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         [Header("Events")]
         public GameEvent onEnemyDeath;
-        
+        public GameEvent onStartAttack;
+        public GameEvent onEndAttack;
         //[Header("Events Listener")]
         //public GameEventListener onStaggerHit;
 
@@ -30,6 +31,8 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
            
         }
+
+        public void test(){}
 
         private void Update()
         {
@@ -66,6 +69,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             if (health <= 0)
             {
+                healthBar.gameObject.SetActive(false);
                 onEnemyDeath.Raise();
                 blackBoard.die = true;
                 //Die();
