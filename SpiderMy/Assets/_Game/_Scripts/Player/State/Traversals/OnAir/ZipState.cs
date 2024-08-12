@@ -24,10 +24,8 @@ namespace SFRemastered
             //_blackBoard.playerMovement.TeleportRotation(Quaternion.LookRotation(_blackBoard.findZipPoint.zipPoint));
             _state = _blackBoard.animancer.Play(_startZip);
             _doneMove = false;
-            _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
-            _blackBoard.rigidbody.useGravity = false;
-            _blackBoard.rigidbody.isKinematic = false;
-
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position,
                 _blackBoard.findZipPoint.zipPoint + new Vector3(0, 0.2f, 0));
             float moveDuration = distance / durationValue;
@@ -44,6 +42,7 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             
             _state = _blackBoard.animancer.Play(_zipping);
 
@@ -72,10 +71,7 @@ namespace SFRemastered
             _fsm.transform.DORotate(
                 Quaternion.LookRotation(_fsm.transform.forward.projectedOnPlane(Vector3.up), Vector3.up).eulerAngles,
                 0.2f);
-            _blackBoard.playerMovement.SetMovementMode(MovementMode.Walking);
-            _blackBoard.rigidbody.useGravity = false;
-            _blackBoard.rigidbody.isKinematic = true;
-            _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         }
         
         private void DrawWeb()

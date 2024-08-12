@@ -19,9 +19,12 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool staggerHit;
         public bool stunLockHit;
         public bool knockBackHit;
-        [Header("WebShooter variables")]
+        public bool die;
+        
+        [Header("Combat variables")]
         public float webHitStun;
         public float stunLockTime;
+        public GameObject warningAttack;
         
         public Vector3 startWanderPosition;
         public int wanderPositionIndex;

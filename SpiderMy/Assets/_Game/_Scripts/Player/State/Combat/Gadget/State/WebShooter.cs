@@ -11,13 +11,14 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
     {
         [SerializeField] private NormalIdleCombat _normalIdleCombat;
 
+        private GameObject target;
+
         public override void EnterState()
         {
-            if (_blackBoard.enemyInRange.FindClosestEnemy() != null)
+            target = _blackBoard.enemyInRange.FindClosestEnemyNotStun();
+            if (target != null)
             {
-                _blackBoard.playerMovement.transform
-                    .DOLookAt(_blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position, 0.2f,
-                        AxisConstraint.Y);
+                _blackBoard.playerMovement.transform.DOLookAt(target.transform.position, 0.2f, AxisConstraint.Y);
             }
 
             base.EnterState();
@@ -51,22 +52,17 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 
         public void ShootWebLeft()
         {
-            if (_blackBoard.enemyInRange.FindClosestEnemyNotStun() != null)
+            if (target != null)
             {
-                var rotation = Quaternion.LookRotation(
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position -
-                    _blackBoard.startrope.position);
+                var rotation = Quaternion.LookRotation(target.transform.position - _blackBoard.startrope.position);
 
                 var web = _blackBoard.projectileWebShooterSo.Spawn(_blackBoard.startrope.position, rotation,
                     _blackBoard.poolManager.transform);
 
-                web.transform.DOMove(_blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position +
-                                     new Vector3(
-                                         0, 0.5f, 0), 0.2f).OnComplete(() =>
+                web.transform.DOMove(target.transform.position + new Vector3(0, 0.5f, 0), 0.2f).OnComplete(() =>
                 {
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().GetComponent<EnemyBlackBoard>().webHitStun += 1;
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().GetComponent<EnemyBlackBoard>().stunLockHit =
-                        true;
+                    target.GetComponent<EnemyBlackBoard>().webHitStun += 1;
+                    target.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                     _blackBoard.projectileWebShooterSo.ReturnToPool(web);
                 });
             }
@@ -84,20 +80,15 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 
         public void ShootWebRight()
         {
-            if (_blackBoard.enemyInRange.FindClosestEnemyNotStun() != null)
+            if (target != null)
             {
-                var rotation = Quaternion.LookRotation(
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position -
-                    _blackBoard._zipAttackHandPositon.position);
+                var rotation = Quaternion.LookRotation(target.transform.position - _blackBoard._zipAttackHandPositon.position);
                 var web = _blackBoard.projectileWebShooterSo.Spawn(_blackBoard._zipAttackHandPositon.position, rotation,
                     _blackBoard.poolManager.transform);
-                web.transform.DOMove(_blackBoard.enemyInRange.FindClosestEnemyNotStun().transform.position +
-                                     new Vector3(
-                                         0, 0.5f, 0), 0.2f).OnComplete(() =>
+                web.transform.DOMove(target.transform.position + new Vector3(0, 0.5f, 0), 0.2f).OnComplete(() =>
                 {
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().GetComponent<EnemyBlackBoard>().webHitStun += 1;
-                    _blackBoard.enemyInRange.FindClosestEnemyNotStun().GetComponent<EnemyBlackBoard>().stunLockHit =
-                        true;
+                    target.GetComponent<EnemyBlackBoard>().webHitStun += 1; 
+                    target.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                     _blackBoard.projectileWebShooterSo.ReturnToPool(web);
                 });
             }

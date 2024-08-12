@@ -19,13 +19,10 @@ namespace SFRemastered.Combat.ZipAttack
         {
             base.EnterState();
             //onZipAttackStart.Raise();
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyController>().zipAttackStun = true;
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f, AxisConstraint.Y);
-            _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
-            _blackBoard.rigidbody.constraints =
-                RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.useGravity = false; 
-            _blackBoard.rigidbody.isKinematic = false;
         }
 
         public override StateStatus UpdateState()
@@ -51,10 +48,7 @@ namespace SFRemastered.Combat.ZipAttack
         public override void ExitState()
         {
             base.ExitState();
-            _blackBoard.playerMovement.SetMovementMode(MovementMode.Walking);
-            _blackBoard.rigidbody.useGravity = false;
-            _blackBoard.rigidbody.isKinematic = true;
-            _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            
         }
     }
 }

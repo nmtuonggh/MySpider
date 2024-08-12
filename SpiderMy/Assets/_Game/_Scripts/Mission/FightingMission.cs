@@ -52,10 +52,13 @@ namespace SFRemastered._Game._Scripts.Mission
             Destroy(_indicator);
             Destroy(_missionRange);
             base.CompleteMission();
+            Debug.Log("Complete fighting mission");
         }
 
         public override void FailMission()
         {
+            Destroy(_indicator);
+            Destroy(_missionRange);
             progressing = false;
             base.FailMission();
         }
@@ -151,6 +154,7 @@ namespace SFRemastered._Game._Scripts.Mission
             );
 
             Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
+            //enemySo.Spawn(spawnPos, Quaternion.identity, fightingMissionSo.SpawnPosition);
         }
         #endregion
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 {
@@ -10,13 +11,18 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         [SerializeField] private float radius = 2f;
         [SerializeField] private float angle = 0f;
         [SerializeField] private float smoothSpeed = 0.125f;
-        private float elapsedTime;
+        public float elapsedTime;
         [SerializeField] private float duration = 10f;
         [SerializeField] private HealingBotSO healingBotSO;
 
         private Vector3 currentOffset;
 
         private void Start()
+        {
+            
+        }
+
+        private void OnEnable()
         {
             elapsedTime = 0;
             /*currentOffset = new Vector3(Mathf.Cos(angle) * radius, 2, Mathf.Sin(angle) * radius);
@@ -35,6 +41,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             {
                 //healingBotSO.ReturnToPool(gameObject);
                 gameObject.SetActive(false);
+                elapsedTime = 0;
                 return;
             }
 

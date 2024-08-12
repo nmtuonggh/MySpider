@@ -9,16 +9,19 @@ namespace SFRemastered._Game._Scripts.Mission
     public class ShippingMissionSO : BaseMissionSO
     { 
         [Header("Ship Mission")]
-        public List<Transform> listDeliveryPoints = new List<Transform>();
+        public List<Vector3> listDeliveryPoints = new List<Vector3>();
         public GameObject deliveryPointPrefab;
 
         public override void GetMissionPosition(Transform mssPoint)
         {
             base.GetMissionPosition(mssPoint);
-            foreach (Transform transform in mssPoint)
+            listDeliveryPoints.Clear();
+            
+            foreach (Transform child in mssPoint)
             {
-                listDeliveryPoints.Add(transform);
+                listDeliveryPoints.Add(child.position);
             }
         }
+        
     }
 }

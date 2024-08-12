@@ -57,4 +57,4 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 30
-  duration: 0
+  delayAttack: 0.9

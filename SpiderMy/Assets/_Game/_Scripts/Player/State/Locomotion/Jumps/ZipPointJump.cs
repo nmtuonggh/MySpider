@@ -16,7 +16,6 @@ namespace SFRemastered
         [SerializeField] private ClipTransition _endAnimation ;
         public override void EnterState()
         {
-            
             base.EnterState();
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;

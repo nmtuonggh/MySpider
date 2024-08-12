@@ -35,5 +35,5 @@ MonoBehaviour:
   lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   _currentComboIndex: 0
-  _delayTime: 0.8
-  _canGoToNextAttack: 0
+  _delayTime: 0.9
+  _canGoToNextAttack: 1

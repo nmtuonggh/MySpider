@@ -1,4 +1,5 @@
 ﻿using Animancer;
+using DG.Tweening;
 using UnityEngine;
 
 namespace SFRemastered
@@ -7,9 +8,7 @@ namespace SFRemastered
     public class JumpFromSwing : AirBoneState
     {
         [SerializeField] private DiveState _diveState;
-        [SerializeField] private LandToIdleState _landIdleState;
-        [SerializeField] private LandNormalState _landNormalState;
-        [SerializeField] private SprintState _sprintState;
+        [SerializeField] private LandRollState _landRollState;
         [SerializeField] private LinearMixerTransition _jumpFromSwingBlendTree;
         [SerializeField] private ClipTransition[] _litsAnimation;
         [SerializeField] private int _animCount;
@@ -22,6 +21,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
             //add force
             var totalForce = forceDirecton * forceValue;
@@ -39,15 +39,9 @@ namespace SFRemastered
             
             RandomAnim();
 
-            if (_blackBoard.playerMovement.IsGrounded())
-            {
-                if (_blackBoard.moveDirection.magnitude < 0.3f)
-                    _fsm.ChangeState(_landIdleState);
-                else if (elapsedTime > .4f)
-                    _fsm.ChangeState(_landNormalState);
-                else
-                    _fsm.ChangeState(_sprintState);
-
+            if (GroundCheck())
+            {   
+                _fsm.ChangeState(_landRollState);
                 return StateStatus.Success;
             }
 
@@ -63,11 +57,24 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
         }
         
         private void RandomAnim()
         {
             _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
+        }
+        
+        private bool GroundCheck()
+        {
+            if (Physics.Raycast(_fsm.transform.position, Vector3.down, 0.3f, _blackBoard.groundLayers))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

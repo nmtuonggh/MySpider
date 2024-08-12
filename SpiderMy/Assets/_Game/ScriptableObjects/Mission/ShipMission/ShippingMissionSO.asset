@@ -19,7 +19,7 @@ MonoBehaviour:
   expReward: 0
   timeLimit: 0
   listDeliveryPoints:
-  - {fileID: 1320318904221327023, guid: 0f4b4e11d53dfbd45b40e86ac0bedaee, type: 3}
-  - {fileID: 8810108110381957510, guid: b3e43c965fc82e642b8ac23f0ebd9078, type: 3}
-  - {fileID: 5071886938055889938, guid: 8f3d95cf445a610419823ed71e8f3969, type: 3}
+  - {x: -142.86, y: 30.718994, z: 57.179993}
+  - {x: -40.59999, y: 71.499, z: 252.46002}
+  - {x: 23.330002, y: 23.589005, z: 98.399994}
   deliveryPointPrefab: {fileID: 842339807759303052, guid: 7867037d9572bbb408b36fff238026ad, type: 3}

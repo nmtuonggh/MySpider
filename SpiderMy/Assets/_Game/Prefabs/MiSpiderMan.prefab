@@ -127,7 +127,6 @@ Transform:
   - {fileID: 5938693364337232585}
   - {fileID: 2401403228649078355}
   - {fileID: 5700394502015949070}
-  - {fileID: 2658278442789830611}
   - {fileID: 3816006632450827002}
   - {fileID: 1146610085994068491}
   m_Father: {fileID: 6396317292476732604}
@@ -755,6 +754,7 @@ MonoBehaviour:
   sfxManager: {fileID: 9115051808228800094}
   camera: {fileID: 0}
   rigidbody: {fileID: 633614093378856963}
+  poolManager: {fileID: 0}
   characterVisual: {fileID: 5118393900050330974}
   moveDirection: {x: 0, y: 0, z: 0}
   wallMoveDirection: {x: 0, y: 0, z: 0}
@@ -765,8 +765,8 @@ MonoBehaviour:
   foundWall: 0
   attack: 0
   dodge: 0
-  swapskin: 0
   ultimate: 0
+  gadget: 0
   isGrounded: 0
   groundLayers:
     serializedVersion: 2
@@ -779,10 +779,15 @@ MonoBehaviour:
   startZipLeft: {fileID: 7669618011350797208}
   startZipRight: {fileID: 8664776891800940664}
   overlapSphereHit: {fileID: 2677965867816207866}
-  _targetEnemy: {fileID: 0}
   _zipAttackHandPositon: {fileID: 8639669394431903807}
-  _distanceToTargetEnemy: 0
   _detectedEnemy: 0
+  enemyInRange: {fileID: 0}
+  ultimateEffectPrefab: {fileID: 0}
+  gadgetIndex: 0
+  healingBotSO: {fileID: 0}
+  healingBot: {fileID: 0}
+  projectileWebShooterSo: {fileID: 0}
+  projectileHealingBotPosition: {fileID: 0}
   playerRef: {fileID: 11400000, guid: 158360586ecfd8646b32ab4dad1aad4c, type: 2}
 --- !u!114 &1543211991591086881
 MonoBehaviour:
@@ -1412,11 +1417,11 @@ Transform:
   m_GameObject: {fileID: 3483344279694933277}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 20.2, z: 30}
+  m_LocalPosition: {x: 0, y: 18.2, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2150438140952861413}
+  m_Father: {fileID: 41685457198569216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3651643111615787808
 GameObject:
@@ -1512,6 +1517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8184263119088520213}
+  - {fileID: 2658278442789830611}
   m_Father: {fileID: 6396317292476732604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5156002814380404575

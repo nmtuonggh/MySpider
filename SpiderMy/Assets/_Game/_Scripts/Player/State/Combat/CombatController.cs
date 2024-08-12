@@ -56,11 +56,13 @@ namespace SFRemastered._Game._Scripts.State.Combat
         
         void RandomAttackCombo()
         {
-            var random = Random.Range(0, 2);
+            /*var random = Random.Range(0, 2);
             if (random == 0)
                 _fsm.ChangeState(_firstCombo);
             else
-                _fsm.ChangeState(_secondCombo);
+                _fsm.ChangeState(_secondCombo);*/
+            
+            _fsm.ChangeState(_firstCombo);
         }
     }
 }
