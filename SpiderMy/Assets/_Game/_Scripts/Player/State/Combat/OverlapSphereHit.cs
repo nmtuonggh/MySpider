@@ -18,7 +18,7 @@ namespace SFRemastered
             Collider[] hitColliders = Physics.OverlapCapsule(start.transform.position, end.transform.position,radius, layer);
             foreach (var hitCollider in hitColliders)
             {
-                var enemy = hitCollider.GetComponent<IHitable>();
+                var enemy = hitCollider.GetComponent<EnemyController>();
                 enemy.OnStaggerHit(damage);
             }
         }
@@ -28,7 +28,7 @@ namespace SFRemastered
             Collider[] hitColliders = Physics.OverlapSphere(center.transform.position ,0.3f, layer);
             foreach (var hitCollider in hitColliders)
             {
-                var enemy = hitCollider.GetComponent<IHitable>();
+                var enemy = hitCollider.GetComponent<EnemyController>();
                 enemy.OnStaggerHit(damage);
             }
         }
@@ -40,7 +40,7 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 Debug.Log(hitCollider.name + " hit!");
-                var enemy = hitCollider.GetComponent<IHitable>();
+                var enemy = hitCollider.GetComponent<EnemyController>();
                 enemy.OnKnockBackHit(damage);
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Animancer;
+using SFRemastered.OnHitState;
 using UnityEngine;
 
 namespace SFRemastered
@@ -10,6 +11,7 @@ namespace SFRemastered
         [SerializeField] private SprintState _sprintState;
         [SerializeField] private FallState _fallState;
         [SerializeField] private ClipTransition _fallLoopAnimation;
+        [SerializeField] private StaggerState stagger;
 
         public override void EnterState()
         {
@@ -50,6 +52,12 @@ namespace SFRemastered
             if (_blackBoard.playerMovement.GetVelocity().y < 0 && elapsedTime > .2f)
             {
                 _fsm.ChangeState(_fallState);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.staggerHit)
+            {
+                _fsm.ChangeState(stagger);
                 return StateStatus.Success;
             }
 

@@ -6,8 +6,8 @@ namespace SFRemastered
 {
     public class SpiderSen : MonoBehaviour
     {
-        [SerializeField] private GameObject spiderSen;
-        private int spiderSenCount = 0;
+        public GameObject spiderSen;
+        public int spiderSenCount = 0;
         
         public GameEventListener onEnableSpiderSen;
         public GameEventListener onDisableSpiderSen;

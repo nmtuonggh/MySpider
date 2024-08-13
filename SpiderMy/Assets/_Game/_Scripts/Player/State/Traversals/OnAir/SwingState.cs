@@ -142,7 +142,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints =
                 RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            //_blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
         }
 

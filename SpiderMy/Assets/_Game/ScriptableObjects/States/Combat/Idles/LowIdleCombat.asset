@@ -31,4 +31,5 @@ MonoBehaviour:
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   _ultimateSkill: {fileID: 11400000, guid: 27bcd1203acf53549888f7a1206ea224, type: 2}
   _gadgetAdapter: {fileID: 11400000, guid: 6de9178b9bebaff4d817785506b4e89f, type: 2}
+  stagger: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}
   canJump: 1

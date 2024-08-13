@@ -34,7 +34,7 @@ namespace SFRemastered
             {
                 _state = _blackBoard.animancer.Play(loopStunLock);
             }
-            if (currentTime >= _blackBoard.stunLockTime - 1 && _state.Clip == loopStunLock.Clip)  
+            if (currentTime >= _blackBoard.stunLockTime - endStunLock.Length && _state.Clip == loopStunLock.Clip)  
             {
                 _state = _blackBoard.animancer.Play(endStunLock);
             }

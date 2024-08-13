@@ -5,17 +5,16 @@ namespace SFRemastered.SwingHolder
 {
     public class SwingHolderController : MonoBehaviour
     {
-        [SerializeField] private GameObject _player;
+        [SerializeField] private GameObject root;
         [SerializeField] private Vector3 _offset;
 
         private void Update()
         {
-            Vector3 position = _player.transform.position + _player.transform.forward * 10f + _offset;
+            Vector3 forwardXZ = new Vector3(root.transform.forward.x, 0, root.transform.forward.z).normalized;
+
+            // Calculate the position 30 units in front of the root on the x-z plane and 20 units above the root
+            Vector3 position = root.transform.position + forwardXZ * 30f + Vector3.up * 20f;
             transform.position = position;
-            float yRotation = _player.transform.rotation.eulerAngles.y;
-            
-            // Set the SwingHolder's rotation with only the y-axis from the player
-            transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
 }

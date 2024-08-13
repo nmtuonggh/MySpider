@@ -37,3 +37,4 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 1f7a93442b82e564ab956b4cd8a0bc07, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
+  stagger: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}

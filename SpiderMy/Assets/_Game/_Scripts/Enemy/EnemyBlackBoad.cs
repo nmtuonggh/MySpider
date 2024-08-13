@@ -25,13 +25,22 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         [Header("Combat variables")]
         public float webHitStun;
         public float stunLockTime;
+        public GameObject sphereCastCenter;
+        public LayerMask hitLayer;
+        public GameObject warningAttack;
 
         public Vector3 startWanderPosition;
         public int wanderPositionIndex;
 
-        private void Awake()
+        private void OnEnable()
         {
-           
+           //set all bool to false
+           attacking = false;
+           zipAttackStun = false;
+           staggerHit = false;
+           stunLockHit = false; 
+           knockBackHit = false;
+           die = false;
         }
     }
 }
