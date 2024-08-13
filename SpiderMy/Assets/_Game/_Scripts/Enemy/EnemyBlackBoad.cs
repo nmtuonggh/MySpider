@@ -14,6 +14,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public AnimancerComponent animancer;
         public CharacterController characterController;
         public GameObjectRef target;
+        public LineRenderer lineRenderer;
         
         [Header("============Actions bool============")]
         public bool attacking;
@@ -29,6 +30,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public GameObject sphereCastCenter;
         public LayerMask hitLayer;
         public GameObject warningAttack;
+        public GameObject bulletHolder;
         
         [Header("============Range variables==========")]
         public BulletSO bulletSo;

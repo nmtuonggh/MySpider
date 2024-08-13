@@ -75,12 +75,6 @@ namespace SFRemastered._Game._Scripts.Enemy
             }
         }
         
-        //drawn gizmos sphere 
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(transform.position + new Vector3(0,1f,0.8f), 0.5f);
-        }
+        
     }
 }

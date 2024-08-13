@@ -19,14 +19,19 @@ namespace SFRemastered._Game._Scripts.Enemy.Bullet
             }
         }
 
+        /*private void OnEnable()
+        {
+            lifeTime = 2f;
+        }
+
         private void Update()
         {
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            Vector3.MoveTowards( transform.position, transform.position + transform.forward, speed * Time.deltaTime);
             lifeTime -= Time.deltaTime;
             if (lifeTime <= 0)
             {
                 bulletSo.ReturnToPool(gameObject);
             }
-        }
+        }*/
     }
 }

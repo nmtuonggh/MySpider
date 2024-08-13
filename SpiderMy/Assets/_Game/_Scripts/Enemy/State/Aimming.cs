@@ -19,8 +19,11 @@ namespace SFRemastered
             }
             
             _blackBoard.characterController.Move(Vector3.zero);
-            
             var target = _blackBoard.target.obj.transform.position;
+            _blackBoard.lineRenderer.positionCount = 2;
+            _blackBoard.lineRenderer.SetPosition(0, _blackBoard.shootPosition.transform.position);
+            _blackBoard.lineRenderer.SetPosition(1, target);
+            
             Vector3 targetDir = target -  transform.position;
             targetDir.y = 0;
             
