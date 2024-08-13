@@ -153,8 +153,9 @@ namespace SFRemastered._Game._Scripts.Mission
                 position.z + Mathf.Sin(angle) * distance
             );
 
-            Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
+            //Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
             //enemySo.Spawn(spawnPos, Quaternion.identity, fightingMissionSo.SpawnPosition);
+            enemySo.Spawn(spawnPos, Quaternion.identity, fightingMissionSo.SpawnPosition, enemySo.id);
         }
         #endregion
     }

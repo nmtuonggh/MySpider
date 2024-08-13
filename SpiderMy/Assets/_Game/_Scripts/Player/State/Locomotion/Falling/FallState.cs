@@ -25,12 +25,8 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            StateStatus baseStatus = base.UpdateState();
-            if (baseStatus != StateStatus.Running)
-            {
-                return baseStatus;
-            }
-            
+            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
+
             if (_blackBoard.playerMovement.IsGrounded())
             {
                 if(_blackBoard.moveDirection.magnitude < 0.3f)
@@ -40,6 +36,17 @@ namespace SFRemastered
                 else
                     _fsm.ChangeState(_sprintState);
 
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.swing)
+            {
+                if (_fsm.PreviousState != _swingState)
+                {
+                    _fsm.ChangeState(_swingState);
+                }else if(_fsm.PreviousState == _swingState && elapsedTime >= 0.5f)
+                    _fsm.ChangeState(_swingState);
+                
                 return StateStatus.Success;
             }
             

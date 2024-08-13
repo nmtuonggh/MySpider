@@ -10,29 +10,30 @@ namespace SFRemastered._Game._Scripts.Enemy
 {
     public class EnemyController : MonoBehaviour, IHitable
     {
+        [Header("=============Enemy Stats============")]
+        
         public float health;
+        
         [SerializeField] private bool getHit;
         [SerializeField] public bool zipAttackStun;
-        
         [SerializeField] private HealthBar healthBar;
+        [SerializeField] private GameObject healthBarUI;
         [SerializeField] private EnemyBlackBoard blackBoard;
         
         private Vector3 velocity;
         public float gravity = -9.81f;
         
-        [Header("Events")]
+        [Header("=============Events=============")]
         public GameEvent onEnemyDeath;
         public GameEvent onStartAttack;
         public GameEvent onEndAttack;
-        //[Header("Events Listener")]
-        //public GameEventListener onStaggerHit;
 
         private void Start()
         {
-           
+           health = blackBoard.enemyData.health;
+           //healthBarUI.SetActive(true);
         }
-
-        public void test(){}
+        
 
         private void Update()
         {
@@ -69,16 +70,9 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             if (health <= 0)
             {
-                healthBar.gameObject.SetActive(false);
                 onEnemyDeath.Raise();
                 blackBoard.die = true;
-                //Die();
             }
-        }
-
-        private void Die()
-        {
-            Destroy(gameObject);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         private void Start()
         {
+            gameObject.SetActive(true);
             healthBar.maxValue = enemyController.health;
             easeHealthBar.maxValue = enemyController.health;
         }
@@ -37,6 +38,11 @@ namespace SFRemastered._Game._Scripts.Enemy
         public void TakeDamage(float damage)
         {
             healthBar.value -= damage;
+            
+            if (healthBar.value <= 0)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

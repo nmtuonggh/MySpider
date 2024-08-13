@@ -491,6 +491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 41685457198569216}
+  - {fileID: 2658278442789830611}
   - {fileID: 2150438140952861413}
   - {fileID: 8813480614802753405}
   m_Father: {fileID: 0}
@@ -1401,6 +1402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2658278442789830611}
+  - component: {fileID: 7149448686843404489}
   m_Layer: 0
   m_Name: Swingpoint
   m_TagString: Untagged
@@ -1417,12 +1419,26 @@ Transform:
   m_GameObject: {fileID: 3483344279694933277}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 18.2, z: 35}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 41685457198569216}
+  m_Father: {fileID: 6396317292476732604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7149448686843404489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483344279694933277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e4e4db953048608b2a19338a9c2f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 4072785331485688345}
+  _offset: {x: 0, y: 20, z: 30}
 --- !u!1 &3651643111615787808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1533,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8184263119088520213}
-  - {fileID: 2658278442789830611}
   m_Father: {fileID: 6396317292476732604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5156002814380404575

@@ -5,8 +5,8 @@ namespace SFRemastered._Game._Scripts.Enemy
 {
     public class EnemySO : ScriptableObject
     {
+        public int id;
         public GameObject prefab;
-        
         public float health;
         public float damage;
         public float speed;
@@ -14,13 +14,13 @@ namespace SFRemastered._Game._Scripts.Enemy
         public float attackRange;
         public float attackCooldown;
         
-        public Queue<GameObject> EnemyPool = new Queue<GameObject>();
+        public Dictionary<int, Queue<GameObject>> enemyPools = new Dictionary<int, Queue<GameObject>>();
         
-        public GameObject Spawn(Vector3 position, Quaternion rotation, Transform parent)
+        public GameObject Spawn(Vector3 position, Quaternion rotation, Transform parent, int id)
         {
-            if (EnemyPool.Count > 0)
+            if (enemyPools.ContainsKey(id) && enemyPools[id].Count > 0)
             {
-                GameObject item = EnemyPool.Dequeue();
+                GameObject item = enemyPools[id].Dequeue();
                 item.transform.position = position;
                 item.transform.rotation = rotation;
                 item.transform.SetParent(parent);
@@ -33,10 +33,14 @@ namespace SFRemastered._Game._Scripts.Enemy
             }
         }
 
-        public void ReturnToPool(GameObject item)
+        public void ReturnToPool(int id, GameObject enemy)
         {
-            EnemyPool.Enqueue(item);
-            item.gameObject.SetActive(false);
+            enemy.SetActive(false);
+            if (!enemyPools.ContainsKey(id))
+            {
+                enemyPools[id] = new Queue<GameObject>();
+            }
+            enemyPools[id].Enqueue(enemy);
         }
     }
 }
