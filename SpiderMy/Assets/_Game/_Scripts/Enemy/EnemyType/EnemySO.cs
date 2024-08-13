@@ -5,6 +5,14 @@ namespace SFRemastered._Game._Scripts.Enemy
 {
     public class EnemySO : ScriptableObject
     {
+        public enum EnemyType
+        {
+            Melee,
+            Ranged,
+            Boss
+        }
+        
+        public EnemyType enemyType;
         public int id;
         public GameObject prefab;
         public float health;

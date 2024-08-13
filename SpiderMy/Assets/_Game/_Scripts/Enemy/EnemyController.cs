@@ -11,7 +11,7 @@ namespace SFRemastered._Game._Scripts.Enemy
     public class EnemyController : MonoBehaviour, IHitable
     {
         [Header("=============Enemy Stats============")]
-        
+        public EnemySO.EnemyType enemyType;
         public float health;
         
         [SerializeField] private bool getHit;
@@ -73,6 +73,14 @@ namespace SFRemastered._Game._Scripts.Enemy
                 onEnemyDeath.Raise();
                 blackBoard.die = true;
             }
+        }
+        
+        //drawn gizmos sphere 
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position + new Vector3(0,1f,0.8f), 0.5f);
         }
     }
 }

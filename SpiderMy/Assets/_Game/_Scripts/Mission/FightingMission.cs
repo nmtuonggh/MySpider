@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Game.Scripts.Event;
 using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Enemy.State;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -52,7 +53,6 @@ namespace SFRemastered._Game._Scripts.Mission
             Destroy(_indicator);
             Destroy(_missionRange);
             base.CompleteMission();
-            Debug.Log("Complete fighting mission");
         }
 
         public override void FailMission()
@@ -77,8 +77,13 @@ namespace SFRemastered._Game._Scripts.Mission
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach (var enemy in enemies)
                 {
-                    Destroy(enemy);
-                    //enemy.SetActive(false);
+                    var obj = enemy.GetComponent<EnemyBlackBoard>();
+                    if (obj.attacking)
+                    {
+                        obj.warningAttack.SetActive(false);
+                        obj.attacking = false;
+                    }
+                    obj.enemyData.ReturnToPool(obj.enemyData.id, enemy);
                 }
                 FailMission();
             }
@@ -152,9 +157,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 position.y,
                 position.z + Mathf.Sin(angle) * distance
             );
-
-            //Instantiate(enemySo.prefab, spawnPos, Quaternion.identity);
-            //enemySo.Spawn(spawnPos, Quaternion.identity, fightingMissionSo.SpawnPosition);
+            
             enemySo.Spawn(spawnPos, Quaternion.identity, fightingMissionSo.SpawnPosition, enemySo.id);
         }
         #endregion

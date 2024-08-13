@@ -4,6 +4,7 @@ using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.State.Combat;
 using SFRemastered._Game._Scripts.State.Locomotion.Ground;
 using SFRemastered.Combat;
+using SFRemastered.OnHitState;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,6 +17,7 @@ namespace SFRemastered
         [SerializeField] protected ZipState _zipState;
         [FormerlySerializedAs("_attackController")] [SerializeField] protected CombatController combatController;
         [SerializeField] protected DodgeState _dodgeState;
+        [SerializeField] protected StaggerState stagger;
 
         public bool canJump = true;
 
@@ -48,6 +50,12 @@ namespace SFRemastered
             if (_blackBoard.dodge)
             {
                 _fsm.ChangeState(_dodgeState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.staggerHit)
+            {
+                _fsm.ChangeState(stagger);
                 return StateStatus.Success;
             }
 

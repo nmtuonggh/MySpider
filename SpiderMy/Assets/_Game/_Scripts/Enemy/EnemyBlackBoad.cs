@@ -1,6 +1,7 @@
 ﻿using System;
 using Animancer;
 using NodeCanvas.Framework;
+using SFRemastered._Game._Scripts.Enemy.Bullet;
 using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public CharacterController characterController;
         public GameObjectRef target;
         
-        [Header("Actions bools")]
+        [Header("============Actions bool============")]
         public bool attacking;
         public bool zipAttackStun;
         public bool staggerHit;
@@ -22,16 +23,29 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool knockBackHit;
         public bool die;
         
-        [Header("Combat variables")]
+        [Header("============Combat variables============")]
         public float webHitStun;
         public float stunLockTime;
+        public GameObject sphereCastCenter;
+        public LayerMask hitLayer;
+        public GameObject warningAttack;
+        
+        [Header("============Range variables==========")]
+        public BulletSO bulletSo;
+        public GameObject shootPosition;
 
         public Vector3 startWanderPosition;
         public int wanderPositionIndex;
 
-        private void Awake()
+        private void OnEnable()
         {
-           
+           //set all bool to false
+           attacking = false;
+           zipAttackStun = false;
+           staggerHit = false;
+           stunLockHit = false; 
+           knockBackHit = false;
+           die = false;
         }
     }
 }

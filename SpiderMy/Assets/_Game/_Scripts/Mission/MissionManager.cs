@@ -9,6 +9,7 @@ namespace SFRemastered._Game._Scripts.Mission
     {
         public List<Transform> missionPositions;
         public MainMissionSO mainMissionSO;
+        public BlackBoard playerBlackBoard;
 
         private BaseMissionSO currentMission;
         private GameObject currentMissionPrefab;
@@ -69,6 +70,8 @@ namespace SFRemastered._Game._Scripts.Mission
         public void HandlerMissionFail()
         {
             Destroy(currentMissionPrefab);
+            playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
+            playerBlackBoard.spiderSen.spiderSenCount=0;
             StartMission();
             Debug.Log("Mission Fail");
         }

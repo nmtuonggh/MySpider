@@ -35,9 +35,10 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             }
 
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
-
-            if (_state.NormalizedTime >= 0.9f)
+            
+            if (_state.NormalizedTime >= 1f)
             {
+                Debug.Log("Change state");
                 _fsm.ChangeState(_normalIdleCombat);
                 return StateStatus.Success;
             }
@@ -59,10 +60,10 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
                 var web = _blackBoard.projectileWebShooterSo.Spawn(_blackBoard.startrope.position, rotation,
                     _blackBoard.poolManager.transform);
 
-                web.transform.DOMove(target.transform.position + new Vector3(0, 0.5f, 0), 0.2f).OnComplete(() =>
+                web.transform.DOMove(target.transform.position + new Vector3(0, 0.7f, 0), 0.2f).OnComplete(() =>
                 {
-                    target.GetComponent<EnemyBlackBoard>().webHitStun += 1;
-                    target.GetComponent<EnemyBlackBoard>().stunLockHit = true;
+                    //target.GetComponent<EnemyBlackBoard>().webHitStun += 1;
+                    //target.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                     _blackBoard.projectileWebShooterSo.ReturnToPool(web);
                 });
             }
@@ -85,9 +86,9 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
                 var rotation = Quaternion.LookRotation(target.transform.position - _blackBoard._zipAttackHandPositon.position);
                 var web = _blackBoard.projectileWebShooterSo.Spawn(_blackBoard._zipAttackHandPositon.position, rotation,
                     _blackBoard.poolManager.transform);
-                web.transform.DOMove(target.transform.position + new Vector3(0, 0.5f, 0), 0.2f).OnComplete(() =>
+                web.transform.DOMove(target.transform.position + new Vector3(0, 0.7f, 0), 0.2f).OnComplete(() =>
                 {
-                    target.GetComponent<EnemyBlackBoard>().webHitStun += 1; 
+                    //target.GetComponent<EnemyBlackBoard>().webHitStun += 1; 
                     target.GetComponent<EnemyBlackBoard>().stunLockHit = true;
                     _blackBoard.projectileWebShooterSo.ReturnToPool(web);
                 });

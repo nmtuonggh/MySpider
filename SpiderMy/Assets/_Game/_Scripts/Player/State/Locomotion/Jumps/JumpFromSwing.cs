@@ -39,7 +39,7 @@ namespace SFRemastered
             
             RandomAnim();
 
-            if (GroundCheck())
+            if (_blackBoard.playerMovement.IsGrounded())
             {   
                 _fsm.ChangeState(_landRollState);
                 return StateStatus.Success;
@@ -65,16 +65,5 @@ namespace SFRemastered
             _state = _blackBoard.animancer.Play(_litsAnimation[_animIndex]);
         }
         
-        private bool GroundCheck()
-        {
-            if (Physics.Raycast(_fsm.transform.position, Vector3.down, 0.3f, _blackBoard.groundLayers))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }

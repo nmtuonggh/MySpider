@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="" />
+    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/Bullet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/Bullet/BulletController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/Bullet/BulletController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/Bullet/BulletSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/Bullet/BulletSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Aimming.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Aimming.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/RollBack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/RollBack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Shoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Shoot.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mafia.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Mafia.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/EnemyIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/EnemyIdle.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,34 +55,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.39173013",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Code Search",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39173013&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Code Search&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\atomb\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -74,7 +90,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -171,6 +187,8 @@
       <workItem from="1723458178869" duration="8824000" />
       <workItem from="1723479412845" duration="2000" />
       <workItem from="1723479456658" duration="9724000" />
+      <workItem from="1723512175815" duration="11360000" />
+      <workItem from="1723524252972" duration="21536000" />
     </task>
     <servers />
   </component>

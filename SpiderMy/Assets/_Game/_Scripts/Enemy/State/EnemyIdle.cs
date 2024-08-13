@@ -13,6 +13,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            Debug.Log(_blackBoard.animancer);
         }
         
         public override StateStatus UpdateState()
