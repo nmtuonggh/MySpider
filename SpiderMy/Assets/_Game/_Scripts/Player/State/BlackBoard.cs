@@ -14,7 +14,7 @@ namespace SFRemastered
     public class BlackBoard : MonoBehaviour
     {
         public PlayerMovement playerMovement;
-        public CameraController cameraController;
+        public PlayerController playerController;
         public CheckWallState checkWallState;
         public FindZipPoint findZipPoint;
         
@@ -48,6 +48,7 @@ namespace SFRemastered
         public Transform startrope;
         public GameObject ropHolder;
         public LineRenderer lr;
+        public bool readyToSwing = true;
         
         [Header("=====Zip================================")]
         public Transform startZipLeft;
@@ -73,18 +74,17 @@ namespace SFRemastered
         
         [Header("=====GameObject References================")]
         public GameObjectRef playerRef;
-        
-        public enum HitType
+
+        private void OnEnable()
         {
-            stagger,
-            knockBack,
-            stunLock
+            readyToSwing = true;
         }
 
         private void Awake()
         {
             playerRef.obj = this.gameObject;
             gadgetIndex = -1;
+            
         }
 
         public void SetSuitData(SuitData suitData)

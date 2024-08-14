@@ -14,6 +14,7 @@ namespace SFRemastered
         {
             base.EnterState();
             randomDirection = Random.Range(0, 2);
+            _blackBoard.lineRenderer.positionCount = 0;
         }
 
         public override StateStatus UpdateState()

@@ -155,7 +155,7 @@ MonoBehaviour:
     IsIconRecursive: 0
     BackgroundType: 110
     BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
+    IsBackgroundRecursive: 1
     IsHidden: 0
   - Type: 0
     Key: Project
@@ -203,7 +203,7 @@ MonoBehaviour:
     IsIconRecursive: 0
     BackgroundType: 210
     BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
+    IsBackgroundRecursive: 1
     IsHidden: 0
   - Type: 0
     Key: Scripts
@@ -344,20 +344,20 @@ MonoBehaviour:
     IconType: 2160
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
-    IsIconRecursive: 0
+    IsIconRecursive: 1
     BackgroundType: 50
     BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
+    IsBackgroundRecursive: 1
     IsHidden: 0
   - Type: 1
     Key: Assets/_Game/ScriptableObjects
     Ordinal: 28
     Priority: 0
-    IconType: 0
+    IconType: 2120
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
-    IsIconRecursive: 0
-    BackgroundType: 10
+    IsIconRecursive: 1
+    BackgroundType: 130
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
     IsIconRecursive: 0
     BackgroundType: 10
     BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
+    IsBackgroundRecursive: 1
     IsHidden: 0
   - Type: 1
     Key: Assets/_Game/_Scripts/Mission
@@ -407,5 +407,5 @@ MonoBehaviour:
     IsIconRecursive: 0
     BackgroundType: 90
     BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
+    IsBackgroundRecursive: 1
     IsHidden: 0

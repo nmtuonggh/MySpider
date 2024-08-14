@@ -15,6 +15,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public CharacterController characterController;
         public GameObjectRef target;
         public LineRenderer lineRenderer;
+        public GameObject healthBarUI;
         
         [Header("============Actions bool============")]
         public bool attacking;

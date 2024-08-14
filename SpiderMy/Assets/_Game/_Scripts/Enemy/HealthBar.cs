@@ -6,8 +6,8 @@ namespace SFRemastered._Game._Scripts.Enemy
 {
     public class HealthBar : MonoBehaviour
     {
-        [SerializeField] private Slider healthBar;
-        [SerializeField] private Slider easeHealthBar;
+        [SerializeField] public Slider healthBar;
+        [SerializeField] public Slider easeHealthBar;
         
         [SerializeField] private float lerpSpeed;
         
@@ -15,9 +15,9 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         private void OnEnable()
         {
-            gameObject.SetActive(true);
+            /*gameObject.SetActive(true);
             healthBar.maxValue = enemyController.health;
-            easeHealthBar.maxValue = enemyController.health;
+            easeHealthBar.maxValue = enemyController.health;*/
         }
 
         private void Update()
@@ -39,10 +39,10 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             healthBar.value -= damage;
             
-            if (healthBar.value <= 0)
+            /*if (healthBar.value <= 0)
             {
                 gameObject.SetActive(false);
-            }
+            }*/
         }
     }
 }

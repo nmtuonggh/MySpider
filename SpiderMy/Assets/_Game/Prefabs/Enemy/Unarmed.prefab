@@ -3661,7 +3661,7 @@ MonoBehaviour:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 576, y: 56}
+    _translation: {x: 926, y: 66}
     _zoomFactor: 0.25009143
   _firstActivation: 0
   _enableAction: 0
@@ -3687,8 +3687,7 @@ MonoBehaviour:
   health: 100
   getHit: 0
   zipAttackStun: 0
-  healthBar: {fileID: 6955290185690705474}
-  healthBarUI: {fileID: 1192706164312972956}
+  healthBarscript: {fileID: 6955290185690705474}
   blackBoard: {fileID: 9052413327096295297}
   gravity: -9.81
   onEnemyDeath: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
@@ -3775,6 +3774,7 @@ MonoBehaviour:
   characterController: {fileID: 3581575913099011126}
   target: {fileID: 11400000, guid: 158360586ecfd8646b32ab4dad1aad4c, type: 2}
   lineRenderer: {fileID: 9199559797040963810}
+  healthBarUI: {fileID: 3277608048120099156}
   attacking: 0
   zipAttackStun: 0
   staggerHit: 0

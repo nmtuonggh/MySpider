@@ -17,8 +17,8 @@ MonoBehaviour:
     _Events:
       _NormalizedTimes:
       - 0.2272036
-      - 0.54037666
-      - NaN
+      - 0.5029412
+      - 0.6498517
       _Callbacks:
       - m_PersistentCalls:
           m_Calls:
