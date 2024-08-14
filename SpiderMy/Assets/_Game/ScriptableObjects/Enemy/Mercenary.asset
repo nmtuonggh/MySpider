@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4d4112c9a1400980f1027c13ec6b32, type: 3}
   m_Name: Mercenary
   m_EditorClassIdentifier: 
+  enemyType: 2
   id: 2
   prefab: {fileID: 5548262100645127044, guid: db6bfdb42582643478103da10b4e9709, type: 3}
   health: 0

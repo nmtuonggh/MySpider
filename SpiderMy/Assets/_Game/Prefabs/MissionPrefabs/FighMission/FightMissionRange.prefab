@@ -72,5 +72,5 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 25
+  radius: 40
   hitColliders: []

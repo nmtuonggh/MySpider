@@ -21,17 +21,17 @@ MonoBehaviour:
   warningRange: {fileID: 0}
   spawnRange: 5
   currentWaveIndex: 1
-  currentWaveEnemyCount: 3
+  currentWaveEnemyCount: 2
   listWaveCombat:
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     listMercenary: []
-    listMafia: []
+    listMafia:
+    - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     listMercenary: []
-    listMafia: []
+    listMafia:
+    - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}

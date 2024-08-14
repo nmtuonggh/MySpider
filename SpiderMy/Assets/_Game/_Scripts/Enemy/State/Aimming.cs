@@ -5,6 +5,7 @@ namespace SFRemastered
     public class Aimming : EnemyBaseState
     {
         public float rotationSpeed = 3f;
+        public float aimTime;
         public override void EnterState()
         {
             base.EnterState();
@@ -19,17 +20,29 @@ namespace SFRemastered
             }
             
             _blackBoard.characterController.Move(Vector3.zero);
-            var target = _blackBoard.target.obj.transform.position;
-            _blackBoard.lineRenderer.positionCount = 2;
-            _blackBoard.lineRenderer.SetPosition(0, _blackBoard.shootPosition.transform.position);
-            _blackBoard.lineRenderer.SetPosition(1, target);
             
-            Vector3 targetDir = target -  transform.position;
+            var lastPos = _blackBoard.target.obj.transform.position;
+            var shootPos = _blackBoard.shootPosition.transform.position;
+            var target = lastPos + Vector3.up * shootPos.y * 0.6f;
+
+            var direction = (target - shootPos).normalized;
+            var extendedTarget = target + direction * 0.1f;
+            
+            _blackBoard.lineRenderer.positionCount = 2;
+            _blackBoard.lineRenderer.SetPosition(0, shootPos);
+            _blackBoard.lineRenderer.SetPosition(1, extendedTarget);
+            
+            Vector3 targetDir = lastPos -  transform.position;
             targetDir.y = 0;
             
             //rotate to target with smoothness with CharacterController
             _blackBoard.characterController.transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(targetDir), rotationSpeed * Time.deltaTime);
+
+            if (elapsedTime >= aimTime)
+            {
+                return StateStatus.Success;
+            }
 
             return StateStatus.Running;
         }

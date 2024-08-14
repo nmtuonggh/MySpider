@@ -26,7 +26,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .5f : 1f;
+            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? 1f : 1f;
             _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
             if (_blackBoard._detectedEnemy)
@@ -94,7 +94,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 
         public void RotateToTarget()
         {
-            if (_blackBoard._detectedEnemy)
+            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
             {
                 _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f,
                     AxisConstraint.Y);

@@ -12,6 +12,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.lineRenderer.positionCount = 0;
             _blackBoard.animancer.Animator.applyRootMotion = true;
         }
 

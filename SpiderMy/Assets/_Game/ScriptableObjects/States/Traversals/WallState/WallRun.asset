@@ -31,7 +31,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: ed4c7a859a65ea349b6b5f2d0ac208eb, type: 2}
+    _Clip: {fileID: 7400000, guid: 182f3308ae4de844fb882efa31660442, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
   - _FadeDuration: 0.25
@@ -59,7 +59,7 @@ MonoBehaviour:
     _Speed: 1
     _Animations:
     - {fileID: 7400000, guid: 93bb1a5be49b29841b92e9426917307b, type: 2}
-    - {fileID: 7400000, guid: ed4c7a859a65ea349b6b5f2d0ac208eb, type: 2}
+    - {fileID: 7400000, guid: 182f3308ae4de844fb882efa31660442, type: 3}
     - {fileID: 7400000, guid: 903a1c3a1820e244c933b8d050111832, type: 2}
     _Speeds: []
     _SynchronizeChildren: 
