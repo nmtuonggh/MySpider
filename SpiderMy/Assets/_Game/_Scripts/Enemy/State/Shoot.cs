@@ -11,15 +11,15 @@ namespace SFRemastered
             _blackBoard.lineRenderer.positionCount = 0;
             Bum();
         }
-        
+
         public override StateStatus UpdateState()
         {
             StateStatus baseStatus = base.UpdateState();
-            if(baseStatus != StateStatus.Running)
+            if (baseStatus != StateStatus.Running)
             {
                 return baseStatus;
             }
-            
+
             _blackBoard.characterController.Move(Vector3.zero);
 
             /*if (elapsedTime >= 1f)
@@ -35,8 +35,8 @@ namespace SFRemastered
         {
             var lastPos = _blackBoard.target.obj.transform.position;
             var shootPos = _blackBoard.shootPosition.transform.position;
-            var target = lastPos + Vector3.up * shootPos.y;
-            
+            var target = lastPos + Vector3.up * shootPos.y * 0.6f;
+
             var direction = (target - shootPos).normalized;
             var extendedTarget = target + direction * 5;
 

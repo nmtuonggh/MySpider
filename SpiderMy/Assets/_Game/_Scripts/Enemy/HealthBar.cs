@@ -13,7 +13,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         [SerializeField] private EnemyController enemyController;
         
-        private void Start()
+        private void OnEnable()
         {
             gameObject.SetActive(true);
             healthBar.maxValue = enemyController.health;

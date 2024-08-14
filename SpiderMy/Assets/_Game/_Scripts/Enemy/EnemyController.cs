@@ -30,10 +30,17 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         private void Start()
         {
-           health = blackBoard.enemyData.health;
+          
            //healthBarUI.SetActive(true);
         }
-        
+
+        private void OnEnable()
+        {
+            healthBar.gameObject.SetActive(true);
+            health = blackBoard.enemyData.health;
+            blackBoard.characterController.enabled = true;
+        }
+
 
         private void Update()
         {

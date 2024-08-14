@@ -14,11 +14,9 @@ namespace SFRemastered.Combat.ZipAttack
         [SerializeField] private ZipGroundAttack zipGroundAttack;
         [SerializeField] private ZipAirAttack _zipAirAttack;
         
-        //public GameEvent onZipAttackStart;
         public override void EnterState()
         {
             base.EnterState();
-            //onZipAttackStart.Raise();
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyController>().zipAttackStun = true;

@@ -12,6 +12,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             randomRange = Random.Range(minRange, maxRange);
+            _blackBoard.lineRenderer.positionCount = 0;
             base.EnterState();
         }
         

@@ -15,6 +15,7 @@ namespace SFRemastered
         {
             base.EnterState();
             currentTime = 0;
+            _blackBoard.lineRenderer.positionCount = 0;
             _state = _blackBoard.animancer.Play(startStunLock);
             _blackBoard.animancer.Animator.applyRootMotion = true;
         }
