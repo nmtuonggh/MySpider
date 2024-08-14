@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace SFRemastered
 {
@@ -7,6 +8,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.lineRenderer.positionCount = 0;
             Bum();
         }
         
@@ -31,9 +33,15 @@ namespace SFRemastered
 
         private void Bum()
         {
-            var rotation = Quaternion.LookRotation(_blackBoard.target.obj.transform.position - _blackBoard.shootPosition.transform.position);
-            _blackBoard.bulletSo.Spawn(_blackBoard.shootPosition.transform.position, rotation, _blackBoard.gameObject.transform);
+            var lastPos = _blackBoard.target.obj.transform.position;
+            var shootPos = _blackBoard.shootPosition.transform.position;
+            var target = lastPos + Vector3.up * shootPos.y;
+            
+            var direction = (target - shootPos).normalized;
+            var extendedTarget = target + direction * 5;
+
+            var bullet = _blackBoard.bulletSo.Spawn(shootPos, _blackBoard.transform.rotation, _blackBoard.transform);
+            bullet.transform.DOMove(extendedTarget, 0.4f).OnComplete(() => _blackBoard.bulletSo.ReturnToPool(bullet));
         }
-        
     }
 }
