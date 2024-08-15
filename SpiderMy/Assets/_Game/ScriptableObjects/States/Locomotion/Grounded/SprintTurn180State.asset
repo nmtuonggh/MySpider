@@ -28,6 +28,7 @@ MonoBehaviour:
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   stagger: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}
+  knockBack: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
   canJump: 1
   _sprintState: {fileID: 11400000, guid: a1e8d158f33e09f45ac07e0fabc4ffd5, type: 2}
   _sprintToIdleState: {fileID: 11400000, guid: b551b896c6cb1b04684787a4f4dec030, type: 2}

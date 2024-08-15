@@ -5,10 +5,12 @@ namespace SFRemastered
 {
     public class Shoot : EnemyBaseState
     {
+        private bool done = false;
         public override void EnterState()
         {
             base.EnterState();
             _blackBoard.lineRenderer.positionCount = 0;
+            done = false;
             Bum();
         }
 
@@ -22,13 +24,18 @@ namespace SFRemastered
 
             _blackBoard.characterController.Move(Vector3.zero);
 
-            /*if (elapsedTime >= 1f)
+            if (done)
             {
-                Bum();
                 return StateStatus.Success;
-            }*/
+            }
 
             return StateStatus.Running;
+        }
+        
+        public override void ExitState()
+        {
+            base.ExitState();
+            done = false;
         }
 
         private void Bum()
@@ -41,7 +48,11 @@ namespace SFRemastered
             var extendedTarget = target + direction * 5;
 
             var bullet = _blackBoard.bulletSo.Spawn(shootPos, _blackBoard.transform.rotation, _blackBoard.transform);
-            bullet.transform.DOMove(extendedTarget, 0.4f).OnComplete(() => _blackBoard.bulletSo.ReturnToPool(bullet));
+            bullet.transform.DOMove(extendedTarget, 0.4f).OnComplete(() =>
+            {
+                _blackBoard.bulletSo.ReturnToPool(bullet);
+                done = true;
+            });
         }
     }
 }

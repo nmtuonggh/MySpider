@@ -31,11 +31,14 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public GameObject sphereCastCenter;
         public LayerMask hitLayer;
         public GameObject warningAttack;
-        public GameObject bulletHolder;
+        public float attackCoolDown;
+        public GameObject kingPinStaf;
         
         [Header("============Range variables==========")]
         public BulletSO bulletSo;
         public GameObject shootPosition;
+        
+        
 
         public Vector3 startWanderPosition;
         public int wanderPositionIndex;

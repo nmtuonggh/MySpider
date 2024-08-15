@@ -11,6 +11,7 @@ namespace SFRemastered.OnHitState
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.playerMovement.useRootMotion = true;
             _blackBoard.staggerHit = false;
         }
         
@@ -35,6 +36,7 @@ namespace SFRemastered.OnHitState
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.playerMovement.useRootMotion = false;
         }
     }
 }

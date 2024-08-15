@@ -18,6 +18,7 @@ namespace SFRemastered
         [FormerlySerializedAs("_attackController")] [SerializeField] protected CombatController combatController;
         [SerializeField] protected DodgeState _dodgeState;
         [SerializeField] protected StaggerState stagger;
+        [SerializeField] protected KnockBackState knockBack;
 
         public bool canJump = true;
 
@@ -56,6 +57,12 @@ namespace SFRemastered
             if (_blackBoard.staggerHit)
             {
                 _fsm.ChangeState(stagger);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.knockBackHit)
+            {
+                _fsm.ChangeState(knockBack);
                 return StateStatus.Success;
             }
 

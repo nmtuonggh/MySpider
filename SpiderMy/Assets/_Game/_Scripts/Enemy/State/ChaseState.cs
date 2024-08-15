@@ -13,7 +13,6 @@ namespace SFRemastered
         {
             base.EnterState();
             _blackBoard.lineRenderer.positionCount = 0;
-            Debug.Log("Enter Chase State");
         }
 
         public override StateStatus UpdateState()

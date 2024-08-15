@@ -41,14 +41,6 @@ namespace SFRemastered
             RandomRopeShotPosition();
             Swinging();
         }
-        
-        //coroutine for readytoswing for 1s
-        
-        IEnumerable ReadyToSwing()
-        {
-            yield return new WaitForSeconds(handlerSwing);
-            _blackBoard.readyToSwing = true;
-        }
 
         public override StateStatus UpdateState()
         {

@@ -30,7 +30,6 @@ namespace SFRemastered._Game._Scripts.Enemy
         private void Start()
         {
             
-           //healthBarUI.SetActive(true);
         }
 
         private void OnEnable()
@@ -39,6 +38,7 @@ namespace SFRemastered._Game._Scripts.Enemy
             health = blackBoard.enemyData.health;
             healthBarscript.healthBar.maxValue = health;
             healthBarscript.easeHealthBar.maxValue = health;
+            blackBoard.attackCoolDown = blackBoard.enemyData.attackCooldown;
         }
 
 

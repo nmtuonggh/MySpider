@@ -20,7 +20,7 @@ namespace SFRemastered
         {
             StateStatus baseStatus = base.UpdateState();
             if(baseStatus != StateStatus.Running)
-            {
+            { 
                 return baseStatus;
             }
 

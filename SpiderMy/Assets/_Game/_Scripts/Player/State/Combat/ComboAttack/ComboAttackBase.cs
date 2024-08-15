@@ -2,6 +2,7 @@
 using DG.Tweening;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat.SFRemastered.Combat;
 using SFRemastered._Game.ScriptableObjects.AnimationAttack;
+using SFRemastered.OnHitState;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,6 +16,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         [SerializeField] protected IdleCombat.NormalIdleCombat normalIdleCombat;
         [SerializeField] protected LowIdleCombat lowIdleCombat;
         [SerializeField] protected CombatController combatController;
+        [SerializeField] protected KnockBackState knockBack;
 
         [SerializeField] protected int _currentComboIndex = 0;
         [SerializeField] protected float _delayTime;
@@ -74,9 +76,15 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() is > 2f)
+            if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() > 2f)
             {
                 _fsm.ChangeState(combatController);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.knockBackHit)
+            {
+                _fsm.ChangeState(knockBack);
                 return StateStatus.Success;
             }
 

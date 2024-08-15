@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6920521037494fd6aacba00dc65ecdbb, type: 3}
+  m_Name: KnockBackState
+  m_EditorClassIdentifier: 
+  canTransitionToSelf: 0
+  _mainAnimation:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: c906e45f55e9dcd4fa4c34d29fb895d4, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}

@@ -20,7 +20,7 @@
             
             if (_state.NormalizedTime >= .8f)
             {
-                _blackBoard.animancer.Animator.applyRootMotion = false;
+                
                 return StateStatus.Success;
             }
             
@@ -30,6 +30,7 @@
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.animancer.Animator.applyRootMotion = false;
         }
     }
 }

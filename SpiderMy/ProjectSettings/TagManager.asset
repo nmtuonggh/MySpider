@@ -8,6 +8,7 @@ TagManager:
   - Car
   - SpeedZone
   - Enemy
+  - CharacterRoot
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - ZipPoint
   - Player
   - Enemy
-  - 
+  - Prop
   - 
   - 
   - 

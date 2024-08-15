@@ -62,4 +62,4 @@ MonoBehaviour:
   _normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
   layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
