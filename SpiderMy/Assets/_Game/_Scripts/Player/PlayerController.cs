@@ -1,4 +1,5 @@
-﻿using SFRemastered._Game._Scripts.Enemy;
+﻿using System.Collections;
+using SFRemastered._Game._Scripts.Enemy;
 using UnityEngine;
 
 namespace SFRemastered
@@ -8,14 +9,14 @@ namespace SFRemastered
         [Header("=============Player Stats============")]
         public float health;
         public PlayerHealthBar healthBar;
-        public BlackBoard blackBoard;
+        public BlackBoard _blackBoard;
         
         
         public void OnStaggerHit(float damage)
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            blackBoard.staggerHit = true;
+            _blackBoard.staggerHit = true;
             CheckHealth();
         }
         
@@ -23,7 +24,7 @@ namespace SFRemastered
         {
             health -= damage;
             healthBar.TakeDamage(damage);
-            blackBoard.knockBackHit = true;
+            _blackBoard.knockBackHit = true;
             CheckHealth();
         }
         
@@ -33,6 +34,17 @@ namespace SFRemastered
             {
                 Debug.Log("Die");
             }
+        }
+        
+        public void StartSwingCoroutine()
+        {
+            StartCoroutine(ReadyToSwing());
+        }
+
+        private IEnumerator ReadyToSwing()
+        {
+            yield return new WaitForSeconds(0.8f);
+            _blackBoard.readyToSwing = true;
         }
     }
 }

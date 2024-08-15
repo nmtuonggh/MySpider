@@ -13,7 +13,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
-            Debug.Log(_blackBoard.animancer);
+            _blackBoard.lineRenderer.positionCount = 0;
         }
         
         public override StateStatus UpdateState()

@@ -66,6 +66,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public void PlayerEnterCombatRange()
         {
             progressing = true;
+            Destroy(_indicator);
         }
         
         public void PlayerLeaveCombatRange()

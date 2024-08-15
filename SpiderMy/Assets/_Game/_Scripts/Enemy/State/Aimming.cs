@@ -23,7 +23,7 @@ namespace SFRemastered
             
             var lastPos = _blackBoard.target.obj.transform.position;
             var shootPos = _blackBoard.shootPosition.transform.position;
-            var target = lastPos + Vector3.up * shootPos.y * 0.6f;
+            var target = lastPos + Vector3.up * 0.6f;
 
             var direction = (target - shootPos).normalized;
             var extendedTarget = target + direction * 0.1f;

@@ -38,7 +38,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.swing)
+            if (_blackBoard.swing && _blackBoard.readyToSwing)
             {
                 _fsm.ChangeState(_swingState);
                 return StateStatus.Success;

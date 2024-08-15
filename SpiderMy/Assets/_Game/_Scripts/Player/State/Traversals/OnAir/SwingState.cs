@@ -27,16 +27,27 @@ namespace SFRemastered
         private Vector3 _randomRopePosition;
         private float angle;
         private int animIndex;
+        private float handlerSwing = .8f;
 
         
         public override void EnterState()
         {
+            _blackBoard.readyToSwing = false;
+            _blackBoard.playerController.StartSwingCoroutine();
             currentSwingPoint = _blackBoard.swingPoint.position;
             animIndex = Random.Range(0, swingAnimCount);
             base.EnterState();
             SetupEnterState();
             RandomRopeShotPosition();
             Swinging();
+        }
+        
+        //coroutine for readytoswing for 1s
+        
+        IEnumerable ReadyToSwing()
+        {
+            yield return new WaitForSeconds(handlerSwing);
+            _blackBoard.readyToSwing = true;
         }
 
         public override StateStatus UpdateState()
@@ -56,6 +67,7 @@ namespace SFRemastered
                 _fsm.ChangeState(_landRollState);
                 return StateStatus.Success;
             }
+            
 
             if (!_blackBoard.swing)
             {

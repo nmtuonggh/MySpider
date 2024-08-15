@@ -16,8 +16,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         [SerializeField] private bool getHit;
         [SerializeField] public bool zipAttackStun;
-        [SerializeField] private HealthBar healthBar;
-        [SerializeField] private GameObject healthBarUI;
+        [SerializeField] private HealthBar healthBarscript;
         [SerializeField] private EnemyBlackBoard blackBoard;
         
         private Vector3 velocity;
@@ -30,15 +29,16 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         private void Start()
         {
-          
+            
            //healthBarUI.SetActive(true);
         }
 
         private void OnEnable()
         {
-            healthBar.gameObject.SetActive(true);
+            blackBoard.healthBarUI.SetActive(true);
             health = blackBoard.enemyData.health;
-            blackBoard.characterController.enabled = true;
+            healthBarscript.healthBar.maxValue = health;
+            healthBarscript.easeHealthBar.maxValue = health;
         }
 
 
@@ -60,7 +60,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         public void OnStaggerHit(float damage)
         {
             health -= damage;
-            healthBar.TakeDamage(damage);
+            healthBarscript.TakeDamage(damage);
             blackBoard.staggerHit = true;
             CheckHealth();
         }
@@ -68,7 +68,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         public void OnKnockBackHit(float damage)
         {
             health -= damage;
-            healthBar.TakeDamage(damage);
+            healthBarscript.TakeDamage(damage);
             blackBoard.knockBackHit = true;
             CheckHealth();
         }
