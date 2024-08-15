@@ -12,7 +12,7 @@ namespace SFRemastered.OnHitState
         {
             base.EnterState();
             _blackBoard.playerMovement.useRootMotion = true;
-            _blackBoard.knockBackHit = false;
+            //_blackBoard.knockBackHit = false;
         }
         
         public override StateStatus UpdateState()

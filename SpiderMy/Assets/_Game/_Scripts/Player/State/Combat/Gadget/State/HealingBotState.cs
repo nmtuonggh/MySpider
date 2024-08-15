@@ -19,7 +19,6 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             {
                 base.EnterState();
                 _state.Time = 0;
-                //ShotProjectile();
             }
 
             public override StateStatus UpdateState()

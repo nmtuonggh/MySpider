@@ -23,6 +23,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool staggerHit;
         public bool stunLockHit;
         public bool knockBackHit;
+        public bool blocking;
         public bool die;
         
         [Header("============Combat variables============")]
