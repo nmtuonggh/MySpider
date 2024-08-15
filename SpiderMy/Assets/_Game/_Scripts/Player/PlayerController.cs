@@ -18,6 +18,7 @@ namespace SFRemastered
             healthBar.TakeDamage(damage);
             _blackBoard.staggerHit = true;
             CheckHealth();
+            StartHitCoroutine(_blackBoard.staggerHit);
         }
         
         public void OnKnockBackHit(float damage)
@@ -26,6 +27,7 @@ namespace SFRemastered
             healthBar.TakeDamage(damage);
             _blackBoard.knockBackHit = true;
             CheckHealth();
+            StartHitCoroutine(_blackBoard.knockBackHit);
         }
         
         private void CheckHealth()
@@ -39,12 +41,24 @@ namespace SFRemastered
         public void StartSwingCoroutine()
         {
             StartCoroutine(ReadyToSwing());
+            
+        }
+        
+        public void StartHitCoroutine(bool hitType)
+        {
+            StartCoroutine(Hit(hitType));
         }
 
         private IEnumerator ReadyToSwing()
         {
             yield return new WaitForSeconds(0.8f);
             _blackBoard.readyToSwing = true;
+        }
+        
+        private IEnumerator Hit(bool hitType)
+        {
+            yield return null;
+            hitType = false;
         }
     }
 }

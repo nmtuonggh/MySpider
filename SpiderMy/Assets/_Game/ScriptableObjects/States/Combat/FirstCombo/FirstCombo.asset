@@ -34,6 +34,7 @@ MonoBehaviour:
   normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
   lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
+  knockBack: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
   _currentComboIndex: 0
   _delayTime: 0.9
   _canGoToNextAttack: 1

@@ -42,8 +42,6 @@ namespace SFRemastered
             
             if (currentTime >= _blackBoard.stunLockTime)
             {
-                _blackBoard.stunLockHit = false;
-                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
             
@@ -53,6 +51,8 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.stunLockHit = false;
+            _blackBoard.animancer.Animator.applyRootMotion = false;
         }
     }
 }

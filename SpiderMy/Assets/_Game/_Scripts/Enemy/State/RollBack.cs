@@ -1,7 +1,10 @@
-﻿namespace SFRemastered
+﻿using UnityEngine;
+
+namespace SFRemastered
 {
     public class RollBack : EnemyBaseState
     {
+        [SerializeField] private float duration = 1f;
         public override void EnterState()
         {
             base.EnterState();
@@ -17,9 +20,9 @@
                 return baseStatus;
             }
             
-            if (_state.NormalizedTime >= 1f)
+            if (_state.NormalizedTime >= duration)
             {
-                _blackBoard.animancer.Animator.applyRootMotion = false;
+               
                 return StateStatus.Success;
             }
 
@@ -29,6 +32,7 @@
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.animancer.Animator.applyRootMotion = false;
         }
     }
 }

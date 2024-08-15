@@ -18,6 +18,7 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected UltimateSkill _ultimateSkill;
         [SerializeField] protected GadgetAdapter _gadgetAdapter;
         [SerializeField] protected StaggerState stagger;
+        [SerializeField] protected KnockBackState knockBack;
 
         public bool canJump = true;
 
@@ -80,6 +81,12 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.staggerHit)
             {
                 _fsm.ChangeState(stagger);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.knockBackHit)
+            {
+                _fsm.ChangeState(knockBack);
                 return StateStatus.Success;
             }
 

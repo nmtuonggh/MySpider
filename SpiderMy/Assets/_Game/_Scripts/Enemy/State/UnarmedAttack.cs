@@ -1,4 +1,5 @@
-﻿using NodeCanvas.Framework;
+﻿using Animancer;
+using NodeCanvas.Framework;
 using ParadoxNotion;
 using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.ReferentSO;
@@ -8,12 +9,17 @@ namespace SFRemastered
 {
     public class UnarmedAttack : EnemyBaseState
     {
-        
+        [SerializeField] private float radius = 0.75f;
+        [SerializeField] private ClipTransition[] clip;
+        private int randomIndex;
+
         public override void EnterState()
         {
             base.EnterState();
+            randomIndex = Random.Range(0, clip.Length);
+            _state = _blackBoard.animancer.Play(clip[randomIndex]);
             _blackBoard.lineRenderer.positionCount = 0;
-            _blackBoard.animancer.Animator.applyRootMotion = true;
+            _blackBoard.animancer.Animator.applyRootMotion = true;  
         }
 
         public override StateStatus UpdateState()
@@ -26,26 +32,38 @@ namespace SFRemastered
 
             if (_state.NormalizedTime >= 1f)
             {
-                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
-
             return StateStatus.Running;
         }
 
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.animancer.Animator.applyRootMotion = false;
         }
 
         public void OnHit()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(_blackBoard.sphereCastCenter.transform.position, .75f, _blackBoard.hitLayer);
-            foreach (var hitCollider in hitColliders)
+            Debug.Log("call");
+            Collider[] hitColliders = Physics.OverlapSphere(_blackBoard.sphereCastCenter.transform.position, radius,
+                _blackBoard.hitLayer);
+            if (hitColliders.Length > 0)
             {
-                var target = hitCollider.GetComponent<IHitable>();
-                target.OnStaggerHit(_blackBoard.enemyData.damage);
+                foreach (var hitCollider in hitColliders)
+                {
+                    Debug.Log(hitCollider.name);
+                    var target = hitCollider.GetComponent<IHitable>();
+                    target.OnStaggerHit(_blackBoard.enemyData.damage);
+                }
             }
         }
+
+        //draw the sphere cast gizmo
+        /*private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(_blackBoard.sphereCastCenter.transform.position, radius);
+        }*/
     }
 }

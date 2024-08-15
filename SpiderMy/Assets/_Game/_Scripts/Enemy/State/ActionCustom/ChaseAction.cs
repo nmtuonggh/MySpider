@@ -47,8 +47,9 @@ namespace SFRemastered {
             else if(result == StateStatus.Failure) {
                 EndAction(false);
             }
-            
-            if(Vector3.Distance(agent.transform.position, target.value.obj.transform.position) <= randomDistance) {
+            var targetPosition = target.value.obj.transform.position;
+            var groundTargetPosition = new Vector3(targetPosition.x, agent.transform.position.y, targetPosition.z);
+            if(Vector3.Distance(agent.transform.position, groundTargetPosition) <= randomDistance) {
                 EndAction(true);
             }
         }
