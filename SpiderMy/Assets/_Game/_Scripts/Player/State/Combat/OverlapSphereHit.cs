@@ -15,7 +15,7 @@ namespace SFRemastered
         
         public void Hit(float damage)
         {
-            Collider[] hitColliders = Physics.OverlapCapsule(start.transform.position, end.transform.position,radius, layer);
+            Collider[] hitColliders = Physics.OverlapSphere(center.position,radius, layer);
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();
@@ -23,13 +23,13 @@ namespace SFRemastered
             }
         }
         
-        public void MidHit(float damage)
+        public void KnockBackHit(float damage)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(center.transform.position ,0.3f, layer);
+            Collider[] hitColliders = Physics.OverlapSphere(center.position ,0.3f, layer);
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();
-                enemy.OnStaggerHit(damage);
+                enemy.OnKnockBackHit(damage);
             }
         }
         
@@ -50,8 +50,7 @@ namespace SFRemastered
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(start.position, radius);
-            Gizmos.DrawWireSphere(end.position, radius);
+            Gizmos.DrawWireSphere(center.position, radius);
         }   
     }
 }

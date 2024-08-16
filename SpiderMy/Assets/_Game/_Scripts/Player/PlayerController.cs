@@ -14,7 +14,7 @@ namespace SFRemastered
         
         public void OnStaggerHit(float damage)
         {
-            StartHitCoroutine(_blackBoard.staggerHit);
+            StartCoroutine(HandleStaggerHit());
             health -= damage;
             healthBar.TakeDamage(damage);
             CheckHealth();
@@ -22,11 +22,13 @@ namespace SFRemastered
         
         public void OnKnockBackHit(float damage)
         {
-            StartHitCoroutine(_blackBoard.knockBackHit);
+            StartCoroutine(HandleKnockBackHit());
             health -= damage;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
+        
+        
         
         private void CheckHealth()
         {
@@ -41,24 +43,28 @@ namespace SFRemastered
             StartCoroutine(ReadyToSwing());
             
         }
-        
-        public void StartHitCoroutine(bool hitType)
-        {
-            StartCoroutine(Hit(hitType));
-        }
+
+
+        #region Couroutines
 
         private IEnumerator ReadyToSwing()
         {
             yield return new WaitForSeconds(0.8f);
             _blackBoard.readyToSwing = true;
         }
-        
-        private IEnumerator Hit(bool hitType)
+        private IEnumerator HandleKnockBackHit()
         {
-            hitType = true;
-            yield return null;
-            Debug.Log("Hit!");
-            hitType = false;
+            _blackBoard.knockBackHit = true;
+            yield return new WaitForSeconds(0.2f);
+            _blackBoard.knockBackHit = false;
         }
+        private IEnumerator HandleStaggerHit()
+        {
+            _blackBoard.staggerHit = true;
+            yield return new WaitForSeconds(0.2f);
+            _blackBoard.staggerHit = false;
+        }
+
+        #endregion
     }
 }

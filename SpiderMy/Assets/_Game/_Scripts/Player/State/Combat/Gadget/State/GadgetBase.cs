@@ -5,6 +5,10 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 {
     public class GadgetBase : CombatBase
     {
+        public int maxStack;
+        public float coolDown;
+        public float currentStack;
+        public float currentCoolDown;
         public override void EnterState()
         {
             base.EnterState();
@@ -12,12 +16,6 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         
         public override StateStatus UpdateState()
         {
-            StateStatus baseStatus = base.UpdateState();
-            if (baseStatus != StateStatus.Running)
-            {
-                return baseStatus;
-            }
-            
             return StateStatus.Running;
         }
         

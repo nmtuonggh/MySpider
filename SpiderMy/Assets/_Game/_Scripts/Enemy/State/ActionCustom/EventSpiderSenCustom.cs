@@ -48,6 +48,7 @@ namespace SFRemastered {
 
                 value = (int)setTo == 1;
             }
+            
             gameEvent.Raise();
             warningAttack.value.SetActive(value);
         }

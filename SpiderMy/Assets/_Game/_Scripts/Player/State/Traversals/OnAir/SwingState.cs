@@ -28,6 +28,9 @@ namespace SFRemastered
         private float angle;
         private int animIndex;
         private float handlerSwing = .8f;
+        
+        private float originalMaxDistance;
+        private float originalMinDistance;
 
         
         public override void EnterState()
@@ -40,6 +43,9 @@ namespace SFRemastered
             SetupEnterState();
             RandomRopeShotPosition();
             Swinging();
+            
+            originalMaxDistance = _springJoint.maxDistance;
+            originalMinDistance = _springJoint.minDistance;
         }
 
         public override StateStatus UpdateState()
@@ -49,27 +55,38 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-
+            
             SwitchAnim();
 
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             
-            if (GroundCheck())
-            {
-                _fsm.ChangeState(_landRollState);
-                return StateStatus.Success;
-            }
             
+            float groundDistance = GroundCheck();
+            if (groundDistance < 3.5f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 0.1f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.05f, 0.25f);
+            }
+            else if (groundDistance < 2f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 0.5f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.25f, 0.25f); 
+            }
+            else if (groundDistance < 0.5f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 1f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.5f, 0.25f); 
+            }
 
             if (!_blackBoard.swing)
             {
-                if (_blackBoard.rigidbody.velocity.y <= 0)
+                if (_blackBoard.rigidbody.velocity.y <= 15)
                 {
                     _fsm.ChangeState(_jumpFromSwingLow);
                     return StateStatus.Success;
                 }
 
-                if (_blackBoard.rigidbody.velocity.y > 0)
+                if (_blackBoard.rigidbody.velocity.y > 15)
                 {
                     _fsm.ChangeState(_jumpFromSwing);
                     return StateStatus.Success;
@@ -84,7 +101,6 @@ namespace SFRemastered
         public override void FixedUpdateState()
         {
             base.FixedUpdateState();
-            //RotationPlayerWhileSwing();
             RotateVisual();
         }
 
@@ -96,6 +112,9 @@ namespace SFRemastered
             _blackBoard.lr.positionCount = 0;
             Destroy(_springJoint);
             _blackBoard.swing = false;
+            
+            _springJoint.maxDistance = originalMaxDistance; // Store this value when entering the state
+            _springJoint.minDistance = originalMinDistance;
         }
 
         private void SwitchAnim()
@@ -112,18 +131,6 @@ namespace SFRemastered
 
         private void RotateVisual()
         {
-            /*Quaternion targetRot =  Quaternion.Euler(Vector3.zero);
-            Vector3 threadDirection = (_randomRopePosition - _blackBoard.startrope.position).normalized;
-            Vector3 planeNormalX = Vector3.Cross(_blackBoard.transform.right, threadDirection);
-            Quaternion rotationX = Quaternion.LookRotation(planeNormalX);
-            Vector3 planeNormalZ = Vector3.Cross(_blackBoard.transform.forward, threadDirection);
-            Quaternion rotationZ = Quaternion.LookRotation(planeNormalZ);
-
-            Vector3 eulers = new Vector3(rotationX.eulerAngles.x, 0, rotationZ.eulerAngles.x);
-            targetRot = Quaternion.Euler(eulers);
-
-            _blackBoard.characterVisual.transform.localRotation = Quaternion.Slerp(_blackBoard.characterVisual.transform.localRotation, targetRot, 0.2f);*/
-            
             Vector3 ropeDirection = (_randomRopePosition - _blackBoard.startrope.position).normalized;
             Vector3 velocityDirection = _blackBoard.rigidbody.velocity.normalized;
             
@@ -177,8 +184,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
-            //_blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
-            // _blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
 
@@ -201,16 +207,18 @@ namespace SFRemastered
             _blackBoard.lr.SetPosition(0, _blackBoard.startrope.position + Vector3.down * .5f);
         }
 
-        private bool GroundCheck()
+        private float GroundCheck()
         {
-            if (Physics.Raycast(_fsm.transform.position, Vector3.down, 0.3f, _blackBoard.groundLayers))
+            RaycastHit hit;
+            if (Physics.Raycast(_fsm.transform.position, Vector3.down, out hit, 4f, _blackBoard.groundLayers))
             {
-                return true;
+                return hit.distance;
             }
             else
             {
-                return false;
+                return float.MaxValue;
             }
         }
+        
     }
 }

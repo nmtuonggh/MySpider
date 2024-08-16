@@ -25,7 +25,7 @@ MonoBehaviour:
           - m_Target: {fileID: 11400000, guid: eb9331ed2e8388845a596521fbc62743, type: 2}
             m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.CombatBase,
               Assembly-CSharp
-            m_MethodName: GetNormalHit
+            m_MethodName: GetKnockBackHit
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}

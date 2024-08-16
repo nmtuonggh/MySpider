@@ -2,6 +2,7 @@
 using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.State.Locomotion.Ground;
 using SFRemastered._Game.ScriptableObjects.AnimationAttack;
+using SFRemastered.OnHitState;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.State.Combat
@@ -9,6 +10,8 @@ namespace SFRemastered._Game._Scripts.State.Combat
     public abstract class CombatBase : StateBase
     {
         [SerializeField] protected DodgeState _dodgeState;
+        [SerializeField] protected StaggerState staggerState;
+        [SerializeField] protected KnockBackState knockBackState;
         
         protected float _currentDamage;
         public override void EnterState()
@@ -29,6 +32,18 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 _fsm.ChangeState(_dodgeState);
                 return StateStatus.Success;
             }
+
+            if (_blackBoard.staggerHit)
+            {
+                _fsm.ChangeState(staggerState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.knockBackHit)
+            {
+                _fsm.ChangeState(knockBackState);
+                return StateStatus.Success;
+            }
             
             return StateStatus.Running; 
         }
@@ -42,14 +57,13 @@ namespace SFRemastered._Game._Scripts.State.Combat
         {
             if (_blackBoard._detectedEnemy)
             {
-               
                 _blackBoard.overlapSphereHit.Hit( _currentDamage);
             }
         }
         
-        public void GetMidRangeHit()
+        public void GetKnockBackHit()
         {
-            _blackBoard.overlapSphereHit.Hit( _currentDamage);
+            _blackBoard.overlapSphereHit.KnockBackHit(_currentDamage);
         }
         
     }

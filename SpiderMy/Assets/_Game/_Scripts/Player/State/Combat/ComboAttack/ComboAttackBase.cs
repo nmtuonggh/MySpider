@@ -28,13 +28,14 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .8f : 1f;
+            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .6f : 1f;
             _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
             if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
                 _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.3f,
                     AxisConstraint.Y);
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
+            
         }
 
         public override StateStatus UpdateState()
@@ -98,7 +99,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
             _state.Events.Add(0.3f, RotateToTarget);
-            _state.Events.Add(0.5f, MoveToTarget);
+            _state.Events.Add(0.5f, RotateToTarget);
             time = 0;
         }
 
@@ -121,8 +122,8 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
             {
                 var targetPosition = _blackBoard.enemyInRange.FindClosestEnemy().transform.position;
-                var direction = _blackBoard.enemyInRange.FindClosestEnemy().transform.position - _blackBoard.playerMovement.transform.position;
-                _blackBoard.playerMovement.transform.DOMove(targetPosition - direction.normalized*.8f, 0.2f);
+                var direction = targetPosition - _blackBoard.playerMovement.transform.position;
+                _blackBoard.playerMovement.transform.DOMove(targetPosition - direction.normalized*1.3f, 0.2f);
             }
         }
 

@@ -19,6 +19,7 @@ namespace SFRemastered
 
         public override void ExitState()
         {
+            _blackBoard.characterVisual.transform.rotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
             base.ExitState();
         }
 
@@ -39,7 +40,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.swing && _blackBoard.readyToSwing)
+            if (_blackBoard.swing && _blackBoard.readyToSwing && !GroundCheck())
             {
                 if (_fsm.PreviousState != _swingState)
                 {
@@ -50,7 +51,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
-            if (_blackBoard.playerMovement.GetVelocity().y < 0 && _blackBoard.playerMovement.GetVelocity().magnitude > 40f)
+            if (_blackBoard.playerMovement.GetVelocity().y < 0 && _blackBoard.playerMovement.GetVelocity().magnitude > 40f )
             {
                 _fsm.ChangeState(_diveState);
                 return StateStatus.Success;
@@ -58,5 +59,7 @@ namespace SFRemastered
             
             return StateStatus.Running;
         }
+        
+        
     }
 }

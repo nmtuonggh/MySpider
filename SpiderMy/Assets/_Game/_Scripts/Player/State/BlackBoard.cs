@@ -92,5 +92,11 @@ namespace SFRemastered
             suitData.ApplySkin(this);
             animancer.Animator = suitData.gameObject.GetComponent<Animator>();
         }
+        
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, Vector3.down * 2f);
+        }
     }
 }

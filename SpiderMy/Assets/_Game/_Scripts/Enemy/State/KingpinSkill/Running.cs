@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using _Game.Scripts.Event;
 using SFRemastered._Game._Scripts.Enemy;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -10,8 +11,11 @@ namespace SFRemastered.KingpinSkill
     {
         [SerializeField] private float speed;
         [SerializeField] private float time;
+        [SerializeField] private float radius = 1.8f;
         private Vector3 targetPos;
         private Vector3 direction;
+        
+        public GameEvent onDisableSpiderSense;
         
         public override void EnterState()
         { 
@@ -42,17 +46,29 @@ namespace SFRemastered.KingpinSkill
         public override void ExitState()
         {
             base.ExitState();
+            radius = 1.8f;
+            if (_blackBoard.attacking)
+            {
+                _blackBoard.warningAttack.SetActive(false);
+                _blackBoard.attacking = false;
+                onDisableSpiderSense.Raise();
+            }
         }
 
         void OverlapSphere()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(_blackBoard.characterController.transform.position, 1.8f, _blackBoard.hitLayer);
-            int i = 0;
-            while (i < hitColliders.Length)
+            Collider[] hitColliders = Physics.OverlapSphere(_blackBoard.characterController.transform.position, radius, _blackBoard.hitLayer);
+            if (hitColliders.Length > 0)
             {
-                var target = hitColliders[i].GetComponent<IHitable>();
+                var target = hitColliders[0].GetComponent<IHitable>();
                 target.OnKnockBackHit(_blackBoard.enemyData.damage);
-                i++;
+                radius = 0;
+                if (_blackBoard.attacking)
+                {
+                    _blackBoard.warningAttack.SetActive(false);
+                    _blackBoard.attacking = false;
+                    onDisableSpiderSense.Raise();
+                }
             }
         }
     }

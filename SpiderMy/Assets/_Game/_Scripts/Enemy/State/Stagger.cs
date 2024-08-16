@@ -1,10 +1,16 @@
-﻿namespace SFRemastered
+﻿using UnityEngine;
+
+namespace SFRemastered
 {
     public class Stagger : EnemyBaseState
     { 
+        private Vector3 direction;
+        private Vector3 targetPosition;
         public override void EnterState()
         {
             base.EnterState();
+            direction =_blackBoard.characterController.transform.position - _blackBoard.target.obj.transform.position;
+           
             _blackBoard.lineRenderer.positionCount = 0;
             _blackBoard.animancer.Animator.applyRootMotion = true;
         }
@@ -18,9 +24,10 @@
                 return baseStatus;
             }
             
+            _blackBoard.characterController.Move(direction * Time.deltaTime);
+            
             if (_state.NormalizedTime >= .8f)
             {
-                
                 return StateStatus.Success;
             }
             

@@ -10,6 +10,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
     public class WebShooter : GadgetBase
     {
         [SerializeField] private NormalIdleCombat _normalIdleCombat;
+        [SerializeField] private int stack = 0;
 
         private GameObject target;
 
