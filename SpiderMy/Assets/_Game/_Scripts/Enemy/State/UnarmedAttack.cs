@@ -45,15 +45,14 @@ namespace SFRemastered
 
         public void OnHit()
         {
-            Debug.Log("call");
             Collider[] hitColliders = Physics.OverlapSphere(_blackBoard.sphereCastCenter.transform.position, radius,
                 _blackBoard.hitLayer);
             if (hitColliders.Length > 0)
             {
                 foreach (var hitCollider in hitColliders)
                 {
-                    Debug.Log(hitCollider.name);
                     var target = hitCollider.GetComponent<IHitable>();
+                    Debug.Log("Stagger Hit!");
                     target.OnStaggerHit(_blackBoard.enemyData.damage);
                 }
             }

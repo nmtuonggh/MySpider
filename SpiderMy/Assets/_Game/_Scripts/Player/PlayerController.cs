@@ -14,20 +14,18 @@ namespace SFRemastered
         
         public void OnStaggerHit(float damage)
         {
+            StartHitCoroutine(_blackBoard.staggerHit);
             health -= damage;
             healthBar.TakeDamage(damage);
-            _blackBoard.staggerHit = true;
             CheckHealth();
-            StartHitCoroutine(_blackBoard.staggerHit);
         }
         
         public void OnKnockBackHit(float damage)
         {
+            StartHitCoroutine(_blackBoard.knockBackHit);
             health -= damage;
             healthBar.TakeDamage(damage);
-            _blackBoard.knockBackHit = true;
             CheckHealth();
-            StartHitCoroutine(_blackBoard.knockBackHit);
         }
         
         private void CheckHealth()
@@ -57,7 +55,9 @@ namespace SFRemastered
         
         private IEnumerator Hit(bool hitType)
         {
+            hitType = true;
             yield return null;
+            Debug.Log("Hit!");
             hitType = false;
         }
     }
