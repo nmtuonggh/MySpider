@@ -112,14 +112,14 @@ namespace SFRemastered._Game._Scripts.State.Combat
             }
         }
         
-        public float GetDistanceToTargetEnemy()
+        public float GetDistanceToClosetEnemy()
         {
             if (FindClosestEnemy()!=null)
             {
                 return Vector3.Distance(transform.position, FindClosestEnemy().transform.position);
             }
 
-            return 0;
+            return -1;
         }
         
     }

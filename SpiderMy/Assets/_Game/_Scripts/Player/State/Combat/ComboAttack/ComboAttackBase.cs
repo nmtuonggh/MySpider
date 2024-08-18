@@ -17,25 +17,18 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         [SerializeField] protected LowIdleCombat lowIdleCombat;
         [SerializeField] protected CombatController combatController;
         [SerializeField] protected KnockBackState knockBack;
+        [SerializeField] protected SprintState sprintState;
 
         [SerializeField] protected int _currentComboIndex = 0;
-        [SerializeField] protected float _delayTime;
         [SerializeField] protected bool _canGoToNextAttack = false;
-
-        /*private float _currentDamage;*/
-        private float time;
 
         public override void EnterState()
         {
             base.EnterState();
-            _blackBoard.playerMovement.rootmotionSpeedMult = _blackBoard._detectedEnemy ? .6f : 1f;
-            _blackBoard.playerMovement.useRootMotion = true;
             _currentComboIndex = 0;
-            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
-                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.3f,
-                    AxisConstraint.Y);
+            _blackBoard.playerMovement.useRootMotion = true;
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
-            
+            _state.Time = 0;
         }
 
         public override StateStatus UpdateState()
@@ -45,24 +38,35 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             {
                 return baseStatus;
             }
-
-            time += Time.deltaTime;
-
-            //TODO: replace _state.NormalizedTime by attackanim.duration
-
+            
             if (_blackBoard.attack && _canGoToNextAttack)
             {
-                if (_currentComboIndex < 3)
-                    _currentComboIndex++;
+                if ( _blackBoard.enemyInRange.GetDistanceToClosetEnemy()> 2f)
+                {
+                    _fsm.ChangeState(combatController);
+                    return StateStatus.Success;
+                }
+                
+                if (_currentComboIndex == 3)
+                {
+                    _fsm.ChangeState(combatController);
+                    return StateStatus.Success;
+                }
                 else
-                    _currentComboIndex = 0;
+                {
+                    _currentComboIndex++;
+                }
 
                 if (_currentComboIndex < 3)
+                {
                     PlayComboAnimation(_firstComboClips, _currentComboIndex);
+                }
                 else
+                {
                     PlayComboAnimation(_extraAttackClips, Random.Range(0, _extraAttackClips.Length));
+                }
             }
-            else if(_state.NormalizedTime >= 1f)
+            else if (_state.NormalizedTime >= 1f)
             {
                 if (_blackBoard.attack)
                     _fsm.ChangeState(combatController);
@@ -77,12 +81,6 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.enemyInRange.GetDistanceToTargetEnemy() > 2f)
-            {
-                _fsm.ChangeState(combatController);
-                return StateStatus.Success;
-            }
-
             if (_blackBoard.knockBackHit)
             {
                 _fsm.ChangeState(knockBack);
@@ -91,16 +89,22 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 
             return StateStatus.Running;
         }
-
-        public void PlayComboAnimation(AttackAnim[] clip, int index)
+        
+        public override void ExitState()
         {
+            base.ExitState();
+            _currentComboIndex = 0;
+            _blackBoard.playerMovement.rootmotionSpeedMult = 1;
+            _blackBoard.playerMovement.useRootMotion = false;
+        }
+
+        private void PlayComboAnimation(AttackAnim[] clip, int index)
+        {
+            HandlerSpeedRootMotion();
             _canGoToNextAttack = false;
-            _delayTime = clip[index].delayAttack;
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
-            _state.Events.Add(0.3f, RotateToTarget);
-            _state.Events.Add(0.5f, RotateToTarget);
-            time = 0;
+            _state.Events.Add(0.25f, RotateToTarget);
         }
 
         public void CanGoToNextAttack()
@@ -108,31 +112,26 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _canGoToNextAttack = true;
         }
 
-        public void RotateToTarget()
+        private void RotateToTarget()
         {
-            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
+            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy() != null)
             {
-                _blackBoard.rigidbody.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f,
+                _blackBoard.rigidbody.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position,
+                    0.2f,
                     AxisConstraint.Y);
             }
         }
-        
-        public void MoveToTarget()
-        {
-            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy()!=null)
-            {
-                var targetPosition = _blackBoard.enemyInRange.FindClosestEnemy().transform.position;
-                var direction = targetPosition - _blackBoard.playerMovement.transform.position;
-                _blackBoard.playerMovement.transform.DOMove(targetPosition - direction.normalized*1.3f, 0.2f);
-            }
-        }
 
-        public override void ExitState()
+        private void HandlerSpeedRootMotion()
         {
-            base.ExitState();
-            _currentComboIndex = 0;
-            _blackBoard.playerMovement.rootmotionSpeedMult = 1;
-            _blackBoard.playerMovement.useRootMotion = false;
+            if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 0 and <= 1f)
+            {
+                _blackBoard.playerMovement.rootmotionSpeedMult = 0.15f;
+            }
+            else if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 1f and <= 2)
+            {
+                _blackBoard.playerMovement.rootmotionSpeedMult = 0.5f;
+            }
         }
     }
 }
