@@ -34,6 +34,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public GameObject warningAttack;
         public float attackCoolDown;
         public GameObject kingPinStaf;
+        public int hitStatus;
         
         [Header("============Range variables==========")]
         public BulletSO bulletSo;
@@ -52,7 +53,8 @@ namespace SFRemastered._Game._Scripts.Enemy.State
            staggerHit = false;
            stunLockHit = false; 
            knockBackHit = false;
-           die = false;
+           die = false;        
+           blocking = false;
         }
     }
 }

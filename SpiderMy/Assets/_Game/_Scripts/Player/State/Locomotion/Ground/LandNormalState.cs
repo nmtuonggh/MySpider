@@ -14,6 +14,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.characterVisual.transform.rotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
             //_state.Events.SetShouldNotModifyReason(null);
             _state.Events.OnEnd = () =>
             {

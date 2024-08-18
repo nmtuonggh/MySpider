@@ -12,7 +12,6 @@ namespace SFRemastered
         {
             base.EnterState();
             incomingVelocity = _blackBoard.playerMovement.GetSpeed();
-            //_blackBoard.characterVisual.transform.DORotate(Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up).eulerAngles, 0.3f);
         }
 
         public override void ExitState()
@@ -30,10 +29,7 @@ namespace SFRemastered
                 return baseStatus;
             }
             
-            
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
-            
-            
             
             return StateStatus.Running;
         }
@@ -43,6 +39,16 @@ namespace SFRemastered
             base.FixedUpdateState();
             var targetRotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
             _blackBoard.characterVisual.transform.rotation = Quaternion.Slerp(_blackBoard.characterVisual.transform.rotation, targetRotation, Time.fixedDeltaTime / 0.3f);
+        }
+        
+        protected bool GroundCheck()
+        {
+            if (Physics.Raycast(_fsm.transform.position, Vector3.down, 1.8f, _blackBoard.groundLayers))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

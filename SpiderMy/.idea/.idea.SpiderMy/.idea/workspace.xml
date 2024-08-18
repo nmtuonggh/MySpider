@@ -4,7 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="" />
+    <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/BaseAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/BaseAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Block.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Block.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ZipAttackStun.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ZipAttackStun.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/GadgetController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/GadgetController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Range.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Range.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Unarmed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/Enemy/Unarmed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Boss_KingPin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Boss_KingPin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Range.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Range.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Unarmed.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Enemy/Unarmed.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/AttackController.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/AttackController.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/Attack 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/Attack 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/ExtraAttack 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/FirstCombo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/FirstCombo/FirstCombo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Gadget/HealBot/HealingBotState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Gadget/HealBot/HealingBotState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Gadget/WebShooter/WebShooter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Gadget/WebShooter/WebShooter.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/LeapAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/LeapAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Ultimate/UltimateSkill.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/Ultimate/UltimateSkill.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/EndZipAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/EndZipAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/StartZipAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/ZipAirAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/ZipAirAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/ZipAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Combat/ZipAttack/ZipAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyBlackBoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ActionCustom/EventSpiderSenCustom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/ActionCustom/EventSpiderSenCustom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/KingpinSkill/Running.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/KingpinSkill/Running.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/KnockBack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/KnockBack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/LearpAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/LearpAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Stagger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/Stagger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/UnarmedAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Enemy/State/UnarmedAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/CombatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ComboAttack/ComboAttackBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/ComboAttack/ComboAttackBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/State/GadgetBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/State/GadgetBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/State/WebShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/Gadget/State/WebShooter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/OverlapSphereHit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/OverlapSphereHit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/UltimateSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Combat/UltimateSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/DiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/DiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/FallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/FallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/FallingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Falling/FallingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/LandNormalState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/LandNormalState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/LandToIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Locomotion/Ground/LandToIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/OnAir/SwingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/OnAir/SwingState.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,34 +95,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.39173013",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39173013&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\atomb\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\atomb\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Admin\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -76,7 +130,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Program Files\Unity\2022.3.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Admin\Documents\EFAS_2\SpiderMy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Admin\Documents\EFAS_2\SpiderMy" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -180,6 +234,8 @@
       <workItem from="1723650733743" duration="9859000" />
       <workItem from="1723686411140" duration="26233000" />
       <workItem from="1723742288863" duration="2734000" />
+      <workItem from="1723772637509" duration="24895000" />
+      <workItem from="1723808087772" duration="4885000" />
     </task>
     <servers />
   </component>

@@ -28,8 +28,8 @@ MonoBehaviour:
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _jumpFromSwingLow: {fileID: 11400000, guid: 9e7485a58cdfb6d44a90fffc6611c20a, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 280.79965, y: 27.954292, z: 170.46295}
-  startSwingVelocity: 20
+  currentSwingPoint: {x: 112.410484, y: 39.40547, z: 209.56944}
+  startSwingVelocity: 15
   speedWhenSwing: 15
   _ListAnim:
   - _FadeDuration: 0.2533334

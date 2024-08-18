@@ -7,6 +7,8 @@
             public override void EnterState()
             {
                 base.EnterState();
+                var direction =_blackBoard.characterController.transform.position - _blackBoard.target.obj.transform.position;
+                _blackBoard.characterController.Move(direction * 1);
                 _blackBoard.lineRenderer.positionCount = 0;
                 _blackBoard.animancer.Animator.applyRootMotion = true;
             }

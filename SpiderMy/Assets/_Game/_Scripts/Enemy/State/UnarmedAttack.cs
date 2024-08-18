@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace SFRemastered
 {
-    public class UnarmedAttack : EnemyBaseState
+    public class UnarmedAttack : BaseAttack
     {
         [SerializeField] private float radius = 0.75f;
         [SerializeField] private ClipTransition[] clip;
@@ -52,17 +52,9 @@ namespace SFRemastered
                 foreach (var hitCollider in hitColliders)
                 {
                     var target = hitCollider.GetComponent<IHitable>();
-                    Debug.Log("Stagger Hit!");
                     target.OnStaggerHit(_blackBoard.enemyData.damage);
                 }
             }
         }
-
-        //draw the sphere cast gizmo
-        /*private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(_blackBoard.sphereCastCenter.transform.position, radius);
-        }*/
     }
 }

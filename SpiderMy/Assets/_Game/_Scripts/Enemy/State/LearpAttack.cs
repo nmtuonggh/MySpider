@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SFRemastered
 {
-    public class LearpAttack : EnemyBaseState
+    public class LearpAttack : BaseAttack
     {
         [SerializeField] private ClipTransition[] clip;
         [SerializeField] private float radius = 0.75f;
