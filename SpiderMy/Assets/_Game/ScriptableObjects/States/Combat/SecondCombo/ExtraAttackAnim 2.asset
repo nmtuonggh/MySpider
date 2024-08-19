@@ -16,9 +16,9 @@ MonoBehaviour:
     _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.4535056
-      - 0.45693508
-      - 0.7638
+      - 0.23454034
+      - 0.58990455
+      - 0.78535485
       - NaN
       _Callbacks:
       - m_PersistentCalls:
@@ -41,7 +41,7 @@ MonoBehaviour:
           - m_Target: {fileID: 11400000, guid: d31ba91d4b849004ba350f833f7e3ef8, type: 2}
             m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.State.Combat.CombatBase,
               Assembly-CSharp
-            m_MethodName: GetNormalHit
+            m_MethodName: GetKnockBackHit
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -70,8 +70,8 @@ MonoBehaviour:
       - Hit
       - Hit2
       - CanGoNext
-    _Clip: {fileID: 7400000, guid: 02533fddf0601cc4ba2ed1890c41a4a1, type: 2}
+    _Clip: {fileID: 7400000, guid: bf1f07d53e7ae9c44b2bae741ac0548a, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   damage: 40
-  duration: 0
+  delayAttack: 0

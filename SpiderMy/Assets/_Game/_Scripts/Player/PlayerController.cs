@@ -10,8 +10,9 @@ namespace SFRemastered
         public float health;
         public PlayerHealthBar healthBar;
         public BlackBoard _blackBoard;
-        
-        
+
+        #region OnHit
+
         public void OnStaggerHit(float damage)
         {
             StartCoroutine(HandleStaggerHit());
@@ -27,6 +28,39 @@ namespace SFRemastered
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
+        
+        public void OnVenomPhase1Hit(float damage)
+        {
+            StartCoroutine(HandleVenomPhase1Hit());
+            health -= damage;
+            healthBar.TakeDamage(damage);
+            CheckHealth();
+        }
+        
+        public void OnVenomPhase2Hit(float damage)
+        {
+            StartCoroutine(HandleVenomPhase2Hit());
+            health -= damage;
+            healthBar.TakeDamage(damage);
+            CheckHealth();
+        }
+        
+        public void OnVenomMiniHit(float damage)
+        {
+            health -= damage;
+            healthBar.TakeDamage(damage);
+            CheckHealth();
+        }
+        
+        public void OnVenomFinalHit(float damage)
+        {
+            StartCoroutine(HandleVenomFinalHit());
+            health -= damage;
+            healthBar.TakeDamage(damage);
+            CheckHealth();
+        }
+
+        #endregion
         
         
         
@@ -63,6 +97,27 @@ namespace SFRemastered
             _blackBoard.staggerHit = true;
             yield return new WaitForSeconds(0.2f);
             _blackBoard.staggerHit = false;
+        }
+        
+        private IEnumerator HandleVenomPhase1Hit()
+        {
+            _blackBoard.venomP1Hit = true;
+            yield return new WaitForSeconds(0.2f);
+            _blackBoard.venomP1Hit = false;
+        }
+        
+        private IEnumerator HandleVenomPhase2Hit()
+        {
+            _blackBoard.venomP2Hit = true;
+            yield return new WaitForSeconds(0.2f);
+            _blackBoard.venomP2Hit = false;
+        }
+        
+        private IEnumerator HandleVenomFinalHit()
+        {
+            _blackBoard.venomFinalHit = true;
+            yield return new WaitForSeconds(0.2f);
+            _blackBoard.venomFinalHit = false;
         }
 
         #endregion

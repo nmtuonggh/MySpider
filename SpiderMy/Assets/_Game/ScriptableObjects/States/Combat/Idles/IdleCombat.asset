@@ -33,4 +33,7 @@ MonoBehaviour:
   _gadgetAdapter: {fileID: 11400000, guid: 6de9178b9bebaff4d817785506b4e89f, type: 2}
   stagger: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}
   knockBack: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
+  venomHit: {fileID: 11400000, guid: dc42ff4d7f4c6574b8da18f69a44f5b6, type: 2}
+  venomHit2: {fileID: 11400000, guid: d6aeacf4510877843b6a74666f770a62, type: 2}
+  venomHit3: {fileID: 11400000, guid: 5354d9d83333b7549aa3eef45a459f72, type: 2}
   canJump: 1

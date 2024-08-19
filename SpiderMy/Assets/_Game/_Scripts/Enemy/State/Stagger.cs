@@ -28,6 +28,7 @@ namespace SFRemastered
             
             if (_state.NormalizedTime >= .8f)
             {
+                _blackBoard.staggerHit = false;
                 return StateStatus.Success;
             }
             
@@ -37,6 +38,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            
             _blackBoard.animancer.Animator.applyRootMotion = false;
         }
     }

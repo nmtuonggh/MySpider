@@ -190,7 +190,24 @@ namespace SFRemastered
 
         private void RandomRopeShotPosition()
         {
-            _ropeHolderBounds = _blackBoard.ropHolder.GetComponent<Renderer>().bounds;
+            randomBound(_blackBoard.ropHolder);
+            /*if (_blackBoard.moveDirection.x > 0)
+            {
+                randomBound(_blackBoard.ropHolderRight);
+            }
+            else if (_blackBoard.moveDirection.x < 0)
+            {
+                randomBound(_blackBoard.ropHolderLeft);
+            }
+            else
+            {
+                randomBound(_blackBoard.ropHolderMid);
+            }*/
+        }
+
+        private void randomBound(GameObject gameObject)
+        {
+            _ropeHolderBounds = gameObject.GetComponent<Renderer>().bounds;
             _randomRopePosition = new Vector3(
                 Random.Range(_ropeHolderBounds.min.x, _ropeHolderBounds.max.x),
                 Random.Range(_ropeHolderBounds.min.y, _ropeHolderBounds.max.y),

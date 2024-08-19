@@ -1,4 +1,5 @@
-﻿using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
+﻿using SFRemastered._Game._Scripts.Player.State.Combat;
+using SFRemastered._Game._Scripts.State.Combat.IdleCombat;
 using UnityEngine;
 
 namespace SFRemastered.OnHitState
@@ -7,10 +8,11 @@ namespace SFRemastered.OnHitState
 
     public class KnockBackState : StateBase
     {
-        [SerializeField] private NormalIdleCombat normalIdleCombat;
+        [SerializeField] private Riseup riseupState;
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.invincible = true;
             _blackBoard.playerMovement.useRootMotion = true;
             //_blackBoard.knockBackHit = false;
         }
@@ -27,7 +29,7 @@ namespace SFRemastered.OnHitState
             
             if (_state.NormalizedTime >= 1f)
             {
-                _fsm.ChangeState(normalIdleCombat);
+                _fsm.ChangeState(riseupState);
                 return StateStatus.Success;
             }
 
@@ -37,6 +39,7 @@ namespace SFRemastered.OnHitState
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.invincible = false;
             _blackBoard.playerMovement.useRootMotion = false;
         }
     }

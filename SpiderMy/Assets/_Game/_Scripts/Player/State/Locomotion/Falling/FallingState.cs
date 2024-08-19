@@ -6,6 +6,7 @@ namespace SFRemastered
     public class FallingState : AirBoneState
     {
         [SerializeField] protected SwingState _swingState;
+        [SerializeField] protected float speedMultiplier;
         
         protected float incomingVelocity;
         public override void EnterState()
@@ -28,8 +29,7 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-            
-            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
+            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection * speedMultiplier);
             
             return StateStatus.Running;
         }

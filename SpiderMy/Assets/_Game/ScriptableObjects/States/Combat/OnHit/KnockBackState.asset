@@ -22,4 +22,4 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: c906e45f55e9dcd4fa4c34d29fb895d4, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  riseupState: {fileID: 11400000, guid: 49cd82dc8fa283148a824b4f1ba7bb30, type: 2}

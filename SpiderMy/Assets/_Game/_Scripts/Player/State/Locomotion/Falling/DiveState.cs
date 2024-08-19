@@ -44,6 +44,12 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
             
+            if (_blackBoard.foundWall)
+            {
+                _fsm.ChangeState(_wallRun);
+                return StateStatus.Success;
+            }
+            
             return StateStatus.Running;
         }
     }

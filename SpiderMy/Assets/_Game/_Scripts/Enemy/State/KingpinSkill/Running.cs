@@ -61,7 +61,11 @@ namespace SFRemastered.KingpinSkill
             if (hitColliders.Length > 0)
             {
                 var target = hitColliders[0].GetComponent<IHitable>();
-                target.OnKnockBackHit(_blackBoard.enemyData.damage);
+                if (!hitColliders[0].GetComponent<BlackBoard>().invincible)
+                {
+                    target.OnKnockBackHit(_blackBoard.enemyData.damage);
+                }
+                
                 radius = 0;
                 if (_blackBoard.attacking)
                 {

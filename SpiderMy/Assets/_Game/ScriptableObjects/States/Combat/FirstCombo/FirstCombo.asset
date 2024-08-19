@@ -25,6 +25,9 @@ MonoBehaviour:
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   staggerState: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}
   knockBackState: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
+  venomHit: {fileID: 11400000, guid: dc42ff4d7f4c6574b8da18f69a44f5b6, type: 2}
+  venomHit2: {fileID: 11400000, guid: dc42ff4d7f4c6574b8da18f69a44f5b6, type: 2}
+  venomHit3: {fileID: 11400000, guid: 5354d9d83333b7549aa3eef45a459f72, type: 2}
   _firstComboClips:
   - {fileID: 11400000, guid: 18a71a07df098584abe25c962e773350, type: 2}
   - {fileID: 11400000, guid: 363785acc6159c84197901d21e05f1db, type: 2}
@@ -37,6 +40,6 @@ MonoBehaviour:
   lowIdleCombat: {fileID: 11400000, guid: 80fc3512892e7b646b6e183cb6e9e0f6, type: 2}
   combatController: {fileID: 11400000, guid: cb09ff0fa93ad1a4283337857527ada9, type: 2}
   knockBack: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
+  leapAttack: {fileID: 11400000, guid: fdb27329260e8264781d3bb281c89c6a, type: 2}
   _currentComboIndex: 0
-  _delayTime: 0.9
   _canGoToNextAttack: 1

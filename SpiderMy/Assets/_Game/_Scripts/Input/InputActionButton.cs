@@ -9,7 +9,7 @@ namespace SFRemastered.InputSystem
     public class InputActionButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private InputAction action;
-        [SerializeField] private KeyCode keyBind;
+        [SerializeField] public KeyCode keyBind;
 
         private void Update()
         {

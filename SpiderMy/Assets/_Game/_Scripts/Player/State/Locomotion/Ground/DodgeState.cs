@@ -19,6 +19,7 @@ namespace SFRemastered._Game._Scripts.State.Locomotion.Ground
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.invincible = true;
             _blackBoard.playerMovement.useRootMotion = true;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _state = _blackBoard.animancer.Play(HandelDodge());
@@ -57,6 +58,7 @@ namespace SFRemastered._Game._Scripts.State.Locomotion.Ground
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.invincible = false;
             _blackBoard.playerMovement.useRootMotion = false;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _done = false;
