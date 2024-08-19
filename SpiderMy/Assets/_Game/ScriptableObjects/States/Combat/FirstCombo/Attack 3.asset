@@ -16,8 +16,8 @@ MonoBehaviour:
     _FadeDuration: 0.25
     _Events:
       _NormalizedTimes:
-      - 0.29291552
-      - 0.64786583
+      - 0.3031437
+      - 0.501497
       - NaN
       _Callbacks:
       - m_PersistentCalls:

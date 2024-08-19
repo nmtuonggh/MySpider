@@ -13,7 +13,7 @@ namespace SFRemastered.Combat.ZipAttack
             var targetPos = (_blackBoard.transform.position - _blackBoard.enemyInRange.FindClosestEnemy().transform.position).normalized;
 
             DrawnWeb(_blackBoard._zipAttackHandPositon.transform.position,
-                _blackBoard.enemyInRange.FindClosestEnemy().transform.position + new Vector3(0, 0.2f, 0));
+                _blackBoard.enemyInRange.FindClosestEnemy().transform.position + new Vector3(0, _blackBoard._zipAttackHandPositon.transform.position.y, 0));
 
             _blackBoard.playerMovement.transform
                 .DOMove((_blackBoard.enemyInRange.FindClosestEnemy().transform.position + targetPos * .3f) + new Vector3(0, 0.05f, 0), 0.35f)
