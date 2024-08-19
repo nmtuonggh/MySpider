@@ -7,6 +7,7 @@
             public override void EnterState()
             {
                 base.EnterState();
+                _blackBoard.cantTarget = true;
                 var direction =_blackBoard.characterController.transform.position - _blackBoard.target.obj.transform.position;
                 _blackBoard.characterController.Move(direction * 1);
                 _blackBoard.lineRenderer.positionCount = 0;
@@ -24,7 +25,8 @@
             
                 if (_state.NormalizedTime >= 1f)
                 {
-                    _blackBoard.knockBackHit = false;
+                    _blackBoard.cantTarget = false;
+                    //_blackBoard.knockBackHit = false;
                     return StateStatus.Success;
                 }
             

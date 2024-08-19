@@ -25,6 +25,8 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool knockBackHit;
         public bool blocking;
         public bool die;
+        public bool cantTarget;
+        public bool invincible;
         
         [Header("============Combat variables============")]
         public float webHitStun;

@@ -5,6 +5,7 @@
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.cantTarget = true;
             _blackBoard.lineRenderer.positionCount = 0;
             _blackBoard.healthBarUI.SetActive(false);
         }
@@ -16,6 +17,7 @@
             if (_state.NormalizedTime >= 2.5f)
             {
                 _blackBoard.die = false;
+                _blackBoard.cantTarget = false;
                 _blackBoard.enemyData.ReturnToPool(_blackBoard.enemyData.id, _blackBoard.gameObject);
                 return StateStatus.Success;
             }

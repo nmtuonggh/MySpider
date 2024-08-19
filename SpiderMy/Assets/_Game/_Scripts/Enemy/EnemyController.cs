@@ -2,6 +2,7 @@
 using System.Collections;
 using _Game.Scripts.Event;
 using Animancer;
+using DamageNumbersPro;
 using NodeCanvas.Framework;
 using SFRemastered._Game._Scripts.Enemy.State;
 using Unity.VisualScripting;
@@ -15,10 +16,9 @@ namespace SFRemastered._Game._Scripts.Enemy
         public EnemySO.EnemyType enemyType;
         public float health;
         
-        [SerializeField] private bool getHit;
-        [SerializeField] public bool zipAttackStun;
         [SerializeField] private HealthBar healthBarscript;
         [SerializeField] private EnemyBlackBoard blackBoard;
+        [SerializeField] private DamageNumber damageNumber;
         
         private Vector3 velocity;
         public float gravity = -9.81f;
@@ -62,8 +62,9 @@ namespace SFRemastered._Game._Scripts.Enemy
 
         public void OnStaggerHit(float damage)
         {
-            if (!blackBoard.blocking)
+            if (!blackBoard.blocking || !blackBoard.invincible)
             {
+                damageNumber.Spawn(this.transform.position + Vector3.up, damage);
                 health -= damage;
                 healthBarscript.TakeDamage(damage);
                 blackBoard.staggerHit = true;
@@ -75,7 +76,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         public void OnKnockBackHit(float damage)
         {
-            if (!blackBoard.blocking)
+            if (!blackBoard.blocking || !blackBoard.invincible)
             {
                 health -= damage;
                 healthBarscript.TakeDamage(damage);

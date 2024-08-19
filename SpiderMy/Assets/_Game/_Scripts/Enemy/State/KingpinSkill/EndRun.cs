@@ -18,6 +18,8 @@
 
             if (_state.NormalizedTime >= 1f)
             {
+                _blackBoard.invincible = false;
+                _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }
         
@@ -27,7 +29,7 @@
         public override void ExitState()
         {
             base.ExitState();
-            _blackBoard.animancer.Animator.applyRootMotion = false;
+            
         }
     }
 }

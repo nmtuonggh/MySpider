@@ -6,6 +6,7 @@ public class StartRun : EnemyBaseState
     public override void EnterState()
     {
         base.EnterState();
+        _blackBoard.invincible = true;
         var target = _blackBoard.target.obj.transform.position;
         var targetDir = target - transform.position;
         targetDir.y = 0;
