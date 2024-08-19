@@ -106,6 +106,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void OnEnemyDie()
         {
+            Debug.Log("Enemy Die");
             fightingMissionSo.currentWaveEnemyCount--;
             if (fightingMissionSo.currentWaveEnemyCount <= 0)
             {
@@ -118,7 +119,6 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             if (fightingMissionSo.currentWaveIndex < fightingMissionSo.listWaveCombat.Count)
             {
-                Debug.Log("Spawn wave" + fightingMissionSo.currentWaveIndex );
                 SpawnWave(fightingMissionSo.currentWaveIndex);
                 fightingMissionSo.currentWaveIndex++;
             }

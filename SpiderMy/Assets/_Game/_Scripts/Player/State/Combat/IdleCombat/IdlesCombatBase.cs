@@ -19,6 +19,9 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected GadgetAdapter _gadgetAdapter;
         [SerializeField] protected StaggerState stagger;
         [SerializeField] protected KnockBackState knockBack;
+        [SerializeField] protected OnVenomHitP1 venomHit;
+        [SerializeField] protected OnVenomHitP2 venomHit2;
+        [SerializeField] protected OnVenomFinalHit venomHit3;
 
         public bool canJump = true;
 
@@ -87,6 +90,22 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.knockBackHit)
             {
                 _fsm.ChangeState(knockBack);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.venomP1Hit)
+            {
+                _fsm.ChangeState(venomHit);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomP2Hit)
+            {
+                _fsm.ChangeState(venomHit2);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomFinalHit)
+            {
+                _fsm.ChangeState(venomHit3);
                 return StateStatus.Success;
             }
 

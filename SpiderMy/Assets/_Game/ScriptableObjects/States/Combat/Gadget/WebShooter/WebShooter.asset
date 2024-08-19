@@ -60,4 +60,12 @@ MonoBehaviour:
   _dodgeState: {fileID: 11400000, guid: 0477ec206bb4e414d8763fb9d25ce3f0, type: 2}
   staggerState: {fileID: 11400000, guid: 22a1e59c75cb9f643b6cc551ac8b2423, type: 2}
   knockBackState: {fileID: 11400000, guid: 6c7b02a1a28017a4ea614a423c8ca7f6, type: 2}
+  venomHit: {fileID: 11400000, guid: dc42ff4d7f4c6574b8da18f69a44f5b6, type: 2}
+  venomHit2: {fileID: 11400000, guid: dc42ff4d7f4c6574b8da18f69a44f5b6, type: 2}
+  venomHit3: {fileID: 11400000, guid: 5354d9d83333b7549aa3eef45a459f72, type: 2}
+  maxStack: 3
+  coolDown: 20
+  currentStack: 1
+  currentCoolDown: 1.8311777
   _normalIdleCombat: {fileID: 11400000, guid: 66ebbbc6c024e77408899c8b1b63056f, type: 2}
+  stack: 0

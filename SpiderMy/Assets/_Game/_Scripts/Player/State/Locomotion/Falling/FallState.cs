@@ -26,7 +26,7 @@ namespace SFRemastered
 
         public override StateStatus UpdateState()
         {
-            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
+            _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection * speedMultiplier);
 
             if (_blackBoard.playerMovement.IsGrounded())
             {
@@ -54,6 +54,12 @@ namespace SFRemastered
             if (_blackBoard.playerMovement.GetVelocity().y < 0 && _blackBoard.playerMovement.GetVelocity().magnitude > 40f )
             {
                 _fsm.ChangeState(_diveState);
+                return StateStatus.Success;
+            }
+
+            if (_blackBoard.foundWall)
+            {
+                _fsm.ChangeState(_wallRun);
                 return StateStatus.Success;
             }
             

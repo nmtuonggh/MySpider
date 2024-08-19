@@ -12,6 +12,9 @@ namespace SFRemastered._Game._Scripts.State.Combat
         [SerializeField] protected DodgeState _dodgeState;
         [SerializeField] protected StaggerState staggerState;
         [SerializeField] protected KnockBackState knockBackState;
+        [SerializeField] protected OnVenomHitP1 venomHit;
+        [SerializeField] protected OnVenomHitP1 venomHit2;
+        [SerializeField] protected OnVenomFinalHit venomHit3;
         
         protected float _currentDamage;
         public override void EnterState()
@@ -42,6 +45,21 @@ namespace SFRemastered._Game._Scripts.State.Combat
             if (_blackBoard.knockBackHit)
             {
                 _fsm.ChangeState(knockBackState);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomP1Hit)
+            {
+                _fsm.ChangeState(venomHit);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomP2Hit)
+            {
+                _fsm.ChangeState(venomHit2);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomFinalHit)
+            {
+                _fsm.ChangeState(venomHit3);
                 return StateStatus.Success;
             }
             

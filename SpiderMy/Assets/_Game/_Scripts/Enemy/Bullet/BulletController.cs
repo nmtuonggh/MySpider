@@ -14,24 +14,12 @@ namespace SFRemastered._Game._Scripts.Enemy.Bullet
         {
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<PlayerController>().OnStaggerHit(ownerEnemyData.damage);
+                if (!other.GetComponent<BlackBoard>().invincible)
+                {
+                    other.GetComponent<PlayerController>().OnStaggerHit(ownerEnemyData.damage);
+                }
                 bulletSo.ReturnToPool(gameObject);
             }
         }
-
-        /*private void OnEnable()
-        {
-            lifeTime = 2f;
-        }
-
-        private void Update()
-        {
-            Vector3.MoveTowards( transform.position, transform.position + transform.forward, speed * Time.deltaTime);
-            lifeTime -= Time.deltaTime;
-            if (lifeTime <= 0)
-            {
-                bulletSo.ReturnToPool(gameObject);
-            }
-        }*/
     }
 }

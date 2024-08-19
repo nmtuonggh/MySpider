@@ -16,6 +16,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
 
         public override void EnterState()
         {
+            Debug.Log("web shooter");
             target = _blackBoard.enemyInRange.FindClosestEnemyNotStun();
             if (target != null)
             {
@@ -39,7 +40,6 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             
             if (_state.NormalizedTime >= 1f)
             {
-                Debug.Log("Change state");
                 _fsm.ChangeState(_normalIdleCombat);
                 return StateStatus.Success;
             }

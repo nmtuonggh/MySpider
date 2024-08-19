@@ -1,5 +1,6 @@
 ﻿using Animancer;
 using DG.Tweening;
+using SFRemastered._Game._Scripts.Enemy.State;
 using SFRemastered._Game._Scripts.State.Combat.IdleCombat.SFRemastered.Combat;
 using SFRemastered._Game.ScriptableObjects.AnimationAttack;
 using SFRemastered.OnHitState;
@@ -17,7 +18,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         [SerializeField] protected LowIdleCombat lowIdleCombat;
         [SerializeField] protected CombatController combatController;
         [SerializeField] protected KnockBackState knockBack;
-        [SerializeField] protected SprintState sprintState;
+        [SerializeField] protected LeapAttack.LeapAttack leapAttack;
 
         [SerializeField] protected int _currentComboIndex = 0;
         [SerializeField] protected bool _canGoToNextAttack = false;
@@ -41,11 +42,11 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             
             if (_blackBoard.attack && _canGoToNextAttack)
             {
-                if ( _blackBoard.enemyInRange.GetDistanceToClosetEnemy()> 2f)
+                /*if ( _blackBoard.enemyInRange.GetDistanceToClosetEnemy()> 2f)
                 {
-                    _fsm.ChangeState(combatController);
+                    _fsm.ChangeState(leapAttack);
                     return StateStatus.Success;
-                }
+                }*/
                 
                 if (_currentComboIndex == 3)
                 {

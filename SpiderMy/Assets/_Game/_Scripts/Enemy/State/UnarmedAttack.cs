@@ -3,6 +3,7 @@ using NodeCanvas.Framework;
 using ParadoxNotion;
 using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.ReferentSO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SFRemastered
@@ -52,7 +53,11 @@ namespace SFRemastered
                 foreach (var hitCollider in hitColliders)
                 {
                     var target = hitCollider.GetComponent<IHitable>();
-                    target.OnStaggerHit(_blackBoard.enemyData.damage);
+                    if (!hitCollider.GetComponent<BlackBoard>().invincible)
+                    {
+                        target.OnStaggerHit(_blackBoard.enemyData.damage);
+                    }
+                    
                 }
             }
         }

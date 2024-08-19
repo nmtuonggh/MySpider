@@ -15,6 +15,8 @@
 
             if (_state.NormalizedTime >= 2.5f)
             {
+                _blackBoard.die = false;
+                _blackBoard.enemyData.ReturnToPool(_blackBoard.enemyData.id, _blackBoard.gameObject);
                 return StateStatus.Success;
             }
             
@@ -24,7 +26,7 @@
         public override void ExitState()
         {
             base.ExitState();
-            _blackBoard.enemyData.ReturnToPool(_blackBoard.enemyData.id, _blackBoard.gameObject);
+            
         }
     }
 }

@@ -46,6 +46,9 @@ namespace SFRemastered
         [FormerlySerializedAs("playerHand")] public Transform playerSwingPos;
         public Transform swingPoint;
         public Transform startrope;
+        public GameObject ropHolderMid;
+        public GameObject ropHolderLeft;
+        public GameObject ropHolderRight;
         public GameObject ropHolder;
         public LineRenderer lr;
         public bool readyToSwing = true;
@@ -63,6 +66,10 @@ namespace SFRemastered
         public bool _detectedEnemy;
         public bool staggerHit;
         public bool knockBackHit;
+        public bool venomP1Hit;
+        public bool venomP2Hit;
+        public bool venomFinalHit;
+        [FormerlySerializedAs("dodging")] public bool invincible;
         
         [Header("Gadget")]
         public int gadgetIndex;
@@ -70,6 +77,7 @@ namespace SFRemastered
         public GameObject healingBot;
         public ProjectileWebShooterSO projectileWebShooterSo;
         public Transform projectileHealingBotPosition;
+        public GadgetAdapter gadgetAdapter;
         
         
         [Header("=====GameObject References================")]
@@ -83,20 +91,13 @@ namespace SFRemastered
         private void Awake()
         {
             playerRef.obj = this.gameObject;
-            gadgetIndex = -1;
-            
+            gadgetIndex = gadgetAdapter.gadgetIndex;
         }
 
         public void SetSuitData(SuitData suitData)
         {
             suitData.ApplySkin(this);
             animancer.Animator = suitData.gameObject.GetComponent<Animator>();
-        }
-        
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, Vector3.down * 2f);
         }
     }
 }

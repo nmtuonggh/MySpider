@@ -23,5 +23,14 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         {
             base.ExitState();
         }
+
+        public void ReplenishStack()
+        {
+            if (currentCoolDown <= 0 && currentStack < maxStack)
+            {
+                currentStack++;
+                currentCoolDown = coolDown;
+            }
+        }
     }
 }

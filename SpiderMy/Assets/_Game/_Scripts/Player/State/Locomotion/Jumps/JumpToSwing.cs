@@ -12,6 +12,9 @@ namespace SFRemastered
         [SerializeField] private FallState _fallState;
         [SerializeField] private ClipTransition _fallLoopAnimation;
         [SerializeField] private StaggerState stagger;
+        [SerializeField] private OnVenomHitP1 venomHit;
+        [SerializeField] private OnVenomHitP2 venomHit2;
+        [SerializeField] private OnVenomFinalHit venomHit3;
 
         public override void EnterState()
         {
@@ -58,6 +61,23 @@ namespace SFRemastered
             if (_blackBoard.staggerHit)
             {
                 _fsm.ChangeState(stagger);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.venomP1Hit)
+            {
+                _fsm.ChangeState(venomHit);
+                return StateStatus.Success;
+            }
+            
+            if (_blackBoard.venomP2Hit)
+            {
+                _fsm.ChangeState(venomHit2);
+                return StateStatus.Success;
+            }
+            if (_blackBoard.venomFinalHit)
+            {
+                _fsm.ChangeState(venomHit3);
                 return StateStatus.Success;
             }
 

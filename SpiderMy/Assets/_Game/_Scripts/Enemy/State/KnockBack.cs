@@ -24,7 +24,7 @@
             
                 if (_state.NormalizedTime >= 1f)
                 {
-                    _blackBoard.animancer.Animator.applyRootMotion = false;
+                    _blackBoard.knockBackHit = false;
                     return StateStatus.Success;
                 }
             
@@ -33,6 +33,7 @@
 
             public override void ExitState()
             {
+                _blackBoard.animancer.Animator.applyRootMotion = false;
                 base.ExitState();
             }
         }

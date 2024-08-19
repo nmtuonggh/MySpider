@@ -23,7 +23,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.LeapAttack
             _blackBoard.playerMovement.useRootMotion = true;
             _state = _blackBoard.animancer.Play(attackAnim.clip);
             _currentDamage = attackAnim.damage;
-            _state.Events.SetCallback("Hit", GetNormalHit);
+            _state.Events.SetCallback("Hit", GetKnockBackHit);
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.3f, AxisConstraint.Y);
             var targetPos = (_blackBoard.transform.position - _blackBoard.enemyInRange.FindClosestEnemy().transform.position).normalized;
             _blackBoard.playerMovement.transform.DOMove((_blackBoard.enemyInRange.FindClosestEnemy().transform.position + targetPos*.3f), 0.5f);

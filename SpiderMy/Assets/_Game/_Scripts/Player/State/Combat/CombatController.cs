@@ -62,7 +62,8 @@ namespace SFRemastered._Game._Scripts.State.Combat
             else
                 _fsm.ChangeState(_secondCombo);*/
             
-            _fsm.ChangeState(_firstCombo);
+            //_fsm.ChangeState(_firstCombo);
+            _fsm.ChangeState(_secondCombo);
         }
     }
 }

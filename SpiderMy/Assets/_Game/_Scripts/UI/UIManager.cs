@@ -13,8 +13,9 @@ namespace SFRemastered._Game._Scripts
         [Header("============Gadget============")]
         [SerializeField] private List<GameObject> gadgetsIconBtn;
 
-        private void Awake()
+        private void Start()
         {
+            SetGadgetUI();
         }
 
         #region SuitUI

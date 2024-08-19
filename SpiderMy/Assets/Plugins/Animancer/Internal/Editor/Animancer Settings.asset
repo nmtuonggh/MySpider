@@ -20,6 +20,7 @@ MonoBehaviour:
     _Models:
     - {fileID: 919132149155446097, guid: abd17ed8bbe5eac4782c1d2527c2bec5, type: 3}
     - {fileID: 919132149155446097, guid: a988d170bd524c147a46bbd60e11b0fa, type: 3}
+    - {fileID: 919132149155446097, guid: 903dc57713b6c2443a1bd784f4dbd280, type: 3}
   _AnimationTimeFields:
     showApproximations: 1
     showNormalized: 1

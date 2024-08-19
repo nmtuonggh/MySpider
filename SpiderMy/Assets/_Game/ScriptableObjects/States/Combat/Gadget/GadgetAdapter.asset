@@ -25,3 +25,5 @@ MonoBehaviour:
   listGadgetStates:
   - {fileID: 11400000, guid: 438ea84ffb6c7ba4089fcc52945ab648, type: 2}
   - {fileID: 11400000, guid: 90f085d8e85bb644fb398677d8952a8b, type: 2}
+  gadgetIndex: 0
+  idleState: {fileID: 11400000, guid: e6845c66084543d47a093d08cf7ca170, type: 2}

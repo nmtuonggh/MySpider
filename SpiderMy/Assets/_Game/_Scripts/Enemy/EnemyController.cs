@@ -80,8 +80,8 @@ namespace SFRemastered._Game._Scripts.Enemy
                 health -= damage;
                 healthBarscript.TakeDamage(damage);
                 blackBoard.knockBackHit = true;
-                CheckHealth();
                 ControlHitStatus();
+                CheckHealth();
                 DisableSpiderSense();
             }
         }
