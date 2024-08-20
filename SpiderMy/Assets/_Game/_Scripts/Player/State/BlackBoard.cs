@@ -6,6 +6,7 @@ using SFRemastered._Game._Scripts.CastCheck.Raycast;
 using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
 using SFRemastered._Game._Scripts.State.Combat;
+using SFRemastered._Game._Scripts.Zip;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,7 @@ namespace SFRemastered
 {
     public class BlackBoard : MonoBehaviour
     {
+        public StateReference stateReference;
         public PlayerMovement playerMovement;
         public PlayerController playerController;
         public CheckWallState checkWallState;
@@ -56,6 +58,7 @@ namespace SFRemastered
         [Header("=====Zip================================")]
         public Transform startZipLeft;
         public Transform startZipRight;
+        public RaycastCheckWall raycastCheckWall;
         
         [Header("=====Combat================================")]
         public OverlapSphereHit overlapSphereHit;

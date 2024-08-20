@@ -11,6 +11,7 @@ namespace SFRemastered
         [SerializeField] private Transform end;
         [SerializeField] private Transform center;
         [SerializeField] private float radius;
+        [SerializeField] private float knockBackradius;
         [SerializeField] private LayerMask layer;
         
         
@@ -26,7 +27,7 @@ namespace SFRemastered
         
         public void KnockBackHit(float damage)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(center.position ,0.5f, layer);
+            Collider[] hitColliders = Physics.OverlapSphere(center.position ,knockBackradius, layer);
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();

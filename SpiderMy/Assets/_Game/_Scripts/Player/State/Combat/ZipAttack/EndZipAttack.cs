@@ -20,7 +20,7 @@ namespace SFRemastered.Combat.ZipAttack
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             _currentDamage = attackAnim.damage;
             _state = _blackBoard.animancer.Play(attackAnim.clip);
-            _state.Events.SetCallback("Hit", GetNormalHit);
+            _currentDamage = attackAnim.damage;
         }
 
         public override StateStatus UpdateState()
@@ -39,7 +39,6 @@ namespace SFRemastered.Combat.ZipAttack
         public override void ExitState()
         {
             base.ExitState();
-            //_blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         }
     }
 }

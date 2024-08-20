@@ -78,6 +78,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             if (!blackBoard.blocking || !blackBoard.invincible)
             {
+                damageNumber.Spawn(this.transform.position + Vector3.up, damage);
                 health -= damage;
                 healthBarscript.TakeDamage(damage);
                 blackBoard.knockBackHit = true;

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using DamageNumbersPro;
 using SFRemastered._Game._Scripts.Enemy;
 using UnityEngine;
 
@@ -10,11 +11,13 @@ namespace SFRemastered
         public float health;
         public PlayerHealthBar healthBar;
         public BlackBoard _blackBoard;
+        public DamageNumber damageNumber;
 
         #region OnHit
 
         public void OnStaggerHit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleStaggerHit());
             health -= damage;
             healthBar.TakeDamage(damage);
@@ -23,6 +26,7 @@ namespace SFRemastered
         
         public void OnKnockBackHit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleKnockBackHit());
             health -= damage;
             healthBar.TakeDamage(damage);
@@ -31,6 +35,7 @@ namespace SFRemastered
         
         public void OnVenomPhase1Hit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomPhase1Hit());
             health -= damage;
             healthBar.TakeDamage(damage);
@@ -39,6 +44,7 @@ namespace SFRemastered
         
         public void OnVenomPhase2Hit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomPhase2Hit());
             health -= damage;
             healthBar.TakeDamage(damage);
@@ -47,6 +53,7 @@ namespace SFRemastered
         
         public void OnVenomMiniHit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             health -= damage;
             healthBar.TakeDamage(damage);
             CheckHealth();
@@ -54,6 +61,7 @@ namespace SFRemastered
         
         public void OnVenomFinalHit(float damage)
         {
+            damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomFinalHit());
             health -= damage;
             healthBar.TakeDamage(damage);

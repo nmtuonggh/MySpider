@@ -19,37 +19,10 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 73f60a9c8c614bc439f7c7d352eefe20, type: 2}
+    _Clip: {fileID: 7400000, guid: 1822afe7eb36fc7429bf9acabdcff17f, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
   _zipEnd: {fileID: 11400000, guid: 95c3c4c82c9fb314e93b2ab65d34c83a, type: 2}
   _zipPointJump: {fileID: 11400000, guid: be37bee7918b31042abfbb055d84f8a9, type: 2}
-  _startZip:
-    _FadeDuration: 0
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: c5cbce2782c84fd44a89e4508ab1f188, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  _zipping:
-    _FadeDuration: 0.11500001
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 2ec7850709ef0784f8b892fb5f0fd7d7, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  _endZip:
-    _FadeDuration: 0.121500015
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: 2f0cf5024c4c31b4ea595cd872afc936, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
   durationValue: 75
   _doneMove: 0

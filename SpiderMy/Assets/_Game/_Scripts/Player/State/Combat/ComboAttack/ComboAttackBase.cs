@@ -43,11 +43,11 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             
             if (_blackBoard.attack && _canGoToNextAttack)
             {
-                /*if ( _blackBoard.enemyInRange.GetDistanceToClosetEnemy()> 2f)
+                if ( _blackBoard.enemyInRange.GetDistanceToClosetEnemy()> 2f)
                 {
-                    _fsm.ChangeState(leapAttack);
+                    _fsm.ChangeState(combatController);
                     return StateStatus.Success;
-                }*/
+                }
                 
                 if (_currentComboIndex == 3)
                 {

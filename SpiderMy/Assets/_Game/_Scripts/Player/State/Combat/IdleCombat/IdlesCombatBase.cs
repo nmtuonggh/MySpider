@@ -10,7 +10,6 @@ namespace SFRemastered._Game._Scripts.State.Combat
     {
         [SerializeField] protected JumpState _jumpState;
         [SerializeField] protected FallState _fallState;
-        [SerializeField] protected ZipState _zipState;
         [SerializeField] protected CombatController combatController;
         [SerializeField] protected SprintState _sprintState;
         [SerializeField] protected JumpToSwing _jumpToSwing;
@@ -39,9 +38,9 @@ namespace SFRemastered._Game._Scripts.State.Combat
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.zip && _blackBoard.findZipPoint.focusZipPointPrefab.gameObject.activeSelf)
+            if (_blackBoard.zip && _blackBoard.raycastCheckWall.zipPoint != Vector3.zero)
             {
-                _fsm.ChangeState(_zipState);
+                _fsm.ChangeState(_blackBoard.stateReference.StartZip);
                 return StateStatus.Success;
             }
 
