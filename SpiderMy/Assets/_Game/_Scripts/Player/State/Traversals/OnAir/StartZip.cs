@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using EasyCharacterMovement;
 using UnityEngine;
 
 namespace SFRemastered
@@ -8,6 +9,11 @@ namespace SFRemastered
     {
         public override void EnterState()
         {
+            _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
+            _blackBoard.rigidbody.useGravity = false;
+            _blackBoard.rigidbody.isKinematic = false;
+            _blackBoard.rigidbody.constraints =
+                RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerController.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f, AxisConstraint.Y).OnComplete( DrawWeb);
             base.EnterState();
@@ -33,6 +39,10 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.playerMovement.SetMovementMode(MovementMode.Walking);
+            _blackBoard.rigidbody.useGravity = false;
+            _blackBoard.rigidbody.isKinematic = true;
+            _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
         }
         
         private void DrawWeb()

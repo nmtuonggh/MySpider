@@ -67,7 +67,7 @@ namespace SFRemastered
                 {
                     var target = hitCollider.GetComponent<IHitable>();
                     Debug.Log("Stagger Hit!");
-                    target.OnStaggerHit(_blackBoard.enemyData.damage);
+                    target.OnKnockBackHit(_blackBoard.enemyData.damage);
                 }
             }
         }

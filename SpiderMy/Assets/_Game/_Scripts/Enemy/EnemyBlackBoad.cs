@@ -14,6 +14,8 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public AnimancerComponent animancer;
         public CharacterController characterController;
         public GameObjectRef target;
+        public float targetHealth;
+        public bool targetInvincible;
         public LineRenderer lineRenderer;
         public GameObject healthBarUI;
         

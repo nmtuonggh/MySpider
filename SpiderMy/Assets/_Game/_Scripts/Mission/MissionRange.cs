@@ -40,11 +40,11 @@ namespace SFRemastered._Game._Scripts.Mission
         }
         
         //draw the sphere in the editor
-        private void OnDrawGizmos()
+        /*private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, radius);
-        }
+        }*/
         
         #region TriggerButFail
 

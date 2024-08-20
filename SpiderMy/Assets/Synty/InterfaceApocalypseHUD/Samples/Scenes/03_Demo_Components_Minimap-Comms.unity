@@ -524,7 +524,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 145586292199025626, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2583693909887369067, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_Pivot.x
@@ -612,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2868606231913000316, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3730865314861407899, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -638,6 +638,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD_Comms_RustyMetal01
       objectReference: {fileID: 0}
+    - target: {fileID: 4844634108796634937, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844634108796634937, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844634108796634937, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954822265565551543, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954822265565551543, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954822265565551543, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.735849
+      objectReference: {fileID: 0}
     - target: {fileID: 4981687159610063462, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -661,6 +685,18 @@ PrefabInstance:
     - target: {fileID: 6138529573470682325, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150728941970169098, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150728941970169098, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150728941970169098, guid: c3786f07e6b8b274684ccb4b237abc9a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

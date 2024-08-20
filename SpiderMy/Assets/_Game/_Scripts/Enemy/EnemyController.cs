@@ -56,6 +56,8 @@ namespace SFRemastered._Game._Scripts.Enemy
             }
 
             blackBoard.characterController.Move(velocity * Time.deltaTime);
+            blackBoard.targetHealth = blackBoard.target.obj.GetComponent<PlayerController>().health;
+            blackBoard.targetInvincible = blackBoard.target.obj.GetComponent<BlackBoard>().invincible;
             
         }
         

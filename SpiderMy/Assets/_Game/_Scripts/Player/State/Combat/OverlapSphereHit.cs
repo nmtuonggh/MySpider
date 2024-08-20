@@ -47,10 +47,10 @@ namespace SFRemastered
         
         
         
-        private void OnDrawGizmos()
+        /*private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(center.position, 0.3f);
-        }   
+        }*/   
     }
 }
