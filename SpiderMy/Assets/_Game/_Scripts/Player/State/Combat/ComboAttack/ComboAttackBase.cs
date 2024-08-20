@@ -27,6 +27,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         {
             base.EnterState();
             _currentComboIndex = 0;
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.useRootMotion = true;
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
             _state.Time = 0;
@@ -94,6 +95,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
             _currentComboIndex = 0;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _blackBoard.playerMovement.useRootMotion = false;

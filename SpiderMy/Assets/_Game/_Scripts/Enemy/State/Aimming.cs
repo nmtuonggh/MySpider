@@ -23,8 +23,9 @@ namespace SFRemastered
             
             var lastPos = _blackBoard.target.obj.transform.position;
             var shootPos = _blackBoard.shootPosition.transform.position;
-            var target = lastPos + Vector3.up * 1f;
-
+            var height = _blackBoard.target.obj.GetComponent<CapsuleCollider>().height * 2/3;
+            var target = lastPos + Vector3.up * height;
+            
             var direction = (target - shootPos).normalized;
             var extendedTarget = target + direction * 0.1f;
             

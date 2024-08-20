@@ -13,6 +13,7 @@ namespace SFRemastered
         [SerializeField] private float radius;
         [SerializeField] private LayerMask layer;
         
+        
         public void Hit(float damage)
         {
             Collider[] hitColliders = Physics.OverlapSphere(center.position,radius, layer);

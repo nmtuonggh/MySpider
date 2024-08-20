@@ -5,6 +5,7 @@
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.cantTarget = true;
             _blackBoard.lineRenderer.positionCount = 0;
             _blackBoard.animancer.Animator.applyRootMotion = true;
         }
@@ -20,6 +21,7 @@
             
             if (_state.NormalizedTime >= 1f)
             {
+                _blackBoard.cantTarget = false;
                 _blackBoard.animancer.Animator.applyRootMotion = false;
                 return StateStatus.Success;
             }

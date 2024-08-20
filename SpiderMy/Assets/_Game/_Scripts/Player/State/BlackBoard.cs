@@ -71,6 +71,7 @@ namespace SFRemastered
         public bool venomFinalHit;
         [FormerlySerializedAs("dodging")] public bool invincible;
         
+        
         [Header("Gadget")]
         public int gadgetIndex;
         public HealingBotSO healingBotSO;

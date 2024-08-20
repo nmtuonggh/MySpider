@@ -2,6 +2,7 @@
 using DG.Tweening;
 using EasyCharacterMovement;
 using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Enemy.State;
 using SFRemastered._Game._Scripts.State.Combat;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -19,14 +20,18 @@ namespace SFRemastered.Combat.ZipAttack
             base.EnterState();
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
-            _blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyController>().zipAttackStun = true;
-            _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f, AxisConstraint.Y);
+            if (_blackBoard.enemyInRange.FindClosestEnemy()!=null && !_blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyBlackBoard>().invincible)
+            {
+                _blackBoard.enemyInRange.FindClosestEnemy().gameObject.GetComponent<EnemyBlackBoard>().zipAttackStun = true;
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position, 0.2f, AxisConstraint.Y);
+            }
         }
 
         public override StateStatus UpdateState()
         {
             base.UpdateState();
 
+            _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             if (_state.NormalizedTime >= 1)
             {
                 if (_blackBoard.playerMovement.IsGrounded())
