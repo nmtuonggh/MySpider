@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.Scripts.Event;
+using Animancer;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Mission
@@ -7,18 +8,24 @@ namespace SFRemastered._Game._Scripts.Mission
     public class DeliveryPoint : MonoBehaviour
     {
         public GameEvent onDeliveryPointReached;
-        public GameEvent OnPlayerOutOfRange;
-        public LayerMask layer;
-        public float radius;
-        public Collider[] hitColliders;
-        private void Update()
-        {
-            hitColliders = Physics.OverlapSphere(transform.position,radius, layer);
+        public AnimancerComponent animancer;
+        public ClipTransition idle;
+        public ClipTransition eat;
+        private bool playerInRange;
 
-            if (hitColliders.Length > 0)
+        private void OnEnable()
+        {
+            playerInRange = false;
+            animancer.Play(idle);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player") && playerInRange==false)
             {
+                playerInRange = true;
                 onDeliveryPointReached.Raise();
-                Destroy(this.gameObject);
+                animancer.Play(eat).Events.OnEnd = () => Destroy(this.gameObject);
             }
         }
     }

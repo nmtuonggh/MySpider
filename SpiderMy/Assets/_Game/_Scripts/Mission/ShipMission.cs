@@ -46,6 +46,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public override void StartMission()
         {
             base.StartMission();
+            deliverySuccess = 0;
             SpawnPickupLocation();
             DrawnIndicator();
         }
@@ -66,16 +67,12 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void InPickup()
         {
-            var shuffledDeliveryPoints = shippingMissionSO.listDeliveryPoints.OrderBy(x => Random.value).ToList();
-            
-            var selectedPoints = shuffledDeliveryPoints.Take(3).ToList();
-            
             foreach (Vector3 shipPoint in shippingMissionSO.listDeliveryPoints)
             {
-                //      Instantiate(deliveryNPCPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
+                Instantiate(deliveryNPCPrefab, shipPoint + Vector3.up*2f, Quaternion.identity, shippingMissionSO.SpawnPosition);
                 Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
             }
-            
+
             Destroy(_missionRange);
             Destroy(_indicator);
         }
