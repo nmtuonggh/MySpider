@@ -9,13 +9,13 @@ namespace SFRemastered
     {
         public override void EnterState()
         {
+            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = false;
-            _blackBoard.rigidbody.constraints =
-                RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
+            _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _blackBoard.playerController.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f, AxisConstraint.Y).OnComplete( DrawWeb);
+            _blackBoard.characterVisual.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f);
             base.EnterState();
         }
         
@@ -43,6 +43,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            _blackBoard.characterVisual.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f);
         }
         
         private void DrawWeb()

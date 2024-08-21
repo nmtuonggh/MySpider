@@ -21,7 +21,7 @@ namespace SFRemastered
             var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position,
                 _blackBoard.raycastCheckWall.zipPoint);
             float moveDuration = distance / durationValue;
-            _blackBoard.playerMovement.transform.DOMove(_blackBoard.raycastCheckWall.zipPoint + new Vector3(0, 0.2f, 0),
+            _blackBoard.playerMovement.transform.DOMove(_blackBoard.raycastCheckWall.zipPoint + new Vector3(0, 0.3f, 0),
                     moveDuration).OnComplete(() => { _doneMove = true; });
         }
 
