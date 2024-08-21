@@ -13,7 +13,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public float radius;
         public Collider[] hitColliders;
 
-        private void OnValidate()
+        /*private void OnValidate()
         {
             #if UNITY_EDITOR
             
@@ -21,14 +21,15 @@ namespace SFRemastered._Game._Scripts.Mission
             OnPlayerOutOfRange = UnityEditor.AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/_Game/ScriptableObjects/EventSO/PlayerOutRangeMission.asset");
             
             #endif
-        }
+        }*/
 
-        private void Update()
+        /*private void Update()
         {
              hitColliders = Physics.OverlapSphere(transform.position,radius, layer);
 
             if (hitColliders.Length > 0)
             {
+                Debug.Log("Player in range");
                 playerInRange = true;
                 OnPlayerInRange.Raise();
             }
@@ -37,18 +38,12 @@ namespace SFRemastered._Game._Scripts.Mission
                 playerInRange = false;
                 OnPlayerOutOfRange.Raise();
             }
-        }
-        
-        //draw the sphere in the editor
-        /*private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, radius);
         }*/
+        
         
         #region TriggerButFail
 
-        /*private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
        {
            if (other.CompareTag("Player"))
            {
@@ -65,7 +60,7 @@ namespace SFRemastered._Game._Scripts.Mission
                playerInRange = false;
                OnPlayerOutOfRange.Raise();
            }
-       }*/
+       }
 
         #endregion
     }

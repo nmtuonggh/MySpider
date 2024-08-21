@@ -18,6 +18,7 @@ namespace SFRemastered
         {
             base.EnterState();
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.AddForce( _blackBoard.playerMovement.transform.up.normalized * _forceValue, ForceMode.Impulse);
@@ -38,6 +39,12 @@ namespace SFRemastered
                 _fsm.ChangeState(_diveState);
                 return StateStatus.Success;
             }
+
+            if (_blackBoard.foundWall)
+            {
+                _fsm.ChangeState(_blackBoard.stateReference.WallRun);
+                return StateStatus.Success;
+            }
             
             return StateStatus.Running;
         }
@@ -52,6 +59,8 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
+            _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
         }
     }
 }

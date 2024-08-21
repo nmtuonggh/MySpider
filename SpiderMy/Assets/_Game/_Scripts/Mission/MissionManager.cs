@@ -18,6 +18,9 @@ namespace SFRemastered._Game._Scripts.Mission
         public UI_ShowMission MissionUIScript;
         public GameObject missionUI;
         
+        [Header("==========Mission Event==========")]
+        //public GameEvent onS;
+        
         [Header("==========Mission Event Listener==========")]
         public GameEventListener onMissionStart;
         public GameEventListener onMissionUpdate;
@@ -50,6 +53,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void HandlerMissionStart()
         {
+            
         }
 
         public void HandlerMissionUpdate()
@@ -60,9 +64,9 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             if (mainMissionSO.currentMissionIndex < mainMissionSO.listMission.Count - 1)
             {
-                MissionUIScript.ShowMissionUI(missionUI, false);
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
+                MissionUIScript.HandlerMissionComplete();
                 StartMission();
             }
         }
@@ -72,6 +76,7 @@ namespace SFRemastered._Game._Scripts.Mission
             Destroy(currentMissionPrefab);
             playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
             playerBlackBoard.spiderSen.spiderSenCount=0;
+            MissionUIScript.HandlerMissionFail();
             StartMission();
             Debug.Log("Mission Fail");
         }
@@ -87,6 +92,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 Quaternion.identity);
             currentMissionPrefab.transform.SetParent(transform);
             currentMissionPrefab.GetComponent<BaseMission>().StartMission();
+            MissionUIScript.HandlerMissionStart();
         }
     }
 }

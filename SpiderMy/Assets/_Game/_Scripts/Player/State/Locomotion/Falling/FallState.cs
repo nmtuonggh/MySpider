@@ -62,6 +62,12 @@ namespace SFRemastered
                 _fsm.ChangeState(_wallRun);
                 return StateStatus.Success;
             }
+
+            if (_blackBoard.zip && _blackBoard.raycastCheckWall.zipPoint!=Vector3.zero)
+            {
+                _fsm.ChangeState(_blackBoard.stateReference.StartZip);
+                return StateStatus.Success;
+            }
             
             return StateStatus.Running;
         }

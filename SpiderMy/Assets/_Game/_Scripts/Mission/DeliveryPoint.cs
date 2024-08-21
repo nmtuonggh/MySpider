@@ -20,10 +20,6 @@ namespace SFRemastered._Game._Scripts.Mission
                 onDeliveryPointReached.Raise();
                 Destroy(this.gameObject);
             }
-            /*else
-            {
-                OnPlayerOutOfRange.Raise();
-            }*/
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/Zip")]
-    public class ZipState : StateBase
+    public class ZipState : ZipBase
     {
         [SerializeField] private ZipEnd _zipEnd;
         [SerializeField] private ZipPointJump _zipPointJump;
@@ -16,12 +16,14 @@ namespace SFRemastered
         public override void EnterState()  
         {
             base.EnterState();
+            Debug.Log(currentZipPoint);
+            //currentZipPoint = _blackBoard.raycastCheckWall.zipPoint;
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             var distance = Vector3.Distance(_blackBoard.playerMovement.transform.position,
-                _blackBoard.raycastCheckWall.zipPoint);
+                _blackBoard.currentZipPoint);
             float moveDuration = distance / durationValue;
-            _blackBoard.playerMovement.transform.DOMove(_blackBoard.raycastCheckWall.zipPoint + new Vector3(0, 0.3f, 0),
+            _blackBoard.playerMovement.transform.DOMove(_blackBoard.currentZipPoint + new Vector3(0, 0.3f, 0),
                     moveDuration).OnComplete(() => { _doneMove = true; });
         }
 

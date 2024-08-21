@@ -5,18 +5,18 @@ using UnityEngine;
 namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/StartZip")]
-    public class StartZip : StateBase
+    public class StartZip : ZipBase
     {
         public override void EnterState()
         {
+            base.EnterState();
+            _blackBoard.currentZipPoint = _blackBoard.raycastCheckWall.zipPoint;
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-            _blackBoard.playerController.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f, AxisConstraint.Y).OnComplete( DrawWeb);
-            _blackBoard.characterVisual.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f);
-            base.EnterState();
+            _blackBoard.playerController.transform.DOLookAt(_blackBoard.currentZipPoint, 0.2f, AxisConstraint.Y).OnComplete( DrawWeb);
         }
         
         public override StateStatus UpdateState()
@@ -43,13 +43,12 @@ namespace SFRemastered
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
-            _blackBoard.characterVisual.transform.DOLookAt(_blackBoard.raycastCheckWall.zipPoint, 0.2f);
         }
         
         private void DrawWeb()
         {
             _blackBoard.lr.positionCount = 3;
-            _blackBoard.lr.SetPosition(1, _blackBoard.raycastCheckWall.zipPoint);
+            _blackBoard.lr.SetPosition(1, _blackBoard.currentZipPoint);
             _blackBoard.lr.SetPosition(2, _blackBoard.startZipRight.position);
             _blackBoard.lr.SetPosition(0, _blackBoard.startZipLeft.position);
         }

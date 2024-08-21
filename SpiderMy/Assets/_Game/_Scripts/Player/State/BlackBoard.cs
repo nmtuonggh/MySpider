@@ -26,6 +26,7 @@ namespace SFRemastered
         public new Rigidbody rigidbody;
         public GameObject poolManager;
         public GameObject characterVisual;
+        public GameObject Bag;
         
         public Vector3 moveDirection;
         public Vector3 wallMoveDirection;
@@ -59,6 +60,7 @@ namespace SFRemastered
         public Transform startZipLeft;
         public Transform startZipRight;
         public RaycastCheckWall raycastCheckWall;
+        public Vector3 currentZipPoint;
         
         [Header("=====Combat================================")]
         public OverlapSphereHit overlapSphereHit;

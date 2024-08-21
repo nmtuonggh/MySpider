@@ -3,10 +3,16 @@ using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Mission
 {
-    
+    public enum MissionType
+    {
+        Fighting,
+        Delivery,
+        Protect
+    }
     public abstract class BaseMissionSO : ScriptableObject
     {
         [Header("General Information")]
+        public MissionType missionType;
         private Transform spawnPosition;
         public GameObject missionPrefab;
         public GameObject missionRangePrefab;

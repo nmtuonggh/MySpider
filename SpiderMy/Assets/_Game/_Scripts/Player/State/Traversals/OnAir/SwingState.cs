@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Animancer;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace SFRemastered
 {
@@ -27,7 +28,6 @@ namespace SFRemastered
         private Vector3 _randomRopePosition;
         private float angle;
         private int animIndex;
-        private float handlerSwing = .8f;
         
         private float originalMaxDistance;
         private float originalMinDistance;
@@ -78,7 +78,7 @@ namespace SFRemastered
                 _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.5f, 0.25f); 
             }
 
-            if (!_blackBoard.swing)
+            if (!_blackBoard.swing && elapsedTime >=0.5f)
             {
                 if (_blackBoard.rigidbody.velocity.y <= 15)
                 {

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be31142b28f24406b895486c511ac36b, type: 3}
   m_Name: ShippingMissionSO
   m_EditorClassIdentifier: 
+  missionType: 1
   missionPrefab: {fileID: 706990304470223936, guid: 42aef40a790ad7d4d94e376078573c8f, type: 3}
   missionRangePrefab: {fileID: 763092591054729281, guid: 78c07be2ef8522a448ac20224c50782e, type: 3}
-  indicatorPrefab: {fileID: 4149666423416372151, guid: 432861d253b5d994f829d7bd5bfc6b06, type: 3}
+  indicatorPrefab: {fileID: 869102409813482803, guid: a0ca8300e69a1534f9f2c92f54844d9a, type: 3}
   cashReward: 0
   expReward: 0
   timeLimit: 0
@@ -22,4 +23,4 @@ MonoBehaviour:
   - {x: -142.86, y: 30.718994, z: 57.179993}
   - {x: -40.59999, y: 71.499, z: 252.46002}
   - {x: 23.330002, y: 23.589005, z: 98.399994}
-  deliveryPointPrefab: {fileID: 842339807759303052, guid: 7867037d9572bbb408b36fff238026ad, type: 3}
+  deliveryPointPrefab: {fileID: 8543515382974315352, guid: 63c6c01a4f986014e873bb569fb98b37, type: 3}

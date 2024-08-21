@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7154364958092965698}
   - component: {fileID: 1324785794877825308}
+  - component: {fileID: 893772404107900816}
   m_Layer: 0
   m_Name: ShipMissionRange
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f646226796df4f6583cc3f19192efffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
+  playerInRange: 1
   OnPlayerInRange: {fileID: 11400000, guid: 3c90e9f4432ea8c47ad910452c35de82, type: 2}
   OnPlayerOutOfRange: {fileID: 11400000, guid: 4917f4ec0b992c04584da5a5da572426, type: 2}
   layer:
@@ -53,6 +54,27 @@ MonoBehaviour:
     m_Bits: 512
   radius: 5
   hitColliders: []
+--- !u!135 &893772404107900816
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763092591054729281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8900365374037250867
 PrefabInstance:
   m_ObjectHideFlags: 0

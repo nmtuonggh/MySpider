@@ -6,7 +6,7 @@ namespace SFRemastered
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/States/ZipEnd")]
 
-    public class ZipEnd : StateBase
+    public class ZipEnd : ZipBase
     {
         [SerializeField] private SprintState _sprintState;
 

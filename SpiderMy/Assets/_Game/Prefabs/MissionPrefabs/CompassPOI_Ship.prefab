@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ba861a214074aa4bdac708dcacc9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: -671849544
+  id: 2
   priority: 0
   visibility: 0
   clampPosition: 0
@@ -69,11 +69,11 @@ MonoBehaviour:
   showOnScreenIndicator: 1
   onScreenIndicatorScale: 1
   onScreenIndicatorShowDistance: 1
-  onScreenIndicatorShowTitle: 1
+  onScreenIndicatorShowTitle: 0
   positionOffset: {x: 0, y: 0, z: 0}
   showOffScreenIndicator: 1
   onScreenIndicatorNearFadeDistance: 0
-  onScreenIndicatorNearFadeMin: 0
+  onScreenIndicatorNearFadeMin: 8
   beaconAudioClip: {fileID: 0}
   dontDestroyOnLoad: 0
   heartbeatEnabled: 0

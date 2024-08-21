@@ -51,12 +51,9 @@ MonoBehaviour:
   progressing: 0
   shippingMissionSO: {fileID: 11400000, guid: 3e1051c6010fccb449b49d9d0c00c850, type: 2}
   deliverySuccess: 0
-  deliveryPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   pickupNPCPrefab: {fileID: 366291745584831357, guid: 819b88ade4659a74ea92ed4205f87e62, type: 3}
-  deliveryNPCPrefab: {fileID: 6848197603787548323, guid: e2bf1d8a51450ff448a521e5ef8fad08, type: 3}
+  deliveryNPCPrefab: {fileID: 842339807759303052, guid: 7867037d9572bbb408b36fff238026ad, type: 3}
+  deliveryIndicatorPrefab: {fileID: 869102409813482803, guid: b4a0b1ec23b5d784dbccd163e59668fa, type: 3}
   onInPickup:
     Event: {fileID: 11400000, guid: 3c90e9f4432ea8c47ad910452c35de82, type: 2}
     Response:

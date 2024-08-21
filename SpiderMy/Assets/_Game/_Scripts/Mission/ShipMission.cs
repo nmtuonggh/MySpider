@@ -19,6 +19,7 @@ namespace SFRemastered._Game._Scripts.Mission
         [Header("NPC Prefabs")]
         public GameObject pickupNPCPrefab;
         public GameObject deliveryNPCPrefab;
+        public GameObject deliveryIndicatorPrefab;
         
         [Header("Game Event")]
         public GameEventListener onInPickup;
@@ -69,9 +70,10 @@ namespace SFRemastered._Game._Scripts.Mission
             
             var selectedPoints = shuffledDeliveryPoints.Take(3).ToList();
             
-            foreach (var shipPoint in selectedPoints)
+            foreach (Vector3 shipPoint in shippingMissionSO.listDeliveryPoints)
             {
-                Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity);
+                //      Instantiate(deliveryNPCPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
+                Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
             }
             
             Destroy(_missionRange);

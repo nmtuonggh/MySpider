@@ -5,8 +5,6 @@ namespace SFRemastered._Game._Scripts.Enemy.Bullet
 {
     public class BulletController : MonoBehaviour
     {
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float lifeTime = 2f;
         [SerializeField] private EnemySO ownerEnemyData;
         [SerializeField] private BulletSO bulletSo;
         
