@@ -86,7 +86,8 @@ namespace SFRemastered._Game._Scripts.Mission
                     }
                     obj.enemyData.ReturnToPool(obj.enemyData.id, enemy);
                 }
-                FailMission();
+
+                DrawnIndicator();
             }
         }
 

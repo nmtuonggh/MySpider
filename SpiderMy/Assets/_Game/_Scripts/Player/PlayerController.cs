@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DamageNumbersPro;
+using SFRemastered._Game._Scripts.Data;
 using SFRemastered._Game._Scripts.Enemy;
 using UnityEngine;
 
@@ -12,6 +14,12 @@ namespace SFRemastered
         public PlayerHealthBar healthBar;
         public BlackBoard _blackBoard;
         public DamageNumber damageNumber;
+        public PlayerDataSO playerData;
+
+        private void OnEnable()
+        {
+            health = playerData.maxHealth;
+        }
 
         #region OnHit
 
@@ -20,6 +28,7 @@ namespace SFRemastered
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleStaggerHit());
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
@@ -29,6 +38,7 @@ namespace SFRemastered
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleKnockBackHit());
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
@@ -38,6 +48,7 @@ namespace SFRemastered
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomPhase1Hit());
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
@@ -47,6 +58,7 @@ namespace SFRemastered
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomPhase2Hit());
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
@@ -55,6 +67,7 @@ namespace SFRemastered
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
@@ -64,13 +77,12 @@ namespace SFRemastered
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
             StartCoroutine(HandleVenomFinalHit());
             health -= damage;
+            playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
             CheckHealth();
         }
 
         #endregion
-        
-        
         
         private void CheckHealth()
         {
