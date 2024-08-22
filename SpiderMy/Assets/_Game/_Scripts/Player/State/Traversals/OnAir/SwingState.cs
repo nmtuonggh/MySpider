@@ -148,6 +148,7 @@ namespace SFRemastered
         private void SetupEnterState()
         {
             var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
+            _blackBoard.playerMovement.rotationRate = 240f;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
             _blackBoard.rigidbody.isKinematic = false;
@@ -185,6 +186,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.isKinematic = true;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.None;
             _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            _blackBoard.playerMovement.rotationRate = 540f;
             _blackBoard.playerMovement.SetVelocity(velocity.normalized * startSwingVelocity);
         }
 

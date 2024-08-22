@@ -23,4 +23,4 @@ MonoBehaviour:
   - {x: -142.86, y: 30.718994, z: 57.179993}
   - {x: -40.59999, y: 71.499, z: 252.46002}
   - {x: 23.330002, y: 23.589005, z: 98.399994}
-  deliveryPointPrefab: {fileID: 8543515382974315352, guid: 63c6c01a4f986014e873bb569fb98b37, type: 3}
+  deliveryPointPrefab: {fileID: 2247850611895165822, guid: 32174b925346b59429475d4c765edee1, type: 3}
