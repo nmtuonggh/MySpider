@@ -38,6 +38,8 @@ namespace SFRemastered
         public bool swing;
         public bool zip;
         public bool foundWall;
+        public bool foundWallTop;
+        public bool foundWallBot;
         public bool attack;
         public bool dodge;
         public bool ultimate;

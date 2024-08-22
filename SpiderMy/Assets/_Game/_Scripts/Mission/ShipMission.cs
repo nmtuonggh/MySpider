@@ -15,6 +15,7 @@ namespace SFRemastered._Game._Scripts.Mission
         private GameObject _indicator;
         private GameObject _missionRange;
         [SerializeField] private int deliverySuccess;
+        private List<GameObject> _deliveryGameObjects = new List<GameObject>();
         
         [Header("NPC Prefabs")]
         public GameObject pickupNPCPrefab;
@@ -26,12 +27,14 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEventListener onOutPickup;
         public GameEventListener onInDelivery;
         public GameEventListener onOutDelivery;
+        public GameEventListener onOutOfTime;
         
         private void OnEnable()
         {
             onInPickup.OnEnable();
             //onOutPickup.OnEnable();
             onInDelivery.OnEnable();
+            onOutOfTime.OnEnable();
             //onOutDelivery.OnEnable();
         }
         
@@ -40,8 +43,10 @@ namespace SFRemastered._Game._Scripts.Mission
             onInPickup.OnDisable();
             //onOutPickup.OnDisable();
             onInDelivery.OnDisable();
+            onOutOfTime.OnDisable();
             //onOutDelivery.OnDisable();
         }
+        
 
         public override void StartMission()
         {
@@ -67,12 +72,14 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void InPickup()
         {
+            _deliveryGameObjects.Clear();
             foreach (Vector3 shipPoint in shippingMissionSO.listDeliveryPoints)
             {
-                Instantiate(deliveryNPCPrefab, shipPoint + Vector3.up*2f, Quaternion.identity, shippingMissionSO.SpawnPosition);
-                Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
+                var a = Instantiate(deliveryNPCPrefab, shipPoint + Vector3.up*2f, Quaternion.identity, shippingMissionSO.SpawnPosition);
+                var b = Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
+                _deliveryGameObjects.Add(a);
+                _deliveryGameObjects.Add(b);
             }
-
             Destroy(_missionRange);
             Destroy(_indicator);
         }
@@ -107,13 +114,21 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public override void CompleteMission()
         {
-            Debug.Log("Mission Complete");
             base.CompleteMission();
         }
         
         public override void FailMission()
         {
             base.FailMission();
+            Destroy(_missionRange);
+            Destroy(_indicator);
+            foreach (var var in _deliveryGameObjects)
+            {
+                if (var!=null)
+                {
+                    Destroy(var);
+                }
+            }
         }
     }
 }

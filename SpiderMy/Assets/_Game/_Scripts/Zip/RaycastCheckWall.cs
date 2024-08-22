@@ -35,6 +35,54 @@ namespace SFRemastered._Game._Scripts.Zip
             if (Physics.SphereCast(camera.transform.position, cameraSphereRadius, camera.transform.forward,
                     out RaycastHit hit, distance, layerMask))
             {
+                /*Debug.Log(hit.transform.gameObject.layer.ToString());
+                if (hit.transform.gameObject.layer == 6 && hit.transform.gameObject.layer == 7)
+                {
+                    Debug.Log("Found ground");
+                    zipPoint = Vector3.zero;
+                    if (focusPrefabRectTransform.gameObject.activeSelf)
+                    {
+                        focusPrefabRectTransform.gameObject.SetActive(false);
+                    }
+                }
+                else if (hit.transform.gameObject.layer != 6 && hit.transform.gameObject.layer == 7)
+                {
+                    hitSurface = hit;
+                    pointSetBack = hit.point - hit.normal * inwardsOffset;
+                    if (Vector3.Dot(hit.normal, Vector3.up) <= 0.99f)
+                    {
+                        /*if (Physics.Raycast(camera.transform.position, camera.transform.forward, distance, GroundLayer))
+                        {
+                            zipPoint = Vector3.zero;
+                            Debug.Log("Found ground");
+                            if (focusPrefabRectTransform.gameObject.activeSelf)
+                            {
+                                focusPrefabRectTransform.gameObject.SetActive(false);
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("FaceZipPoint");
+                            FaceZipPoint();
+                        }#1#
+                        Debug.Log("FaceZipPoint");
+                        FaceZipPoint();
+                    }
+                    else
+                    {
+                        Debug.Log("FaceZipDownPoint");
+                        FaceDownZipPoint();
+                    }
+                }
+                else
+                {
+                    zipPoint = Vector3.zero;
+                    if (focusPrefabRectTransform.gameObject.activeSelf)
+                    {
+                        focusPrefabRectTransform.gameObject.SetActive(false);
+                    } 
+                }*/
+                
                 hitSurface = hit;
                 pointSetBack = hit.point - hit.normal * inwardsOffset;
                 if (Vector3.Dot(hit.normal, Vector3.up) <= 0.99f)
@@ -53,6 +101,8 @@ namespace SFRemastered._Game._Scripts.Zip
                         //Debug.Log("FaceZipPoint");
                         FaceZipPoint();
                     }
+                    //Debug.Log("FaceZipPoint");
+                    FaceZipPoint();
                 }
                 else
                 {

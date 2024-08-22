@@ -16,9 +16,9 @@ MonoBehaviour:
   missionPrefab: {fileID: 706990304470223936, guid: 42aef40a790ad7d4d94e376078573c8f, type: 3}
   missionRangePrefab: {fileID: 763092591054729281, guid: 78c07be2ef8522a448ac20224c50782e, type: 3}
   indicatorPrefab: {fileID: 869102409813482803, guid: a0ca8300e69a1534f9f2c92f54844d9a, type: 3}
+  timeLimit: 5
   cashReward: 0
   expReward: 0
-  timeLimit: 0
   listDeliveryPoints:
   - {x: -142.86, y: 30.718994, z: 57.179993}
   - {x: -40.59999, y: 71.499, z: 252.46002}

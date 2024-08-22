@@ -17,11 +17,11 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameObject missionPrefab;
         public GameObject missionRangePrefab;
         public GameObject indicatorPrefab;
+        public float timeLimit;
 
         [Header("Rewards")] 
         public float cashReward;
         public float expReward;
-        public float timeLimit;
         
         public Transform SpawnPosition
         {

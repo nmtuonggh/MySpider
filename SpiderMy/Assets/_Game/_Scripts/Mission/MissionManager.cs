@@ -11,7 +11,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public MainMissionSO mainMissionSO;
         public BlackBoard playerBlackBoard;
 
-        private BaseMissionSO currentMission;
+        public BaseMissionSO currentMission;
         private GameObject currentMissionPrefab;
         
         [Header("==========Mission UI==========")]
@@ -67,7 +67,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
                 MissionUIScript.HandlerMissionComplete();
-                StartMission();
+                //StartMission();
             }
         }
 
@@ -77,7 +77,7 @@ namespace SFRemastered._Game._Scripts.Mission
             playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
             playerBlackBoard.spiderSen.spiderSenCount=0;
             MissionUIScript.HandlerMissionFail();
-            StartMission();
+            //StartMission();
             Debug.Log("Mission Fail");
         }
 

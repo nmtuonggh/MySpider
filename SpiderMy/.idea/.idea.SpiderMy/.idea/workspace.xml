@@ -5,7 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3be794-d980-43f9-86c8-6044f65a6bf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Data/PlayerDataSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Data/PlayerDataSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/TimerMission.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/TimerMission.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpiderMy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/HomeScene.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/HomeScene.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_BattlePass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_BattlePass.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Equipment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Equipment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Guild.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Guild.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Heroes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Heroes.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Mission.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Mission.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Gem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Gem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Gold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Shop_Gold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Stage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_DemoScene_Panels/Panel_Stage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_Demo_UI/_Prefabs_Demo_Ui.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Layer Lab/GUI Pro-FantasyRPG/Prefabs/Prefabs_Demo_UI/_Prefabs_Demo_Ui.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/DeliveryPointPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/DeliveryPointPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipMission.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipMission.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipMissionRange.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipMissionRange.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefabs/MissionPrefabs/ShipMission/ShipPoint/Delivery 3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Scene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/ShipMission/ShippingMissionSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/Mission/ShipMission/ShippingMissionSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/ScriptableObjects/States/Traversals/Swing/SwingState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/CastCheck/Raycast/CheckWallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/CastCheck/Raycast/CheckWallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/MissionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMissionSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/BaseMissionSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/ShippingMissionSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/SO/ShippingMissionSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/ShipMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Mission/ShipMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/BlackBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/OnAir/SwingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/OnAir/SwingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/Wall/WallRun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Player/State/Traversals/Wall/WallRun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/UI/Mission/UI_ShowMission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/UI/Mission/UI_ShowMission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/_Scripts/Zip/RaycastCheckWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/_Scripts/Zip/RaycastCheckWall.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +230,7 @@
       <workItem from="1724122326723" duration="23923000" />
       <workItem from="1724203649498" duration="35318000" />
       <workItem from="1724257067246" duration="8275000" />
-      <workItem from="1724291555606" duration="696000" />
+      <workItem from="1724291555606" duration="29823000" />
     </task>
     <servers />
   </component>

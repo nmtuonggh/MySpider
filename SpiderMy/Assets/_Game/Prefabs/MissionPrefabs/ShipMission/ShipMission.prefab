@@ -100,3 +100,21 @@ MonoBehaviour:
     Response:
       m_PersistentCalls:
         m_Calls: []
+  onOutOfTime:
+    Event: {fileID: 11400000, guid: 0c1e0f4c1d9a8be489b2122e07fc1fae, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1170250278357941222}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.ShipMission,
+            Assembly-CSharp
+          m_MethodName: FailMission
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
