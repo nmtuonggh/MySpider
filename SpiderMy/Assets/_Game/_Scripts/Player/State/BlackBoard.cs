@@ -44,6 +44,8 @@ namespace SFRemastered
         public bool dodge;
         public bool ultimate;
         public bool gadget;
+        public bool dead;
+        public bool revive;
         public bool isGrounded;
         
         [Header("=====Swing================================")]

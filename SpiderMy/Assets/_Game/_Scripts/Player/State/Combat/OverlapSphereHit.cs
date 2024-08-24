@@ -1,4 +1,6 @@
-﻿using SFRemastered._Game._Scripts.Enemy;
+﻿using _Game.Scripts.Event;
+using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Enemy.State;
 using SFRemastered._Game.ScriptableObjects.AnimationAttack;
 using UnityEngine;
 
@@ -13,7 +15,8 @@ namespace SFRemastered
         [SerializeField] private float radius;
         [SerializeField] private float knockBackradius;
         [SerializeField] private LayerMask layer;
-        
+
+        public GameEvent addCounterCombo;
         
         public void Hit(float damage)
         {
@@ -21,7 +24,15 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();
-                enemy.OnStaggerHit(damage);
+                if (!enemy.GetComponent<EnemyBlackBoard>().die)
+                {
+                    enemy.OnStaggerHit(damage);
+                }
+            }
+
+            if (hitColliders.Length > 0)
+            {
+                addCounterCombo.Raise();
             }
         }
         
@@ -31,7 +42,14 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();
-                enemy.OnKnockBackHit(damage);
+                if (!enemy.GetComponent<EnemyBlackBoard>().die)
+                {
+                    enemy.OnStaggerHit(damage);
+                }
+            }
+            if (hitColliders.Length > 0)
+            {
+                addCounterCombo.Raise();
             }
         }
         
@@ -41,7 +59,14 @@ namespace SFRemastered
             foreach (var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<EnemyController>();
-                enemy.OnKnockBackHit(damage);
+                if (!enemy.GetComponent<EnemyBlackBoard>().die)
+                {
+                    enemy.OnStaggerHit(damage);
+                }
+            }
+            if (hitColliders.Length > 0)
+            {
+                addCounterCombo.Raise();
             }
         }
         

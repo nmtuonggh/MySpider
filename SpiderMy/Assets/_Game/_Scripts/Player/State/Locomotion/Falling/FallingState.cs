@@ -7,11 +7,14 @@ namespace SFRemastered
     {
         [SerializeField] protected SwingState _swingState;
         [SerializeField] protected float speedMultiplier;
+        protected float startRotationRate;
         
         protected float incomingVelocity;
         public override void EnterState()
         {
             base.EnterState();
+            startRotationRate = _blackBoard.playerMovement.rotationRate;
+            _blackBoard.playerMovement.rotationRate = startRotationRate / 3;
             incomingVelocity = _blackBoard.playerMovement.GetSpeed();
         }
 
@@ -19,6 +22,7 @@ namespace SFRemastered
         {
            var velo = _blackBoard.playerMovement.GetVelocity();
            _blackBoard.playerMovement.SetVelocity(velo.normalized * incomingVelocity);
+           _blackBoard.playerMovement.rotationRate = startRotationRate;
             base.ExitState();
         }
 
@@ -39,6 +43,7 @@ namespace SFRemastered
             base.FixedUpdateState();
             var targetRotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
             _blackBoard.characterVisual.transform.rotation = Quaternion.Slerp(_blackBoard.characterVisual.transform.rotation, targetRotation, Time.fixedDeltaTime / 0.3f);
+            //_blackBoard.playerMovement.rotationRate = startRotationRate;
         }
         
         protected bool GroundCheck()

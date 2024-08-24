@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _Game.Scripts.Event;
 using DamageNumbersPro;
 using SFRemastered._Game._Scripts.Data;
 using SFRemastered._Game._Scripts.Enemy;
@@ -15,6 +16,8 @@ namespace SFRemastered
         public BlackBoard _blackBoard;
         public DamageNumber damageNumber;
         public PlayerDataSO playerData;
+        
+        public GameEvent onPlayerDead;
 
         private void OnEnable()
         {
@@ -89,7 +92,15 @@ namespace SFRemastered
             if (health <= 0)
             {
                 Debug.Log("Die");
+                onPlayerDead.Raise();
+                _blackBoard.dead = true;
             }
+        }
+
+        public void RegentHealth()
+        {
+            health += playerData.maxHealth;
+            playerData.currentHealth = playerData.maxHealth;
         }
         
         public void StartSwingCoroutine()

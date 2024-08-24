@@ -26,6 +26,8 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEventListener onMissionUpdate;
         public GameEventListener onMissionComplete;
         public GameEventListener onMissionFail;
+        public GameEventListener onMissionFailByDie;
+        public GameEventListener onNotRevive;
 
         private void OnEnable()
         {
@@ -33,6 +35,7 @@ namespace SFRemastered._Game._Scripts.Mission
             onMissionUpdate.OnEnable();
             onMissionComplete.OnEnable();
             onMissionFail.OnEnable();
+            onMissionFailByDie.OnEnable();
         }
 
 
@@ -42,6 +45,7 @@ namespace SFRemastered._Game._Scripts.Mission
             onMissionUpdate.OnDisable();
             onMissionComplete.OnDisable();
             onMissionFail.OnDisable();
+            onMissionFailByDie.OnDisable();
         }
 
         private void Start()
@@ -67,7 +71,12 @@ namespace SFRemastered._Game._Scripts.Mission
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
                 MissionUIScript.HandlerMissionComplete();
-                //StartMission();
+            }
+            else
+            {
+                mainMissionSO.currentMissionIndex = 0;
+                Destroy(currentMissionPrefab);
+                MissionUIScript.HandlerMissionComplete();
             }
         }
 
@@ -77,16 +86,22 @@ namespace SFRemastered._Game._Scripts.Mission
             playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
             playerBlackBoard.spiderSen.spiderSenCount=0;
             MissionUIScript.HandlerMissionFail();
-            //StartMission();
-            Debug.Log("Mission Fail");
+        }
+        public void HandlerNotRevive()
+        {
+            Destroy(currentMissionPrefab);
+            playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
+            playerBlackBoard.spiderSen.spiderSenCount=0;
+        }
+        public void HandlerMissionFailByDead()
+        {
+            MissionUIScript.HandlerMissionFailByDie();
         }
 
         public void StartMission()
         {
-            //MissionUIScript.ShowMissionUI(missionUI, true);
            
             currentMission = mainMissionSO.GetCurrentMission();
-            Debug.Log("Start Mission" + currentMission.name);
             currentMission.GetMissionPosition(missionPositions[mainMissionSO.currentMissionIndex]);
             currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position,
                 Quaternion.identity);

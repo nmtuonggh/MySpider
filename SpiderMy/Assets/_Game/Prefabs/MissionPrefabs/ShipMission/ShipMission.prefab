@@ -48,6 +48,7 @@ MonoBehaviour:
   onMissionComplete: {fileID: 11400000, guid: b6afc6932acc7bf4ebe9bf6cd3d87c40, type: 2}
   onMissionFail: {fileID: 11400000, guid: 321c9655ab8c09a48b87e5e41cbd127a, type: 2}
   onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
+  onMissionFailByDie: {fileID: 11400000, guid: 3dabfcdc038407a488127afb119d787c, type: 2}
   progressing: 0
   shippingMissionSO: {fileID: 11400000, guid: 3e1051c6010fccb449b49d9d0c00c850, type: 2}
   deliverySuccess: 0

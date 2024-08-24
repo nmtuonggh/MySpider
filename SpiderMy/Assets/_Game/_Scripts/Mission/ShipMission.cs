@@ -95,14 +95,8 @@ namespace SFRemastered._Game._Scripts.Mission
             
             if (deliverySuccess == shippingMissionSO.listDeliveryPoints.Count)
             {
-                Debug.Log("All Delivery Success");
                 CompleteMission();
             }
-            
-            //Destroy all the child of 
-            Debug.Log("Delivery Success: " + deliverySuccess);
-            
-            //TODO: Show UI for delivery success
         }
         
         

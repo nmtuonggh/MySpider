@@ -29,6 +29,7 @@ namespace SFRemastered._Game._Scripts.Mission
         [Header("==========Mission Status==========")]
         [SerializeField] private GameObject CompleteUI;
         [SerializeField] private GameObject FailFightUI;
+        [SerializeField] private GameObject FailFightByDeadUI;
         [SerializeField] private GameObject FailShipUI;
         [SerializeField] private TextMeshProUGUI cashRewardValue;
         [SerializeField] private TextMeshProUGUI expRewardValue;
@@ -36,17 +37,16 @@ namespace SFRemastered._Game._Scripts.Mission
         [SerializeField] private TextMeshProUGUI currentLV;
         [SerializeField] private GameObject videoAds1;
         [SerializeField] private GameObject videoAds2;
+        [SerializeField] private GameObject warningPopup;
         
-
         [Header("==========Mission Ship==========")]
         public GameObject deliveryCountUI;
         public List<GameObject> deliveryDoneUIs;
-        public GameObject ClockUI;
-        public TextMeshProUGUI textTime;
         private int _currentDeliveryDone;
 
         [Header("==========Mission Event ==========")]
-        //public GameEvent g
+        public GameEvent dontWantRevive;
+        
         [Header("==========Mission Event Listener==========")]
         public GameEventListener onMissionStart;
         public GameEventListener onMissionUpdate;
@@ -54,6 +54,9 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEventListener onMissionFail;
         public GameEventListener inMissionRange;
         public GameEventListener inPickupDelivery;
+        public GameEventListener inWarningRange;
+        public GameEventListener outWarningRange;
+        public GameEventListener onMissionFailByDie;
 
         private void OnEnable()
         {
@@ -63,6 +66,9 @@ namespace SFRemastered._Game._Scripts.Mission
             onMissionFail.OnEnable();
             inMissionRange.OnEnable();
             inPickupDelivery.OnEnable();
+            inWarningRange.OnEnable();
+            outWarningRange.OnEnable();
+            //onMissionFailByDie.OnEnable();
         }
 
         private void OnDisable()
@@ -73,6 +79,8 @@ namespace SFRemastered._Game._Scripts.Mission
             onMissionFail.OnDisable();
             inMissionRange.OnDisable();
             inPickupDelivery.OnDisable();
+            inWarningRange.OnDisable();
+            outWarningRange.OnDisable();
         }
 
         public void HandlerMissionStart()
@@ -95,14 +103,14 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void HandlerInRangeMission()
         {
-            Debug.Log("run");
-            step2Item.SetActive(true);
+            warningPopup.SetActive(false);
             switch (currentMission.missionType)
             {
                 case MissionType.Fighting:
                     step2Mission.text = "Kill all enemies";
                     break;
                 case MissionType.Delivery:
+                    step2Item.SetActive(true);
                     blackBoard.Bag.SetActive(true);
                     deliveryCountUI.SetActive(true);
                     step2Mission.text = "Deliver the package to all customers";
@@ -120,16 +128,17 @@ namespace SFRemastered._Game._Scripts.Mission
                 playerData.exp += currentMission.expReward;
                 playerData.cash += currentMission.cashReward;
                 MissionUI.SetActive(false);
+                warningPopup.SetActive(false);
                 ShowUIComplete();
             });
         }
 
         public void HandlerMissionFail()
         {
-            StartCoroutine( Wait());
             deliveryCountUI.SetActive(false);
             blackBoard.Bag.SetActive(false);
             MissionUI.SetActive(false);
+            warningPopup.SetActive(false);
             
             if (currentMission.missionType == MissionType.Delivery)
             {
@@ -142,12 +151,33 @@ namespace SFRemastered._Game._Scripts.Mission
             }
             
         }
+        
+        public void HandlerMissionFailByDie()
+        {
+            deliveryCountUI.SetActive(false);
+            blackBoard.Bag.SetActive(false);
+            MissionUI.SetActive(false);
+            warningPopup.SetActive(false);
+            ShowDeadFailUI();
+        }
 
         public void HandlerInPickupDelivery()
         {
             deliveryDoneUIs[_currentDeliveryDone].SetActive(true);
             _currentDeliveryDone++;
         }
+        
+        public void HandlerOutWarningRange()
+        {
+            warningPopup.SetActive(true);
+        }
+        
+        public void HandlerInWarningRange()
+        {
+            step2Item.SetActive(true);
+            warningPopup.SetActive(false);
+        }
+        
         
         public void ShowUIComplete()
         {
@@ -183,6 +213,24 @@ namespace SFRemastered._Game._Scripts.Mission
             FailFightUI.SetActive(false);
         }
         
+        private void ShowDeadFailUI()
+        {
+            timeManager.focus = true;
+            DOVirtual.DelayedCall(2f, () =>
+            {
+                timeManager.focus = false;
+                MissionUI.SetActive(false);
+                timeManager.pause = true;
+                FailFightByDeadUI.SetActive(true);
+            });
+        }
+        
+        private void OffDeadFailUI()
+        {
+            timeManager.pause = false;
+            FailFightByDeadUI.SetActive(false);
+        }
+        
         private void ShowShipFailUI()
         {
             MissionUI.SetActive(false);
@@ -205,9 +253,12 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             playerData.exp += currentMission.expReward * 2;
             playerData.cash += currentMission.expReward * 2;
-            StartCoroutine(ShowAds());
+            Ads();
             OffUIComplete();
-            StartCoroutine(WaitStartMission(5f));
+            DOVirtual.DelayedCall(10f, () =>
+            {
+                missionManager.StartMission();;
+            });
         }
         
         public void BtnNextComplete()
@@ -215,48 +266,65 @@ namespace SFRemastered._Game._Scripts.Mission
             playerData.exp += currentMission.expReward;
             playerData.cash += currentMission.cashReward;
             OffUIComplete();
-            StartCoroutine(WaitStartMission(5f));
+            DOVirtual.DelayedCall(10f, () =>
+            {
+                missionManager.StartMission();;
+            });
         }
         
         public void BtnNextFail()
         {
             OffFightFailUI();
-            StartCoroutine(WaitStartMission(5f));
+            OffDeadFailUI();
+            DOVirtual.DelayedCall(10f, () =>
+            {
+                missionManager.StartMission();;
+            });
         }
         
         public void BtnRevive()
         {
             playerData.currentHealth = playerData.maxHealth;
             MissionUI.SetActive(true);
+            Ads();
+            OffDeadFailUI();
             //TODO tiep tuc
+        }
+        
+        public void BtnNoRevive()
+        {
+            OffFightFailUI();
+            OffDeadFailUI();
+            dontWantRevive.Raise();
+            DOVirtual.DelayedCall(10f, () =>
+            {
+                missionManager.StartMission();;
+            });
         }
         
         public void BtnShipFail()
         {
             OffShipFailUI();
             Debug.Log("call");
-            StartCoroutine(WaitStartMission(5f));
-        }
-        
-        private IEnumerator WaitStartMission(float time)
-        {
-            yield return new WaitForSeconds(time);
-            missionManager.StartMission();
+            DOVirtual.DelayedCall(10f, () =>
+            {
+                missionManager.StartMission();;
+            });
         }
 
-        private IEnumerator ShowAds()
+        private void Ads()
         {
             videoAds1.SetActive(true);
-            yield return new WaitForSeconds(3);
-            videoAds1.SetActive(false);
-            videoAds2.SetActive(true);
-            yield return new WaitForSeconds(3);
-            videoAds2.SetActive(false);
+            DOVirtual.DelayedCall(3f, () =>
+            {
+                videoAds1.SetActive(false);
+                videoAds2.SetActive(true);
+                DOVirtual.DelayedCall(3f, () =>
+                {
+                    videoAds2.SetActive(false);
+                });
+            });
         }
         
-        private IEnumerator Wait()
-        {
-            yield return new WaitForSeconds(2);
-        }
     }
 }

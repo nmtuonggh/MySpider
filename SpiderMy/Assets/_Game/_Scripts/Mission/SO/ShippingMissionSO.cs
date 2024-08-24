@@ -11,6 +11,7 @@ namespace SFRemastered._Game._Scripts.Mission
         [Header("Ship Mission")]
         public List<Vector3> listDeliveryPoints = new List<Vector3>();
         public GameObject deliveryPointPrefab;
+        public GameObject circlePrefab;
         public override void GetMissionPosition(Transform mssPoint)
         {
             base.GetMissionPosition(mssPoint);

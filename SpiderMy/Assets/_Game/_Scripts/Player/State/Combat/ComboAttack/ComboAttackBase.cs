@@ -29,6 +29,7 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _currentComboIndex = 0;
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.useRootMotion = true;
+            //_blackBoard.playerMovement.SetRotationMode(EasyCharacterMovement.RotationMode.None);
             PlayComboAnimation(_firstComboClips, _currentComboIndex);
             _state.Time = 0;
         }
@@ -40,6 +41,8 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             {
                 return baseStatus;
             }
+
+            //FaceToEnemy();
             
             if (_blackBoard.attack && _canGoToNextAttack)
             {
@@ -99,15 +102,17 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
             _currentComboIndex = 0;
             _blackBoard.playerMovement.rootmotionSpeedMult = 1;
             _blackBoard.playerMovement.useRootMotion = false;
+            //_blackBoard.playerMovement.SetRotationMode(EasyCharacterMovement.RotationMode.OrientToMovement);
         }
 
         private void PlayComboAnimation(AttackAnim[] clip, int index)
         {
+            RotateToTarget();
             HandlerSpeedRootMotion();
+            //_state.Events.Add(0.1f, RotateToTarget);
             _canGoToNextAttack = false;
             _currentDamage = clip[index].damage;
             _state = _blackBoard.animancer.Play(clip[index].clip);
-            _state.Events.Add(0.25f, RotateToTarget);
         }
 
         public void CanGoToNextAttack()
@@ -118,9 +123,9 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
         private void RotateToTarget()
         {
             if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy() != null)
-            {
-                _blackBoard.rigidbody.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position,
-                    0.2f,
+            { 
+                _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.enemyInRange.FindClosestEnemy().transform.position,
+                    0.1f,
                     AxisConstraint.Y);
             }
         }

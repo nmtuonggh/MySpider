@@ -5556,6 +5556,7 @@ MonoBehaviour:
   healthBarscript: {fileID: 4710226316168301012}
   blackBoard: {fileID: 2027575646196316682}
   damageNumber: {fileID: 2548068709201593238, guid: 50842d450d9d66d49b0a177b151f4337, type: 3}
+  hitPrefab: {fileID: 7325138696294772473, guid: d67bb6642e3a8744fa2f06e5b7dc1b15, type: 3}
   gravity: -9.81
   onEnemyDeath: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
   onDisableSpiderSense: {fileID: 11400000, guid: dd22205e7ccc85f4084a0cacba4c0fc6, type: 2}

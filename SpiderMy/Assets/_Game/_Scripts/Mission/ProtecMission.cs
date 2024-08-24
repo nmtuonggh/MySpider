@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Game.Scripts.Event;
+using DG.Tweening;
 using SFRemastered._Game._Scripts.Enemy;
 using SFRemastered._Game._Scripts.Enemy.State;
 using UnityEngine;
@@ -15,17 +16,24 @@ namespace SFRemastered._Game._Scripts.Mission
         private GameObject _indicator;
         private GameObject _missionRange;
         private GameObject _victim;
+        private GameObject _missionWarning;
 
         [Header("Protec Mission Event")]
         public GameEventListener onEnemyDead;
         public GameEventListener inCombatRange;
         public GameEventListener outCombatRange;
+        public GameEventListener inWarningRange;
+        public GameEventListener onPlayerDead;
+        public GameEventListener onNotRevive;
 
         private void OnEnable()
         {
             onEnemyDead.OnEnable();
             inCombatRange.OnEnable();
             outCombatRange.OnEnable();
+            inWarningRange.OnEnable();
+            onPlayerDead.OnEnable();
+            onNotRevive.OnEnable();
         }
         
         private void OnDisable()
@@ -33,6 +41,9 @@ namespace SFRemastered._Game._Scripts.Mission
             onEnemyDead.OnDisable();
             inCombatRange.OnDisable();
             outCombatRange.OnDisable();
+            inWarningRange.OnDisable();
+            onPlayerDead.OnDisable();
+            onNotRevive.OnDisable();
         }
 
         public override void StartMission()
@@ -53,6 +64,7 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             Destroy(_indicator);
             Destroy(_missionRange);
+            Destroy(_missionWarning);
             Destroy(_victim);
             base.CompleteMission();
         }
@@ -61,15 +73,51 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             Destroy(_indicator);
             Destroy(_missionRange);
+            Destroy(_missionWarning);
             Destroy(_victim);
             progressing = false;
             base.FailMission();
         }
         
+        public override void FailMissionByDie()
+        {
+            /*Destroy(_indicator);
+            Destroy(_missionRange);
+            Destroy(_missionWarning);
+            progressing = false;*/
+            base.FailMissionByDie();
+        }
+        
+        public void NotRevive()
+        {
+            Destroy(_indicator);
+            Destroy(_missionRange);
+            Destroy(_missionWarning);
+            protecMissionSo.currentWaveIndex = 0;
+            protecMissionSo.currentWaveEnemyCount = 0;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                var obj = enemy.GetComponent<EnemyBlackBoard>();
+                if (obj.attacking)
+                {
+                    obj.warningAttack.SetActive(false);
+                    obj.attacking = false;
+                }
+                obj.enemyData.ReturnToPool(obj.enemyData.id, enemy);
+            }
+            progressing = false;
+        }
+        
         public void PlayerEnterCombatRange()
         {
-            progressing = true;
+           
+        }
+        
+        public void PlayerEnterWarningRange()
+        {
             Destroy(_indicator);
+            progressing = true;
         }
         
         public void PlayerLeaveCombatRange()
@@ -89,8 +137,11 @@ namespace SFRemastered._Game._Scripts.Mission
                     }
                     obj.enemyData.ReturnToPool(obj.enemyData.id, enemy);
                 }
-                Destroy(_victim);
-                FailMission();
+                DOVirtual.DelayedCall(2f, () =>
+                {
+                    Destroy(_victim);
+                    FailMission();
+                });
             }
         }
 
@@ -98,7 +149,10 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             _missionRange = Instantiate(protecMissionSo.missionRangePrefab, protecMissionSo.SpawnPosition.position,
                 Quaternion.identity);
+            _missionWarning = Instantiate(protecMissionSo.warningRange, protecMissionSo.SpawnPosition.position,
+                Quaternion.identity);
             _missionRange.transform.SetParent(protecMissionSo.SpawnPosition);
+            _missionWarning.transform.SetParent(protecMissionSo.SpawnPosition);
         }
 
         private void DrawnIndicator()
