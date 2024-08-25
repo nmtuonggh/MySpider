@@ -13,14 +13,18 @@ namespace SFRemastered.Wall
         [SerializeField] private ExitWall _exitWallState;
         [SerializeField] private ClipTransition[] _wallRunClip;
         [SerializeField] private LinearMixerTransition _wallRunBlentree;
+        [SerializeField] private LayerMask layerMask;
 
         private Vector3 startVelocity;
+        private bool swingReleased;
+        private RaycastHit currenHit;
 
         public override void EnterState()
         {
             base.EnterState();
             SetupEnter();
             RotatePlayer();
+            swingReleased = false;
         }
 
         public override StateStatus UpdateState()
@@ -34,11 +38,20 @@ namespace SFRemastered.Wall
             HandleAnimation();
             _blackBoard.rigidbody.velocity = _blackBoard.wallMoveDirection * wallRunSpeed;
 
-            if (_blackBoard.foundWall && _blackBoard.swing && _blackBoard.readyToSwing)
+            //RaycastWhileWallRunning();
+            if (_blackBoard.swing)
             {
-                _fsm.ChangeState(_jumpOffWallState);
-                return StateStatus.Success;
+                if (swingReleased)
+                {
+                    _fsm.ChangeState(_jumpOffWallState);
+                    return StateStatus.Success;
+                }
             }
+            else
+            {
+                swingReleased = true;
+            }
+
 
             if (!_blackBoard.foundWall)
             {
@@ -47,6 +60,26 @@ namespace SFRemastered.Wall
             }
 
             return StateStatus.Running;
+        }
+
+        private void RaycastWhileWallRunning()
+        {
+            var leftDir = Vector3.ProjectOnPlane(-_blackBoard.playerMovement.transform.right,
+                _blackBoard.checkWallState.hit.normal);
+            var forwardDir = -_blackBoard.checkWallState.hit.normal;
+            
+            if (_blackBoard.wallMoveDirection.x > 0.1f)
+            {
+                Vector3 perpendicularAxis = Vector3.Cross(leftDir, forwardDir).normalized;
+                Quaternion rotation = Quaternion.AngleAxis(40, perpendicularAxis);
+                Vector3 angledVector = rotation * forwardDir;
+
+                RaycastHit hit;
+                if (Physics.Raycast(_blackBoard.checkWallState.raycastPos.position, angledVector, out hit, 4f, layerMask))
+                {
+                    currenHit = hit;
+                }
+            }
         }
 
         public override void ExitState()

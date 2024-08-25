@@ -6,50 +6,63 @@ namespace SFRemastered._Game._Scripts.Mission
 {
     public class MissionRange : MonoBehaviour
     {
-        public bool playerInRange;
+        public bool playerInRange = false;
         public GameEvent OnPlayerInRange;
         public GameEvent OnPlayerOutOfRange;
-        public LayerMask layer;
+        public GameEventListener onStartMission;
         public float radius;
-        public Collider[] hitColliders;
+        private bool previousPlayerInRange;
 
-        /*private void OnValidate()
+        private void OnEnable()
         {
-            #if UNITY_EDITOR
-            
-            OnPlayerInRange = UnityEditor.AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/_Game/ScriptableObjects/EventSO/PlayerInRangeMission.asset");
-            OnPlayerOutOfRange = UnityEditor.AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/_Game/ScriptableObjects/EventSO/PlayerOutRangeMission.asset");
-            
-            #endif
-        }*/
-
-        /*private void Update()
+            onStartMission.OnEnable();
+        }
+        
+        private void OnDisable()
         {
-             hitColliders = Physics.OverlapSphere(transform.position,radius, layer);
+            onStartMission.OnDisable();
+        }
 
-            if (hitColliders.Length > 0)
+        private void Start()
+        {
+            playerInRange = false;
+            previousPlayerInRange = false;
+        }
+
+        private void Update()
+        {
+            var hitColliders = Physics.OverlapSphere(transform.position, radius, 9);
+            playerInRange = hitColliders.Length > 0;
+
+            if (playerInRange && !previousPlayerInRange)
             {
-                Debug.Log("Player in range");
-                playerInRange = true;
+                //Debug.Log("Player in range");
                 OnPlayerInRange.Raise();
             }
-            else
+            else if (!playerInRange && previousPlayerInRange)
             {
-                playerInRange = false;
+                //Debug.Log("Player out of range");
                 OnPlayerOutOfRange.Raise();
             }
-        }*/
+
+            previousPlayerInRange = playerInRange;
+        }
+
+        public void ResetBool()
+        {
+            playerInRange = false;
+            previousPlayerInRange = false;
+        }
         
         
         #region TriggerButFail
 
-        private void OnTriggerEnter(Collider other)
+        /*private void OnTriggerEnter(Collider other)
        {
            if (other.CompareTag("Player"))
            {
-               playerInRange = true;
+               Debug.Log("Player in range Mission " + other.name);
                OnPlayerInRange.Raise();
-               Debug.Log("Trigge");
            }
        }
 
@@ -57,10 +70,10 @@ namespace SFRemastered._Game._Scripts.Mission
        {
            if (other.CompareTag("Player"))
            {
-               playerInRange = false;
+               Debug.Log("Player out range Mission " + other.name);
                OnPlayerOutOfRange.Raise();
            }
-       }
+       }*/
 
         #endregion
     }

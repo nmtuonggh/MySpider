@@ -48,6 +48,7 @@ MonoBehaviour:
   onMissionComplete: {fileID: 11400000, guid: b6afc6932acc7bf4ebe9bf6cd3d87c40, type: 2}
   onMissionFail: {fileID: 11400000, guid: 321c9655ab8c09a48b87e5e41cbd127a, type: 2}
   onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
+  onMissionFailByDie: {fileID: 11400000, guid: 3dabfcdc038407a488127afb119d787c, type: 2}
   progressing: 0
   fightingMissionSo: {fileID: 11400000, guid: 3340bd692b505f643b048bf83d42f0bc, type: 2}
   onEnemyDead:
@@ -95,6 +96,60 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
             Assembly-CSharp
           m_MethodName: PlayerLeaveCombatRange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  inWarningRange:
+    Event: {fileID: 11400000, guid: 27ab00b03320acf46acfc0edddf380a0, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: PlayerEnterWarningRange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onPlayerDead:
+    Event: {fileID: 11400000, guid: d7453fbca782179418be6a6b026800a0, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: FailMissionByDie
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onNotRevive:
+    Event: {fileID: 11400000, guid: 9e3446d6cfe68514483642d31fd51e70, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: NotRevive
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

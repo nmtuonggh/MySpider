@@ -23,12 +23,11 @@ MonoBehaviour:
     _Speed: 2
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
-  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
   _jumpFromSwingLow: {fileID: 11400000, guid: 9e7485a58cdfb6d44a90fffc6611c20a, type: 2}
   _jumpFromSwing: {fileID: 11400000, guid: 4f27d13ddb1aca746b43cb165b574241, type: 2}
-  currentSwingPoint: {x: 67.91566, y: 49.643875, z: 181.24634}
+  currentSwingPoint: {x: -99.25719, y: 27.613045, z: 197.67708}
   startSwingVelocity: 20
   speedWhenSwing: 8
   _ListAnim:
@@ -90,4 +89,7 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: e859326972ffb6544b64f9ce47d888e6, type: 2}
     _Speed: 1.5
     _NormalizedStartTime: NaN
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
   swingAnimCount: 7

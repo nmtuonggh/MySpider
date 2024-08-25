@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6738680545923651178}
-  - component: {fileID: 5423665705020676432}
   - component: {fileID: 36569814387504753}
+  - component: {fileID: 1968545913533920008}
   m_Layer: 0
   m_Name: FightMissionRange
   m_TagString: Untagged
@@ -33,27 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5423665705020676432
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7617848672185236956}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 40
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &36569814387504753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +48,45 @@ MonoBehaviour:
   playerInRange: 0
   OnPlayerInRange: {fileID: 11400000, guid: 3c90e9f4432ea8c47ad910452c35de82, type: 2}
   OnPlayerOutOfRange: {fileID: 11400000, guid: 4917f4ec0b992c04584da5a5da572426, type: 2}
-  layer:
+  onStartMission:
+    Event: {fileID: 11400000, guid: 5a0c99fc986663d46aafae8c0c379486, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 36569814387504753}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.MissionRange,
+            Assembly-CSharp
+          m_MethodName: ResetBool
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  radius: 50
+--- !u!136 &1968545913533920008
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7617848672185236956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 512
-  radius: 40
-  hitColliders: []
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 80
+  m_Height: 150
+  m_Direction: 1
+  m_Center: {x: 0, y: -10, z: 0}

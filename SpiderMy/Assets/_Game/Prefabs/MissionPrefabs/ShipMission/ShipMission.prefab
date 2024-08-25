@@ -48,6 +48,7 @@ MonoBehaviour:
   onMissionComplete: {fileID: 11400000, guid: b6afc6932acc7bf4ebe9bf6cd3d87c40, type: 2}
   onMissionFail: {fileID: 11400000, guid: 321c9655ab8c09a48b87e5e41cbd127a, type: 2}
   onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
+  onMissionFailByDie: {fileID: 11400000, guid: 3dabfcdc038407a488127afb119d787c, type: 2}
   progressing: 0
   shippingMissionSO: {fileID: 11400000, guid: 3e1051c6010fccb449b49d9d0c00c850, type: 2}
   deliverySuccess: 0
@@ -100,3 +101,21 @@ MonoBehaviour:
     Response:
       m_PersistentCalls:
         m_Calls: []
+  onOutOfTime:
+    Event: {fileID: 11400000, guid: 0c1e0f4c1d9a8be489b2122e07fc1fae, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1170250278357941222}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.ShipMission,
+            Assembly-CSharp
+          m_MethodName: FailMission
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

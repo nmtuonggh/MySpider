@@ -3,6 +3,7 @@ using System.Collections;
 using _Game.Scripts.Event;
 using Animancer;
 using DamageNumbersPro;
+using DG.Tweening;
 using NodeCanvas.Framework;
 using SFRemastered._Game._Scripts.Enemy.State;
 using Unity.VisualScripting;
@@ -19,6 +20,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         [SerializeField] private HealthBar healthBarscript;
         [SerializeField] private EnemyBlackBoard blackBoard;
         [SerializeField] private DamageNumber damageNumber;
+        [SerializeField] private ParticleSystem hitPrefab;
         
         private Vector3 velocity;
         public float gravity = -9.81f;
@@ -56,9 +58,9 @@ namespace SFRemastered._Game._Scripts.Enemy
             }
 
             blackBoard.characterController.Move(velocity * Time.deltaTime);
+            
             blackBoard.targetHealth = blackBoard.target.obj.GetComponent<PlayerController>().health;
             blackBoard.targetInvincible = blackBoard.target.obj.GetComponent<BlackBoard>().invincible;
-            
         }
         
 
@@ -67,6 +69,8 @@ namespace SFRemastered._Game._Scripts.Enemy
             if (!blackBoard.blocking || !blackBoard.invincible)
             {
                 damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+                //hitPrefab.Play();
+                HitEffect();
                 health -= damage;
                 healthBarscript.TakeDamage(damage);
                 blackBoard.staggerHit = true;
@@ -81,6 +85,8 @@ namespace SFRemastered._Game._Scripts.Enemy
             if (!blackBoard.blocking || !blackBoard.invincible)
             {
                 damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+                //hitPrefab.Play();
+                HitEffect();
                 health -= damage;
                 healthBarscript.TakeDamage(damage);
                 blackBoard.knockBackHit = true;
@@ -88,6 +94,12 @@ namespace SFRemastered._Game._Scripts.Enemy
                 CheckHealth();
                 DisableSpiderSense();
             }
+        }
+        
+        private void HitEffect()
+        {
+            var hit = Instantiate(hitPrefab, this.transform.position + Vector3.up*0.8f, Quaternion.identity);
+            DOVirtual.DelayedCall(0.6f, () => { Destroy(hit);});
         }
         
         private void CheckHealth()

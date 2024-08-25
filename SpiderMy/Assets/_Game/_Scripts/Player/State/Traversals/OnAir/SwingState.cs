@@ -19,6 +19,7 @@ namespace SFRemastered
         [SerializeField] protected float startSwingVelocity;
         [SerializeField] protected float speedWhenSwing;
         [SerializeField] private ClipTransition[] _ListAnim;
+        [SerializeField] private LayerMask layerMask;
 
         [FormerlySerializedAs("_swingAnimCount")] [SerializeField]
         private int swingAnimCount;
@@ -61,22 +62,7 @@ namespace SFRemastered
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
             
             
-            float groundDistance = GroundCheck();
-            if (groundDistance < 3.5f)
-            {
-                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 0.1f, 0.5f); 
-                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.05f, 0.25f);
-            }
-            else if (groundDistance < 2f)
-            {
-                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 0.5f, 0.5f); 
-                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.25f, 0.25f); 
-            }
-            else if (groundDistance < 0.5f)
-            {
-                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 1f, 0.5f); 
-                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 0.5f, 0.25f); 
-            }
+            SwingAssist();
 
             if (!_blackBoard.swing && elapsedTime >=0.5f)
             {
@@ -91,11 +77,54 @@ namespace SFRemastered
                     _fsm.ChangeState(_jumpFromSwing);
                     return StateStatus.Success;
                 }
+
+                if (_blackBoard.foundWallBot)
+                {
+                    _fsm.ChangeState(_blackBoard.stateReference.JumpToSwing);
+                    return StateStatus.Success;
+                }
             }
 
             DrawLine();
 
             return StateStatus.Running;
+        }
+
+        private void SwingAssist()
+        {
+            float groundDistance = GroundCheck();
+            if (groundDistance is > 2f and < 3.5f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 8f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 4f, 0.25f);
+            }
+            else if (groundDistance is > 0.5f and < 2f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 10f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 5f, 0.25f); 
+            }
+            else if (groundDistance is > 0 and < 0.5f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 15f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 7.5f, 0.25f); 
+            }
+            
+            float wallDistance = WallCheck();
+            if (wallDistance is > 6f and <= 10f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 8f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 4f, 0.25f);
+            }
+            else if (wallDistance is > 3f and <= 6f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 10f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 5f, 0.25f); 
+            }
+            else if (wallDistance is > 0 and <= 3f)
+            {
+                _springJoint.maxDistance = Mathf.Max(_springJoint.maxDistance - 15f, 0.5f); 
+                _springJoint.minDistance = Mathf.Max(_springJoint.minDistance - 7.5f, 0.25f); 
+            }
         }
 
         public override void FixedUpdateState()
@@ -229,7 +258,20 @@ namespace SFRemastered
         private float GroundCheck()
         {
             RaycastHit hit;
-            if (Physics.Raycast(_fsm.transform.position, Vector3.down, out hit, 4f, _blackBoard.groundLayers))
+            if (Physics.Raycast(_fsm.transform.position, Vector3.down, out hit, 4f, layerMask))
+            {
+                return hit.distance;
+            }
+            else
+            {
+                return float.MaxValue;
+            }
+        }
+        
+        private float WallCheck()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(_fsm.transform.position, Vector3.forward, out hit, 10f, layerMask))
             {
                 return hit.distance;
             }

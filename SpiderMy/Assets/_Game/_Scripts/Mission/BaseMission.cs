@@ -12,6 +12,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEvent onMissionComplete;
         public GameEvent onMissionFail;
         public GameEvent onMissionUpdate;
+        public GameEvent onMissionFailByDie;
         
         [Header("Mission Status")]
         public bool progressing = false;
@@ -46,6 +47,11 @@ namespace SFRemastered._Game._Scripts.Mission
         public virtual void FailMission()
         {
             onMissionFail.Raise();
+        }
+        
+        public virtual void FailMissionByDie()
+        {
+            onMissionFailByDie.Raise();
         }
     }
 }

@@ -61,5 +61,6 @@ namespace SFRemastered
         public OnVenomFinalHit OnVenomFinalHit;
         public Riseup Riseup;
         public StartZip StartZip;
+        public Dead DeadState;
     }
 }

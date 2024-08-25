@@ -45,6 +45,11 @@ namespace SFRemastered
             {
                 return false;
             }
+            
+            if (_blackBoard.dead)
+            {
+                ChangeState(_blackBoard.stateReference.DeadState);
+            }
             _currentState.ExitState();
             _previousState = _currentState;
             _currentState = newState;

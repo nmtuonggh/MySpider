@@ -13,10 +13,9 @@ namespace SFRemastered
         [SerializeField] private float durationValue;
         [SerializeField] private bool _doneMove;
 
-        public override void EnterState()  
+        public override void EnterState()
         {
             base.EnterState();
-            Debug.Log(currentZipPoint);
             //currentZipPoint = _blackBoard.raycastCheckWall.zipPoint;
             _blackBoard.playerMovement.SetMovementDirection(Vector3.zero);
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;

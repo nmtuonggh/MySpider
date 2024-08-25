@@ -14,17 +14,24 @@ namespace SFRemastered._Game._Scripts.Mission
         public FightingMissionSo fightingMissionSo;
         private GameObject _indicator;
         private GameObject _missionRange;
+        private GameObject _missionWarning;
 
         [Header("Fighting Mission Event")]
         public GameEventListener onEnemyDead;
         public GameEventListener inCombatRange;
         public GameEventListener outCombatRange;
+        public GameEventListener inWarningRange;
+        public GameEventListener onPlayerDead;
+        public GameEventListener onNotRevive;
 
         private void OnEnable()
         {
             onEnemyDead.OnEnable();
             inCombatRange.OnEnable();
             outCombatRange.OnEnable();
+            inWarningRange.OnEnable();
+            onPlayerDead.OnEnable();
+            onNotRevive.OnEnable();
         }
         
         private void OnDisable()
@@ -32,6 +39,9 @@ namespace SFRemastered._Game._Scripts.Mission
             onEnemyDead.OnDisable();
             inCombatRange.OnDisable();
             outCombatRange.OnDisable();
+            inWarningRange.OnDisable();
+            onPlayerDead.OnDisable();
+            onNotRevive.OnDisable();
         }
 
         public override void StartMission()
@@ -52,6 +62,7 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             Destroy(_indicator);
             Destroy(_missionRange);
+            Destroy(_missionWarning);
             base.CompleteMission();
         }
 
@@ -59,20 +70,56 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             Destroy(_indicator);
             Destroy(_missionRange);
+            Destroy(_missionWarning);
             progressing = false;
             base.FailMission();
         }
         
+        
+        public override void FailMissionByDie()
+        {
+            /*Destroy(_indicator);
+            Destroy(_missionRange);
+            Destroy(_missionWarning);
+            progressing = false;*/
+            base.FailMissionByDie();
+        }
+        
+        public void NotRevive()
+        {
+            Destroy(_indicator);
+            Destroy(_missionRange);
+            Destroy(_missionWarning);
+            fightingMissionSo.currentWaveIndex = 0;
+            fightingMissionSo.currentWaveEnemyCount = 0;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                var obj = enemy.GetComponent<EnemyBlackBoard>();
+                if (obj.attacking)
+                {
+                    obj.warningAttack.SetActive(false);
+                    obj.attacking = false;
+                }
+                obj.enemyData.ReturnToPool(obj.enemyData.id, enemy);
+            }
+            progressing = false;
+        }
+        
         public void PlayerEnterCombatRange()
         {
-            progressing = true;
+        }
+
+        public void PlayerEnterWarningRange()
+        {
             Destroy(_indicator);
+            progressing = true;
         }
         
         public void PlayerLeaveCombatRange()
         {
             if (progressing)
-            {
+            {   
                 fightingMissionSo.currentWaveIndex = 0;
                 fightingMissionSo.currentWaveEnemyCount = 0;
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -94,7 +141,10 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             _missionRange = Instantiate(fightingMissionSo.missionRangePrefab, fightingMissionSo.SpawnPosition.position,
                 Quaternion.identity);
+            _missionWarning = Instantiate(fightingMissionSo.warningRange, fightingMissionSo.SpawnPosition.position,
+                Quaternion.identity);
             _missionRange.transform.SetParent(fightingMissionSo.SpawnPosition);
+            _missionWarning.transform.SetParent(fightingMissionSo.SpawnPosition);
         }
 
         private void DrawnIndicator()
@@ -106,7 +156,6 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void OnEnemyDie()
         {
-            Debug.Log("Enemy Die");
             fightingMissionSo.currentWaveEnemyCount--;
             if (fightingMissionSo.currentWaveEnemyCount <= 0)
             {
