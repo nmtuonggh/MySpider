@@ -1,4 +1,5 @@
 ﻿using System;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Mission
@@ -15,8 +16,10 @@ namespace SFRemastered._Game._Scripts.Mission
         public MissionType missionType;
         private Transform spawnPosition;
         public GameObject missionPrefab;
-        public GameObject missionRangePrefab;
-        public GameObject indicatorPrefab;
+        /*public GameObject missionRangePrefab;
+        public GameObject indicatorPrefab;*/
+        public PoolObject missionRangePrefab;
+        public PoolObject indicatorPrefab;
         public float timeLimit;
 
         [Header("Rewards")] 

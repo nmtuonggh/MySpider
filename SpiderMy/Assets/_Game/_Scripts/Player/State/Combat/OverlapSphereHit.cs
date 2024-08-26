@@ -44,7 +44,7 @@ namespace SFRemastered
                 var enemy = hitCollider.GetComponent<EnemyController>();
                 if (!enemy.GetComponent<EnemyBlackBoard>().die)
                 {
-                    enemy.OnStaggerHit(damage);
+                    enemy.OnKnockBackHit(damage);
                 }
             }
             if (hitColliders.Length > 0)
@@ -61,7 +61,7 @@ namespace SFRemastered
                 var enemy = hitCollider.GetComponent<EnemyController>();
                 if (!enemy.GetComponent<EnemyBlackBoard>().die)
                 {
-                    enemy.OnStaggerHit(damage);
+                    enemy.OnKnockBackHit(damage);
                 }
             }
             if (hitColliders.Length > 0)

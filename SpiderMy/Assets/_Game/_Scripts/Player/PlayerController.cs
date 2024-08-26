@@ -2,9 +2,12 @@
 using System.Collections;
 using _Game.Scripts.Event;
 using DamageNumbersPro;
+using DG.Tweening;
 using SFRemastered._Game._Scripts.Data;
 using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered
 {
@@ -19,6 +22,7 @@ namespace SFRemastered
         
         public GameEvent onPlayerDead;
 
+        [FormerlySerializedAs("hitVFX")] public PoolObject poolObject;
         private void OnEnable()
         {
             health = playerData.maxHealth;
@@ -26,9 +30,15 @@ namespace SFRemastered
 
         #region OnHit
 
+        private void HitEffect()
+        {
+            var hit = poolObject.Spawn(this.transform.position + Vector3.up*0.8f, Quaternion.identity, this.transform);
+            DOVirtual.DelayedCall(0.6f, () => { poolObject.ReturnToPool(hit);});
+        }
         public void OnStaggerHit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             StartCoroutine(HandleStaggerHit());
             health -= damage;
             playerData.currentHealth = health;
@@ -39,6 +49,7 @@ namespace SFRemastered
         public void OnKnockBackHit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             StartCoroutine(HandleKnockBackHit());
             health -= damage;
             playerData.currentHealth = health;
@@ -49,6 +60,7 @@ namespace SFRemastered
         public void OnVenomPhase1Hit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             StartCoroutine(HandleVenomPhase1Hit());
             health -= damage;
             playerData.currentHealth = health;
@@ -59,6 +71,7 @@ namespace SFRemastered
         public void OnVenomPhase2Hit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             StartCoroutine(HandleVenomPhase2Hit());
             health -= damage;
             playerData.currentHealth = health;
@@ -69,6 +82,7 @@ namespace SFRemastered
         public void OnVenomMiniHit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             health -= damage;
             playerData.currentHealth = health;
             healthBar.TakeDamage(damage);
@@ -78,6 +92,7 @@ namespace SFRemastered
         public void OnVenomFinalHit(float damage)
         {
             damageNumber.Spawn(this.transform.position + Vector3.up, damage);
+            HitEffect();
             StartCoroutine(HandleVenomFinalHit());
             health -= damage;
             playerData.currentHealth = health;
@@ -91,7 +106,6 @@ namespace SFRemastered
         {
             if (health <= 0)
             {
-                Debug.Log("Die");
                 onPlayerDead.Raise();
                 _blackBoard.dead = true;
             }

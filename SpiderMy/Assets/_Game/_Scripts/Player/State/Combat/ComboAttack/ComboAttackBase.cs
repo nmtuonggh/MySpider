@@ -132,13 +132,20 @@ namespace SFRemastered._Game._Scripts.State.Combat.ComboAttack
 
         private void HandlerSpeedRootMotion()
         {
-            if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 0 and <= 1f)
+            if (_blackBoard._detectedEnemy && _blackBoard.enemyInRange.FindClosestEnemy() == null)
             {
-                _blackBoard.playerMovement.rootmotionSpeedMult = 0.15f;
+                _blackBoard.playerMovement.rootmotionSpeedMult = 0.25f;
             }
-            else if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 1f and <= 2)
+            else
             {
-                _blackBoard.playerMovement.rootmotionSpeedMult = 0.5f;
+                if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 0 and <= 1f)
+                {
+                    _blackBoard.playerMovement.rootmotionSpeedMult = 0.15f;
+                }
+                else if (_blackBoard.enemyInRange.GetDistanceToClosetEnemy() is > 1f and <= 2)
+                {
+                    _blackBoard.playerMovement.rootmotionSpeedMult = 0.5f;
+                } 
             }
         }
     }

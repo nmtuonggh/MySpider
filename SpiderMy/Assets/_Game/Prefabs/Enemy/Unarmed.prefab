@@ -1828,7 +1828,72 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 3d65e001565a4a64db079c4fc23e841d, type: 2}
+    _Clip: {fileID: 0}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  dieAnim:
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: -4815723476054843372, guid: 6f70d993cd294c748a10eec848a37ac0, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 3226618792657046722, guid: 5aa0596fdfcc4833938a2566d15a1166, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: -5333782598003443852, guid: 732abae031b44cd1a2f5ff1f5d9b75c0, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 5740381766929986576, guid: 98ffd605d63e43838d2790e394c80112, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: -3261702172391785166, guid: 292e8bfd4f0640dab60b571d3729d6ce, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: d1d16d8bed214326a6dd6d784b2e9535, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: fa0e2c1cfb4140aeaf2edf59930ebf92, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  - _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: b22e8215e3a84092a93e8011bd6a606d, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!1 &1834273553110701156
@@ -3869,6 +3934,7 @@ MonoBehaviour:
   targetInvincible: 0
   lineRenderer: {fileID: 9199559797040963810}
   healthBarUI: {fileID: 3277608048120099156}
+  hitVFX: {fileID: 11400000, guid: 3026150a17b1caf4c880a077a502c8c1, type: 2}
   attacking: 0
   zipAttackStun: 0
   staggerHit: 0
@@ -3878,6 +3944,7 @@ MonoBehaviour:
   die: 0
   cantTarget: 0
   invincible: 0
+  disableRB: 0
   webHitStun: 0
   stunLockTime: 5
   sphereCastCenter: {fileID: 8891559554653009628}

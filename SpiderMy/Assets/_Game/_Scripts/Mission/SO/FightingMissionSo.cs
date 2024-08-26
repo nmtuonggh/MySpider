@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Game.Scripts.Event;
 using SFRemastered._Game._Scripts.Enemy;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -12,8 +13,8 @@ namespace SFRemastered._Game._Scripts.Mission
     public class FightingMissionSo : BaseMissionSO
     {
         [Header("Fight Mission")]
-        public GameObject warningRange;
         public float spawnRange;
+        public PoolObject warningRange;
         
         [Header("Wave Data")]
         public int currentWaveIndex = 0;

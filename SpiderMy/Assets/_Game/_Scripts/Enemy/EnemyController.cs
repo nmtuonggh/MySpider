@@ -48,14 +48,14 @@ namespace SFRemastered._Game._Scripts.Enemy
         private void Update()
         {
             
-            if (!blackBoard.characterController.isGrounded)
+            if (!blackBoard.characterController.isGrounded && !blackBoard.disableRB)
             {
                 velocity.y += gravity * Time.deltaTime;
             }
-            else
+            /*else
             {
                 velocity.y = 0;
-            }
+            }*/
 
             blackBoard.characterController.Move(velocity * Time.deltaTime);
             
@@ -84,6 +84,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             if (!blackBoard.blocking || !blackBoard.invincible)
             {
+                Debug.Log("run");
                 damageNumber.Spawn(this.transform.position + Vector3.up, damage);
                 //hitPrefab.Play();
                 HitEffect();
@@ -98,8 +99,8 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         private void HitEffect()
         {
-            var hit = Instantiate(hitPrefab, this.transform.position + Vector3.up*0.8f, Quaternion.identity);
-            DOVirtual.DelayedCall(0.6f, () => { Destroy(hit);});
+            var hit = blackBoard.poolObject.Spawn(this.transform.position + Vector3.up*0.8f, Quaternion.identity, this.transform);
+            DOVirtual.DelayedCall(0.6f, () => { blackBoard.poolObject.ReturnToPool(hit);});
         }
         
         private void CheckHealth()

@@ -16,6 +16,7 @@ namespace SFRemastered._Game._Scripts.Mission
         private GameObject _missionRange;
         [SerializeField] private int deliverySuccess;
         private List<GameObject> _deliveryGameObjects = new List<GameObject>();
+        private List<GameObject> _deliveryNPCGameObjects = new List<GameObject>();
         
         [Header("NPC Prefabs")]
         public GameObject pickupNPCPrefab;
@@ -58,30 +59,31 @@ namespace SFRemastered._Game._Scripts.Mission
         
         private void DrawnIndicator()
         {
-            _indicator = Instantiate(shippingMissionSO.indicatorPrefab, shippingMissionSO.SpawnPosition.position,
-                Quaternion.identity);
-            _indicator.transform.SetParent(shippingMissionSO.SpawnPosition);
+            _indicator = shippingMissionSO.indicatorPrefab.Spawn(shippingMissionSO.SpawnPosition.position,
+                Quaternion.identity, shippingMissionSO.SpawnPosition);
         }
 
         private void SpawnPickupLocation()
         {
-           _missionRange = Instantiate(shippingMissionSO.missionRangePrefab, shippingMissionSO.SpawnPosition.position,
-               Quaternion.identity);
-           _missionRange.transform.SetParent(shippingMissionSO.SpawnPosition);
+           _missionRange = shippingMissionSO.missionRangePrefab.Spawn(shippingMissionSO.SpawnPosition.position,
+               Quaternion.identity, shippingMissionSO.SpawnPosition);
         }
 
         public void InPickup()
         {
+            _deliveryNPCGameObjects.Clear();
             _deliveryGameObjects.Clear();
             foreach (Vector3 shipPoint in shippingMissionSO.listDeliveryPoints)
             {
-                var a = Instantiate(deliveryNPCPrefab, shipPoint + Vector3.up*2f, Quaternion.identity, shippingMissionSO.SpawnPosition);
-                var b = Instantiate(shippingMissionSO.deliveryPointPrefab, shipPoint, Quaternion.identity, shippingMissionSO.SpawnPosition);
-                _deliveryGameObjects.Add(a);
+                var a = shippingMissionSO.deliveryNPCPrefab.Spawn(shipPoint,
+                    Quaternion.identity, shippingMissionSO.SpawnPosition);
+                var b = shippingMissionSO.deliveryPointPrefab.Spawn(shipPoint,
+                    Quaternion.identity, shippingMissionSO.SpawnPosition);
+                _deliveryNPCGameObjects.Add(a);
                 _deliveryGameObjects.Add(b);
             }
-            Destroy(_missionRange);
-            Destroy(_indicator);
+            shippingMissionSO.missionRangePrefab.ReturnToPool(_missionRange);
+            shippingMissionSO.indicatorPrefab.ReturnToPool(_indicator);
         }
 
         
@@ -114,13 +116,20 @@ namespace SFRemastered._Game._Scripts.Mission
         public override void FailMission()
         {
             base.FailMission();
-            Destroy(_missionRange);
-            Destroy(_indicator);
+            shippingMissionSO.missionRangePrefab.ReturnToPool(_missionRange);
+            shippingMissionSO.indicatorPrefab.ReturnToPool(_indicator);
             foreach (var var in _deliveryGameObjects)
             {
                 if (var!=null)
                 {
-                    Destroy(var);
+                    shippingMissionSO.deliveryPointPrefab.ReturnToPool(var);
+                }
+            }
+            foreach (var var in _deliveryNPCGameObjects)
+            {
+                if (var!=null)
+                {
+                    shippingMissionSO.deliveryNPCPrefab.ReturnToPool(var);
                 }
             }
         }
