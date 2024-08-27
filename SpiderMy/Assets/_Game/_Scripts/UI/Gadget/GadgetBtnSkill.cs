@@ -18,7 +18,7 @@ namespace SFRemastered._Game._Scripts.Gadget
 
         public GameObject bgDisable;
         public GameObject bgEnable;
-        public GameObject bgCooldown;
+        public GameObject bgCooldown; 
 
         private void Start()
         {

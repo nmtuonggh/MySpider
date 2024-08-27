@@ -7,6 +7,7 @@ namespace SFRemastered._Game._Scripts
 {
     public class UIManager : MonoBehaviour
     {
+        [SerializeField] private TimeManager timeManager;
         [SerializeField] private RectTransform suitUI;
         [SerializeField] private BlackBoard blackBoard;
 
@@ -23,11 +24,13 @@ namespace SFRemastered._Game._Scripts
         public void ShowSuitUI()
         {
             suitUI.gameObject.SetActive(true);
+            timeManager.pause = true;
         }
         
         public void HideSuitUI()
         {
             suitUI.gameObject.SetActive(false);
+            timeManager.pause = false;
         }
 
         #endregion

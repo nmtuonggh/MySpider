@@ -35,6 +35,7 @@ namespace SFRemastered.InputSystem
         public InputAction swapSkin;
         public InputAction ultimate;
         public InputAction gadget;
+        public InputAction scan;
 
         public bool disableInput;
 

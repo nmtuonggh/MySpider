@@ -15,8 +15,8 @@ namespace SFRemastered._Game._Scripts.Enemy.Bullet
                 if (!other.GetComponent<BlackBoard>().invincible)
                 {
                     other.GetComponent<PlayerController>().OnStaggerHit(ownerEnemyData.damage);
+                    bulletSo.ReturnToPool(gameObject);
                 }
-                bulletSo.ReturnToPool(gameObject);
             }
         }
     }

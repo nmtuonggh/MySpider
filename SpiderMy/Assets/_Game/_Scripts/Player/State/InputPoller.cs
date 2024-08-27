@@ -51,6 +51,7 @@ namespace SFRemastered
             blackBoard.dodge = InputManager.instance.dodge.Pressing;
             blackBoard.ultimate = InputManager.instance.ultimate.Pressing;
             blackBoard.gadget = InputManager.instance.gadget.Pressing;
+            blackBoard.scan = InputManager.instance.scan.Down;
 
             blackBoard.isGrounded = playerMovement.IsGrounded();
         }

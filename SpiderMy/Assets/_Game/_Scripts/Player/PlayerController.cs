@@ -113,7 +113,8 @@ namespace SFRemastered
 
         public void RegentHealth()
         {
-            health += playerData.maxHealth;
+            _blackBoard.dead = false;
+            health = playerData.maxHealth;
             playerData.currentHealth = playerData.maxHealth;
         }
         

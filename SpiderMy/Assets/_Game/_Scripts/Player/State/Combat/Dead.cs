@@ -12,6 +12,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.spiderSen.spiderSenCount = 0;
             _blackBoard.dead = false;
             randomIndex = Random.Range(0, _deathClips.Length);
             _state = _blackBoard.animancer.Play(_deathClips[randomIndex]);

@@ -29,6 +29,7 @@ namespace SFRemastered._Game._Scripts.Mission
         [SerializeField] private GameObject step2Item;
         
         [Header("==========Mission Status==========")]
+        [SerializeField] private GameObject StartUI;
         [SerializeField] private GameObject CompleteUI;
         [SerializeField] private GameObject FailFightUI;
         [SerializeField] private GameObject FailFightByDeadUI;
@@ -48,6 +49,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         [Header("==========Mission Event ==========")]
         public GameEvent dontWantRevive;
+        //public GameEvent Revive;
         
         [Header("==========Mission Event Listener==========")]
         public GameEventListener onMissionStart;
@@ -108,12 +110,12 @@ namespace SFRemastered._Game._Scripts.Mission
                     child.gameObject.SetActive(false);
                 }
             }
-            
         }
 
         public void HandlerInRangeMission()
         {
             warningPopup.SetActive(false);
+            StartInRange();
             switch (currentMission.missionType)
             {
                 case MissionType.Fighting:
@@ -129,6 +131,18 @@ namespace SFRemastered._Game._Scripts.Mission
                     step2Mission.text = "Rescue the hostages";
                     break;
             }
+        }
+
+        private void StartInRange()
+        {
+            StartUI.SetActive(true);
+            StartUI.transform.localScale = Vector3.zero;
+            StartUI.transform.DOScale(1f, 0.15f).SetEase(Ease.OutBounce);
+            DOVirtual.DelayedCall(1f, () =>
+            {
+                StartUI.transform.DOScale(0f, 0.15f).SetEase(Ease.OutBounce);
+                StartUI.transform.localScale = Vector3.zero;
+            });
         }
 
         public void HandlerMissionComplete()
@@ -300,7 +314,6 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void BtnRevive()
         {
-            playerData.currentHealth = playerData.maxHealth;
             MissionUI.SetActive(true);
             Ads();
             OffDeadFailUI();

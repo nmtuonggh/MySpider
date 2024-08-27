@@ -57,5 +57,15 @@ namespace SFRemastered
 
             unscaledGameTime += Time.unscaledDeltaTime;
         }
+        
+        public void PauseGame()
+        {
+            pause = true;
+        }
+        
+        public void ResumeGame()
+        {
+            pause = false;
+        }
     }
 }

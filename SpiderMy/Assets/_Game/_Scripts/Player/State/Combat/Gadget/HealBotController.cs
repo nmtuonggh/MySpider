@@ -1,4 +1,5 @@
 ﻿using System;
+using SFRemastered._Game._Scripts.Data;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
@@ -14,8 +15,13 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         public float elapsedTime;
         [SerializeField] private float duration = 10f;
         [SerializeField] private HealingBotSO healingBotSO;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private PlayerDataSO playerData;
+        [SerializeField] private PoolObject healVFX;
 
+        private GameObject healEffect;
         private Vector3 currentOffset;
+        private bool healEffectSpawned = false;
 
         private void Start()
         {
@@ -25,6 +31,7 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         private void OnEnable()
         {
             elapsedTime = 0;
+            healEffectSpawned = false;
             /*currentOffset = new Vector3(Mathf.Cos(angle) * radius, 2, Mathf.Sin(angle) * radius);
             transform.position = startPosition.position;*/
             currentOffset = startPosition.position - playerTransform.position;
@@ -39,9 +46,9 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= duration)
             {
-                //healingBotSO.ReturnToPool(gameObject);
                 gameObject.SetActive(false);
                 elapsedTime = 0;
+                healVFX.ReturnToPool(healEffect);
                 return;
             }
 
@@ -51,6 +58,22 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
             currentOffset = Vector3.Lerp(currentOffset, targetOffset, smoothSpeed);
             transform.position = playerTransform.position + currentOffset;
             transform.LookAt(playerTransform);
+        }
+
+        private void Update()
+        {
+            if (elapsedTime < duration)
+            {
+                float healAmount = 10f * Time.deltaTime;
+                playerController.health = Mathf.Min(playerController.health + healAmount, playerData.maxHealth);
+                playerData.currentHealth = playerController.health;
+                
+                if (!healEffectSpawned)
+                {
+                    healEffect = healVFX.Spawn(playerTransform.transform.position, Quaternion.identity, playerTransform);
+                    healEffectSpawned = true;
+                }
+            }
         }
     }
     

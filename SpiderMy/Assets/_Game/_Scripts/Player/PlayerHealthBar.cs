@@ -21,9 +21,15 @@ namespace SFRemastered
 
         private void Update()
         {
-            if (healthBar.value != playerController.health)
+            if (healthBar.value > playerController.health)
             {
                 healthBar.value = playerController.health;
+            }
+            
+            if (healthBar.value < playerController.health)
+            {
+                healthBar.value = playerController.health;
+                healthBar.value = Mathf.Lerp(healthBar.value, playerController.health, lerpSpeed * Time.deltaTime);
             }
             
             if (healthBar.value != easeHealthBar.value)
