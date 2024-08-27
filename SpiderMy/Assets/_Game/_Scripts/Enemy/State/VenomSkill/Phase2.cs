@@ -49,12 +49,11 @@ namespace SFRemastered.VenomSkill
                     var target = hitCollider.GetComponent<PlayerController>();
                     var direction = transform.position - target.transform.position;
                     var rotation = new Vector3(direction.x, target.transform.position.y, direction.z);
-                    target.transform.rotation = Quaternion.LookRotation(rotation);
                     if (!hitCollider.GetComponent<BlackBoard>().invincible)
                     {
+                        target.transform.rotation = Quaternion.LookRotation(rotation);
                         target.OnVenomPhase1Hit(0);
                     }
-                    
                 }
             }
         }
@@ -70,9 +69,9 @@ namespace SFRemastered.VenomSkill
                     var target = hitCollider.GetComponent<PlayerController>();
                     var direction = transform.position - target.transform.position;
                     var rotation = new Vector3(direction.x, target.transform.position.y, direction.z);
-                    target.transform.rotation = Quaternion.LookRotation(rotation);
                     if (!hitCollider.GetComponent<BlackBoard>().invincible)
                     {
+                        target.transform.rotation = Quaternion.LookRotation(rotation);
                         target.OnVenomPhase2Hit(_blackBoard.enemyData.damage/2);
                     }
                     

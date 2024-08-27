@@ -9,6 +9,7 @@ TagManager:
   - SpeedZone
   - Enemy
   - CharacterRoot
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Player
   - Enemy
   - Prop
-  - 
+  - Chest
   - 
   - 
   - 

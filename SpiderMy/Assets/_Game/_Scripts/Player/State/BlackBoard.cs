@@ -46,6 +46,7 @@ namespace SFRemastered
         public bool gadget;
         public bool dead;
         public bool revive;
+        public bool scan;
         public bool isGrounded;
         
         [Header("=====Swing================================")]

@@ -13,10 +13,9 @@ namespace SFRemastered._Game._Scripts.Player.State.Combat.Gadget
         public override void EnterState()
         {
             base.EnterState();
-            Debug.Log("adapter");
+            
             if (listGadgetStates[gadgetIndex].currentStack > 0)
             {
-                Debug.Log("current index " + gadgetIndex + "curreent stack " +listGadgetStates[gadgetIndex].currentStack);
                 listGadgetStates[gadgetIndex].currentStack--;
                 listGadgetStates[gadgetIndex].currentCoolDown = listGadgetStates[gadgetIndex].coolDown;
                 _fsm.ChangeState(listGadgetStates[gadgetIndex]);

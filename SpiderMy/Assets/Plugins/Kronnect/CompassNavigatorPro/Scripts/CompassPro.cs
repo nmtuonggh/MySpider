@@ -416,7 +416,7 @@ namespace CompassNavigatorPro {
         string _onScreenIndicatorShowDistanceFormat = "0m";
 
         /// <summary>
-        /// The string format for displaying the distance.
+        /// The string format for displaying the distance.player
         /// This string format corresponds with the available options for ToString(format) method of C#.
         /// </summary>
         public string onScreenIndicatorShowDistanceFormat {

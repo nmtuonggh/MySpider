@@ -51,8 +51,11 @@ namespace SFRemastered
             {
                 foreach (var hitCollider in hitColliders)
                 {
-                    var target = hitCollider.GetComponent<IHitable>();
-                    target.OnStaggerHit(_blackBoard.enemyData.damage);
+                    var target = hitCollider.GetComponent<PlayerController>();
+                    if (!_blackBoard.targetInvincible)
+                    {
+                        target.OnStaggerHit(_blackBoard.enemyData.damage);
+                    }
                 }
             }
         }
