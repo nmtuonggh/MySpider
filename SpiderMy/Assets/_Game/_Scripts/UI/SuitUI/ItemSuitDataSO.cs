@@ -19,5 +19,13 @@ namespace SFRemastered._Game._Scripts.SuitUI
         [Header("Suit Stats")]
         public int health;
         public int damage;
+        
+        public void AddCard(int id, int card)
+        {
+            if (id == suitID)
+            {
+                cardOwned+= card; 
+            }
+        }
     }
 }
