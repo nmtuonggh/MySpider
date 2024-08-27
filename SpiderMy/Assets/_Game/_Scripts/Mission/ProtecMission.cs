@@ -62,19 +62,19 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public override void CompleteMission()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
-            Destroy(_victim);
+            protecMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            protecMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            protecMissionSo.warningRange.ReturnToPool(_missionWarning);
+            protecMissionSo.victim.ReturnToPool(_victim);
             base.CompleteMission();
         }
 
         public override void FailMission()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
-            Destroy(_victim);
+            protecMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            protecMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            protecMissionSo.warningRange.ReturnToPool(_missionWarning);
+            protecMissionSo.victim.ReturnToPool(_victim);
             progressing = false;
             base.FailMission();
         }
@@ -90,9 +90,9 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void NotRevive()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
+            protecMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            protecMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            protecMissionSo.warningRange.ReturnToPool(_missionWarning);
             protecMissionSo.currentWaveIndex = 0;
             protecMissionSo.currentWaveEnemyCount = 0;
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -116,7 +116,7 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void PlayerEnterWarningRange()
         {
-            Destroy(_indicator);
+            protecMissionSo.indicatorPrefab.ReturnToPool(_indicator);
             progressing = true;
         }
         
@@ -139,7 +139,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 }
                 DOVirtual.DelayedCall(2f, () =>
                 {
-                    Destroy(_victim);
+                    protecMissionSo.victim.ReturnToPool(_victim);
                     FailMission();
                 });
             }
@@ -147,19 +147,16 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private void SpawnMissionRange()
         {
-            _missionRange = Instantiate(protecMissionSo.missionRangePrefab, protecMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _missionWarning = Instantiate(protecMissionSo.warningRange, protecMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _missionRange.transform.SetParent(protecMissionSo.SpawnPosition);
-            _missionWarning.transform.SetParent(protecMissionSo.SpawnPosition);
+            _missionRange = protecMissionSo.missionRangePrefab.Spawn(protecMissionSo.SpawnPosition.position,
+                Quaternion.identity, protecMissionSo.SpawnPosition);
+            _missionWarning = protecMissionSo.warningRange.Spawn(protecMissionSo.SpawnPosition.position,
+                Quaternion.identity, protecMissionSo.SpawnPosition);
         }
 
         private void DrawnIndicator()
         {
-            _indicator = Instantiate(protecMissionSo.indicatorPrefab, protecMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _indicator.transform.SetParent(protecMissionSo.SpawnPosition);
+            _indicator = protecMissionSo.indicatorPrefab.Spawn(protecMissionSo.SpawnPosition.position,
+                Quaternion.identity, protecMissionSo.SpawnPosition);
         }
 
         public void OnEnemyDie()
@@ -193,7 +190,7 @@ namespace SFRemastered._Game._Scripts.Mission
             var position = protecMissionSo.SpawnPosition.position;
             
             //_victim = Instantiate(protecMissionSo.victim, protecMissionSo.SpawnPosition.position, Quaternion.identity);
-            SpawnVictim(protecMissionSo.victim);
+            SpawnVictim();
             SpawnEnemies(waveCombat.listGangster);
             SpawnEnemies(waveCombat.listMercenary);
             SpawnEnemies(waveCombat.listMafia);
@@ -223,7 +220,7 @@ namespace SFRemastered._Game._Scripts.Mission
             enemySo.Spawn(spawnPos, Quaternion.identity, protecMissionSo.SpawnPosition, enemySo.id);
         }
 
-        private void SpawnVictim(GameObject victim)
+        private void SpawnVictim()
         {
             float angle = Random.Range(0f, Mathf.PI * 2);
             float distance = Random.Range(0f, protecMissionSo.spawnRange);
@@ -235,7 +232,7 @@ namespace SFRemastered._Game._Scripts.Mission
                 position.z + Mathf.Sin(angle) * distance
             );
             
-            _victim = Instantiate(victim, spawnPos, Quaternion.identity);
+            _victim = protecMissionSo.victim.Spawn(spawnPos, Quaternion.identity, protecMissionSo.SpawnPosition);
         }
         #endregion
     }

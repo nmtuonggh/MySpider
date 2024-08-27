@@ -2,8 +2,10 @@
 using Animancer;
 using NodeCanvas.Framework;
 using SFRemastered._Game._Scripts.Enemy.Bullet;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.Enemy.State
 {
@@ -18,6 +20,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool targetInvincible;
         public LineRenderer lineRenderer;
         public GameObject healthBarUI;
+        [FormerlySerializedAs("hitVFX")] public PoolObject poolObject;
         
         [Header("============Actions bool============")]
         public bool attacking;
@@ -29,6 +32,7 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public bool die;
         public bool cantTarget;
         public bool invincible;
+        public bool disableRB;
         
         [Header("============Combat variables============")]
         public float webHitStun;

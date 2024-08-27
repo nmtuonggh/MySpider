@@ -1,4 +1,6 @@
-﻿namespace SFRemastered
+﻿using DG.Tweening;
+
+namespace SFRemastered
 {
     namespace SFRemastered
     {
@@ -7,9 +9,12 @@
             public override void EnterState()
             {
                 base.EnterState();
+                var position = _blackBoard.target.obj.transform.position;
+                var direction =_blackBoard.characterController.transform.position - position;
+                //_blackBoard.characterController.transform.DOLookAt(position,0.1f);
+                //_blackBoard.characterController.transform.DOMove(direction.normalized * 5,0.1f);
                 _blackBoard.cantTarget = true;
-                var direction =_blackBoard.characterController.transform.position - _blackBoard.target.obj.transform.position;
-                _blackBoard.characterController.Move(direction * 1);
+                //_blackBoard.disableRB = true;
                 _blackBoard.lineRenderer.positionCount = 0;
                 _blackBoard.animancer.Animator.applyRootMotion = true;
             }
@@ -26,7 +31,8 @@
                 if (_state.NormalizedTime >= 1f)
                 {
                     _blackBoard.cantTarget = false;
-                    //_blackBoard.knockBackHit = false;
+                    //_blackBoard.disableRB = false;
+                    _blackBoard.animancer.Animator.applyRootMotion = false;
                     return StateStatus.Success;
                 }
             
@@ -35,7 +41,6 @@
 
             public override void ExitState()
             {
-                _blackBoard.animancer.Animator.applyRootMotion = false;
                 base.ExitState();
             }
         }

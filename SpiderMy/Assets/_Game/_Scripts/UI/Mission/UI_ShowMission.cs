@@ -12,6 +12,8 @@ namespace SFRemastered._Game._Scripts.Mission
 {
     public class UI_ShowMission : MonoBehaviour
     {
+        #region Variables
+
         [SerializeField] private MissionManager missionManager;
         [SerializeField] private GameObject MissionUI;
         [SerializeField] private BlackBoard blackBoard;
@@ -58,6 +60,10 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEventListener outWarningRange;
         public GameEventListener onMissionFailByDie;
 
+        #endregion
+
+        #region Register Event
+
         private void OnEnable()
         {
             onMissionStart.OnEnable();
@@ -82,6 +88,10 @@ namespace SFRemastered._Game._Scripts.Mission
             inWarningRange.OnDisable();
             outWarningRange.OnDisable();
         }
+
+        #endregion
+
+        #region Handler State Mission
 
         public void HandlerMissionStart()
         {
@@ -177,8 +187,11 @@ namespace SFRemastered._Game._Scripts.Mission
             step2Item.SetActive(true);
             warningPopup.SetActive(false);
         }
-        
-        
+
+        #endregion
+
+        #region UI Handler
+
         public void ShowUIComplete()
         {
             blackBoard.Bag.SetActive(false);
@@ -248,7 +261,10 @@ namespace SFRemastered._Game._Scripts.Mission
             timeManager.pause = false;
         }
 
-        
+        #endregion
+
+        #region Btn Event
+
         public void BtnAdsReward()
         {
             playerData.exp += currentMission.expReward * 2;
@@ -312,6 +328,8 @@ namespace SFRemastered._Game._Scripts.Mission
             });
         }
 
+        #endregion
+        
         private void Ads()
         {
             videoAds1.SetActive(true);

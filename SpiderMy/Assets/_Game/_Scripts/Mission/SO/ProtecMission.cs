@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using UnityEngine;
 
 namespace SFRemastered._Game._Scripts.Mission
@@ -7,9 +8,9 @@ namespace SFRemastered._Game._Scripts.Mission
     public class ProtecMissionSO : BaseMissionSO
     {
         [Header("Protec Mission")]
-        public GameObject warningRange;
+        public PoolObject warningRange;
         public float spawnRange;
-        public GameObject victim;
+        public PoolObject victim;
         
         [Header("Wave Data")]
         public int currentWaveIndex = 0;

@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionType: 0
   missionPrefab: {fileID: 3925484155556967002, guid: 11ec99dca7a81ca4e92d765226ff57c5, type: 3}
-  missionRangePrefab: {fileID: 7617848672185236956, guid: 13fccdc6deff1a14fa017a207133f723, type: 3}
-  indicatorPrefab: {fileID: 2247850611895165822, guid: cda00faf7d513874697881050ce634c5, type: 3}
+  missionRangePrefab: {fileID: 11400000, guid: 335c8d801f4b436448973dd417e40204, type: 2}
+  indicatorPrefab: {fileID: 11400000, guid: db7e67bb39b33484b8bee1c7a98d90eb, type: 2}
   timeLimit: 0
   cashReward: 0
   expReward: 0
-  warningRange: {fileID: 7085131639914438621, guid: 5adfad47ec29d8a42a1f28c27ba73f10, type: 3}
   spawnRange: 5
-  currentWaveIndex: 0
-  currentWaveEnemyCount: 0
+  warningRange: {fileID: 11400000, guid: e2446775fe868ab438306ddba3573e36, type: 2}
+  currentWaveIndex: 1
+  currentWaveEnemyCount: 1
   listWaveCombat:
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}

@@ -60,17 +60,17 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public override void CompleteMission()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
+            fightingMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            fightingMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            fightingMissionSo.warningRange.ReturnToPool(_missionWarning);
             base.CompleteMission();
         }
 
         public override void FailMission()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
+            fightingMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            fightingMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            fightingMissionSo.warningRange.ReturnToPool(_missionWarning);
             progressing = false;
             base.FailMission();
         }
@@ -78,18 +78,14 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public override void FailMissionByDie()
         {
-            /*Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
-            progressing = false;*/
             base.FailMissionByDie();
         }
         
         public void NotRevive()
         {
-            Destroy(_indicator);
-            Destroy(_missionRange);
-            Destroy(_missionWarning);
+            fightingMissionSo.indicatorPrefab.ReturnToPool(_indicator);
+            fightingMissionSo.missionRangePrefab.ReturnToPool(_missionRange);
+            fightingMissionSo.warningRange.ReturnToPool(_missionWarning);
             fightingMissionSo.currentWaveIndex = 0;
             fightingMissionSo.currentWaveEnemyCount = 0;
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -112,7 +108,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void PlayerEnterWarningRange()
         {
-            Destroy(_indicator);
+            fightingMissionSo.indicatorPrefab.ReturnToPool(_indicator);
             progressing = true;
         }
         
@@ -139,19 +135,19 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private void SpawnMissionRange()
         {
-            _missionRange = Instantiate(fightingMissionSo.missionRangePrefab, fightingMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _missionWarning = Instantiate(fightingMissionSo.warningRange, fightingMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _missionRange.transform.SetParent(fightingMissionSo.SpawnPosition);
-            _missionWarning.transform.SetParent(fightingMissionSo.SpawnPosition);
+            _missionRange = fightingMissionSo.missionRangePrefab.Spawn(fightingMissionSo.SpawnPosition.position,
+                Quaternion.identity, fightingMissionSo.SpawnPosition);
+            _missionWarning = fightingMissionSo.warningRange.Spawn(fightingMissionSo.SpawnPosition.position,
+                Quaternion.identity, fightingMissionSo.SpawnPosition);
+            /*_missionRange.transform.SetParent(fightingMissionSo.SpawnPosition);
+            _missionWarning.transform.SetParent(fightingMissionSo.SpawnPosition);*/
         }
 
         private void DrawnIndicator()
         {
-            _indicator = Instantiate(fightingMissionSo.indicatorPrefab, fightingMissionSo.SpawnPosition.position,
-                Quaternion.identity);
-            _indicator.transform.SetParent(fightingMissionSo.SpawnPosition);
+            _indicator =  fightingMissionSo.indicatorPrefab.Spawn(fightingMissionSo.SpawnPosition.position,
+                Quaternion.identity, fightingMissionSo.SpawnPosition);
+            //_indicator.transform.SetParent(fightingMissionSo.SpawnPosition);
         }
 
         public void OnEnemyDie()
