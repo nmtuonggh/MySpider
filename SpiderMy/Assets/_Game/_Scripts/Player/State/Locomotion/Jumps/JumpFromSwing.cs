@@ -22,11 +22,14 @@ namespace SFRemastered
         {
             base.EnterState();
             _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
+            var valueForward = _blackBoard.playerMovement.transform.forward.normalized;
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
-            //add force
-            var totalForce = forceDirecton * forceValue;
+            var veloValue = _blackBoard.playerMovement.GetVelocity().magnitude;
+            var totalForce = forceDirecton * veloValue + valueForward * forceValue;
             _blackBoard.playerMovement.AddForce(totalForce, ForceMode.Impulse);
             _animIndex = Random.Range(0, _animCount);
+            RandomAnim();
+            _state.Events.OnEnd = () => _fsm.ChangeState(_diveState);
         }
 
         public override StateStatus UpdateState()
@@ -37,7 +40,14 @@ namespace SFRemastered
                 return baseStatus;
             }
             
-            RandomAnim();
+            if (_blackBoard.playerMovement.GetVelocity().magnitude > 15)
+            {
+                _blackBoard.windEffect.Play();
+            }
+            else
+            {
+                DOVirtual.DelayedCall(0.2f, () => _blackBoard.windEffect.Stop());
+            }
 
             if (_blackBoard.playerMovement.IsGrounded())
             {   
@@ -45,7 +55,7 @@ namespace SFRemastered
                 return StateStatus.Success;
             }
 
-            if (_blackBoard.playerMovement.GetVelocity().y < -8f )
+            if (_blackBoard.playerMovement.GetVelocity().y < -5f )
             {
                 _fsm.ChangeState(_diveState);
                 return StateStatus.Success;
@@ -57,6 +67,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.windEffect.Stop();
             _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
         }
         

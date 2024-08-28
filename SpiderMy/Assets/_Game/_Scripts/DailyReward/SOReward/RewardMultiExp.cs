@@ -10,6 +10,7 @@ namespace SFRemastered._Game._Scripts.DailyReward
         
         public override void ClaimReward()
         {
+            Debug.Log("Claim multi exp");
             playerData.multiplierXp = multiplier;
             playerData.timeMulti = times * amount;
         }

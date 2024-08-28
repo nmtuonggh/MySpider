@@ -7,7 +7,6 @@ namespace SFRemastered._Game._Scripts.Mission
     public class MainMissionSO : ScriptableObject
     {
         public List<BaseMissionSO> listMission;
-        public List<GameObject> listMissionPrefab;
         public int currentMissionIndex;
 
         public BaseMissionSO GetCurrentMission()

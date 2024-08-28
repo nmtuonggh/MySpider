@@ -35,6 +35,11 @@ namespace SFRemastered
             else
                 _blackBoard.playerMovement.SetMovementDirection(_fsm.transform.forward);
 
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_blackBoard.stateReference.JumpToSwing);
+                return StateStatus.Success;
+            }
             return StateStatus.Running;
         }
 

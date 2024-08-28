@@ -56,15 +56,21 @@ namespace SFRemastered
             {
                 return baseStatus;
             }
-            
-            SwitchAnim();
 
             _blackBoard.rigidbody.AddForce(_blackBoard.moveDirection.normalized * speedWhenSwing);
-            
+
+            if (_blackBoard.rigidbody.velocity.magnitude > 15)
+            {
+                _blackBoard.windEffect.Play();
+            }
+            else
+            {
+                DOVirtual.DelayedCall(0.2f, () => _blackBoard.windEffect.Stop());
+            }
             
             SwingAssist();
 
-            if (!_blackBoard.swing && elapsedTime >=0.5f)
+            if (!_blackBoard.swing && elapsedTime >=0.3f)
             {
                 if (_blackBoard.rigidbody.velocity.y <= 15)
                 {
@@ -84,11 +90,18 @@ namespace SFRemastered
                     return StateStatus.Success;
                 }
             }
+            
+            if (_blackBoard.playerMovement.transform.position.y >= currentSwingPoint.y - 2f)
+            {
+                _fsm.ChangeState(_jumpFromSwing);
+                return StateStatus.Success;
+            }
 
-            DrawLine();
 
             return StateStatus.Running;
         }
+
+        #region SwingAssist
 
         private void SwingAssist()
         {
@@ -127,10 +140,20 @@ namespace SFRemastered
             }
         }
 
+
+        #endregion
+
         public override void FixedUpdateState()
         {
             base.FixedUpdateState();
             RotateVisual();
+        }
+
+        public override void LateUpdateState()
+        {
+            base.LateUpdateState();
+            DrawLine();
+
         }
 
         public override void ExitState()
@@ -144,6 +167,8 @@ namespace SFRemastered
             
             _springJoint.maxDistance = originalMaxDistance; // Store this value when entering the state
             _springJoint.minDistance = originalMinDistance;
+            
+            _blackBoard.windEffect.Stop();
         }
 
         private void SwitchAnim()
@@ -176,7 +201,12 @@ namespace SFRemastered
 
         private void SetupEnterState()
         {
-            var velocity = _blackBoard.playerMovement.GetVelocity().normalized;
+            /*_blackBoard.normalCam.Follow = _blackBoard.characterVisual.transform;
+            _blackBoard.normalCam.LookAt = _blackBoard.characterVisual.transform;*/
+            //_blackBoard.normalCam.dam
+            var direction = -(_blackBoard.playerMovement.transform.position - currentSwingPoint).normalized;
+            _blackBoard.playerMovement.transform.rotation = Quaternion.LookRotation(direction.onlyXZ(), Vector3.up);
+            var velocity = _blackBoard.playerMovement.GetVelocity();
             _blackBoard.playerMovement.rotationRate = 240f;
             _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = true;
@@ -184,7 +214,14 @@ namespace SFRemastered
             _blackBoard.rigidbody.constraints =
                 RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
             _blackBoard.rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-            _blackBoard.rigidbody.velocity = (velocity * startSwingVelocity);
+            if (velocity.magnitude < 25)
+            {
+                _blackBoard.rigidbody.velocity = (velocity.normalized * startSwingVelocity);
+            }
+            else
+            {
+                _blackBoard.rigidbody.velocity = velocity;
+            }
         }
 
         private void Swinging()
@@ -205,8 +242,10 @@ namespace SFRemastered
 
         private void SetupExitState()
         {
+            //_blackBoard.normalCam.Follow = _blackBoard.target.transform;
+            //_blackBoard.normalCam.LookAt = _blackBoard.target.transform;
+            _blackBoard.rigidbody.mass = 1;
             Vector3 velocity = _blackBoard.rigidbody.velocity;
-
             _fsm.transform.DORotate(
                 Quaternion.LookRotation(_fsm.transform.forward.projectedOnPlane(Vector3.up), Vector3.up).eulerAngles,
                 0.2f);
@@ -222,18 +261,6 @@ namespace SFRemastered
         private void RandomRopeShotPosition()
         {
             randomBound(_blackBoard.ropHolder);
-            /*if (_blackBoard.moveDirection.x > 0)
-            {
-                randomBound(_blackBoard.ropHolderRight);
-            }
-            else if (_blackBoard.moveDirection.x < 0)
-            {
-                randomBound(_blackBoard.ropHolderLeft);
-            }
-            else
-            {
-                randomBound(_blackBoard.ropHolderMid);
-            }*/
         }
 
         private void randomBound(GameObject gameObject)

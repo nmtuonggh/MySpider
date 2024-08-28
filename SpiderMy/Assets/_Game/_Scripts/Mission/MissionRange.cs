@@ -12,6 +12,7 @@ namespace SFRemastered._Game._Scripts.Mission
         public GameEventListener onStartMission;
         public float radius;
         private bool previousPlayerInRange;
+        public LayerMask layerMask;
 
         private void OnEnable()
         {
@@ -31,9 +32,9 @@ namespace SFRemastered._Game._Scripts.Mission
 
         private void Update()
         {
-            var hitColliders = Physics.OverlapSphere(transform.position, radius, 9);
+            var hitColliders = Physics.OverlapSphere(transform.position, radius, layerMask);
             playerInRange = hitColliders.Length > 0;
-
+            
             if (playerInRange && !previousPlayerInRange)
             {
                 //Debug.Log("Player in range");

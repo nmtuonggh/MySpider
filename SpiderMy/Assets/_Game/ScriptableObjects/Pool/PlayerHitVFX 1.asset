@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32ceb8811ca49b1bd2f2309015a5054, type: 3}
   m_Name: PlayerHitVFX 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6619881494795502837, guid: d67bb6642e3a8744fa2f06e5b7dc1b15, type: 3}
+  prefab: {fileID: 3478776589297918674, guid: 1f60fc68533ed0842a40ca332e7e62b4, type: 3}

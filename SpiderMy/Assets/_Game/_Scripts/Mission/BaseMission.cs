@@ -53,5 +53,7 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             onMissionFailByDie.Raise();
         }
+
+        
     }
 }

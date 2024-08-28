@@ -6,6 +6,7 @@ using DamageNumbersPro;
 using DG.Tweening;
 using NodeCanvas.Framework;
 using SFRemastered._Game._Scripts.Enemy.State;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         [Header("=============Enemy Stats============")]
         public EnemySO.EnemyType enemyType;
         public float health;
+        public TextMeshProUGUI textLevel; 
         
         [SerializeField] private HealthBar healthBarscript;
         [SerializeField] private EnemyBlackBoard blackBoard;
@@ -42,6 +44,7 @@ namespace SFRemastered._Game._Scripts.Enemy
             healthBarscript.healthBar.maxValue = health;
             healthBarscript.easeHealthBar.maxValue = health;
             blackBoard.attackCoolDown = blackBoard.enemyData.attackCooldown;
+            textLevel.text = "Lv" + blackBoard.enemyData.level.ToString();
         }
 
 
@@ -84,7 +87,7 @@ namespace SFRemastered._Game._Scripts.Enemy
         {
             if (!blackBoard.blocking || !blackBoard.invincible)
             {
-                Debug.Log("run");
+                
                 damageNumber.Spawn(this.transform.position + Vector3.up, damage);
                 //hitPrefab.Play();
                 HitEffect();

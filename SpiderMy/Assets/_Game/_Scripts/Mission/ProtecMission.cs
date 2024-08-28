@@ -192,8 +192,9 @@ namespace SFRemastered._Game._Scripts.Mission
             //_victim = Instantiate(protecMissionSo.victim, protecMissionSo.SpawnPosition.position, Quaternion.identity);
             SpawnVictim();
             SpawnEnemies(waveCombat.listGangster);
-            SpawnEnemies(waveCombat.listMercenary);
             SpawnEnemies(waveCombat.listMafia);
+            SpawnEnemies(waveCombat.kingpin);
+            SpawnEnemies(waveCombat.venom);
         }
 
         private void SpawnEnemies<T>(List<T> enemies) where T : EnemySO

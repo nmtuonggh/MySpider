@@ -1,3 +1,4 @@
+using System;
 using NodeCanvas.BehaviourTrees;
 using System.Collections;
 using System.Collections.Generic;
@@ -87,6 +88,17 @@ namespace SFRemastered
         public void OnFixedUpdate()
         {
             _currentState.FixedUpdateState();
+        }
+
+        private void LateUpdate()
+        {
+            if (!_isAIControlled)
+                OnLateUpdate();
+        }
+        
+        public void OnLateUpdate()
+        {
+            _currentState.LateUpdateState();
         }
     }
 }

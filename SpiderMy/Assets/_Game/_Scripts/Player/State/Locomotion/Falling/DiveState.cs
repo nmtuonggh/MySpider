@@ -19,6 +19,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.windEffect.Stop();
         }
 
 
@@ -28,6 +29,15 @@ namespace SFRemastered
             if (baseStatus != StateStatus.Running)
             {
                 return baseStatus;
+            }
+            
+            if (_blackBoard.playerMovement.GetVelocity().magnitude > 15)
+            {
+                _blackBoard.windEffect.Play();
+            }
+            else
+            {
+                DOVirtual.DelayedCall(0.2f, () => _blackBoard.windEffect.Stop());
             }
             
             ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter, _blackBoard.moveDirection.x, 55 * Time.deltaTime);

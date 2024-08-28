@@ -114,8 +114,8 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void HandlerInRangeMission()
         {
+            Debug.Log("run");
             warningPopup.SetActive(false);
-            StartInRange();
             switch (currentMission.missionType)
             {
                 case MissionType.Fighting:
@@ -200,6 +200,7 @@ namespace SFRemastered._Game._Scripts.Mission
         {
             step2Item.SetActive(true);
             warningPopup.SetActive(false);
+            StartInRange();
         }
 
         #endregion
@@ -217,8 +218,12 @@ namespace SFRemastered._Game._Scripts.Mission
             MissionUI.SetActive(false);
             CompleteUI.SetActive(true);
             timeManager.pause = true;
-            cashRewardValue.text = currentMission.cashReward.ToString();
-            expRewardValue.text = currentMission.expReward.ToString();
+            var currentExp = currentMission.coefficient * missionManager.GetCurrentMissionBonusEXP() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 50, 2);
+            var currentCash = currentMission.coefficient * missionManager.GetCurrentMissionBonusCash() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 75, 2);
+            cashRewardValue.text = Mathf.RoundToInt(currentCash).ToString();
+            expRewardValue.text = Mathf.RoundToInt(currentExp).ToString();
+            //Debug.Log("coefficient: " + currentMission.coefficient + " GetCurrentMissionBonus " + missionManager.GetCurrentMissionBonus() 
+                      //+ " index " + (missionManager.mainMissionSO.currentMissionIndex));
         }
         
         public void OffUIComplete()
@@ -281,8 +286,10 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void BtnAdsReward()
         {
-            playerData.exp += currentMission.expReward * 2;
-            playerData.cash += currentMission.expReward * 2;
+            var currentExp = currentMission.coefficient * missionManager.GetCurrentMissionBonusEXP() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 50, 2);
+            var currentCash = currentMission.coefficient * missionManager.GetCurrentMissionBonusCash() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 75, 2);
+            playerData.AddExp(Mathf.RoundToInt(currentExp) * 2);
+            playerData.AddCash(Mathf.RoundToInt(currentCash)*2);
             Ads();
             OffUIComplete();
             DOVirtual.DelayedCall(10f, () =>
@@ -293,8 +300,10 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void BtnNextComplete()
         {
-            playerData.exp += currentMission.expReward;
-            playerData.cash += currentMission.cashReward;
+            var currentExp = currentMission.coefficient * missionManager.GetCurrentMissionBonusEXP() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 50, 2);
+            var currentCash = currentMission.coefficient * missionManager.GetCurrentMissionBonusCash() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 75, 2);
+            playerData.AddExp(Mathf.RoundToInt(currentExp));
+            playerData.AddCash(Mathf.RoundToInt(currentCash));
             OffUIComplete();
             DOVirtual.DelayedCall(10f, () =>
             {

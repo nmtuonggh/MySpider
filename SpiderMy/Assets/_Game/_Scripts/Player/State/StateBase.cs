@@ -50,6 +50,7 @@ namespace SFRemastered
             return StateStatus.Running;
         }
         public virtual void FixedUpdateState() { }
+        public virtual void LateUpdateState() { }
         public virtual void ExitState() { }
 
         protected void print(string msg)

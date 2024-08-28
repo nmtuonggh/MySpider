@@ -21,7 +21,7 @@ namespace SFRemastered
         public override void ExitState()
         {
            var velo = _blackBoard.playerMovement.GetVelocity();
-           _blackBoard.playerMovement.SetVelocity(velo.normalized * incomingVelocity);
+           //_blackBoard.playerMovement.SetVelocity(velo.normalized * incomingVelocity);
            _blackBoard.playerMovement.rotationRate = startRotationRate;
             base.ExitState();
         }
@@ -34,6 +34,15 @@ namespace SFRemastered
                 return baseStatus;
             }
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection * speedMultiplier);
+            
+            if (_blackBoard.rigidbody.velocity.magnitude > 15)
+            {
+                _blackBoard.windEffect.Play();
+            }
+            else
+            {
+                DOVirtual.DelayedCall(0.2f, () => _blackBoard.windEffect.Stop());
+            }
             
             return StateStatus.Running;
         }

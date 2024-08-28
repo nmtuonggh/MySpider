@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SFRemastered._Game._Scripts.Data;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.DailyReward
 {
@@ -9,27 +10,50 @@ namespace SFRemastered._Game._Scripts.DailyReward
     {
         public List<BaseDailyRewardSO> listRewardData;
         public List<ItemUI> listRewardUI;
-        public PlayerDataSO dataDailyReward;
-        private int currentIndex;
+        [FormerlySerializedAs("dataDailyReward")] public PlayerDataSO playerData;
+        public GameObject textClaimed;
+        public GameObject btnClaim;
+        private DateTime lastClaimedDate;
+        
+        private const string LastClaimedDateKey = "LastClaimedDate";
 
         private void OnEnable()
         {
+            LoadData();
             SetDataUI();
-            currentIndex = dataDailyReward.currentDay;
+        }
+
+        private void OnDisable()
+        {
+            SaveData();
+        }
+
+        private void LoadData()
+        {
+            if (PlayerPrefs.HasKey(LastClaimedDateKey))
+            {
+                lastClaimedDate = DateTime.Parse(PlayerPrefs.GetString(LastClaimedDateKey));
+            }
         }
         
+        private void SaveData()
+        {
+            PlayerPrefs.SetString(LastClaimedDateKey, lastClaimedDate.ToString());
+            PlayerPrefs.Save();
+        }
+
         public void SetDataUI()
         {
-            for (int i = 0; i < listRewardUI.Count-1; i++)
+            for (int i = 0; i < listRewardUI.Count; i++)
             {
                 listRewardUI[i].SetData(listRewardData[i].rewardImage, listRewardData[i].amount.ToString());
                 listRewardUI[i].SetCheckMark(false);
                 listRewardUI[i].SetFocus(false);
             }
 
-            for (int i = 0; i < listRewardUI.Count-1; i++)
+            for (int i = 0; i < listRewardUI.Count; i++)
             {
-                if (i < dataDailyReward.currentDay-1)
+                if (i < playerData.currentDay)
                 {
                     listRewardUI[i].SetCheckMark(true);
                 }
@@ -39,28 +63,37 @@ namespace SFRemastered._Game._Scripts.DailyReward
                 }
             }
 
-            if (dataDailyReward.currentDay > 0 && dataDailyReward.currentDay <= listRewardUI.Count-1)
+            for (int i = 0; i < listRewardUI.Count; i++)
             {
-                listRewardUI[dataDailyReward.currentDay-1].SetFocus(true);
+                if (lastClaimedDate.Date != DateTime.Now.Date && i == playerData.currentDay)
+                {
+                    listRewardUI[i].SetFocus(true);
+                    textClaimed.SetActive(false);
+                }
+            }
+            
+            if (lastClaimedDate.Date == DateTime.Now.Date)
+            {
+                btnClaim.SetActive(false);
+                textClaimed.SetActive(true);
+            }else if (lastClaimedDate.Date != DateTime.Now.Date)
+            {
+                btnClaim.SetActive(true);
+                textClaimed.SetActive(false);
             }
         }
-        
+
         public void ClaimReward()
         {
-            string savedDate = PlayerPrefs.GetString("LastClaimedDate", DateTime.Now.ToString());
-            DateTime lastClaimedDate = DateTime.Parse(savedDate);
-            
-            if (DateTime.Now.Date > lastClaimedDate.Date)
+            if (lastClaimedDate.Date == DateTime.Now.Date)
             {
-                listRewardData[currentIndex].ClaimReward();
-                dataDailyReward.currentDay = (dataDailyReward.currentDay % 7) + 1;
-                
-                PlayerPrefs.SetString("LastClaimedDate", DateTime.Now.ToString());
-
-                // Update UI
-                SetDataUI();
+                return;
             }
+
+            listRewardData[playerData.currentDay].ClaimReward();
+            playerData.currentDay = (playerData.currentDay % 7) + 1;
+            lastClaimedDate = DateTime.Now;
+            SetDataUI();
         }
-        
     }
 }
