@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,6 +21,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             _blackBoard.characterVisual.transform.rotation = Quaternion.LookRotation(_blackBoard.playerMovement.transform.forward, Vector3.up);
+            _blackBoard.windEffect.Stop();
             base.ExitState();
         }
 
@@ -27,7 +29,16 @@ namespace SFRemastered
         public override StateStatus UpdateState()
         {
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection * speedMultiplier);
-
+            
+            if (_blackBoard.playerMovement.GetVelocity().magnitude > 15)
+            {
+                _blackBoard.windEffect.Play();
+            }
+            else
+            {
+                DOVirtual.DelayedCall(0.2f, () => _blackBoard.windEffect.Stop());
+            }
+            
             if (_blackBoard.playerMovement.IsGrounded())
             {
                 if(_blackBoard.moveDirection.magnitude < 0.3f)
@@ -45,8 +56,7 @@ namespace SFRemastered
                 if (_fsm.PreviousState != _swingState)
                 {
                     _fsm.ChangeState(_swingState);
-                }else if(_fsm.PreviousState == _swingState && elapsedTime >= 0.5f)
-                    _fsm.ChangeState(_swingState);
+                }
                 
                 return StateStatus.Success;
             }

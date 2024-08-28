@@ -2,6 +2,7 @@ using System;
 using Animancer;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using SFRemastered._Game._Scripts.CastCheck.Raycast;
 using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
@@ -60,6 +61,7 @@ namespace SFRemastered
         public GameObject ropHolder;
         public LineRenderer lr;
         public bool readyToSwing = true;
+        public ParticleSystem windEffect;
         
         [Header("=====Zip================================")]
         public Transform startZipLeft;
@@ -89,7 +91,10 @@ namespace SFRemastered
         public ProjectileWebShooterSO projectileWebShooterSo;
         public Transform projectileHealingBotPosition;
         public GadgetAdapter gadgetAdapter;
-        
+        [Header("Camera")] 
+        public Transform target;
+        public CinemachineVirtualCamera normalCam;
+        public CinemachineVirtualCamera swingCam;
         
         [Header("=====GameObject References================")]
         public GameObjectRef playerRef;

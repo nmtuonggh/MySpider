@@ -8,7 +8,8 @@ namespace SFRemastered._Game._Scripts.Mission
     public class WaveCombat
     {
         public List<GangsterSO> listGangster = new List<GangsterSO>();
-        public List<Mercenary> listMercenary = new List<Mercenary>();
         public List<Mafia> listMafia = new List<Mafia>();
+        public List<KingPin> kingpin = new List<KingPin>();
+        public List<Venom> venom = new List<Venom>();
     }
 }

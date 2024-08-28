@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9877941974fd4d678f19e848d0fadc97, type: 3}
-  m_Name: Fighting Mission
+  m_Name: Fighting Mission 2
   m_EditorClassIdentifier: 
   missionType: 0
   missionPrefab: {fileID: 3925484155556967002, guid: 11ec99dca7a81ca4e92d765226ff57c5, type: 3}
@@ -19,17 +19,17 @@ MonoBehaviour:
   timeLimit: 0
   cashReward: 0
   expReward: 0
+  coefficient: 1.5
   spawnRange: 5
   warningRange: {fileID: 11400000, guid: e2446775fe868ab438306ddba3573e36, type: 2}
   currentWaveIndex: 1
-  currentWaveEnemyCount: 1
+  currentWaveEnemyCount: 3
   listWaveCombat:
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    listMercenary: []
-    listMafia: []
-  - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    listMercenary: []
     listMafia:
     - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
+    - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
+    kingpin: []
+    venom: []

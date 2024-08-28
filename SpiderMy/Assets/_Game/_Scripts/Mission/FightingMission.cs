@@ -179,8 +179,9 @@ namespace SFRemastered._Game._Scripts.Mission
             fightingMissionSo.currentWaveEnemyCount = 0;
 
             SpawnEnemies(waveCombat.listGangster);
-            SpawnEnemies(waveCombat.listMercenary);
             SpawnEnemies(waveCombat.listMafia);
+            SpawnEnemies(waveCombat.kingpin);
+            SpawnEnemies(waveCombat.venom);
         }
 
         private void SpawnEnemies<T>(List<T> enemies) where T : EnemySO

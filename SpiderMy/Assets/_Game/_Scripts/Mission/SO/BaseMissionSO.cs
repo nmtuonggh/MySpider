@@ -25,6 +25,7 @@ namespace SFRemastered._Game._Scripts.Mission
         [Header("Rewards")] 
         public float cashReward;
         public float expReward;
+        public float coefficient;
         
         public Transform SpawnPosition
         {

@@ -43,8 +43,14 @@ namespace SFRemastered
             }
             _blackBoard.playerMovement.SetMovementDirection(_blackBoard.moveDirection);
             _blackBoard.playerMovement.Sprint();
+            
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_blackBoard.stateReference.JumpToSwing);
+                return StateStatus.Success;
+            }
+            
             return StateStatus.Running;
-
         }
 
         public override void ExitState()

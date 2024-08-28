@@ -7,6 +7,7 @@ namespace SFRemastered._Game._Scripts.DailyReward
     {
         public override void ClaimReward()
         {
+            Debug.Log("Claim cash");
             playerData.cash += amount;
         }
     }

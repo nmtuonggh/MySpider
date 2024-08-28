@@ -12,6 +12,7 @@ namespace SFRemastered._Game._Scripts.Enemy
             Boss
         }
         
+        [Header("Enemy Data")]
         public EnemyType enemyType;
         public int id;
         public GameObject prefab;
@@ -21,6 +22,23 @@ namespace SFRemastered._Game._Scripts.Enemy
         
         public float attackRange;
         public float attackCooldown;
+        [Header("Enemy Stats")]
+        public int level;
+        public float additionCoefficientHealth;
+        public float additionCoefficientDamage;
+
+        public void UpdateLevel(int level)
+        {
+            this.level = level;
+            UpdateStats(this.level);
+        }
+        
+        public void UpdateStats(int level)
+        {
+            health = 100 + level * additionCoefficientHealth;
+            damage = 10 +  level * additionCoefficientDamage;
+        }
+        
         
         public Dictionary<int, Queue<GameObject>> enemyPools = new Dictionary<int, Queue<GameObject>>();
         

@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   level: 1
-  maxHealth: 100
-  damage: 10
+  maxHealth: 500
+  damage: 20
   cooldown: 0
+  additionCoefficientHealth: 0
+  additionCoefficientDamage: 0
   cash: 0
   exp: 0
   skillPoints: 0
-  currentHealth: 100
+  currentHealth: 350
+  currentCoefficient: 10
+  xpToNextLevel: 121
+  multiplierXp: 1
+  timeMulti: 10
+  cardOwned: 0
+  currentDay: 1

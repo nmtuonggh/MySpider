@@ -44,6 +44,12 @@ namespace SFRemastered
                 _fsm.ChangeState(_gadgetAdapter);
                 return StateStatus.Success;
             }
+            
+            if (_blackBoard.swing)
+            {
+                _fsm.ChangeState(_blackBoard.stateReference.JumpToSwing);
+                return StateStatus.Success;
+            }
 
             return StateStatus.Running;
         }

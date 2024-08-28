@@ -63,6 +63,8 @@ namespace SFRemastered._Game._Scripts.Enemy.State
            knockBackHit = false;
            die = false;        
            blocking = false;
+           cantTarget = false;
+           invincible = false;
         }
     }
 }

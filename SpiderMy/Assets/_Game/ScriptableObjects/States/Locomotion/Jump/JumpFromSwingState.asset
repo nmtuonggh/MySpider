@@ -23,7 +23,6 @@ MonoBehaviour:
     _Speed: 1
     _NormalizedStartTime: NaN
   _wallRun: {fileID: 11400000, guid: f66717294e5a05544994f2885cf65ba0, type: 2}
-  _zipState: {fileID: 11400000, guid: e1b621ff0a7376049ae9f42bb0f00949, type: 2}
   _startZipAttack: {fileID: 11400000, guid: f9cea5dddf8ce464f8dd3f927ccf6432, type: 2}
   _diveState: {fileID: 11400000, guid: ad902a0650015f8439f4f07130cd98b4, type: 2}
   _landRollState: {fileID: 11400000, guid: 6234c07826aedcf4bb15488a2c51f9c0, type: 2}
@@ -65,14 +64,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 8bbebf4dfe3db4f4fb30bcb9c9d1bb27, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  - _FadeDuration: 0.8
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: d7ab9e8882d3c8f4888dfae7e7659b35, type: 2}
-    _Speed: 1
-    _NormalizedStartTime: NaN
   - _FadeDuration: 0.25
     _Events:
       _NormalizedTimes: []
@@ -97,6 +88,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 77de00caf2831cf46a95e253eed9a1cb, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _animCount: 5
+  _animCount: 4
   _animIndex: 3
-  forceValue: 25
+  forceValue: 35

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace SFRemastered._Game._Scripts.Data
@@ -6,11 +7,13 @@ namespace SFRemastered._Game._Scripts.Data
     [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/Data/PlayerData")]
     public class PlayerDataSO : ScriptableObject
     {
-        [Header("Stats")]
+        [Header("Stats Data")]
         public int level;
         public float maxHealth;
         public float damage;
         public float cooldown;
+        public float additionCoefficientHealth;
+        public float additionCoefficientDamage;
         [Header("Player Inventory")]
         public float cash;
         public float exp;
@@ -27,7 +30,9 @@ namespace SFRemastered._Game._Scripts.Data
         [Header("Suit Data")]
         public int cardOwned;
         
+        [Header("Time Data")]
         public int currentDay;
+        //public DateTime lastClaimedDate;
         public void GetCurrentCoefficient()
         {
             if (level < 4)
@@ -52,19 +57,27 @@ namespace SFRemastered._Game._Scripts.Data
         
         public void AddExp(float exp)
         {
-            this.exp += exp * multiplierXp;
+            //this.exp += exp * multiplierXp;
+            this.exp += exp ;
             if (this.exp >= xpToNextLevel)
             {
                 this.exp -= xpToNextLevel;
                 level++;
                 GetCurrentCoefficient();
                 GetXpToNextLevel();
+                UpdateStats();
             }
         }
         
         public void AddCash(float cash)
         {
             this.cash += cash;
+        }
+        
+        public void UpdateStats()
+        {
+            maxHealth = 500 + level * additionCoefficientHealth;
+            damage = 20 + level * additionCoefficientDamage;
         }
     }
 }

@@ -109,5 +109,36 @@ namespace SFRemastered._Game._Scripts.Mission
             currentMissionPrefab.GetComponent<BaseMission>().StartMission();
             MissionUIScript.HandlerMissionStart();
         }
+        
+        public float GetCurrentMissionBonusEXP()
+        {
+            if (mainMissionSO.currentMissionIndex < 10)
+            {
+                return 60 + (mainMissionSO.currentMissionIndex -1) * 30;
+            }
+            else if (mainMissionSO.currentMissionIndex is >= 10 and < 30)
+            {
+                return 330 + (mainMissionSO.currentMissionIndex - 11) * 10;
+            }
+            else
+            {
+                return 530 + (mainMissionSO.currentMissionIndex - 31) * 5;
+            }
+        }
+        public float GetCurrentMissionBonusCash()
+        {
+            if (mainMissionSO.currentMissionIndex < 10)
+            {
+                return 75 + (mainMissionSO.currentMissionIndex -1) * 30;
+            }
+            else if (mainMissionSO.currentMissionIndex is >= 10 and < 30)
+            {
+                return 345 + (mainMissionSO.currentMissionIndex - 11) * 10;
+            }
+            else
+            {
+                return 545 + (mainMissionSO.currentMissionIndex - 31) * 5;
+            }
+        }
     }
 }

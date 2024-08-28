@@ -227,6 +227,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   radius: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &773698782604558310
 GameObject:
   m_ObjectHideFlags: 0
