@@ -15,8 +15,6 @@ namespace SFRemastered.SwingHolder
             Vector3 position = root.transform.position + forwardXZ * 30f + Vector3.up * 20f;
             transform.position = position;
             
-            // Set the SwingHolder's rotation with only the y-axis from the player
-            //transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
 }
