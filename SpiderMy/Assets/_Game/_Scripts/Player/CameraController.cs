@@ -16,11 +16,33 @@ namespace SFRemastered
         public float _cinemachineTargetPitch;
         private Vector2 look = Vector2.zero;
         private const float _threshold = 0.01f;
+        
+        public float timeReset ;
 
         private void Update()
         {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            
+
+            if (InputManager.instance.isLooking)
+            {
+                look.x = InputManager.instance.look.y * 70f;
+                look.y = -InputManager.instance.look.x * 70f;
+                timeReset = 0;
+            }
+            else
+            {
+                timeReset += Time.deltaTime;
+                if (timeReset > 2.5f)
+                {
+                    look.x = InputManager.instance.move.x * 140f;
+                }
+            }
+#endif
+            
             look.x = InputManager.instance.look.y * 70f;
             look.y = -InputManager.instance.look.x * 70f;
+            
         }
 
         private void LateUpdate()
@@ -32,8 +54,16 @@ namespace SFRemastered
         {
             if (TimeManager.instance.pause || InputManager.instance.disableInput)
                 return;
+#if UNITY_ANDROID && !UNITY_EDITOR
+            if (look.sqrMagnitude >= _threshold && !LockCameraPosition || !InputManager.instance.isLooking)
+            {
+                float deltaTimeMultiplier = Time.deltaTime;
 
-            if (look.sqrMagnitude >= _threshold && !LockCameraPosition)
+                _cinemachineTargetYaw += look.x * deltaTimeMultiplier;
+                _cinemachineTargetPitch += look.y * deltaTimeMultiplier;
+            }
+#endif
+            if (look.sqrMagnitude >= _threshold && !LockCameraPosition )
             {
                 float deltaTimeMultiplier = Time.deltaTime;
 

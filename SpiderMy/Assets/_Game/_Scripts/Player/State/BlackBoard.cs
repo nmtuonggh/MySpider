@@ -3,6 +3,7 @@ using Animancer;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using EasyCharacterMovement;
 using SFRemastered._Game._Scripts.CastCheck.Raycast;
 using SFRemastered._Game._Scripts.Player.State.Combat.Gadget;
 using SFRemastered._Game._Scripts.ReferentSO;
@@ -18,6 +19,7 @@ namespace SFRemastered
         public StateReference stateReference;
         public PlayerMovement playerMovement;
         public PlayerController playerController;
+        public CharacterMovement characterMovement;
         public CheckWallState checkWallState;
         public FindZipPoint findZipPoint;
         

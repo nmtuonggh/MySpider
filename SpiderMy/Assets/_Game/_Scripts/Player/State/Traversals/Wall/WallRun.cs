@@ -99,13 +99,14 @@ namespace SFRemastered.Wall
             Quaternion targetRotation = Quaternion.LookRotation(-_blackBoard.checkWallState.hit.normal);
             //_blackBoard.characterVisual.transform.rotation = targetRotation;
             _blackBoard.characterVisual.transform.DORotateQuaternion(targetRotation, 0.2f);
+            //_blackBoard.playerMovement.transform.DORotateQuaternion(targetRotation, 0.2f);
             startVelocity = _blackBoard.playerMovement.GetVelocity();
             var distance = _blackBoard.playerMovement.GetRadius();
             var targetPosition = _blackBoard.checkWallState.hit.point +
                                  _blackBoard.checkWallState.hit.normal.normalized * distance * 1.3f;
             if (_blackBoard.playerMovement.IsGrounded())
             {
-                _blackBoard.playerMovement.transform.DOMove(targetPosition + new Vector3(0, 3f, 0), 0.2f);
+                _blackBoard.playerMovement.transform.DOMove(targetPosition + new Vector3(0, 2f, 0), 0.2f);
             }
             else
             {
@@ -144,7 +145,7 @@ namespace SFRemastered.Wall
             {
                 _state = _blackBoard.animancer.Play(_wallRunBlentree);
                 ((LinearMixerState)_state).Parameter = Mathf.Lerp(((LinearMixerState)_state).Parameter,
-                    Vector3.Angle(_blackBoard.playerMovement.transform.right, _blackBoard.wallMoveDirection),
+                    Vector3.Angle(_blackBoard.characterVisual.transform.right, _blackBoard.wallMoveDirection),
                     55 * Time.deltaTime);
             }
         }

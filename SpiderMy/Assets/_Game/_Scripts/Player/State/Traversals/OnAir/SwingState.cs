@@ -32,6 +32,8 @@ namespace SFRemastered
         
         private float originalMaxDistance;
         private float originalMinDistance;
+        
+        private LayerMask originalCollisionLayers;
 
         
         public override void EnterState()
@@ -204,6 +206,9 @@ namespace SFRemastered
             /*_blackBoard.normalCam.Follow = _blackBoard.characterVisual.transform;
             _blackBoard.normalCam.LookAt = _blackBoard.characterVisual.transform;*/
             //_blackBoard.normalCam.dam
+            //not take layer 3
+            originalCollisionLayers = _blackBoard.characterMovement.collisionLayers;
+            _blackBoard.characterMovement.collisionLayers &= ~(1 << 11)| (1 << 13)  ;
             var direction = -(_blackBoard.playerMovement.transform.position - currentSwingPoint).normalized;
             _blackBoard.playerMovement.transform.rotation = Quaternion.LookRotation(direction.onlyXZ(), Vector3.up);
             var velocity = _blackBoard.playerMovement.GetVelocity();
@@ -244,7 +249,7 @@ namespace SFRemastered
         {
             //_blackBoard.normalCam.Follow = _blackBoard.target.transform;
             //_blackBoard.normalCam.LookAt = _blackBoard.target.transform;
-            _blackBoard.rigidbody.mass = 1;
+            _blackBoard.characterMovement.collisionLayers = originalCollisionLayers;
             Vector3 velocity = _blackBoard.rigidbody.velocity;
             _fsm.transform.DORotate(
                 Quaternion.LookRotation(_fsm.transform.forward.projectedOnPlane(Vector3.up), Vector3.up).eulerAngles,
