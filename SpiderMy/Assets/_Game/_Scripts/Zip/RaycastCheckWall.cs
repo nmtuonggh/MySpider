@@ -6,7 +6,7 @@ namespace SFRemastered._Game._Scripts.Zip
 {
     public class RaycastCheckWall : MonoBehaviour
     {
-        public new Camera cam;
+        public new UnityEngine.Camera cam;
         public LayerMask layerMask;
         public LayerMask GroundLayer;
         public LayerMask WallLayer;

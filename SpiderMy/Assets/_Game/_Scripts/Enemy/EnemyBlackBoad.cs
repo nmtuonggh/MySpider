@@ -48,8 +48,6 @@ namespace SFRemastered._Game._Scripts.Enemy.State
         public BulletSO bulletSo;
         public GameObject shootPosition;
         
-        
-
         public Vector3 startWanderPosition;
         public int wanderPositionIndex;
 

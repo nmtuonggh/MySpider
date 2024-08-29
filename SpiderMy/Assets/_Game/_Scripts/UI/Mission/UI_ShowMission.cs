@@ -193,7 +193,7 @@ namespace SFRemastered._Game._Scripts.Mission
         
         public void HandlerOutWarningRange()
         {
-            warningPopup.SetActive(true);
+            //warningPopup.SetActive(true);
         }
         
         public void HandlerInWarningRange()
@@ -222,8 +222,7 @@ namespace SFRemastered._Game._Scripts.Mission
             var currentCash = currentMission.coefficient * missionManager.GetCurrentMissionBonusCash() + Mathf.Log(missionManager.mainMissionSO.currentMissionIndex * 75, 2);
             cashRewardValue.text = Mathf.RoundToInt(currentCash).ToString();
             expRewardValue.text = Mathf.RoundToInt(currentExp).ToString();
-            //Debug.Log("coefficient: " + currentMission.coefficient + " GetCurrentMissionBonus " + missionManager.GetCurrentMissionBonus() 
-                      //+ " index " + (missionManager.mainMissionSO.currentMissionIndex));
+            
         }
         
         public void OffUIComplete()

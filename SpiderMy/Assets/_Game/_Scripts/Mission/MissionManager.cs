@@ -66,16 +66,22 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void HandlerMissionComplete()
         {
-            if (mainMissionSO.currentMissionIndex < mainMissionSO.listMission.Count - 1)
+            if (mainMissionSO.currentMissionIndex < mainMissionSO.listMission.Count)
             {
+                Debug.Log("be hon");
                 mainMissionSO.AdvanceMission();
                 Destroy(currentMissionPrefab);
+                playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
+                playerBlackBoard.spiderSen.spiderSenCount=0;
                 MissionUIScript.HandlerMissionComplete();
             }
             else
             {
+                Debug.Log("lon hon");
                 mainMissionSO.currentMissionIndex = 0;
                 Destroy(currentMissionPrefab);
+                playerBlackBoard.spiderSen.spiderSen.gameObject.SetActive(false);
+                playerBlackBoard.spiderSen.spiderSenCount=0;
                 MissionUIScript.HandlerMissionComplete();
             }
         }
@@ -100,8 +106,8 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void StartMission()
         {
-           
             currentMission = mainMissionSO.GetCurrentMission();
+            Debug.Log("currentMissionIndex: " + mainMissionSO.currentMissionIndex);
             currentMission.GetMissionPosition(missionPositions[mainMissionSO.currentMissionIndex]);
             currentMissionPrefab = Instantiate(currentMission.missionPrefab, currentMission.SpawnPosition.position,
                 Quaternion.identity);

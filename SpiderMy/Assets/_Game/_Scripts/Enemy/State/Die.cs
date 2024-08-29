@@ -31,7 +31,7 @@ namespace SFRemastered
                 _blackBoard.cantTarget = false;
                 _blackBoard.disableRB = false;
                 _blackBoard.animancer.Animator.applyRootMotion = false;
-                _blackBoard.enemyData.ReturnToPool(_blackBoard.enemyData.id, _blackBoard.gameObject);
+                _blackBoard.enemyData.ReturnToPool(_blackBoard.enemyData.id, _blackBoard.characterController.gameObject);
                 return StateStatus.Success;
             }
             

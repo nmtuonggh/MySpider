@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32ceb8811ca49b1bd2f2309015a5054, type: 3}
   m_Name: DeliveryPointIndicator
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2247850611895165822, guid: 32174b925346b59429475d4c765edee1, type: 3}
+  prefab: {fileID: 2247850611895165822, guid: cda00faf7d513874697881050ce634c5, type: 3}

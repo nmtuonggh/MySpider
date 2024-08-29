@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fighting Mission Boss 4
   m_EditorClassIdentifier: 
   missionType: 0
-  missionPrefab: {fileID: 3925484155556967002, guid: 11ec99dca7a81ca4e92d765226ff57c5, type: 3}
+  missionPrefab: {fileID: 3925484155556967002, guid: fb5bb8bd92e51da458bff5c02ff5a713, type: 3}
   missionRangePrefab: {fileID: 11400000, guid: 335c8d801f4b436448973dd417e40204, type: 2}
   indicatorPrefab: {fileID: 11400000, guid: db7e67bb39b33484b8bee1c7a98d90eb, type: 2}
   timeLimit: 0
@@ -23,15 +23,13 @@ MonoBehaviour:
   spawnRange: 5
   warningRange: {fileID: 11400000, guid: e2446775fe868ab438306ddba3573e36, type: 2}
   currentWaveIndex: 1
-  currentWaveEnemyCount: 3
+  currentWaveEnemyCount: 6
   listWaveCombat:
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    listMafia:
-    - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
-    - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
+    listMafia: []
     kingpin:
     - {fileID: 11400000, guid: 6abfb211bf4f9fe47aebd4a21707759d, type: 2}
     venom: []

@@ -75,9 +75,9 @@ namespace SFRemastered._Game._Scripts.Mission
             _deliveryGameObjects.Clear();
             foreach (Vector3 shipPoint in shippingMissionSO.listDeliveryPoints)
             {
-                var a = shippingMissionSO.deliveryNPCPrefab.Spawn(shipPoint,
+                var a = shippingMissionSO.deliveryNPCPrefab.Spawn(shipPoint + new Vector3(0,1,0),
                     Quaternion.identity, shippingMissionSO.SpawnPosition);
-                var b = shippingMissionSO.deliveryPointPrefab.Spawn(shipPoint,
+                var b = shippingMissionSO.deliveryPointPrefab.Spawn(shipPoint + new Vector3(0,1,0),
                     Quaternion.identity, shippingMissionSO.SpawnPosition);
                 _deliveryNPCGameObjects.Add(a);
                 _deliveryGameObjects.Add(b);

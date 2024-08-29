@@ -9,25 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e62facdbbe3450387f270ed2412e9e8, type: 3}
-  m_Name: ProtecMissionSO
+  m_Script: {fileID: 11500000, guid: 9877941974fd4d678f19e848d0fadc97, type: 3}
+  m_Name: Fighting Mission 5
   m_EditorClassIdentifier: 
-  missionType: 2
-  missionPrefab: {fileID: 3925484155556967002, guid: 419b23c43451ba74a8d570b82d54308e, type: 3}
-  missionRangePrefab: {fileID: 11400000, guid: 76c67592c61cf19439ed1bd1f27873f5, type: 2}
-  indicatorPrefab: {fileID: 11400000, guid: a2c9b560c91a5134fa21f2c39ea0d2ca, type: 2}
+  missionType: 0
+  missionPrefab: {fileID: 3925484155556967002, guid: e3a28c1047cddec4faa0c25d0caa1e13, type: 3}
+  missionRangePrefab: {fileID: 11400000, guid: 335c8d801f4b436448973dd417e40204, type: 2}
+  indicatorPrefab: {fileID: 11400000, guid: db7e67bb39b33484b8bee1c7a98d90eb, type: 2}
   timeLimit: 0
   cashReward: 0
   expReward: 0
-  warningRange: {fileID: 11400000, guid: 54bddc1200b9909459818d0f7731f7f2, type: 2}
+  coefficient: 1.5
   spawnRange: 5
-  victim: {fileID: 11400000, guid: f23ef97b1db30f547a96a945674978f3, type: 2}
+  warningRange: {fileID: 11400000, guid: e2446775fe868ab438306ddba3573e36, type: 2}
   currentWaveIndex: 1
   currentWaveEnemyCount: 0
   listWaveCombat:
   - listGangster:
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
-    listMercenary: []
+    - {fileID: 11400000, guid: d32d5e873f5acff4db9658a189d0b7cf, type: 2}
     listMafia:
     - {fileID: 11400000, guid: 9dde8816f82f7d248ba7121580db672f, type: 2}
+    kingpin: []
+    venom: []

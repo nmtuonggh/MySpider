@@ -21,6 +21,7 @@ namespace SFRemastered
         public override void EnterState()
         {
             base.EnterState();
+            _blackBoard.SetCamera(_blackBoard.jumpSwingcam, _blackBoard.normalCam);
             _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
             var valueForward = _blackBoard.playerMovement.transform.forward.normalized;
             var forceDirecton = _blackBoard.playerMovement.GetVelocity().normalized;
@@ -30,6 +31,7 @@ namespace SFRemastered
             _animIndex = Random.Range(0, _animCount);
             RandomAnim();
             _state.Events.OnEnd = () => _fsm.ChangeState(_diveState);
+            
         }
 
         public override StateStatus UpdateState()
@@ -67,6 +69,7 @@ namespace SFRemastered
         public override void ExitState()
         {
             base.ExitState();
+            _blackBoard.SetCamera(_blackBoard.normalCam, _blackBoard.swingCam);
             _blackBoard.windEffect.Stop();
             _blackBoard.characterVisual.transform.DORotate(new Vector3(0, _blackBoard.playerMovement.transform.eulerAngles.y, 0), 0.2f);
         }

@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3925484155556967002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6809993103523659500}
+  - component: {fileID: 8396928405241227853}
+  m_Layer: 0
+  m_Name: FightingMission 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6809993103523659500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925484155556967002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8396928405241227853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925484155556967002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe32a9ca27ad48c29c632cf9bb8ab975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onMissionStart: {fileID: 11400000, guid: 5a0c99fc986663d46aafae8c0c379486, type: 2}
+  onMissionComplete: {fileID: 11400000, guid: b6afc6932acc7bf4ebe9bf6cd3d87c40, type: 2}
+  onMissionFail: {fileID: 11400000, guid: 321c9655ab8c09a48b87e5e41cbd127a, type: 2}
+  onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
+  onMissionFailByDie: {fileID: 11400000, guid: 3dabfcdc038407a488127afb119d787c, type: 2}
+  progressing: 0
+  fightingMissionSo: {fileID: 11400000, guid: a45e7ceb0d707854e93b2ef08a18003d, type: 2}
+  onEnemyDead:
+    Event: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: OnEnemyDie
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  inCombatRange:
+    Event: {fileID: 11400000, guid: 3c90e9f4432ea8c47ad910452c35de82, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: PlayerEnterCombatRange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  outCombatRange:
+    Event: {fileID: 11400000, guid: 4917f4ec0b992c04584da5a5da572426, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: PlayerLeaveCombatRange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  inWarningRange:
+    Event: {fileID: 11400000, guid: 27ab00b03320acf46acfc0edddf380a0, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: PlayerEnterWarningRange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onPlayerDead:
+    Event: {fileID: 11400000, guid: d7453fbca782179418be6a6b026800a0, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: FailMissionByDie
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  onNotRevive:
+    Event: {fileID: 11400000, guid: 9e3446d6cfe68514483642d31fd51e70, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8396928405241227853}
+          m_TargetAssemblyTypeName: SFRemastered._Game._Scripts.Mission.FightingMission,
+            Assembly-CSharp
+          m_MethodName: NotRevive
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

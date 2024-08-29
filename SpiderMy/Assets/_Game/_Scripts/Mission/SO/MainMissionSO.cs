@@ -20,14 +20,7 @@ namespace SFRemastered._Game._Scripts.Mission
 
         public void AdvanceMission()
         {
-            if (currentMissionIndex < listMission.Count)
-            {
-                currentMissionIndex++;
-            }
-            else
-            {
-                currentMissionIndex= 0;
-            }
+            currentMissionIndex++;
         }
     }
 }

@@ -226,7 +226,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  radius: 2
+  radius: 3.5
   layerMask:
     serializedVersion: 2
     m_Bits: 512

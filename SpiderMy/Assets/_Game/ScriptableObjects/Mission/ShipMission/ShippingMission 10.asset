@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be31142b28f24406b895486c511ac36b, type: 3}
+  m_Name: ShippingMission 10
+  m_EditorClassIdentifier: 
+  missionType: 1
+  missionPrefab: {fileID: 706990304470223936, guid: 3f056401629deee41a83284704bbbf41, type: 3}
+  missionRangePrefab: {fileID: 11400000, guid: fa9ef979400b541409980394290c6f51, type: 2}
+  indicatorPrefab: {fileID: 11400000, guid: f1a81b5e85610784b9208d7f7e691585, type: 2}
+  timeLimit: 180
+  cashReward: 0
+  expReward: 0
+  coefficient: 0
+  listDeliveryPoints:
+  - {x: -142.86, y: 30.718994, z: 57.179993}
+  - {x: -40.59999, y: 71.499, z: 252.46002}
+  - {x: 23.330002, y: 23.589005, z: 98.399994}
+  deliveryPointPrefab: {fileID: 11400000, guid: af2215984cd1fc2439387851b48b1cf1, type: 2}
+  deliveryNPCPrefab: {fileID: 11400000, guid: 85c6c9f456e122a49b51cd492c13621e, type: 2}

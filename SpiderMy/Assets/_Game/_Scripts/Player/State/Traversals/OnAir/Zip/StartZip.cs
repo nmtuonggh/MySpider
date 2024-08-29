@@ -13,7 +13,8 @@ namespace SFRemastered
             _blackBoard.currentZipPoint = _blackBoard.raycastCheckWall.zipPoint;
             _blackBoard.rigidbody.interpolation = RigidbodyInterpolation.None;
             _blackBoard.playerMovement.transform.DOLookAt(_blackBoard.currentZipPoint, 0.2f, AxisConstraint.Y).OnComplete(DrawWeb);
-            //_blackBoard.playerMovement.SetMovementMode(MovementMode.None);
+            
+            _blackBoard.playerMovement.SetMovementMode(MovementMode.None);
             _blackBoard.rigidbody.useGravity = false;
             _blackBoard.rigidbody.isKinematic = false;
             _blackBoard.rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;

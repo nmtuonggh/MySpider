@@ -1046,7 +1046,6 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3225689851060265200}
-  - {fileID: 1317136963327641872}
   m_Father: {fileID: 4871468115270657828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3326,16 +3325,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3231035872239769929}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2333839349554528044}
+  m_Father: {fileID: 3225689851060265200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 2}
+  m_AnchoredPosition: {x: -65, y: 2}
   m_SizeDelta: {x: 70, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7526618468506622152
@@ -3463,6 +3462,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1317136963327641872}
   - {fileID: 538822656708278374}
   - {fileID: 2207835714168969429}
   - {fileID: 3842125192039877360}
@@ -8884,7 +8884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1487243964771483444}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SphereCastAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9009,6 +9009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2261773798791727950}
     m_Modifications:
+    - target: {fileID: 171047282330400879, guid: e303112388d9a5e49927284437369457, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1317292251075115572, guid: e303112388d9a5e49927284437369457, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9049,9 +9053,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3282869950813988375, guid: e303112388d9a5e49927284437369457, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889003423005341433, guid: e303112388d9a5e49927284437369457, type: 3}
       propertyPath: m_Name
       value: VFX_SPidersen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889003423005341433, guid: e303112388d9a5e49927284437369457, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207335087090279792, guid: e303112388d9a5e49927284437369457, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230556282142146209, guid: e303112388d9a5e49927284437369457, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

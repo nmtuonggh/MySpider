@@ -3,6 +3,7 @@ using EasyCharacterMovement;
 using System.Collections;
 using System.Collections.Generic;
 using Animancer;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -46,6 +47,10 @@ namespace SFRemastered
             SetupEnterState();
             RandomRopeShotPosition();
             Swinging();
+            
+            _blackBoard.SetCamera(_blackBoard.swingCam, _blackBoard.normalCam);
+             
+            //_blackBoard.swingCam.transform.rotation = _blackBoard.swingAngle.transform.rotation;
             
             originalMaxDistance = _springJoint.maxDistance;
             originalMinDistance = _springJoint.minDistance;
@@ -169,6 +174,8 @@ namespace SFRemastered
             
             _springJoint.maxDistance = originalMaxDistance; // Store this value when entering the state
             _springJoint.minDistance = originalMinDistance;
+            
+            _blackBoard.SetCamera(_blackBoard.normalCam, _blackBoard.swingCam);        
             
             _blackBoard.windEffect.Stop();
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6809993103523659500}
   - component: {fileID: 8396928405241227853}
   m_Layer: 0
-  m_Name: FightingMission
+  m_Name: FightingMission 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   onMissionUpdate: {fileID: 11400000, guid: a263482fdd7053e48a60b8547b224e4d, type: 2}
   onMissionFailByDie: {fileID: 11400000, guid: 3dabfcdc038407a488127afb119d787c, type: 2}
   progressing: 0
-  fightingMissionSo: {fileID: 11400000, guid: 3340bd692b505f643b048bf83d42f0bc, type: 2}
+  fightingMissionSo: {fileID: 11400000, guid: 331d7f977c5d69149bae8af763e68398, type: 2}
   onEnemyDead:
     Event: {fileID: 11400000, guid: 5a8b677ca8a212242bbbcd135a86043b, type: 2}
     Response:

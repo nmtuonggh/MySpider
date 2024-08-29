@@ -14,12 +14,14 @@ namespace SFRemastered
         {
             base.EnterState();
             _state = _blackBoard.animancer.Play(_diveBlendTree);
+            _blackBoard.SetCamera(_blackBoard.swingCam, _blackBoard.normalCam);
         }
 
         public override void ExitState()
         {
             base.ExitState();
             _blackBoard.windEffect.Stop();
+            _blackBoard.SetCamera(_blackBoard.normalCam, _blackBoard.swingCam);
         }
 
 

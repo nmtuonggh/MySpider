@@ -37,7 +37,16 @@ namespace SFRemastered
             elapsedTime = 0;
 
             if (_mainAnimation.Clip != null)
-                _state = _blackBoard.animancer.Play(_mainAnimation);
+            {
+                if (_blackBoard != null)
+                {
+                    _state = _blackBoard.animancer.Play(_mainAnimation);
+                }
+                else
+                {
+                    Debug.LogError("Blackboard is null");
+                }
+            }
         }
 
         public virtual void ConsistentUpdateState()

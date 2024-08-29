@@ -10,11 +10,6 @@ namespace SFRemastered
 
         public void ChangeSuit(int ID)
         {
-            /*foreach (var suits in suitList)
-            {
-                suits.gameObject.SetActive(false);
-            }*/
-
             for (int i = 0; i < suitList.Count; i++)
             {
                 var suit = suitList[i];

@@ -24,6 +24,7 @@ namespace SFRemastered
         public FindZipPoint findZipPoint;
         
         public AnimancerComponent animancer;
+        public Animator animator;
         public SFXManager sfxManager;
         public new Camera camera;
         public new Rigidbody rigidbody;
@@ -97,6 +98,11 @@ namespace SFRemastered
         public Transform target;
         public CinemachineVirtualCamera normalCam;
         public CinemachineVirtualCamera swingCam;
+        public CinemachineVirtualCamera jumpSwingcam;
+        
+        public GameObject swingAngle;
+        public GameObject jumpSwingAngle;
+        
         
         [Header("=====GameObject References================")]
         public GameObjectRef playerRef;
@@ -115,7 +121,15 @@ namespace SFRemastered
         public void SetSuitData(SuitData suitData)
         {
             suitData.ApplySkin(this);
-            animancer.Animator = suitData.gameObject.GetComponent<Animator>();
+            animator.avatar = suitData.avatar;
+        }
+        
+        public void SetCamera(CinemachineVirtualCamera newCamera, CinemachineVirtualCamera oldCamera)
+        {
+            newCamera.enabled = true;
+            newCamera.Priority = 10;
+            oldCamera.Priority = 0;
+            oldCamera.enabled = false;
         }
     }
 }
